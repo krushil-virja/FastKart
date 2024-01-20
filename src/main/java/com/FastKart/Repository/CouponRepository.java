@@ -8,5 +8,5 @@ import com.FastKart.entities.Coupon;
 public interface CouponRepository extends JpaRepository<Coupon, Integer > {
 
 	
-	  Coupon findByCouponCode(String couponCode);
+	  Coupon findByCoupon_Code(String couponCode);
 }
