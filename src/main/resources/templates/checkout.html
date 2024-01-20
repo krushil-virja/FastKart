@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+
+
+<!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 11:45:41 GMT -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Fastkart">
+	<meta name="keywords" content="Fastkart">
+	<meta name="author" content="Fastkart">
+	<link rel="icon" href="../assets/images/favicon/1.png" type="image/x-icon">
+	<title>Checkout</title>
+
+
+</head>
+
+<body>
+	<!-- Loader Start -->
+	<div class="fullpage-loader">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<!-- Loader End -->
+
+
+
+	<!-- mobile fix menu start -->
+	<div class="mobile-menu d-md-none d-block mobile-cart">
+		<ul>
+			<li class="active">
+				<a href="index.html">
+					<i class="iconly-Home icli"></i>
+					<span>Home</span>
+				</a>
+			</li>
+
+			<li class="mobile-category">
+				<a href="javascript:void(0)">
+					<i class="iconly-Category icli js-link"></i>
+					<span>Category</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="search.html" class="search-box">
+					<i class="iconly-Search icli"></i>
+					<span>Search</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="wishlist.html" class="notifi-wishlist">
+					<i class="iconly-Heart icli"></i>
+					<span>My Wish</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="cart.html">
+					<i class="iconly-Bag-2 icli fly-cate"></i>
+					<span>Cart</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- mobile fix menu end -->
+
+	<!-- Breadcrumb Section Start -->
+	<section class="breadscrumb-section pt-0">
+		<div class="container-fluid-lg">
+			<div class="row">
+				<div class="col-12">
+					<div class="breadscrumb-contain">
+						<h2>Checkout</h2>
+						<nav>
+							<ol class="breadcrumb mb-0">
+								<li class="breadcrumb-item">
+									<a href="index.html">
+										<i class="fa-solid fa-house"></i>
+									</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Checkout</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Breadcrumb Section End -->
+
+	<!-- Checkout section Start -->
+	<section class="checkout-section-2 section-b-space">
+		<div class="container-fluid-lg">
+			<div class="row g-sm-4 g-3">
+
+				<div class="col-lg-8">
+
+					<div class="left-sidebar-checkout" style="background-color: #f8f8f8;">
+						<div class="checkout-detail-box">
+
+							<div style=" width: 100%; gap: 20px; display: flex;  ">
+
+								<div class="input-group mb-3" style="width: 50%; margin-top: 12px; ">
+									<span style="background-color: white;" class="input-group-text" id="basic-addon1"><i
+											class="fa-solid fa-user fa-lg"></i></span>
+									<input type="text" name="firstName" class="form-control"
+										placeholder=" Enter First Name" aria-label="First Name"
+										aria-describedby="basic-addon1">
+								</div>
+
+								<div class="input-group mb-3" style="width: 50%;  margin-top: 12px;">
+									
+									<span class="input-group-text" id="basic-addon1"><i
+											class="fa-solid fa-user fa-lg"></i></span>
+									<input type="text" name="lastName" id="lastName" class="form-control"
+										placeholder="Enter Last Name" aria-label="Last Name"
+										aria-describedby="basic-addon1">
+								</div>
+
+							</div>
+
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="basic-addon1"><i
+										class="fa-solid fa-envelope fa-lg"></i></span>
+								<input type="email" name="email" class="form-control"
+									placeholder="Enter name@example.com" aria-label="email"
+									aria-describedby="basic-addon1">
+							</div>
+
+							<div class="input-group mb-3">
+								<span class="input-group-text" id="basic-addon1"><i
+										class="fa-solid fa-mobile-screen-button fa-lg"></i></span>
+								<input type="text" name="number" class="form-control"
+									placeholder="Enter Your Phone Number" aria-label="number"
+									aria-describedby="basic-addon1">
+							</div>
+
+							<div class="input-group mb-3">
+								<span class="input-group-text"><i class="fa fa-address-card fa-lg"
+										aria-hidden="true"></i></span>
+								<textarea name="address" class="form-control" aria-label="With textarea"
+									placeholder="Your Address"></textarea>
+							</div>
+
+
+							<div style=" width: 100%; gap: 20px; display: flex; ">
+
+								<div class="input-group mb-3" style="width: 33%;">
+									<span class="input-group-text" id="basic-addon1"><i
+											class="fas fa-city fa-lg"></i></span>
+									<input type="text" name="state" class="form-control" placeholder="Enter State"
+										aria-label="state" aria-describedby="basic-addon1">
+								</div>
+
+								<div class="input-group mb-3" style="width: 34%;">
+									<span class="input-group-text" id="basic-addon1"><i class="fa fa-flag fa-lg"
+											aria-hidden="true"></i></span>
+									<input type="text" name="country" class="form-control" placeholder="Enter Country"
+										aria-label="country" aria-describedby="basic-addon1">
+								</div>
+
+								<div class="input-group mb-3" style="width: 33%;">
+									<span class="input-group-text" id="basic-addon1"><i class="fa fa-map-pin fa-lg"
+											aria-hidden="true"></i></span>
+									<input type="number" name="pinCode" class="form-control"
+										placeholder="Enter Your PinCode" aria-label="pinCode"
+										aria-describedby="basic-addon1">
+								</div>
+
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="right-side-summery-box">
+						<div class="summery-box-2">
+							<div class="summery-header">
+								<h3>Order Summery</h3>
+							</div>
+
+							<ul class="summery-contain">
+								<li>
+									<img src="../assets/images/vegetable/product/1.png"
+										class="img-fluid blur-up lazyloaded checkout-image" alt="">
+									<h4>Bell pepper <span>X 1</span></h4>
+									<h4 class="price">$32.34</h4>
+								</li>
+
+								<li>
+									<img src="../assets/images/vegetable/product/2.png"
+										class="img-fluid blur-up lazyloaded checkout-image" alt="">
+									<h4>Eggplant <span>X 3</span></h4>
+									<h4 class="price">$12.23</h4>
+								</li>
+
+								<li>
+									<img src="../assets/images/vegetable/product/3.png"
+										class="img-fluid blur-up lazyloaded checkout-image" alt="">
+									<h4>Onion <span>X 2</span></h4>
+									<h4 class="price">$18.27</h4>
+								</li>
+
+								<li>
+									<img src="../assets/images/vegetable/product/4.png"
+										class="img-fluid blur-up lazyloaded checkout-image" alt="">
+									<h4>Potato <span>X 1</span></h4>
+									<h4 class="price">$26.90</h4>
+								</li>
+
+								<li>
+									<img src="../assets/images/vegetable/product/5.png"
+										class="img-fluid blur-up lazyloaded checkout-image" alt="">
+									<h4>Baby Chili <span>X 1</span></h4>
+									<h4 class="price">$19.28</h4>
+								</li>
+
+								<li>
+									<img src="../assets/images/vegetable/product/6.png"
+										class="img-fluid blur-up lazyloaded checkout-image" alt="">
+									<h4>Broccoli <span>X 2</span></h4>
+									<h4 class="price">$29.69</h4>
+								</li>
+							</ul>
+
+							<ul class="summery-total">
+								<li>
+									<h4>Subtotal</h4>
+									<h4 class="price">$111.81</h4>
+								</li>
+
+								<li>
+									<h4>Shipping</h4>
+									<h4 class="price">$8.90</h4>
+								</li>
+
+								<li>
+									<h4>Tax</h4>
+									<h4 class="price">$29.498</h4>
+								</li>
+
+								<li>
+									<h4>Coupon/Code</h4>
+									<h4 class="price">$-23.10</h4>
+								</li>
+
+								<li class="list-total">
+									<h4>Total (USD)</h4>
+									<h4 class="price">$19.28</h4>
+								</li>
+							</ul>
+						</div>
+
+						<div class="checkout-offer">
+							<div class="offer-title">
+								<div class="offer-icon">
+									<img src="https://themes.pixelstrap.com/fastkart/assets/images/inner-page/offer.svg"
+										class="img-fluid" alt="">
+								</div>
+								<div class="offer-name">
+									<h6>Available Offers</h6>
+								</div>
+							</div>
+
+							<ul class="offer-detail">
+								<li>
+									<p>Combo: BB Royal Almond/Badam Californian, Extra Bold 100 gm...</p>
+								</li>
+								<li>
+									<p>combo: Royal Cashew Californian, Extra Bold 100 gm + BB Royal Honey 500 gm</p>
+								</li>
+							</ul>
+						</div>
+
+						<button class="btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold">Place Order</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Checkout section End -->
+
+
+
+	<!-- Location Modal Start -->
+	<div class="modal location-modal fade theme-modal" id="locationModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Choose your Delivery Location</h5>
+					<p class="mt-1 text-content">Enter your address and we will specify the offer for your area.</p>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="location-list">
+						<div class="search-input">
+							<input type="search" class="form-control" placeholder="Search Your Area">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</div>
+
+						<div class="disabled-box">
+							<h6>Select a Location</h6>
+						</div>
+
+						<ul class="location-select custom-height">
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Alabama</h6>
+									<span>Min: $130</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Arizona</h6>
+									<span>Min: $150</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>California</h6>
+									<span>Min: $110</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Colorado</h6>
+									<span>Min: $140</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Florida</h6>
+									<span>Min: $160</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Georgia</h6>
+									<span>Min: $120</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Kansas</h6>
+									<span>Min: $170</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Minnesota</h6>
+									<span>Min: $120</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>New York</h6>
+									<span>Min: $110</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Washington</h6>
+									<span>Min: $130</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Location Modal End -->
+
+	<!-- Add address modal box start -->
+	<div class="modal fade theme-modal" id="add-address" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel1">Add a new address</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-floating mb-4 theme-form-floating">
+							<input type="text" class="form-control" id="fname" placeholder="Enter First Name">
+							<label for="fname">First Name</label>
+						</div>
+					</form>
+
+					<form>
+						<div class="form-floating mb-4 theme-form-floating">
+							<input type="text" class="form-control" id="lname" placeholder="Enter Last Name">
+							<label for="lname">Last Name</label>
+						</div>
+					</form>
+
+					<form>
+						<div class="form-floating mb-4 theme-form-floating">
+							<input type="email" class="form-control" id="email" placeholder="Enter Email Address">
+							<label for="email">Email Address</label>
+						</div>
+					</form>
+
+					<form>
+						<div class="form-floating mb-4 theme-form-floating">
+							<textarea class="form-control" placeholder="Leave a comment here" id="address"
+								style="height: 100px"></textarea>
+							<label for="address">Enter Address</label>
+						</div>
+					</form>
+
+					<form>
+						<div class="form-floating mb-4 theme-form-floating">
+							<input type="email" class="form-control" id="pin" placeholder="Enter Pin Code">
+							<label for="pin">Pin Code</label>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary btn-md" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn theme-bg-color btn-md text-white" data-bs-dismiss="modal">Save
+						changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Add address modal box end -->
+
+	<!-- Deal Box Modal Start -->
+	<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div>
+						<h5 class="modal-title w-100" id="deal_today">Deal Today</h5>
+						<p class="mt-1 text-content">Recommended deals for you.</p>
+					</div>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="deal-offer-box">
+						<ul class="deal-offer-list">
+							<li class="list-1">
+								<div class="deal-offer-contain">
+									<a href="shop-left-sidebar.html" class="deal-image">
+										<img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
+											alt="">
+									</a>
+
+									<a href="shop-left-sidebar.html" class="deal-contain">
+										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+									</a>
+								</div>
+							</li>
+
+							<li class="list-2">
+								<div class="deal-offer-contain">
+									<a href="shop-left-sidebar.html" class="deal-image">
+										<img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
+											alt="">
+									</a>
+
+									<a href="shop-left-sidebar.html" class="deal-contain">
+										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+									</a>
+								</div>
+							</li>
+
+							<li class="list-3">
+								<div class="deal-offer-contain">
+									<a href="shop-left-sidebar.html" class="deal-image">
+										<img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
+											alt="">
+									</a>
+
+									<a href="shop-left-sidebar.html" class="deal-contain">
+										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+									</a>
+								</div>
+							</li>
+
+							<li class="list-1">
+								<div class="deal-offer-contain">
+									<a href="shop-left-sidebar.html" class="deal-image">
+										<img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
+											alt="">
+									</a>
+
+									<a href="shop-left-sidebar.html" class="deal-contain">
+										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Deal Box Modal End -->
+
+	<!-- Tap to top start -->
+	<div class="theme-option">
+		<div class="setting-box">
+			<button class="btn setting-button">
+				<i class="fa-solid fa-gear"></i>
+			</button>
+
+			<div class="theme-setting-2">
+				<div class="theme-box">
+					<ul>
+						<li>
+							<div class="setting-name">
+								<h4>Color</h4>
+							</div>
+							<div class="theme-setting-button color-picker">
+								<form class="form-control">
+									<label for="colorPick" class="form-label mb-0">Theme Color</label>
+									<input type="color" class="form-control form-control-color" id="colorPick"
+										value="#0da487" title="Choose your color">
+								</form>
+							</div>
+						</li>
+
+						<li>
+							<div class="setting-name">
+								<h4>Dark</h4>
+							</div>
+							<div class="theme-setting-button">
+								<button class="btn btn-2 outline" id="darkButton">Dark</button>
+								<button class="btn btn-2 unline" id="lightButton">Light</button>
+							</div>
+						</li>
+
+						<li>
+							<div class="setting-name">
+								<h4>RTL</h4>
+							</div>
+							<div class="theme-setting-button rtl">
+								<button class="btn btn-2 rtl-unline">LTR</button>
+								<button class="btn btn-2 rtl-outline">RTL</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="back-to-top">
+			<a id="back-to-top" href="#">
+				<i class="fas fa-chevron-up"></i>
+			</a>
+		</div>
+	</div>
+	<!-- Tap to top end -->
+
+	<!-- Bg overlay Start -->
+	<div class="bg-overlay"></div>
+	<!-- Bg overlay End -->
+
+
+</body>
+
+
+<!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 11:45:42 GMT -->
+
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+
+
+<!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 11:45:41 GMT -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Fastkart">
+	<meta name="keywords" content="Fastkart">
+	<meta name="author" content="Fastkart">
+	<link rel="icon" href="../assets/images/favicon/1.png" type="image/x-icon">
+	<title>Checkout</title>
+	
+	<style>
+ 
+		@keyframes slideIn {
+			0% {
+				left: -100%;
+			}
+
+			100% {
+				left: 10px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Loader Start -->
+	<div class="fullpage-loader">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<!-- Loader End -->
+
+	<!-- Header Start -->
+
+	<!-- Header End -->
+
+	<!-- mobile fix menu start -->
+	<div class="mobile-menu d-md-none d-block mobile-cart">
+		<ul>
+			<li class="active">
+				<a href="index.html">
+					<i class="iconly-Home icli"></i>
+					<span>Home</span>
+				</a>
+			</li>
+
+			<li class="mobile-category">
+				<a href="javascript:void(0)">
+					<i class="iconly-Category icli js-link"></i>
+					<span>Category</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="search.html" class="search-box">
+					<i class="iconly-Search icli"></i>
+					<span>Search</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="wishlist.html" class="notifi-wishlist">
+					<i class="iconly-Heart icli"></i>
+					<span>My Wish</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="cart.html">
+					<i class="iconly-Bag-2 icli fly-cate"></i>
+					<span>Cart</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- mobile fix menu end -->
+
+	<!-- Breadcrumb Section Start -->
+	<section class="breadscrumb-section pt-0">
+		<div class="container-fluid-lg">
+			<div class="row">
+				<div class="col-12">
+					<div class="breadscrumb-contain">
+						<h2>Checkout</h2>
+						<nav>
+							<ol class="breadcrumb mb-0">
+								<li class="breadcrumb-item">
+									<a href="index.html">
+										<i class="fa-solid fa-house"></i>
+									</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Checkout</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Breadcrumb Section End -->
+
+	<!-- Checkout section Start -->
+	<section class="checkout-section-2 section-b-space">
+		<form action="/checkOut" method="post">
+		<div class="container-fluid-lg">
+			<div class="row g-sm-4 g-3">
+				<div class="col-lg-8">
+					<div class="left-sidebar-checkout">
+						<div class="checkout-detail-box">
+
+
+							<!--<div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>-->
+
+							<!--==================================================== TOAST FOR SHOW MESSAGE ==============================================================-->
+
+							<div th:if="${error}"
+								class="toast-container fixed-top top-0 start-0 p-3 border-l-4 border-first"
+								style="animation: slideIn 0.5s e	ase-in-out forwards; z-index: 100;">
+								<div style="background-color:rgb(0, 189, 0)" class="toast fade show" id="errorToast">
+									<div class="toast-body text-white"><i class="fa fa-check-square"></i> <span
+											th:text="${error}"></span></div>
+								</div>
+							</div>
+
+							<!--================================================== TOAST END =============================================================================-->
+
+
+							<ul>
+								<li>
+
+									<div class="checkout-box">
+										<div class="checkout-title">
+											<h4>Delivery Address</h4>
+										</div>
+
+										<div class="checkout-detail">
+											<div class="row g-4">
+												<div class="col-xxl-6 col-lg-12 col-md-6" th:each="a:${showAllAddress}">
+													<div class="delivery-address-box">
+														<div>
+															<div class="form-check">
+																<input class="form-check-input" type="radio" th:value="${a.id}" name="address_id"
+																	id="flexRadioDefault1">
+															</div>
+
+															<div class="label">
+																<label>Home</label>
+															</div>
+
+															<ul class="delivery-address-detail">
+																<li>
+																	<div style="display: flex; gap: 5px;">
+																		<h4 class="fw-500" th:text="${a.firstName}">Jack
+																			Jennas </h4>
+																		<h4 th:text="${a.lastName}"></h4>
+																	</div>
+																</li>
+
+
+
+																<li>
+																	<p class="text-content">
+																	<div style="display: flex; gap: 5px;">
+																		<span class="text-title">Address:</span>
+																		<span th:text="${a.addressText}"></span>
+																	</div>
+																	</p>
+																</li>
+
+																<li>
+																	<h6 class="text-content">
+																		<div style="display: flex; gap: 5px;">
+																			<span class="text-title">Pin Code:</span>
+																			<span th:text="${a.pinCode}"></span>
+																		</div>
+																	</h6>
+																</li>
+
+																<li>
+																	<h6 class="text-content mb-0">
+																		<div style="display: flex; gap: 5px;">
+																			<span class="text-title">Phone :</span>
+																			<span th:text="${a.number}"></span>
+																		</div>
+																	</h6>
+																</li>
+
+																<div>
+																	<a style="text-decoration: underline; color: rgb(0, 128, 0);"
+																		href="#">EDIT</a>
+																	<a style="margin-left: 130px; text-decoration: underline; color: red;"
+																		th:href="@{'/deleteAddress/' + ${a.id}}"
+																		href="#">DELETE</a>
+																</div>
+															</ul>
+														</div>
+													</div>
+												</div>
+
+
+											</div>
+										</div>
+									</div>
+								</li>
+
+								<li>
+									<div class="checkout-box" style="padding: 15px; cursor: pointer;"
+										data-bs-toggle="modal" data-bs-target="#add-address">
+										<i style="color: dodgerblue;" class="fa fa-plus" aria-hidden="true"></i>
+										<a href="#" style="border: none; color: dodgerblue;">Add New Address</a>
+									</div>
+								</li>
+
+
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4">
+					<div class="right-side-summery-box">
+						<div class="summery-box-2">
+							<div class="summery-header">
+								<h3>Order Summery</h3>
+							</div>
+
+							<ul class="summery-contain">
+
+								<li th:each="c:${viewCart}">
+									<img src="#" th:src="@{'assets1/images/' + ${c.product.pimage}}"
+										class="img-fluid blur-up lazyloaded checkout-image" alt="">
+									<h4 th:text="${c.product.pname}">Broccoli <span>X 2</span></h4>
+									<h4 class="price"> <i class="fa fa-inr " 
+											aria-hidden="true"></i>
+										<span th:text="${c.product.price}">$29.69</span></h4>
+								</li>
+							</ul>
+
+							<ul class="summery-total">
+								<li>
+									<h4>Subtotal</h4>
+									<h4 class="price"> <i class="fa fa-inr " style="margin-right: 2px;"
+											aria-hidden="true"></i>
+										<span th:text="${subTotalOfCart}">$29.69</span></h4>
+
+								<li>
+									<h4>Shipping</h4>
+									<h4 class="price">$8.90</h4>
+								</li>
+
+								<li>
+									<h4>Tax</h4>
+									<h4 class="price">$29.498</h4>
+								</li>
+
+								<li>
+									<h4>Coupon/Code</h4>
+									<h4 class="price">$-23.10</h4>
+								</li>
+
+								<li class="list-total">
+									<h4>Total (USD)</h4>
+									<h4 class="price">$19.28</h4>
+								</li>
+							</ul>
+						</div>
+
+						<div class="checkout-offer">
+							<div class="offer-title">
+								<div class="offer-icon">
+									<img src="https://themes.pixelstrap.com/fastkart/assets/images/inner-page/offer.svg"
+										class="img-fluid" alt="">
+								</div>
+								<div class="offer-name">
+									<h6>Available Offers</h6>
+								</div>
+							</div>
+
+							<ul class="offer-detail">
+								<li>
+									<p>Combo: BB Royal Almond/Badam Californian, Extra Bold 100 gm...</p>
+								</li>
+								<li>
+									<p>combo: Royal Cashew Californian, Extra Bold 100 gm + BB Royal Honey 500 gm</p>
+								</li>
+							</ul>
+						</div>
+
+						<button  class="btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold">Place Order</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		</form>
+	</section>
+	<!-- Checkout section End -->
+
+	<!-- Footer Section Start -->
+
+	<!-- Footer Section End -->
+
+	<!-- Location Modal Start -->
+	<div class="modal location-modal fade theme-modal" id="locationModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Choose your Delivery Location</h5>
+					<p class="mt-1 text-content">Enter your address and we will specify the offer for your area.</p>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="location-list">
+						<div class="search-input">
+							<input type="search" class="form-control" placeholder="Search Your Area">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</div>
+
+						<div class="disabled-box">
+							<h6>Select a Location</h6>
+						</div>
+
+						<ul class="location-select custom-height">
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Alabama</h6>
+									<span>Min: $130</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Arizona</h6>
+									<span>Min: $150</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>California</h6>
+									<span>Min: $110</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Colorado</h6>
+									<span>Min: $140</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Florida</h6>
+									<span>Min: $160</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Georgia</h6>
+									<span>Min: $120</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Kansas</h6>
+									<span>Min: $170</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Minnesota</h6>
+									<span>Min: $120</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>New York</h6>
+									<span>Min: $110</span>
+								</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">
+									<h6>Washington</h6>
+									<span>Min: $130</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Location Modal End -->
+
+	<!-- Add address modal box start -->
+	<section>
+		<div class="modal fade theme-modal" id="add-address" tabindex="-1" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Add a new address</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							<i class="fa-solid fa-xmark"></i>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form th:action="@{/addAddress}" action="#" method="post">
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="firstName" type="text" class="form-control" id="firstName"
+									placeholder="Enter First Name">
+								<label for="firstName">First Name</label>
+							</div>
+
+
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="lastName" type="text" class="form-control" id="lastName"
+									placeholder="Enter Last Name">
+								<label for="lastName">Last Name</label>
+							</div>
+
+
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="email" type="email" class="form-control" id="email"
+									placeholder="Enter Email Address">
+								<label for="email">Email Address</label>
+							</div>
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="number" type="number" class="form-control" id="number"
+									placeholder="Enter Mobile Number">
+								<label for="number">MObile Number</label>
+							</div>
+
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<textarea name="addressText" class="form-control" placeholder="Enter Your Address"
+									id="addressText" style="height: 100px"></textarea>
+								<label for="addressText">Enter Address</label>
+							</div>
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="state" type="text" class="form-control" id="state"
+									placeholder="Enter Your State Name">
+								<label for="state">State Name</label>
+							</div>
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="country" type="text" class="form-control" id="country"
+									placeholder="Enter Your Country Name">
+								<label for="country">Country Name</label>
+							</div>
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="pinCode" type="text" class="form-control" id="pin"
+									placeholder="Enter Pin Code">
+								<label for="pin">Pin Code</label>
+							</div>
+
+							<div class="modal-footer">
+								<!--<button type="button" class="btn btn-secondary btn-md"
+									data-bs-dismiss="modal">Close</button>-->
+								<button type="submit" class="btn theme-bg-color btn-md text-white">Add Address</button>
+							</div>
+
+						</form>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Add address modal box end -->
+
+	<!-- Deal Box Modal Start -->
+	<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div>
+						<h5 class="modal-title w-100" id="deal_today">Deal Today</h5>
+						<p class="mt-1 text-content">Recommended deals for you.</p>
+					</div>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="deal-offer-box">
+						<ul class="deal-offer-list">
+							<li class="list-1">
+								<div class="deal-offer-contain">
+									<a href="shop-left-sidebar.html" class="deal-image">
+										<img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
+											alt="">
+									</a>
+
+									<a href="shop-left-sidebar.html" class="deal-contain">
+										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+									</a>
+								</div>
+							</li>
+
+							<li class="list-2">
+								<div class="deal-offer-contain">
+									<a href="shop-left-sidebar.html" class="deal-image">
+										<img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
+											alt="">
+									</a>
+
+									<a href="shop-left-sidebar.html" class="deal-contain">
+										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+									</a>
+								</div>
+							</li>
+
+							<li class="list-3">
+								<div class="deal-offer-contain">
+									<a href="shop-left-sidebar.html" class="deal-image">
+										<img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
+											alt="">
+									</a>
+
+									<a href="shop-left-sidebar.html" class="deal-contain">
+										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+									</a>
+								</div>
+							</li>
+
+							<li class="list-1">
+								<div class="deal-offer-contain">
+									<a href="shop-left-sidebar.html" class="deal-image">
+										<img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
+											alt="">
+									</a>
+
+									<a href="shop-left-sidebar.html" class="deal-contain">
+										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Deal Box Modal End -->
+
+	<!-- Tap to top start -->
+	<div class="theme-option">
+		<div class="setting-box">
+			<button class="btn setting-button">
+				<i class="fa-solid fa-gear"></i>
+			</button>
+
+			<div class="theme-setting-2">
+				<div class="theme-box">
+					<ul>
+						<li>
+							<div class="setting-name">
+								<h4>Color</h4>
+							</div>
+							<div class="theme-setting-button color-picker">
+								<form class="form-control">
+									<label for="colorPick" class="form-label mb-0">Theme Color</label>
+									<input type="color" class="form-control form-control-color" id="colorPick"
+										value="#0da487" title="Choose your color">
+								</form>
+							</div>
+						</li>
+
+						<li>
+							<div class="setting-name">
+								<h4>Dark</h4>
+							</div>
+							<div class="theme-setting-button">
+								<button class="btn btn-2 outline" id="darkButton">Dark</button>
+								<button class="btn btn-2 unline" id="lightButton">Light</button>
+							</div>
+						</li>
+
+						<li>
+							<div class="setting-name">
+								<h4>RTL</h4>
+							</div>
+							<div class="theme-setting-button rtl">
+								<button class="btn btn-2 rtl-unline">LTR</button>
+								<button class="btn btn-2 rtl-outline">RTL</button>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="back-to-top">
+			<a id="back-to-top" href="#">
+				<i class="fas fa-chevron-up"></i>
+			</a>
+		</div>
+	</div>
+	<!-- Tap to top end -->
+
+	<!-- Bg overlay Start -->
+	<div class="bg-overlay"></div>
+	<!-- Bg overlay End -->
+<!--====================================================== TOAST MESSAGE JAVA SCRIPT ===========================================================-->
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			setTimeout(function () {
+				var errorToast = document.getElementById('errorToast');
+				var bsToast = new bootstrap.Toast(errorToast);
+				bsToast.hide();
+				
+			}, 1300); console.log("hello word"); // Adjust the time in milliseconds as needed
+		});
+	</script>
+
+	<script>
+			document.addEventListener('DOMContentLoaded', function () {
+			var toastContainer = document.querySelector('.toast-container');
+			var toast = document.querySelector('.toast');
+
+			// Adjust the position when the window is scrolled
+			window.addEventListener('scroll', function () {
+				var scrollTop = window.scrollY;
+				toastContainer.style.bottom = scrollTop + 'px';
+			});
+		});
+	</script>
+<!--========================================================== TOAST MESSAGE JAVA SCRIPT END ==================================================-->
+
+</body>
+
+
+<!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 11:45:42 GMT -->
+
+</html>
