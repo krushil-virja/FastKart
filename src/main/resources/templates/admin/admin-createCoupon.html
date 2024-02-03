@@ -300,7 +300,7 @@
 
                                
 
-                                <li class="sidebar-list">
+                               <li class="sidebar-list">
                                     <a class="sidebar-link sidebar-title" href="javascript:void(0)">
                                         <i class="ri-archive-line"></i>
                                         <span>Orders</span>
@@ -309,8 +309,21 @@
                                         <li>
                                             <a href="#" th:href="@{allOrder}">Order List</a>
                                         </li>
+                                        
+                                         <li>
+                                            <a href="#" th:href="@{pendingOrder}">Pending  Order</a>
+                                        </li>
+                                         <li>
+                                            <a href="#" th:href="@{activeOrder}">Active Order</a>
+                                        </li>
+                                         <li>
+                                            <a href="#" th:href="@{shippingOrder}">Shipping Order</a>
+                                        </li>
                                         <li>
-                                            <a href="#" th:href="@{orderDetails}">Order Detail</a>
+                                            <a href="#" th:href="@{deliveredOrder}">Delivered Order</a>
+                                        </li>
+                                         <li>
+                                            <a href="#" th:href="@{cancslledOrder}">Cancalled Order</a>
                                         </li>
                                         <li>
                                             <a href="#" th:href="@{orderTracking}">Order Tracking</a>
@@ -418,7 +431,7 @@
                                                                     class="col-lg-2 col-md-3 col-form-label form-label-title">Coupon
                                                                     Code</label>
                                                                 <div class="col-md-9 col-lg-10">
-                                                                    <input class="form-control" type="text" name="coupon_code">
+                                                                    <input class="form-control" type="text" name="couponCode">
                                                                 </div>
                                                             </div>
 

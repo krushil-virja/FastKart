@@ -312,23 +312,36 @@
 
 
 
-								<li class="sidebar-list">
-									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
-										<i class="ri-archive-line"></i>
-										<span>Orders</span>
-									</a>
-									<ul class="sidebar-submenu">
-										<li>
-											<a href="#" th:href="@{allOrder}">Order List</a>
-										</li>
-										<li>
-											<a href="#" th:href="@{orderDetails}">Order Detail</a>
-										</li>
-										<li>
-											<a href="#" th:href="@{orderTracking}">Order Tracking</a>
-										</li>
-									</ul>
-								</li>
+								 <li class="sidebar-list">
+                                    <a class="sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-archive-line"></i>
+                                        <span>Orders</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="#" th:href="@{allOrder}">Order List</a>
+                                        </li>
+                                        
+                                         <li>
+                                            <a href="#" th:href="@{pendingOrder}">Pending  Order</a>
+                                        </li>
+                                         <li>
+                                            <a href="#" th:href="@{activeOrder}">Active Order</a>
+                                        </li>
+                                         <li>
+                                            <a href="#" th:href="@{shippingOrder}">Shipping Order</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" th:href="@{deliveredOrder}">Delivered Order</a>
+                                        </li>
+                                         <li>
+                                            <a href="#" th:href="@{cancslledOrder}">Cancalled Order</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" th:href="@{orderTracking}">Order Tracking</a>
+                                        </li>
+                                    </ul>
+                                </li>
 
 
 								<li class="sidebar-list">
@@ -434,7 +447,7 @@
 													<tr th:each="coupon : ${allCoupon}">
 														
 														<td th:text="${coupon.coupon_name}"></td>
-														<td th:text="${coupon.coupon_code}"></td>
+														<td th:text="${coupon.couponCode}"></td>
 														<td th:text="${coupon.discount}"></td>
 														<td th:text="${coupon.min_cart_subtotal}"></td>
 														<td th:text="${coupon.max_cart_subtotal}"></td>

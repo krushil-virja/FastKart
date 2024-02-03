@@ -48,7 +48,7 @@ public class productController {
 	private ProductRepository productRepository;
 
 	@PostMapping("insertProduct")
-	private String addProduct(@ModelAttribute Product product, @RequestParam("image") MultipartFile file, @RequestParam("cid") int cid, @RequestParam("scid") int scid) {
+	public String addProduct(@ModelAttribute Product product, @RequestParam("image") MultipartFile file, @RequestParam("cid") int cid, @RequestParam("scid") int scid) {
 		
 		
 		try {

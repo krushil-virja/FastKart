@@ -14,12 +14,20 @@ public class checkoutDao {
 	@Autowired
 	private CheckOutRepository checkOutRepository;
 	
-	public void saveSelectedAddress(Address selectedAddress) {
+	public CheckOut saveSelectedAddress(Address selectedAddress) {
 		
 		CheckOut checkOut = new CheckOut();
 		checkOut.setAddress(selectedAddress);
 		
-		checkOutRepository.save(checkOut);
+		return checkOutRepository.save(checkOut);
+		
+	}
+	
+	
+	public CheckOut getCheckOutById(int id) {
+		
+	CheckOut checkOut=	checkOutRepository.findById(id).get();
+	return checkOut;
 		
 	}
 }

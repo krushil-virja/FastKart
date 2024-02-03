@@ -26,6 +26,8 @@ import com.FastKart.entities.Product;
 import com.FastKart.entities.User;
 import com.FastKart.entities.WishList;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class basicController {
 
@@ -46,7 +48,7 @@ public class basicController {
 
 	@Autowired
 	private WishListDao wdao;
-	
+
 	@Autowired
 	private addressDao addao;
 
@@ -62,7 +64,7 @@ public class basicController {
 	// this method is check for user is login or not
 	// also this handler used in all handler where you need to find that user is
 	// login or not
-	
+
 	@ModelAttribute("loggedInUser")
 	public User getLoggedInUser(Principal principal) {
 		if (principal != null) {
@@ -71,7 +73,7 @@ public class basicController {
 		}
 		return null;
 	}
-	
+
 //========================================================= HOME PAGE METHOD ==========================================================================	
 	@GetMapping("/home")
 	public String home(Model m, Principal principal) {
@@ -135,8 +137,7 @@ public class basicController {
 
 		return "login";
 	}
-
-//======================================================= SHOP PAGE METHOD ============================================================================	
+//======================================================= SHOP PAGE Handler ============================================================================	
 
 	@GetMapping("/shop")
 	public String shop() {
@@ -144,7 +145,7 @@ public class basicController {
 		return "shop";
 	}
 
-//======================================================= ABOUT PAGE METHOD ============================================================================
+//======================================================= ABOUT PAGE Handler ============================================================================
 
 	@GetMapping("/about")
 	public String about() {
@@ -152,7 +153,7 @@ public class basicController {
 		return "about-us";
 	}
 
-//======================================================= CONTACT PAGE METHOD ============================================================================
+//======================================================= CONTACT PAGE Handler ============================================================================
 	@GetMapping("/contact")
 	public String contact() {
 
@@ -166,16 +167,17 @@ public class basicController {
 		if (principal != null) {
 			List<Cart> viewCart = cartdao.viewCart(principal);
 			m.addAttribute("cart", viewCart);
-			
-			  int subTotalOfCart = cartdao.getTotalOfCart(viewCart);
-			   m.addAttribute("subTotalOfCart", subTotalOfCart);
-			   
-			 int totalWithShipping = cartdao.getTotalWithShipping(viewCart);
-			 m.addAttribute("totalWithShipping", totalWithShipping);
-			 
-			 int shippingTotal = cartdao.getShippingTotal(viewCart);
-			 m.addAttribute("shippingTotal", shippingTotal);
 
+			int subTotalOfCart = cartdao.getTotalOfCart(viewCart);
+			m.addAttribute("subTotalOfCart", subTotalOfCart);
+
+			int totalWithShipping = cartdao.getTotalWithShipping(viewCart);
+			m.addAttribute("grandTotal", totalWithShipping);
+
+			int shippingTotal = cartdao.getShippingTotal(viewCart);
+			m.addAttribute("shippingTotal", shippingTotal);
+
+			m.addAttribute("discount", 0);
 			return "Cart";
 		} else {
 			// Redirect to the login page
@@ -190,30 +192,25 @@ public class basicController {
 		return "checkOut";
 	}
 
-	
 	@GetMapping("/checkOut1")
 	public String CHECKOUT(Model m, Principal principal) {
-		 
-		if(principal!=null) {
-		List<Address> showAllAddress = addao.showAllAddress(principal);
-		m.addAttribute("showAllAddress", showAllAddress);
-		
-		
-	   List<Cart> viewCart = cartdao.viewCart(principal);
-	   m.addAttribute("viewCart", viewCart);
-	   
-	   
-	   int subTotalOfCart = cartdao.getTotalOfCart(viewCart);
-	   m.addAttribute("subTotalOfCart", subTotalOfCart);
-		return "CKECHOUT";
-		}
-		else {
-			return  null; 
-		}
-		
 
-		
+		if (principal != null) {
+			List<Address> showAllAddress = addao.showAllAddress(principal);
+			m.addAttribute("showAllAddress", showAllAddress);
+
+			List<Cart> viewCart = cartdao.viewCart(principal);
+			m.addAttribute("viewCart", viewCart);
+
+			int subTotalOfCart = cartdao.getTotalOfCart(viewCart);
+			m.addAttribute("subTotalOfCart", subTotalOfCart);
+			return "CKECHOUT";
+		} else {
+			return null;
+		}
+
 	}
+
 //======================================================= WISHLIST PAGE METHOD ============================================================================	
 	@GetMapping("/wishList")
 	public String wishList(Principal principal, Model m) {
@@ -227,10 +224,10 @@ public class basicController {
 	}
 
 //======================================================= USERDASHBOARD PAGE METHOD ============================================================================
-	@GetMapping("/deshboard")
+	@GetMapping("/userDashboard")
 	public String userDashboard() {
 
-		return " redirect:/user-dashboard";
+		return "userDashboard";
 	}
 
 //======================================================= PRODUCTDETAILS PAGE METHOD ============================================================================	
@@ -253,39 +250,67 @@ public class basicController {
 		return "product";
 	}
 
-	
 //==================================================== COMFIRM ORDER PAGE HANDLER ================================================================
+ 
+	// fetch checkout id through query parameter 
+	
+	/*
+	 * @GetMapping("/comfirmOrder") public String
+	 * comfirmOrder(@RequestParam("checkoutId") int checkoutId, Principal principal,
+	 * Model m) { List<Cart> viewCart = cartdao.viewCart(principal);
+	 * m.addAttribute("viewCart", viewCart);
+	 * 
+	 * int subTotalOfCart = cartdao.getTotalOfCart(viewCart);
+	 * m.addAttribute("subTotalOfCart", subTotalOfCart);
+	 * 
+	 * int shippingTotal = cartdao.getShippingTotal(viewCart);
+	 * m.addAttribute("shippingTotal", shippingTotal);
+	 * 
+	 * System.out.println("comfirmOrder method called with checkoutId: " +
+	 * checkoutId);
+	 * 
+	 * m.addAttribute("checkoutId", checkoutId);
+	 * 
+	 * return "ORDER"; }
+	 */
+
+// fetch checkout through HttpSession 	
 	@GetMapping("/comfirmOrder")
-	public String comfirmOrder(Principal principal, Model m) {
-		
+	public String comfirmOrder(HttpSession session, Principal principal, Model m) {
 		List<Cart> viewCart = cartdao.viewCart(principal);
 		m.addAttribute("viewCart", viewCart);
-		
-		  int subTotalOfCart = cartdao.getTotalOfCart(viewCart);
-		   m.addAttribute("subTotalOfCart", subTotalOfCart);
 
-		
-		
+		int subTotalOfCart = cartdao.getTotalOfCart(viewCart);
+		m.addAttribute("subTotalOfCart", subTotalOfCart);
+
+		int shippingTotal = cartdao.getShippingTotal(viewCart);
+		m.addAttribute("shippingTotal", shippingTotal);
+
+		 Integer checkoutId = (Integer) session.getAttribute("checkoutId");
+		System.out.println("comfirmOrder method called with checkoutId: " + checkoutId);
+
+		m.addAttribute("checkoutId", checkoutId);
+
 		return "ORDER";
-		
 	}
 	
+
 //============================================================== ALL MODEL ==========================================================================
 
 	// The reason to create model is when i have to fetch one functionality in more
-	// page i will use this model Instead of call method in every url
+	// page i will use this model Instead of call method in every URL
 
 	@ModelAttribute("cartItemCount")
 	public int countCartByUser(Principal principal) {
 
-		User loggedInUser =getLoggedInUser(principal);
+		User loggedInUser = getLoggedInUser(principal);
 		return cartRepository.countByUser(loggedInUser);
 	}
 
 	@ModelAttribute("wishListCount")
 	public int countWishListByUser(Principal principal) {
 
-		User loggedInUser =getLoggedInUser(principal);
+		User loggedInUser = getLoggedInUser(principal);
 		return wishListRepository.countByUser(loggedInUser);
 	}
 

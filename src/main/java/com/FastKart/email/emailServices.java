@@ -11,7 +11,7 @@ public class emailServices {
 	@Autowired
 	private JavaMailSender javaMailSender;
 	
-	public void sendMail(String to, String subject, String message) {
+	public boolean sendMail(String to, String subject, String message) {
 		
 		SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
 		
@@ -20,5 +20,6 @@ public class emailServices {
 		simpleMailMessage.setText(message);
 		
 		javaMailSender.send(simpleMailMessage);
+		return true;
 	}
 }

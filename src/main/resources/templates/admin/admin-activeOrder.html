@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 
-<!-- Mirrored from themes.pixelstrap.com/fastkart/back-end/all-users.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Oct 2023 06:44:51 GMT -->
+<!-- Mirrored from themes.pixelstrap.com/fastkart/back-end/order-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Oct 2023 06:44:53 GMT -->
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,7 +15,8 @@
 	<meta name="author" content="pixelstrap">
 	<link rel="icon" href="assets1/images/favicon.png" type="image/x-icon">
 	<link rel="shortcut icon" href="assets1/images/favicon.png" type="image/x-icon">
-	<title>Fastkart - All User</title>
+	<title>Fastkart - Order List</title>
+
 	<!-- Google font-->
 	<link
 		href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
@@ -24,20 +25,20 @@
 	<!-- Fontawesome css -->
 	<link rel="stylesheet" type="text/css" href="assets1/css/vendors/font-awesome.css">
 
-	<!-- Linear Icon css -->
-	<link rel="stylesheet" href="assets1/css/linearicon.css">
+	<!-- Linear Icon -->
+	<link rel="stylesheet" href="../../../cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+
+	<!-- Themify icon css -->
+	<link rel="stylesheet" type="text/css" href="assets1/css/vendors/themify.css">
+
+	<!-- Feather icon css -->
+	<link rel="stylesheet" type="text/css" href="assets1/css/vendors/feather-icon.css">
 
 	<!-- remixicon css -->
 	<link rel="stylesheet" type="text/css" href="assets1/css/remixicon.css">
 
 	<!-- Data Table css -->
 	<link rel="stylesheet" type="text/css" href="assets1/css/datatables.css">
-
-	<!-- Themify icon css-->
-	<link rel="stylesheet" type="text/css" href="assets1/css/vendors/themify.css">
-
-	<!-- Feather icon css -->
-	<link rel="stylesheet" type="text/css" href="assets1/css/vendors/feather-icon.css">
 
 	<!-- Plugins css -->
 	<link rel="stylesheet" type="text/css" href="assets1/css/vendors/scrollbar.css">
@@ -51,11 +52,11 @@
 </head>
 
 <body>
-	<!-- tap on top start -->
+	<!-- tap on top start-->
 	<div class="tap-top">
 		<span class="lnr lnr-chevron-up"></span>
 	</div>
-	<!-- tap on tap end -->
+	<!-- tap on tap end-->
 
 	<!-- page-wrapper Start-->
 	<div class="page-wrapper compact-wrapper" id="pageWrapper">
@@ -192,7 +193,7 @@
 		</div>
 		<!-- Page Header Ends-->
 
-		<!-- Page Body Start -->
+		<!-- Page Body Start-->
 		<div class="page-body-wrapper">
 			<!-- Page Sidebar Start-->
 			<div class="sidebar-wrapper">
@@ -235,22 +236,6 @@
 
 								<li class="sidebar-list">
 									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-										<i class="ri-store-3-line"></i>
-										<span>Product</span>
-									</a>
-									<ul class="sidebar-submenu">
-										<li>
-											<a href="#" th:href="@{/product}">Prodcts</a>
-										</li>
-
-										<li>
-											<a href="#" th:href="@{/addProduct}">Add New Products</a>
-										</li>
-									</ul>
-								</li>
-
-								<li class="sidebar-list">
-									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
 										<i class="ri-list-check-2"></i>
 										<span>Category</span>
 									</a>
@@ -265,6 +250,39 @@
 									</ul>
 								</li>
 
+
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-list-check-2"></i>
+										<span>subCategory</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/subCategory}">subCategory List</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/addSubCategory}">Add New subCategory</a>
+										</li>
+									</ul>
+								</li>
+
+
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-store-3-line"></i>
+										<span>Product</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/product}">Prodcts</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/addProduct}">Add New Products</a>
+										</li>
+									</ul>
+								</li>
 
 
 								<li class="sidebar-list">
@@ -285,36 +303,38 @@
 
 
 
-								<li class="sidebar-list">
-									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
-										<i class="ri-archive-line"></i>
-										<span>Orders</span>
-									</a>
-									<ul class="sidebar-submenu">
-										<li>
-											<a href="#" th:href="@{allOrder}">Order List</a>
-										</li>
 
-										<li>
-											<a href="#" th:href="@{pendingOrder}">Pending Order</a>
-										</li>
-										<li>
-											<a href="#" th:href="@{activeOrder}">Active Order</a>
-										</li>
-										<li>
-											<a href="#" th:href="@{shippingOrder}">Shipping Order</a>
-										</li>
-										<li>
-											<a href="#" th:href="@{deliveredOrder}">Delivered Order</a>
-										</li>
-										<li>
-											<a href="#" th:href="@{cancslledOrder}">Cancalled Order</a>
-										</li>
-										<li>
-											<a href="#" th:href="@{orderTracking}">Order Tracking</a>
-										</li>
-									</ul>
-								</li>
+								 <li class="sidebar-list">
+                                    <a class="sidebar-link sidebar-title" href="javascript:void(0)">
+                                        <i class="ri-archive-line"></i>
+                                        <span>Orders</span>
+                                    </a>
+                                    <ul class="sidebar-submenu">
+                                        <li>
+                                            <a href="#" th:href="@{allOrder}">Order List</a>
+                                        </li>
+                                        
+                                         <li>
+                                            <a href="#" th:href="@{/pendingOrder}">Pending  Order</a>
+                                        </li>
+                                         <li>
+                                            <a href="#" th:href="@{/activeOrder}">Active Order</a>
+                                        </li>
+                                         <li>
+                                            <a href="#" th:href="@{/shippingOrder}">Shipping Order</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" th:href="@{/deliveredOrder}">Delivered Order</a>
+                                        </li>
+                                         <li>
+                                            <a href="#" th:href="@{/cancslledOrder}">Cancalled Order</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" th:href="@{/orderTracking}">Order Tracking</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
 
 								<li class="sidebar-list">
 									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
@@ -378,77 +398,165 @@
 				</div>
 			</div>
 			<!-- Page Sidebar Ends-->
-			<!-- Container-fluid starts-->
+
+			<!-- Order section Start -->
 			<div class="page-body">
-				<!-- All User Table Start -->
+				<!-- Table Start -->
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="card card-table">
 								<div class="card-body">
 									<div class="title-header option-title">
-										<h5>All Users</h5>
-										<form class="d-inline-flex">
-											<a href="add-new-user.html" class="align-items-center btn btn-theme d-flex">
-												<i data-feather="plus"></i>Add New
-											</a>
-										</form>
+										<h5>Order List</h5>
+										<a href="#" class="btn btn-solid">Download all orders</a>
 									</div>
+									<div>
+										<div class="table-responsive">
+											<table class="table all-package order-table theme-table" id="table_id">
+												<thead>
+													<tr>
+														<th>Order Image</th>
+														<th>Product Name</th>
+														<th>Date</th>
+														<th>Delivery Status</th>
+														<th>Amount</th>
+														<th>Option</th>
+													</tr>
+												</thead>
 
-									<div class="table-responsive table-product">
-										<table class="table all-package theme-table" id="table_id">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Email</th>
-													<th>Role</th>
-													<th>Option</th>
-												</tr>
-											</thead>
+												<tbody>
 
-											<tbody>
-												<tr th:each="u : ${user}">
 
-													<td th:text="${u.name}"></td>
-													<td th:text="${u.email}"></td>
-													<td th:text="${u.role}"></td>
+													<tr data-bs-toggle="offcanvas" href="#order-details"
+														th:each="o : ${allOrder}">
+														
+													<div th:if="${o.status} == 2">	
+														<td>
+															<span class="order-image">
+																<img src="assets1/images/product/11.png"
+																	th:src="@{'/assets1/images/' + ${o.cart.product.pimage}}"
+																	alt="users">
+															</span>
+														</td>
 
-													<td>
-														<ul>
-															<li>
-																<a href="order-detail.html">
-																	<i class="ri-eye-line"></i>
-																</a>
-															</li>
+														<td th:text="${o.cart.product.pname}"> 586-5865224</td>
 
-															<li>
-																<a href="javascript:void(0)">
-																	<i class="ri-pencil-line"></i>
-																</a>
-															</li>
+														<td th:text="${o.orderDate}">Sep 20, 2022</td>
 
-															<li>
-																<a href="javascript:void(0)" data-bs-toggle="modal"
-																	data-bs-target="#exampleModalToggle">
-																	<i class="ri-delete-bin-line"></i>
-																</a>
-															</li>
-														</ul>
-													</td>
-												</tr>
+														<div th:switch="${o.status}">
+															<div th:case="1">
+																<td class="order-pending">
+																	<span>Pending</span>
+																</td>
+															</div>
+															
+															<div th:case="2">
+																<td class="order-pending" >
+																	<span style="background-color:green;"><a  style="color:white;" th:href="@{'/shippingOrder/' + ${o.id}}">Active</a></span>
+																</td>
+															</div>
+															
+															<div th:case="3">
+																<td class="order-pending">
+																	<span>Shipping</span>
+																</td>
+															</div>
+															
+															<div th:case="4">
+																<td class="order-pending">
+																	<span>Delivered</span>
+																</td>
+															</div>
+															
+															<div th:case="5">
+																<td class="order-pending">
+																	<span>Cancelled</span>
+																</td>
+															</div>
+														</div>
+														
+														<!--<div th:switch="${o.status}">
+															<div th:case="2">
+																<td class="order-pending">
+																	<span>Active</span>
+																</td>
+															</div>
+														</div>
+														
+														<div th:switch="${o.status}">
+															<div th:case="3">
+																<td class="order-pending">
+																	<span>Shipping</span>
+																</td>
+															</div>
+														</div>
+														
+														<div th:switch="${o.status}">
+															<div th:case="4">
+																<td class="order-pending">
+																	<span>Delivered</span>
+																</td>
+															</div>
+														</div>
+														
+														<div th:switch="${o.status}">
+															<div th:case="5">
+																<td class="order-pending">
+																	<span>Cancelled</span>
+																</td>
+															</div>
+														</div>-->
+														
 
-											</tbody>
-										</table>
+														<td >$15</td>
+
+														<td>
+															<ul>
+																<li>
+																	<a href="order-detail.html">
+																		<i class="ri-eye-line"></i>
+																	</a>
+																</li>
+
+																<li>
+																	<a href="javascript:void(0)">
+																		<i class="ri-pencil-line"></i>
+																	</a>
+																</li>
+
+																<li>
+																	<a href="javascript:void(0)" data-bs-toggle="modal"
+																		data-bs-target="#exampleModalToggle">
+																		<i class="ri-delete-bin-line"></i>
+																	</a>
+																</li>
+																<li>
+																	<a class="btn btn-sm btn-solid text-white"
+																		href="order-tracking.html">
+																		Tracking
+																	</a>
+																</li>
+															</ul>
+														</td>
+														
+													</div>	
+													</tr>
+
+
+												</tbody>
+											</table>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!-- All User Table Ends-->
+				<!-- Table End -->
 
+				<!-- footer start-->
 				<div class="container-fluid">
-					<!-- footer start-->
 					<footer class="footer">
 						<div class="row">
 							<div class="col-md-12 footer-copyright text-center">
@@ -456,31 +564,32 @@
 							</div>
 						</div>
 					</footer>
-					<!-- footer end-->
 				</div>
 			</div>
-			<!-- Container-fluid end -->
+			<!-- Order section End -->
 		</div>
-		<!-- Page Body End -->
+		<!-- Page Body End-->
+	</div>
+	<!-- page-wrapper End -->
 
-		<!-- Modal Start -->
-		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-			<div class="modal-dialog  modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-body">
-						<h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
-						<p>Are you sure you want to log out?</p>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						<div class="button-box">
-							<button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
-							<button type="button" class="btn  btn--yes btn-primary">Yes</button>
-						</div>
+	<!-- Modal start -->
+	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog  modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
+					<p>Are you sure you want to log out?</p>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					<div class="button-box">
+						<button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
+						<button type="button" class="btn  btn--yes btn-primary">Yes</button>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- Modal End -->
 	</div>
+	<!-- Modal end -->
 
 	<!-- Delete Modal Box Start -->
 	<div class="modal fade theme-modal remove-coupon" id="exampleModalToggle" aria-hidden="true" tabindex="-1">
@@ -535,6 +644,79 @@
 	</div>
 	<!-- Delete Modal Box End -->
 
+	<!-- Offcanvas Box Start -->
+	<div class="offcanvas offcanvas-end order-offcanvas" tabindex="-1" id="order-details"
+		aria-labelledby="offcanvasExampleLabel" aria-expanded="false">
+		<div class="offcanvas-header">
+			<h4 class="offcanvas-title" id="offcanvasExampleLabel">#573-685572</h4>
+			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+				<i class="fas fa-times"></i>
+			</button>
+		</div>
+		<div class="offcanvas-body">
+			<div class="order-date">
+				<h6>September 17, 2022 <span class="ms-3">8:12 PM</span></h6>
+				<a href="javascript:void(0)" class="d-block mt-1">Cancel Order</a>
+			</div>
+
+			<div class="accordion accordion-flush custome-accordion" id="accordionFlushExample">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="flush-headingOne">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+							data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+							Status
+						</button>
+					</h2>
+					<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+						data-bs-parent="#accordionFlushExample">
+						<div class="accordion-body">
+							<ul class="status-list">
+								<li>
+									<a href="javascript:void(0)">Shipped</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)">Pending</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="flush-headingTwo">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+							data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+							Accordion Item #2
+						</button>
+					</h2>
+					<div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+						data-bs-parent="#accordionFlushExample">
+						<div class="accordion-body">Placeholder content for this accordion, which is intended to
+							demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion
+							body. Let's imagine this being filled with some actual content.</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="flush-headingThree">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+							data-bs-target="#flush-collapseThree" aria-expanded="false"
+							aria-controls="flush-collapseThree">
+							Accordion Item #3
+						</button>
+					</h2>
+					<div id="flush-collapseThree" class="accordion-collapse collapse"
+						aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+						<div class="accordion-body">Placeholder content for this accordion, which is intended to
+							demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion
+							body. Nothing more exciting happening here in terms of content, but just filling up the
+							space to make it look, at least at first glance, a bit more representative of how this would
+							look in a real-world application.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Offcanvas Box End -->
+
 	<!-- latest js -->
 	<script src="assets1/js/jquery-3.6.0.min.js"></script>
 
@@ -545,17 +727,17 @@
 	<script src="assets1/js/icons/feather-icon/feather.min.js"></script>
 	<script src="assets1/js/icons/feather-icon/feather-icon.js"></script>
 
+	<!-- customizer js -->
+	<script src="assets1/js/customizer.js"></script>
+
 	<!-- scrollbar simplebar js -->
 	<script src="assets1/js/scrollbar/simplebar.js"></script>
 	<script src="assets1/js/scrollbar/custom.js"></script>
 
-	<!-- customizer js -->
-	<script src="assets1/js/customizer.js"></script>
-
 	<!-- Sidebar js -->
 	<script src="assets1/js/config.js"></script>
 
-	<!-- Plugins JS -->
+	<!-- Plugins js -->
 	<script src="assets1/js/sidebar-menu.js"></script>
 	<script src="assets1/js/notify/bootstrap-notify.min.js"></script>
 	<script src="assets1/js/notify/index.js"></script>
@@ -575,6 +757,6 @@
 </body>
 
 
-<!-- Mirrored from themes.pixelstrap.com/fastkart/back-end/all-users.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Oct 2023 06:44:53 GMT -->
+<!-- Mirrored from themes.pixelstrap.com/fastkart/back-end/order-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Oct 2023 06:44:56 GMT -->
 
 </html>

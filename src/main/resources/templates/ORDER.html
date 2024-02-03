@@ -1,234 +1,245 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
 
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 11:45:41 GMT -->
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fastkart">
-    <meta name="keywords" content="Fastkart">
-    <meta name="author" content="Fastkart">
-    <link rel="icon" href="../assets/images/favicon/1.png" type="image/x-icon">
-    <title>Checkout</title>
 
-   
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Fastkart">
+	<meta name="keywords" content="Fastkart">
+	<meta name="author" content="Fastkart">
+	<link rel="icon" href="../assets/images/favicon/1.png" type="image/x-icon">
+	<title>Checkout</title>
+
+
 </head>
 
 <body>
-    <!-- Loader Start -->
-    <div class="fullpage-loader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <!-- Loader End -->
+	<!-- Loader Start -->
+	<div class="fullpage-loader">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+	<!-- Loader End -->
 
-    <!-- Header Start -->
-    
-    <!-- Header End -->
+	<!-- Header Start -->
 
-    <!-- mobile fix menu start -->
-    
-    <!-- mobile fix menu end -->
+	<!-- Header End -->
 
-    <!-- Breadcrumb Section Start -->
-    <section class="breadscrumb-section pt-0">
-        <div class="container-fluid-lg">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadscrumb-contain">
-                        <h2>Checkout</h2>
-                        <nav>
-                            <ol class="breadcrumb mb-0">
-                                <li class="breadcrumb-item">
-                                    <a href="index.html">
-                                        <i class="fa-solid fa-house"></i>
-                                    </a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">Checkout</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Section End -->
+	<!-- mobile fix menu start -->
 
-    <!-- Checkout section Start -->
-    <section class="checkout-section-2 section-b-space">
-        <div class="container-fluid-lg" >
-            <div class="row g-sm-4 g-3" style="display: flex; justify-content: center;" >
-                
-                <div class="col-lg-4">
-                    <div class="right-side-summery-box">
-                        <div class="summery-box-2">
-                            <div class="summery-header">
-                                <h3>Order Summery</h3>
-                            </div>
+	<!-- mobile fix menu end -->
 
-                            <ul class="summery-contain">
-                               
+	<!-- Breadcrumb Section Start -->
+	<section class="breadscrumb-section pt-0">
+		<div class="container-fluid-lg">
+			<div class="row">
+				<div class="col-12">
+					<div class="breadscrumb-contain">
+						<h2>Checkout</h2>
+						<nav>
+							<ol class="breadcrumb mb-0">
+								<li class="breadcrumb-item">
+									<a href="index.html">
+										<i class="fa-solid fa-house"></i>
+									</a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Checkout</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Breadcrumb Section End -->
 
-                                <li th:each="v : ${viewCart}">
-                                    <img src="#" th:src="@{'assets1/images/' + ${v.product.pimage}}"
-                                        class="img-fluid blur-up lazyloaded checkout-image" alt="">
-                                    <h4><span th:text="${v.product.pname}">Broccoli</span> X <span th:text="${v.quntity}"></span></h4>
-                                    <h4 class="price">
+	<!-- Checkout section Start -->
+	<section class="checkout-section-2 section-b-space">
+		<div class="container-fluid-lg">
+			<div class="row g-sm-4 g-3" style="display: flex; justify-content: center;">
+
+				<div class="col-lg-4">
+					<div class="right-side-summery-box">
+						<div class="summery-box-2">
+							<div class="summery-header">
+								<h3>Order Summery</h3>
+							</div>
+
+							<ul class="summery-contain">
+
+
+								<li th:each="v : ${viewCart}">
+									<img src="#" th:src="@{'assets1/images/' + ${v.product.pimage}}"
+										class="img-fluid blur-up lazyloaded checkout-image" alt="">
+									<h4><span th:text="${v.product.pname}">Broccoli</span> X <span
+											th:text="${v.quntity}"></span></h4>
+									<h4 class="price">
 										<i class="fa fa-inr" style="margin-right: 2px;" aria-hidden="true"></i>
-										<span  th:text="${v.product.price}">$29.69</span>
+										<span th:text="${v.product.price}">$29.69</span>
 									</h4>
-                                </li>
-                            </ul>
+								</li>
+							</ul>
 
-                            <ul class="summery-total">
-                                <li>
-                                    <h4>Subtotal</h4>
-                                    <h4 class="price" >
-										<i class="fa fa-inr" style="margin-right: 2px;" aria-hidden="true"></i> 
-										<span th:text="${subTotalOfCart}">$111.81</span></h4>
-                                </li>
+							<ul class="summery-total">
+								<li>
+									<h4>Subtotal</h4>
+									<h4 class="price">
+										<i class="fa fa-inr" style="margin-right: 2px;" aria-hidden="true"></i>
+										<span th:text="${subTotalOfCart}">$111.81</span>
+									</h4>
+								</li>
 
-                                <li>
-                                    <h4>Shipping</h4>
-                                    <h4 class="price">$8.90</h4>
-                                </li>
+								<li>
+									<h4>Shipping</h4>
+									<h4 class="price" th:text="${shippingTotal}">$8.90</h4>
+								</li>
 
-                                <li>
-                                    <h4>Tax</h4>
-                                    <h4 class="price">$29.498</h4>
-                                </li>
+								<li>
+									<h4>Tax</h4>
+									<h4 class="price">$29.498</h4>
+								</li>
 
-                                <li>
-                                    <h4>Coupon/Code</h4>
-                                    <h4 class="price">$-23.10</h4>
-                                </li>
+								<li>
+									<h4>Coupon/Code</h4>
+									<h4 class="price">$-23.10</h4>
+								</li>
 
-                                <li class="list-total">
-                                    <h4>Total (USD)</h4>
-                                    <h4 class="price">$19.28</h4>
-                                </li>
-                            </ul>
-                        </div>
+								<li class="list-total">
+									<h4>Total (USD)</h4>
+									<h4 class="price">$19.28</h4>
+								</li>
+							</ul>
+						</div>
 
-                        
 
-                        <button class="btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold">Place Order</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Checkout section End -->
+						<form action="/order" method="post">
 
-    <!-- Footer Section Start -->
+							<div th:each="v : ${viewCart}">
+								<input name="cart" type="hidden" th:value="${v.id}">
+							</div>
+							<input name="status" type="hidden" th:value="1">
+							<input name="checkOut" type="hidden"  th:value="${checkoutId}">
+							<button class="btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold">Place Order</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Checkout section End -->
 
-    <!-- Footer Section End -->
+	<!-- Footer Section Start -->
 
-    <!-- Location Modal Start -->
+	<!-- Footer Section End -->
 
-    <!-- Location Modal End -->
+	<!-- Location Modal Start -->
 
-    <!-- Add address modal box start -->
-  
-    <!-- Add address modal box end -->
+	<!-- Location Modal End -->
 
-    <!-- Deal Box Modal Start -->
-    <div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div>
-                        <h5 class="modal-title w-100" id="deal_today">Deal Today</h5>
-                        <p class="mt-1 text-content">Recommended deals for you.</p>
-                    </div>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="deal-offer-box">
-                        <ul class="deal-offer-list">
-                            <li class="list-1">
-                                <div class="deal-offer-contain">
-                                    <a href="shop-left-sidebar.html" class="deal-image">
-                                        <img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
-                                            alt="">
-                                    </a>
+	<!-- Add address modal box start -->
 
-                                    <a href="shop-left-sidebar.html" class="deal-contain">
-                                        <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-                                        <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
-                                    </a>
-                                </div>
-                            </li>
+	<!-- Add address modal box end -->
 
-                            <li class="list-2">
-                                <div class="deal-offer-contain">
-                                    <a href="shop-left-sidebar.html" class="deal-image">
-                                        <img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
-                                            alt="">
-                                    </a>
+	<!-- Deal Box Modal Start -->
+	<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div>
+						<h5 class="modal-title w-100" id="deal_today">Deal Today</h5>
+						<p class="mt-1 text-content">Recommended deals for you.</p>
+					</div>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+						<i class="fa-solid fa-xmark"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="deal-offer-box">
+						<ul class="deal-offer-list">
+							<li class="list-1">
+								<div class="deal-offer-contain">
+									<a href="shop-left-sidebar.html" class="deal-image">
+										<img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
+											alt="">
+									</a>
 
-                                    <a href="shop-left-sidebar.html" class="deal-contain">
-                                        <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-                                        <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
-                                    </a>
-                                </div>
-                            </li>
+									<a href="shop-left-sidebar.html" class="deal-contain">
+										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+									</a>
+								</div>
+							</li>
 
-                            <li class="list-3">
-                                <div class="deal-offer-contain">
-                                    <a href="shop-left-sidebar.html" class="deal-image">
-                                        <img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
-                                            alt="">
-                                    </a>
+							<li class="list-2">
+								<div class="deal-offer-contain">
+									<a href="shop-left-sidebar.html" class="deal-image">
+										<img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
+											alt="">
+									</a>
 
-                                    <a href="shop-left-sidebar.html" class="deal-contain">
-                                        <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-                                        <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
-                                    </a>
-                                </div>
-                            </li>
+									<a href="shop-left-sidebar.html" class="deal-contain">
+										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+									</a>
+								</div>
+							</li>
 
-                            <li class="list-1">
-                                <div class="deal-offer-contain">
-                                    <a href="shop-left-sidebar.html" class="deal-image">
-                                        <img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
-                                            alt="">
-                                    </a>
+							<li class="list-3">
+								<div class="deal-offer-contain">
+									<a href="shop-left-sidebar.html" class="deal-image">
+										<img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
+											alt="">
+									</a>
 
-                                    <a href="shop-left-sidebar.html" class="deal-contain">
-                                        <h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-                                        <h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Deal Box Modal End -->
+									<a href="shop-left-sidebar.html" class="deal-contain">
+										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+									</a>
+								</div>
+							</li>
 
-    <!-- Tap to top start -->
-  
-    <!-- Tap to top end -->
+							<li class="list-1">
+								<div class="deal-offer-contain">
+									<a href="shop-left-sidebar.html" class="deal-image">
+										<img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
+											alt="">
+									</a>
 
-    <!-- Bg overlay Start -->
-    <div class="bg-overlay"></div>
-    <!-- Bg overlay End -->
+									<a href="shop-left-sidebar.html" class="deal-contain">
+										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
+										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Deal Box Modal End -->
 
-   
+	<!-- Tap to top start -->
+
+	<!-- Tap to top end -->
+
+	<!-- Bg overlay Start -->
+	<div class="bg-overlay"></div>
+	<!-- Bg overlay End -->
+
+
 </body>
 
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 11:45:42 GMT -->
+
 </html>

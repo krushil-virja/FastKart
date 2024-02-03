@@ -1,4 +1,5 @@
-package com.FastKart.Dao;
+
+ package com.FastKart.Dao;
 
 import java.security.Principal;
 import java.util.List;
@@ -158,6 +159,8 @@ public class cartDao {
 	 
 	 Coupon coupon = couponRepository.findByCouponCode(couponCode);
 	 
-	 int discount = coupon.getDiscount(); return discount; }
+	 int discount = coupon.getDiscount();
+	 
+	 return discount; }
 	
 }

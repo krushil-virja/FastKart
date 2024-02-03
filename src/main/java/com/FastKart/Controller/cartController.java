@@ -65,27 +65,30 @@ public String updateCart(@RequestParam("id") int id, @RequestParam("quntity") in
 
 
  @PostMapping("/discount") 
- public String getDiscount( @RequestParam("couponId") String couponCode, Principal principal, Model m) {
+ public String getDiscount( @RequestParam("couponCode") String couponCode, Principal principal, Model m) {
  
- List<Cart> cartList = cartdao.viewCart(principal);
+	 List<Cart> cartList = cartdao.viewCart(principal);
+
+	    // Calculate the total, shippingTotal, totalWithShipping, and discount
+	    int totalOfCart = cartdao.getTotalOfCart(cartList);
+	    int shippingTotal = cartdao.getShippingTotal(cartList);
+	    int totalWithShipping = cartdao.getTotalWithShipping(cartList);
+	    int discount = cartdao.getDiscount(couponCode, principal);
+
+	    // Update the model attributes
+	    m.addAttribute("subTotalOfCart", totalOfCart);
+	    m.addAttribute("shippingTotal", shippingTotal);
+	    m.addAttribute("totalWithShipping", totalWithShipping);
+	    m.addAttribute("discount", discount);
+
+	    // Calculate the new grandTotal after applying the discount
+	    int grandTotal = totalWithShipping - discount;
+	    m.addAttribute("grandTotal", grandTotal);
+
+	    // Redirect to the "viewCart" page
+	    return "redirect:/viewCart";
  
- int totalOfCart = cartdao.getTotalOfCart(cartList);
- m.addAttribute("totalOfCart", totalOfCart);
- 
- int shippingTotal = cartdao.getShippingTotal(cartList);
- m.addAttribute("shippingTotal", shippingTotal);
- 
- int totalWithShipping = cartdao.getTotalWithShipping(cartList);
- m.addAttribute("totalWithShipping", totalWithShipping);
- 
- 
- int discount = cartdao.getDiscount(couponCode, principal);
- m.addAttribute("discount", discount);
- 
- int grandTotal = totalWithShipping - discount; m.addAttribute("grandTotal",
- grandTotal);
- 
- return "redirect:/viewCart"; }
+ }
  
 
 	 
