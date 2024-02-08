@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.FastKart.Repository.UserRepository;
 import com.FastKart.email.emailServices;
@@ -28,6 +29,8 @@ public class forgotPasswordController {
 	
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	
 	Random random = new Random(100000);
 
 //======================================================== forgotPassword Page Handler ===========================================================
@@ -56,7 +59,7 @@ public class forgotPasswordController {
 //======================================== Generate Random otp and send it via mail Handler =========================================================
 
 	@PostMapping("/sendOtp")
-	public String sendOtp(@RequestParam("email") String email, HttpSession session,Model m) {
+	public String sendOtp(@RequestParam("email") String email, HttpSession session,Model m,RedirectAttributes redirAttrs) {
 
 		System.out.println("Email is " + email);
 
@@ -95,7 +98,11 @@ public class forgotPasswordController {
 			
 		// we need this OTP while verifying OTP so we can easily fetch this random OTP which send on user email, we match user enter OTP with random OTP; 
 			
-			session.setAttribute("message", " We have send OTP to your email id ");
+			// session.setAttribute("message", " We have send OTP to your email id ");
+			
+			redirAttrs.addFlashAttribute("message", "We have send OTP to your email id");
+			
+			
 			
 			return "redirect:/otp";
 		} else {
@@ -107,7 +114,9 @@ public class forgotPasswordController {
 //============================================ verifying OTP handler =============================================================================
 	@PostMapping("/verify-otp")
 	public String verifyOpt(@RequestParam("otp1") int otp1,@RequestParam("otp2") int otp2,@RequestParam("otp3") int otp3,
-			@RequestParam("otp4") int otp4,@RequestParam("otp5") int otp5, @RequestParam("otp6") int otp6, HttpSession session){
+			@RequestParam("otp4") int otp4,@RequestParam("otp5") int otp5, @RequestParam("otp6") int otp6, HttpSession session,RedirectAttributes redirAttrs){
+		
+		session.removeAttribute("message");
 		
 		int generatedOTP = (int) session.getAttribute("generatedOTP");
 		String email = (String) session.getAttribute("email");
@@ -122,7 +131,9 @@ public class forgotPasswordController {
 			User user = userRepository.getUserByUserName(email);
 			
 			if(user==null) {
-				session.setAttribute("error", "user does not exist with this email!!");
+			//	session.setAttribute("error", "user does not exist with this email!!");
+				
+				redirAttrs.addFlashAttribute("error", "user does not exist with this email!!");
 				
 				return "redirect:/forgotPassword";
 				
@@ -134,7 +145,9 @@ public class forgotPasswordController {
 		}
 		else {
 			
-			session.setAttribute("error", "Please, check your otp !!");
+		//	session.setAttribute("error", "Please, check your otp !!");
+			redirAttrs.addFlashAttribute("error", "Please, check your otp !!");
+			
 			return  "redirect:/otp";
 		}
 	}
@@ -143,7 +156,7 @@ public class forgotPasswordController {
 //=================================================================================== change password handler =======================================================================================
 	
 	@PostMapping("/change_password")
-	public String  changePassword(@RequestParam("newPassword") String newPassword, @RequestParam("comfirmPassword") String comfirmPassword, HttpSession session) {
+	public String  changePassword(@RequestParam("newPassword") String newPassword, @RequestParam("comfirmPassword") String comfirmPassword, HttpSession session,RedirectAttributes redirAttrs) {
 		
 		
 		String email = (String) session.getAttribute("email");
@@ -159,10 +172,14 @@ public class forgotPasswordController {
 		
 		System.out.println("password successfully changed");
 		
+		redirAttrs.addFlashAttribute("message", "password successfully changed");
+		
 		return "redirect:/login";
 	}
 		else {
-			session.setAttribute("message", "password does not match");
+			
+			//session.setAttribute("message", "password does not match");
+			redirAttrs.addFlashAttribute("error", "password does not match");
 			
 			System.out.println("password does not match");
 			

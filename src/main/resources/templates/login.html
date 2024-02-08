@@ -140,7 +140,13 @@
 
                         <div class="input-box">
 							
-							 <div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>
+							 <!--<div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>-->
+							 <!-- message block -->
+							<div th:if="${message}" class="log-in-box">
+								<div class="alert alert-success" role="alert">
+									<span th:text="${message}"></span>
+								</div>
+							</div>
 							 
 							 
                             <form class="row g-4" method="post">
