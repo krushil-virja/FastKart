@@ -14,6 +14,7 @@ import com.FastKart.Dao.WishListDao;
 import com.FastKart.Dao.addressDao;
 import com.FastKart.Dao.cartDao;
 import com.FastKart.Dao.categoryDao;
+import com.FastKart.Dao.orderDao;
 import com.FastKart.Dao.productDao;
 import com.FastKart.Dao.userDao;
 import com.FastKart.Repository.CartRepository;
@@ -22,6 +23,7 @@ import com.FastKart.Repository.WishListRepository;
 import com.FastKart.entities.Address;
 import com.FastKart.entities.Cart;
 import com.FastKart.entities.Category;
+import com.FastKart.entities.Order;
 import com.FastKart.entities.Product;
 import com.FastKart.entities.User;
 import com.FastKart.entities.WishList;
@@ -51,6 +53,9 @@ public class basicController {
 
 	@Autowired
 	private addressDao addao;
+	
+	@Autowired
+	private orderDao oDao;
 
 	@Autowired
 	private CartRepository cartRepository;
@@ -225,8 +230,13 @@ public class basicController {
 
 //======================================================= USERDASHBOARD PAGE METHOD ============================================================================
 	@GetMapping("/userDashboard")
-	public String userDashboard() {
+	public String userDashboard(Model m , Principal principal) {
 
+		List<Order> orders = oDao.allOrder();
+		m.addAttribute("orders", orders);
+		
+		List<WishList> viewWishList = wdao.viewWishList(principal);
+		m.addAttribute("viewWishList", viewWishList);
 		return "userDashboard";
 	}
 
@@ -236,6 +246,14 @@ public class basicController {
 
 		return "productDetails";
 	}
+
+	
+//======================================================= updatePassword PAGE METHOD ============================================================================	
+		@GetMapping("/updatePassword")
+		public String updatePassword() {
+
+			return "updatePassword";
+		}
 
 //======================================================= GET ALL PRODUCT PAGE METHOD ============================================================================
 	@GetMapping("/getProduct")

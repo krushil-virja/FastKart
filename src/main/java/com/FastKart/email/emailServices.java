@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 public class emailServices {
 
 	@Autowired
-	private JavaMailSender javaMailSender;
+	private JavaMailSender javaMailSender;  //The JavaMailSender interface is a part of Spring's email support. It provides methods for sending Emails.
 	
 	public boolean sendMail(String to, String subject, String message) {
 		
-		SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+		SimpleMailMessage simpleMailMessage = new SimpleMailMessage();   //new instance of SimpleMailMessage, which is a simple implementation of the MailMessage interface provided by Spring.
 		
 		simpleMailMessage.setTo(to);
 		simpleMailMessage.setSubject(subject);
