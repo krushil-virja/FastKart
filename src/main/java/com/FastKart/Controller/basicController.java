@@ -18,6 +18,7 @@ import com.FastKart.Dao.orderDao;
 import com.FastKart.Dao.productDao;
 import com.FastKart.Dao.userDao;
 import com.FastKart.Repository.CartRepository;
+import com.FastKart.Repository.OrderRepository;
 import com.FastKart.Repository.UserRepository;
 import com.FastKart.Repository.WishListRepository;
 import com.FastKart.entities.Address;
@@ -62,6 +63,9 @@ public class basicController {
 
 	@Autowired
 	private WishListRepository wishListRepository;
+	
+	@Autowired
+	private OrderRepository orderRepository;
 
 //===================================================== HANDLER TO FETCH LOGIN USER====================================================================
 	// in any situation i want to find something related to user (ex addToCart if
@@ -312,7 +316,25 @@ public class basicController {
 		return "ORDER";
 	}
 	
+	
+	@GetMapping("trackOrder")
+	public String trackOrder() {
+		
+		return "orderTracking";
+	}
+	
 
+	@GetMapping("/successOrder")
+	public String successOrder() {
+		
+		return "orderSuccess";
+	}
+	
+	@GetMapping("/rateProduct")
+	public String rateProduct() {
+		
+	 return "rating";
+	}
 //============================================================== ALL MODEL ==========================================================================
 
 	// The reason to create model is when i have to fetch one functionality in more
@@ -350,5 +372,29 @@ public class basicController {
 		return cartRepository.findByUser(loggedInUser);
 
 	}
+	
+	@ModelAttribute("orderCount")
+	public int countOrderByUser(Principal principal) {
+		
+		User loggedInUser = getLoggedInUser(principal);
+		
+		return orderRepository.countByUser(loggedInUser);
+		
+	}
+	
+	
+	@ModelAttribute("deliveredOrder")
+	public int deliveredOrder(Principal principal) {
+		
+		User loggedInUser = getLoggedInUser(principal);
+		
+		 int deliveredStatus = 4;
+		
+		return orderRepository.countByStatusAndUser(deliveredStatus, loggedInUser);
+		
+	}
+	
+	
+
 
 }

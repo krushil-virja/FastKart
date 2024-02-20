@@ -17,7 +17,8 @@ public class Address {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	@JoinColumn(name="firstName")
+	@JoinColumn(name=""
+			+ "")
 	private String firstName;
 	@JoinColumn(name="lastName")
 	private String lastName;

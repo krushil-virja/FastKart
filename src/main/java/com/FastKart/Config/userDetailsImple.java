@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import com.FastKart.Repository.UserRepository;
 import com.FastKart.entities.User;
 
+ 
 public class userDetailsImple implements UserDetailsService {
 	@Autowired
 	private UserRepository userRepository;
