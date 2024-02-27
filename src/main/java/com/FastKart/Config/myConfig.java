@@ -74,8 +74,9 @@ public class myConfig {
 					.permitAll()
 					
 					
-					 ) .oauth2Login(oauth2Login -> oauth2Login .loginPage("/login")
-					 
+					// ) .oauth2Login(oauth2Login -> oauth2Login .loginPage("/login")
+					
+					  
 				   	
 			 ).logout(logout -> logout
 				       .logoutUrl("/logout")

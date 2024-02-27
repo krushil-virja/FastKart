@@ -58,7 +58,7 @@ public class categoryController {
 	}
 	
 	
-	
+	 
 //===================================================== DELETE CATEGORY HANDLER =========================================================================
 	@GetMapping("/deleteCategory/{id}")
 	public String deleteCategory(@PathVariable("id") Integer id, Model m) {
