@@ -52,6 +52,10 @@ public class Category {
 		return id;
 	}
 
+	
+
+
+
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -81,12 +85,11 @@ public class Category {
 	}
 
 
-
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", cname=" + cname + ", cimage=" + cimage + ", products=" + products + "]";
+		return "Category [id=" + id + ", cname=" + cname + ", cimage=" + cimage + "]";
 	}
-
+	
 	
 	
 	

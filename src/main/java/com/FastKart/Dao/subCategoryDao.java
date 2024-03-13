@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.FastKart.Repository.SubCategoryRepository;
+import com.FastKart.entities.Category;
 import com.FastKart.entities.subCategory;
 
 @Service
@@ -45,6 +46,13 @@ public class subCategoryDao {
 	 subCategoryRepository.deleteById(id);
  }
 	
+
+ //====================================== To FIND SUBCATEGORY BY ITS CATEORY======================================  
+/* public subCategory getSubCategoryByCategory(int cid) {
+	 
+subCategory sc = subCategoryRepository.findByCategory(cid);
+return sc;
 	
+ }*/
 	
 }

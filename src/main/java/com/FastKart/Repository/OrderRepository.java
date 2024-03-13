@@ -1,5 +1,7 @@
 package com.FastKart.Repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,4 +16,6 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
 	
 	 // Method to count delivered orders for a specific user
     int countByStatusAndUser(int status, User user);
+    
+    List<Order> getOrdersByUser(User user);
 }

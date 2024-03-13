@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -73,4 +74,11 @@ public String deketeSubCategory(@PathVariable("id") Integer id, Model m) {
 	
 	
 }
+
+// i implement just for dependent dropdown 
+//pending  
+/*
+ * @GetMapping("/subcategories/{cid}") public List<subCategory>
+ * getSubCategories(@RequestParam int cid) { return ""; }
+ */
 }

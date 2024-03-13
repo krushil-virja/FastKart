@@ -156,13 +156,16 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
+
+
 	@Override
 	public String toString() {
-		return "product [id=" + id + ", pname=" + pname + ", pimage=" + pimage + ", category=" + category
+		return "Product [id=" + id + ", pname=" + pname + ", pimage=" + pimage + ", category=" + category
 				+ ", subcategory=" + subcategory + ", brand=" + brand + ", price=" + price + ", exchangeable="
 				+ exchangeable + ", refundable=" + refundable + ", description=" + description + "]";
 	}
+	
+	
+
 	
 }

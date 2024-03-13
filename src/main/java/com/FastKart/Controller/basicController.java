@@ -2,12 +2,14 @@ package com.FastKart.Controller;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.FastKart.Dao.WishListDao;
@@ -19,6 +21,7 @@ import com.FastKart.Dao.productDao;
 import com.FastKart.Dao.userDao;
 import com.FastKart.Repository.CartRepository;
 import com.FastKart.Repository.OrderRepository;
+import com.FastKart.Repository.ProductRepository;
 import com.FastKart.Repository.UserRepository;
 import com.FastKart.Repository.WishListRepository;
 import com.FastKart.entities.Address;
@@ -45,6 +48,9 @@ public class basicController {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
 
 	@Autowired
 	private cartDao cartdao;
@@ -330,11 +336,27 @@ public class basicController {
 		return "orderSuccess";
 	}
 	
-	@GetMapping("/rateProduct")
-	public String rateProduct() {
-		
-	 return "rating";
-	}
+	
+	
+	
+	/*
+	 * @GetMapping("/rateProduct") public String rateProduct( ) {
+	 * 
+	 * return "rating"; }
+	 */
+	  
+	 
+	
+	
+	 @GetMapping("/rateProduct/{id}")
+	 public String  rateProduct2(@PathVariable("id") int id, Model m) {
+	 
+	 Product p = productRepository.findById(id).orElseThrow();
+	 m.addAttribute("product", p.getId());
+	 
+	 return "rating"; }
+	
+	
 //============================================================== ALL MODEL ==========================================================================
 
 	// The reason to create model is when i have to fetch one functionality in more
