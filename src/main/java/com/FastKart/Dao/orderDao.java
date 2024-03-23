@@ -8,16 +8,28 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.FastKart.Repository.CartRepository;
 import com.FastKart.Repository.OrderRepository;
+import com.FastKart.Repository.ProductRepository;
+import com.FastKart.entities.Cart;
 import com.FastKart.entities.CheckOut;
 import com.FastKart.entities.Order;
+import com.FastKart.entities.Product;
 import com.FastKart.entities.User;
+
+import jakarta.transaction.Transactional;
 
 @Service
 public class orderDao {
 
 	@Autowired
 	private OrderRepository orderRepository;
+	
+	@Autowired
+	private CartRepository cartRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
 
 	@Autowired
 	private userDao uDao;
@@ -40,25 +52,66 @@ public class orderDao {
 	 * }
 	 */
 	
-
-	public Order doOrder(Order o, Principal principal) {
+	
+	/*
+	 * public Order doOrder(Order o, Principal principal) {
+	 * 
+	 * User user = uDao.getLoggedInUser(principal);
+	 * 
+	 * 
+	 * 
+	 * if (user != null) {
+	 * 
+	 * 
+	 * o.setUser(user);
+	 * 
+	 * o.setOrderDate(LocalDate.now());
+	 * 
+	 * Cart cart = o.getCart();
+	 * 
+	 * 
+	 * if(cart!=null) {
+	 * 
+	 * // cartRepository.delete(cart); // Delete the cart item associated with the
+	 * user and product cartRepository.deleteByUserAndProduct(user,
+	 * cart.getProduct());
+	 * 
+	 * }
+	 * 
+	 * return orderRepository.save(o); } else { return null; }
+	 * 
+	 * }
+	 */	
+	
+	
+	public Order doOrder(Order o, Principal principal,int pid) {
 
 		User user = uDao.getLoggedInUser(principal);
+		Product product = productRepository.findById(pid).get();
+		
 
-	
+	   
 
 		if (user != null) {
 
+			
 			o.setUser(user);
-		
+		   o.setProduct(product);
 			o.setOrderDate(LocalDate.now());
+			
+			      //	cartRepository.delete(cart);
+				  // Delete the cart item associated with the user and product
+	            cartRepository.deleteByUserAndProduct(user, product);
+				
+			
+			
 			return orderRepository.save(o);
 		} else {
 			return null;
 		}
 
 	}
-	
+
 	
 	public List<Order> allOrder(){
 		

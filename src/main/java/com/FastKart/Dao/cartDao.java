@@ -1,5 +1,5 @@
- 
- package com.FastKart.Dao;
+
+package com.FastKart.Dao;
 
 import java.security.Principal;
 import java.util.List;
@@ -43,20 +43,33 @@ public class cartDao {
 
 		if (product != null && user != null) {
 
-			cart.setQuntity(quntity);
-			cart.setTotal(quntity * product.getPrice());
+			Cart cartByUserandProduct = cartRepository.findByUserAndProduct(user, product);
 
-			cart.setProduct(product);
-			cart.setUser(user);
-			Cart saveCarts = cartRepository.save(cart);
+			if (cartByUserandProduct == null) {
+				cart.setQuntity(quntity);
+				cart.setTotal(quntity * product.getPrice());
 
-			return saveCarts;
+				cart.setProduct(product);
+				cart.setUser(user);
+				Cart saveCarts = cartRepository.save(cart);
+
+				return saveCarts;
+			}
+
+			else {
+
+				int newQuntity = cartByUserandProduct.getQuntity() + quntity;
+				cartByUserandProduct.setQuntity(newQuntity);
+				cartByUserandProduct.setTotal(cartByUserandProduct.getProduct().getPrice() * newQuntity);
+				cartRepository.save(cartByUserandProduct);
+				return cartByUserandProduct;
+
+			}
 
 		} else {
 
 			return null;
 		}
-
 	}
 
 //================================================================== VIEW CART METHOD IF USER LOGIN ====================================================
@@ -150,17 +163,18 @@ public class cartDao {
 	}
 
 //==================================================== GET DISCOUNT METHOD ======================================================================
-	
-	 public int getDiscount( String couponCode, Principal principal ) {
-	 
-	 List<Cart> cartList = viewCart(principal);
-	
-	 int subTotalOfCart = getTotalOfCart(cartList);
-	 
-	 Coupon coupon = couponRepository.findByCouponCode(couponCode);
-	 
-	 int discount = coupon.getDiscount();
-	 
-	 return discount; }
-	
+
+	public int getDiscount(String couponCode, Principal principal) {
+
+		List<Cart> cartList = viewCart(principal);
+
+		int subTotalOfCart = getTotalOfCart(cartList);
+
+		Coupon coupon = couponRepository.findByCouponCode(couponCode);
+
+		int discount = coupon.getDiscount();
+
+		return discount;
+	}
+
 }

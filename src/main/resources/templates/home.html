@@ -158,8 +158,7 @@
                             <div class="category-box-list">
                                 <a href="shop-left-sidebar.html" class="category-name">
                                     <h4 th:text="${c.cname}"></h4>
-                                    <!--<h6 th:text="'Total Items: ' + ${countByCategory}">25 items</h6>-->
-                                     <h6 th:text="'Total Items: ' + ${countByCategory}"></h6>
+                                    <h6 th:text="'Total Items: ' + ${countByCategory}">25 items</h6>
                                 </a>
                                 <div class="category-box-view">
                                     <a href="#" th:href="@{'/findProductByCategory/' + ${c.id}}">

@@ -468,13 +468,13 @@
 											<div class="product-order-detail">
 												<a href="product-left-thumbnail.html" class="order-image">
 													<img style="height: 100px;"
-														th:src="@{'/assets1/images/' + ${o.cart.product.pimage}}"
+														th:src="@{'/assets1/images/' + ${o.product.pimage}}"
 														class="blur-up lazyload" alt="">
 												</a>
 
 												<div class="order-wrap">
 													<a href="product-left-thumbnail.html">
-														<h3 th:text="${o.cart.product.pname}">SnackAmor Combo Pack of
+														<h3 th:text="${o.product.pname}">SnackAmor Combo Pack of
 															Jowar Stick and Jowar Chips</h3>
 													</a>
 													<p class="text-content">The big cheese cream cheese pepper jack
@@ -513,7 +513,7 @@
 																			
 																		</li>
 																	</ul>-->
-																	<a th:href="@{'rateProduct/'+ ${o.cart.product.id}}">Rate Product</a>
+																	<a th:href="@{'rateProduct/'+ ${o.product.id}}">Rate Product</a>
 																		<a th:href="@{rateProduct}">Rate Product</a>
 
 																</div>

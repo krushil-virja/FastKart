@@ -155,8 +155,26 @@ public class basicController {
 //======================================================= SHOP PAGE Handler ============================================================================	
 
 	@GetMapping("/shop")
-	public String shop() {
+	public String shop( Model m, @RequestParam(required = false, name = "category") List<Integer> categoryId  ) {
 
+		List<Category> category = cdao.showAllCategory();
+		m.addAttribute("category", category);
+		
+		System.out.println("category id is" + categoryId);
+		
+		if(categoryId !=null) {
+			
+			List<Product> productByCategories = pdao.findProductByCategories(categoryId);
+			m.addAttribute("productByCategories", productByCategories);
+		}
+		
+		else {
+			List<Product> product = pdao.showAllProduct();
+			m.addAttribute("products", product);
+			
+		}
+		
+		
 		return "shop";
 	}
 

@@ -120,11 +120,24 @@
 						</div>
 
 
-						<form action="/order" method="post">
+						<!--<form action="/order" method="post">
 
 							<div th:each="v : ${viewCart}">
 								<input name="cart" type="hidden" th:value="${v.id}">
 							</div>
+							<input name="status" type="hidden" th:value="1">
+							<input name="checkOut" type="hidden"  th:value="${checkoutId}">
+							<button class="btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold">Place Order</button>
+						</form>-->
+						
+						
+						<form action="/order" method="post">  
+							
+							<div th:each="v : ${viewCart}">
+								 <input type="hidden" name="pid"  th:value="${v.product.id}">
+								
+							</div>
+							
 							<input name="status" type="hidden" th:value="1">
 							<input name="checkOut" type="hidden"  th:value="${checkoutId}">
 							<button class="btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold">Place Order</button>

@@ -32,56 +32,7 @@ public class reviewsDao {
 	@Autowired
 	private UserRepository userRepository;
 
-	// only rate product who order that product so first we fetch user bought that
-	// product or not. if yes than it able to rate else show message
-	/*
-	 * private boolean userHasBoughtProduct(Principal principal, Product p) {
-	 * 
-	 * // first we find that order who contain that product but according to user //
-	 * call user method that fetch currunt user login
-	 * 
-	 * User user = uDao.getLoggedInUser(principal);
-	 * 
-	 * List<Order> order = orderRepository.getOrdersByUserId(user); // now apply for
-	 * loop so we get all the details or product
-	 * 
-	 * for(Order o : order) {
-	 * 
-	 * // get the product ID of the current order's product Product product =
-	 * o.getCart().getProduct();
-	 * 
-	 * if(product.equals(p)) { // if the product ID matches, return true indicating
-	 * the user has bought this product return true; } } // if the loop completes
-	 * without finding a matching product ID, return false return false; }
-	 * 
-	 * 
-	 * 
-	 * 
-	 * @Autowired private ReviewsRepository reviewsRepository;
-	 * 
-	 * public Review productReviews(Review review, Principal principal, Product
-	 * product) {
-	 * 
-	 * User user = uDao.getLoggedInUser(principal); // // Product product =
-	 * productRepository.findById(pid).get(); //
-	 * 
-	 * if(userHasBoughtProduct(principal, product)) {
-	 * 
-	 * Review existingRating = reviewsRepository.findByUserAndProduct(user,
-	 * product);
-	 * 
-	 * if(existingRating!=null) { //review.setProduct(product);
-	 * review.setUser(user); review.setReviewdate(LocalDate.now());
-	 * 
-	 * Review r = reviewsRepository.save(review); return r; } else {
-	 * System.out.println("user has not bought the product"); }
-	 * 
-	 * 
-	 * 
-	 * } return null;
-	 * 
-	 * }
-	 */
+	
 
 	private boolean userHasBoughtProduct(Principal principal, int pid) {
 
@@ -96,7 +47,9 @@ public class reviewsDao {
 		for (Order o : order) {
 
 			// get the product ID of the current order's product
-			int productId = o.getCart().getProduct().getId();
+			/* int productId = o.getCart().getProduct().getId(); */
+			
+			 int productId = o.getProduct().getId(); 
 
 			if (productId == pid) {
 				// if the product ID matches, return true indicating the user has bought this

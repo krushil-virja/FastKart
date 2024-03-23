@@ -36,9 +36,7 @@ public class Cart {
 	 @JoinColumn(name="uid")
 	private User user;
 	
-	 
-	 @OneToMany(mappedBy = "cart",  orphanRemoval = true)
-	    private List<Order> orders = new ArrayList<>();
+	
 
 
 	public int getId() {
@@ -111,21 +109,13 @@ public class Cart {
 	}
 
 
-	public List<Order> getOrders() {
-		return orders;
-	}
-
-
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
-	}
+	
 
 
 	@Override
 	public String toString() {
 		return "Cart [id=" + id + ", quntity=" + quntity + ", total=" + total + ", shipping=" + shipping
-				+ ", grand_total=" + grand_total + ", product=" + product + ", user=" + user + ", orders=" + orders
-				+ "]";
+				+ ", grand_total=" + grand_total + ", product=" + product + ", user=" + user + "]";
 	}
 
 
@@ -139,7 +129,7 @@ public class Cart {
 		this.grand_total = grand_total;
 		this.product = product;
 		this.user = user;
-		this.orders = orders;
+		
 	}
 
 

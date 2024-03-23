@@ -24,8 +24,8 @@ public class Order {
 	private User user;
 	
 	@ManyToOne
-	@JoinColumn(name="cartid")
-	private Cart cart;
+	@JoinColumn(name="pid")
+	private Product product;
 	
 	@ManyToOne
 	@JoinColumn(name="checkoutid")
@@ -52,12 +52,12 @@ public class Order {
 		this.user = user;
 	}
 
-	public Cart getCart() {
-		return cart;
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setCart(Cart cart) {
-		this.cart = cart;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
 	public CheckOut getCheckOut() {
@@ -84,26 +84,27 @@ public class Order {
 		this.orderDate = orderDate;
 	}
 
-	public Order(int id, User user, Cart cart, CheckOut checkOut, int status, LocalDate orderDate) {
-		super();
-		this.id = id;
-		this.user = user;
-		this.cart = cart;
-		this.checkOut = checkOut;
-		this.status = status;
-		this.orderDate = orderDate;
-	}
-
 	public Order() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public String toString() {
-		return "Order [id=" + id + ", user=" + user + ", cart=" + cart + ", checkOut=" + checkOut + ", status=" + status
-				+ ", orderDate=" + orderDate + "]";
+	public Order(int id, User user, Product product, CheckOut checkOut, int status, LocalDate orderDate) {
+		super();
+		this.id = id;
+		this.user = user;
+		this.product = product;
+		this.checkOut = checkOut;
+		this.status = status;
+		this.orderDate = orderDate;
 	}
 
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", user=" + user + ", product=" + product + ", checkOut=" + checkOut + ", status="
+				+ status + ", orderDate=" + orderDate + "]";
+	}
+
+	
 	
 }

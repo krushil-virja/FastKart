@@ -16,6 +16,8 @@ import com.FastKart.Dao.orderDao;
 import com.FastKart.entities.CheckOut;
 import com.FastKart.entities.Order;
 
+import jakarta.transaction.Transactional;
+
 @Controller
 public class orderController {
 
@@ -43,12 +45,15 @@ public class orderController {
 	
 	
 	@PostMapping("/order")
-	public String doOrder(@ModelAttribute ("order") Order o,Principal principal,Model m) {
+	@Transactional
+	public String doOrder(@ModelAttribute ("order") Order o,Principal principal,Model m,@RequestParam("pid") int pid) {
 		
 		System.out.println("Received Checkout ID in doOrder: " + o.getCheckOut());
 
 		 
-		oDao.doOrder(o, principal);
+		oDao.doOrder(o, principal, pid);
+		
+		System.out.println("order successfully and delete assosiate cart with the order");
 		
 		/* return "redirect:/comfirmOrder?checkoutId=" +  o.getCheckOut();  THIS RETURN FOR THE HANDLER WICH WE PASS CHECKOUT AS A QUERY PARAMETER*/
 		

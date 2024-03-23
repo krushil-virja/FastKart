@@ -57,6 +57,13 @@ public class productDao {
 			return findProductByCategory;
 			
 		}
+
+//=================================================================FIND by MULTIPLE CATEGORY WISE PRODUCT METHOD  using filter===========================================================
+
+		public List<Product> findProductByCategories(List<Integer> categoryId) {
+		    List<Product> findProductByCategory = productRepository.findProductsByCategoryIds(categoryId);
+		    return findProductByCategory;
+		}
 	
 //=========================================================== Find PRODUCT BY ID ===================================================================
 		
