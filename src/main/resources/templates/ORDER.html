@@ -135,8 +135,10 @@
 							
 							<div th:each="v : ${viewCart}">
 								 <input type="hidden" name="pid"  th:value="${v.product.id}">
+								 <input name="quantity" type="hidden" th:value="${v.quntity}">
 								
 							</div>
+							
 							
 							<input name="status" type="hidden" th:value="1">
 							<input name="checkOut" type="hidden"  th:value="${checkoutId}">

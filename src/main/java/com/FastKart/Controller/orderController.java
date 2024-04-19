@@ -13,8 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.FastKart.Dao.checkoutDao;
 import com.FastKart.Dao.orderDao;
+import com.FastKart.Dao.userDao;
+import com.FastKart.Repository.OrderRepository;
+import com.FastKart.email.emailServices;
 import com.FastKart.entities.CheckOut;
 import com.FastKart.entities.Order;
+import com.FastKart.entities.User;
 
 import jakarta.transaction.Transactional;
 
@@ -23,9 +27,18 @@ public class orderController {
 
 	@Autowired
 	private orderDao oDao;
+	
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	@Autowired
+	private userDao uDao;
 
 	@Autowired
 	private checkoutDao chDao;
+	
+	@Autowired
+	private emailServices mailservice;
 
 	/*
 	 * @PostMapping("/order") private String doOrder(@ModelAttribute ("order") Order
@@ -46,12 +59,12 @@ public class orderController {
 	
 	@PostMapping("/order")
 	@Transactional
-	public String doOrder(@ModelAttribute ("order") Order o,Principal principal,Model m,@RequestParam("pid") int pid) {
+	public String doOrder(@ModelAttribute ("order") Order o,Principal principal,Model m,@RequestParam("pid") int pid, @RequestParam("quantity") int quantity) {
 		
 		System.out.println("Received Checkout ID in doOrder: " + o.getCheckOut());
 
 		 
-		oDao.doOrder(o, principal, pid);
+		oDao.doOrder(o, principal, pid, quantity);
 		
 		System.out.println("order successfully and delete assosiate cart with the order");
 		
@@ -63,8 +76,24 @@ public class orderController {
 	
 	
 	@GetMapping("/activeOrder/{id}")
-	public String activeOrder(@PathVariable("id") int id) {
-	    oDao.activeOrder(id);
+	public String activeOrder(@PathVariable("id") int id, Order o) {
+		
+		
+	   Order order = orderRepository.findById(id).get();
+	    
+	    String email = order.getUser().getEmail();
+	    
+	    String form="virjakrushil@gmail.com";
+		String subject = "Your Order Hase been Activated";
+		String message = "Your Order is acceepted ";
+				
+		String To= email;
+		
+		mailservice.sendMail(To, subject, message);
+		
+		 oDao.activeOrder(id);
+	    
+	    
 	    return "redirect:/activeOrder";
 	}
 	
@@ -80,8 +109,24 @@ public class orderController {
 	@GetMapping("/deliveredOrder/{id}")
 	public String deliveredOrder(@PathVariable("id") int id) {
 		
+		
+Order order = orderRepository.findById(id).get();
+	    
+	    String email = order.getUser().getEmail();
+	    
+	    String form="virjakrushil@gmail.com";
+		String subject = "Order delivered";
+		String message = "Your Order  has been delivered ";
+				
+		String To= email;
+		
+		mailservice.sendMail(To, subject, message);
+		
 		oDao.deliveredOrder(id);
 		
 		return "redirect:/deliveredOrder";
 	}
+	
+	
+	
 }

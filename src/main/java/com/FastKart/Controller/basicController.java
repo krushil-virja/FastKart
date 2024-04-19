@@ -134,7 +134,13 @@ public class basicController {
 		User loggedInUser = getLoggedInUser(principal);
 		m.addAttribute("loggedInUser", loggedInUser);
 
+
+		List<Product> topSellingProducts = pdao.getTopSellingProducts(10);
+		
+		m.addAttribute("topSellingProducts", topSellingProducts);
+		
 		return "home";
+		
 	}
 //========================================================== REGISTER PAGE METHOD ======================================================================	
 

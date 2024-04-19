@@ -198,8 +198,8 @@
 								<div class="category-title">
 									<h3>Pack Size</h3>
 								</div>
-								<ul class="category-list custom-padding custom-height">
-									<li th:each="c : ${category}">
+								<ul class="category-list custom-padding custom-height " >
+									<li  th:each="c : ${category}">
 										<div class="form-check ps-0 m-0 category-list-box">
 											
 											
@@ -499,9 +499,11 @@
 						class="row g-sm-4 g-3 row-cols-xxl-5 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2 product-list-section">
 
                    <!--  FILTER PRODUCT SECTION START  -->
-                   <div>
-						<div th:each="product : ${productByCategories}">
-							<div class="product-box-3 h-100 wow fadeInUp">
+                   
+                   <!--this is for filter -->
+                   <div  style=" display: grid; grid-template-columns: auto auto auto auto; width:100%;  gap: 25px; padding: 10px; margin-top: 50px;">
+						<div th:each="product : ${productByCategories}" style="width: 100%; width: 100%; height: 100%;">
+							<div class="product-box-3 h-100 wow  fadeInUp" >
 								<div class="product-header">
 									<div class="product-image">
 										<a href="product-left-thumbnail.html">
@@ -581,9 +583,10 @@
 						</div>
 					    </div>
 					    
+					 <!-- if User direct redirect on this shope page he is able to see all the product -->
+					 <!--all product Section start-->   
 					    
-					    
-					           <div>
+					           <div  style="display: grid; grid-template-columns: auto auto auto auto; justify-content:  center; width:100%; margin: auto; gap: 25px; padding: 10px;">
 						<div th:each="product : ${products}">
 							<div class="product-box-3 h-100 wow fadeInUp">
 								<div class="product-header">
@@ -664,6 +667,8 @@
 							</div>
 						</div>
 					    </div>
+					    
+					     <!--all product Section start-->   
 
 
 					</div>

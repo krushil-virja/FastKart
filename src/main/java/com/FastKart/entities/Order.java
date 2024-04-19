@@ -35,6 +35,9 @@ public class Order {
 	
 	@JoinColumn(name = "date")
     private LocalDate orderDate;
+	
+	@JoinColumn(name="quantity")
+	private int quantity;
 
 	public int getId() {
 		return id;
@@ -84,12 +87,21 @@ public class Order {
 		this.orderDate = orderDate;
 	}
 
-	public Order() {
-		super();
-		// TODO Auto-generated constructor stub
+	public int getQuantity() {
+		return quantity;
 	}
 
-	public Order(int id, User user, Product product, CheckOut checkOut, int status, LocalDate orderDate) {
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", user=" + user + ", product=" + product + ", checkOut=" + checkOut + ", status="
+				+ status + ", orderDate=" + orderDate + ", quantity=" + quantity + "]";
+	}
+
+	public Order(int id, User user, Product product, CheckOut checkOut, int status, LocalDate orderDate, int quantity) {
 		super();
 		this.id = id;
 		this.user = user;
@@ -97,14 +109,17 @@ public class Order {
 		this.checkOut = checkOut;
 		this.status = status;
 		this.orderDate = orderDate;
+		this.quantity = quantity;
 	}
 
-	@Override
-	public String toString() {
-		return "Order [id=" + id + ", user=" + user + ", product=" + product + ", checkOut=" + checkOut + ", status="
-				+ status + ", orderDate=" + orderDate + "]";
+	public Order() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
+	
+	
+	
 	
 	
 }

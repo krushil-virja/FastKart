@@ -1,3 +1,4 @@
+
 package com.FastKart.Dao;
 
 import java.security.Principal;
@@ -7,6 +8,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.FastKart.Repository.CartRepository;
 import com.FastKart.Repository.OrderRepository;
@@ -84,7 +86,7 @@ public class orderDao {
 	 */	
 	
 	
-	public Order doOrder(Order o, Principal principal,int pid) {
+	public Order doOrder(Order o, Principal principal,int pid , int quantity) {
 
 		User user = uDao.getLoggedInUser(principal);
 		Product product = productRepository.findById(pid).get();
@@ -93,8 +95,9 @@ public class orderDao {
 	   
 
 		if (user != null) {
-
-			
+      
+			 
+			o.setQuantity(quantity);
 			o.setUser(user);
 		   o.setProduct(product);
 			o.setOrderDate(LocalDate.now());
@@ -147,4 +150,10 @@ public class orderDao {
 		
 		orderRepository.save(order);
 	}
-}
+	
+	
+	
+	  
+	}
+	
+	

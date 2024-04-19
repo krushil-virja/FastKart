@@ -435,12 +435,12 @@
 														<td>
 															<span class="order-image">
 																<img src="assets1/images/product/11.png"
-																	th:src="@{'/assets1/images/' + ${o.cart.product.pimage}}"
+																	th:src="@{'/assets1/images/' + ${o.product.pimage}}"
 																	alt="users">
 															</span>
 														</td>
 
-														<td th:text="${o.cart.product.pname}"> 586-5865224</td>
+														<td th:text="${o.product.pname}"> 586-5865224</td>
 
 														<td th:text="${o.orderDate}">Sep 20, 2022</td>
 
@@ -450,7 +450,7 @@
 																	<span style="background-color:red;"><a  style="color:white;" th:href="@{'/activeOrder/' + ${o.id}}">Pending</a></span>
 																</td>
 															</div>
-													s	</div>
+													</div>
 														
 														<div th:switch="${o.status}">
 															<div th:case="2">

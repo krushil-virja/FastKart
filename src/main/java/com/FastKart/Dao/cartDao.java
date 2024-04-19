@@ -46,7 +46,7 @@ public class cartDao {
 			Cart cartByUserandProduct = cartRepository.findByUserAndProduct(user, product);
 
 			if (cartByUserandProduct == null) {
-				cart.setQuntity(quntity);
+				cart.setQuntity(quntity);  	
 				cart.setTotal(quntity * product.getPrice());
 
 				cart.setProduct(product);
@@ -82,6 +82,8 @@ public class cartDao {
 
 		return cartRepository.findByUser(user);
 
+
+		
 	}
 
 //===================================================== DELETE CART METHOD =============================================================================

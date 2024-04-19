@@ -2,11 +2,13 @@ package com.FastKart.Dao;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.FastKart.Repository.CategoryRepository;
+import com.FastKart.Repository.OrderRepository;
 import com.FastKart.Repository.ProductRepository;
 import com.FastKart.entities.Category;
 import com.FastKart.entities.Product;
@@ -20,6 +22,10 @@ public class productDao {
 	
 	@Autowired
 	private CategoryRepository categoryRepository;
+	
+	
+	@Autowired
+	private OrderRepository orderRepository;
 //=================================================================== ADD PRODUCT METHOD ===============================================================
 	public Product addProduct(Product p) {
 		
@@ -84,12 +90,22 @@ public class productDao {
 			}
 		}
 		
-		/*
-		 * public int countByCategory(int id) {
-		 * 
-		 * Category category = categoryRepository.findById(id).get();
-		 * 
-		 * return productRepository.countByCategory(category); }
-		 */
+	
+		
+	    public List<Product> getTopSellingProducts(int n) {
+	        // Get the top selling products from the repository
+	        List<Object[]> topSellingProducts = orderRepository.findTopSellingProducts();
+
+	        // Extract products from the result
+	        List<Product> products = topSellingProducts.stream()
+	                .map(result -> (Product) result[0])
+	                .collect(Collectors.toList());
+
+	        // Return the top N products (in this case, top 10)
+	        return products.subList(0, Math.min(n, products.size()));
+	    }
+		
+		
+		
 		
 } 
