@@ -4,7 +4,12 @@ import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
+import javax.print.attribute.standard.PageRanges;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,10 +23,12 @@ import com.FastKart.Dao.cartDao;
 import com.FastKart.Dao.categoryDao;
 import com.FastKart.Dao.orderDao;
 import com.FastKart.Dao.productDao;
+import com.FastKart.Dao.reviewsDao;
 import com.FastKart.Dao.userDao;
 import com.FastKart.Repository.CartRepository;
 import com.FastKart.Repository.OrderRepository;
 import com.FastKart.Repository.ProductRepository;
+import com.FastKart.Repository.ReviewsRepository;
 import com.FastKart.Repository.UserRepository;
 import com.FastKart.Repository.WishListRepository;
 import com.FastKart.entities.Address;
@@ -42,6 +49,9 @@ public class basicController {
 
 	@Autowired
 	private categoryDao cdao;
+	
+	@Autowired
+	private reviewsDao rdao;
 
 	@Autowired
 	private userDao udao;
@@ -51,6 +61,9 @@ public class basicController {
 	
 	@Autowired
 	private ProductRepository productRepository;
+	
+	@Autowired
+	private ReviewsRepository reviewsRepository;
 
 	@Autowired
 	private cartDao cartdao;
@@ -161,7 +174,11 @@ public class basicController {
 //======================================================= SHOP PAGE Handler ============================================================================	
 
 	@GetMapping("/shop")
-	public String shop( Model m, @RequestParam(required = false, name = "category") List<Integer> categoryId  ) {
+	public String shop( Model m, @RequestParam(required = false, name = "category") List<Integer> categoryId ,
+			@RequestParam(value="pageNumber", required = false, defaultValue = "1") Integer pageNumber,
+	        @RequestParam(value="paeSize", required = false, defaultValue = "12") Integer pageSize
+			
+			) {
 
 		List<Category> category = cdao.showAllCategory();
 		m.addAttribute("category", category);
@@ -170,19 +187,59 @@ public class basicController {
 		
 		if(categoryId !=null) {
 			
-			List<Product> productByCategories = pdao.findProductByCategories(categoryId);
+			PageRequest pageable = PageRequest.of(pageNumber-1, pageSize);
+			
+			
+			 Page<Product> page = pdao.findProductByCategories(categoryId, pageable);
+			 
+			 List<Product> productByCategories = page.getContent();
+			 
 			m.addAttribute("productByCategories", productByCategories);
+			
+			m.addAttribute("currentPage", pageNumber );
+			System.out.println(pageNumber);
+			m.addAttribute("totalPages", page.getTotalElements());
+			System.out.println(page.getTotalElements());
+			m.addAttribute("totalPages", page.getTotalPages());
+			System.out.println(page.getTotalPages());
+
+		    m.addAttribute("pageSize", pageSize);
 		}
 		
+		
 		else {
-			List<Product> product = pdao.showAllProduct();
-			m.addAttribute("products", product);
 			
+			/*
+			 * List<Product> product = pdao.showAllProduct(); m.addAttribute("products",
+			 * product);
+			 */
+			
+			
+			// show product using pagination 1 page - 12 product
+			 Pageable pageable = PageRequest.of(pageNumber - 1, pageSize);
+			    Page<Product> page = productRepository.findAll(pageable);
+			    List<Product> product = page.getContent();
+			    
+			    
+			    m.addAttribute("products", product);
+			    m.addAttribute("totalPages", page.getTotalPages());
+			    
+			    System.out.println( page.getTotalPages());
+			    
+			    m.addAttribute("totalItems", page.getTotalElements());
+			    System.out.println(page.getTotalElements());
+			    m.addAttribute("currentPage", pageNumber);
+			    
+			    m.addAttribute("pageSize", pageSize);
+			    System.out.println(pageNumber);
+
 		}
 		
 		
 		return "shop";
 	}
+	
+	
 
 //======================================================= ABOUT PAGE Handler ============================================================================
 
@@ -266,8 +323,13 @@ public class basicController {
 	@GetMapping("/userDashboard")
 	public String userDashboard(Model m , Principal principal) {
 
-		List<Order> orders = oDao.allOrder();
-		m.addAttribute("orders", orders);
+		User loggedInUser = udao.getLoggedInUser(principal);
+		/*
+		 * List<Order> orders = oDao.allOrder(); m.addAttribute("orders", orders);
+		 */
+		
+		List<Order> orders = orderRepository.getOrdersByUser(loggedInUser);
+		 m.addAttribute("orders", orders);
 		
 		List<WishList> viewWishList = wdao.viewWishList(principal);
 		m.addAttribute("viewWishList", viewWishList);
@@ -276,8 +338,11 @@ public class basicController {
 
 //======================================================= PRODUCTDETAILS PAGE METHOD ============================================================================	
 	@GetMapping("/productDetails")
-	public String productDetails() {
+	public String productDetails(Model model,@RequestParam("pid") int pid) {
 
+		
+		
+		
 		return "productDetails";
 	}
 
@@ -440,6 +505,16 @@ public class basicController {
 		
 	}
 	
+	
+	/*
+	 * @ModelAttribute("countRatingByProduct") public int
+	 * countOfRatingByProduct( @RequestParam("pid") int pid) {
+	 * 
+	 * 
+	 * Product product = pdao.findProductById(pid);
+	 * 
+	 * return reviewsRepository.countByProduct(product); }
+	 */
 	
 
 

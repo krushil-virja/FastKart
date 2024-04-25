@@ -673,27 +673,27 @@
 
 					</div>
 					<!-- ============================================== Pagination code =====================================================================================-->
-
-					<nav class="custome-pagination" th:if="${totalPages > 1}">
+                   
+					<nav class="custome-pagination"  th:if="${totalPages > 1}">
 						<ul class="pagination justify-content-center">
 							<li class="page-item disabled" th:class="${currentPage == 1} ? 'disabled' : ''">
-								<a class="page-link"  th:if="${currentPage > 1}"  th:href="@{'/shop?pageNumber=' + ${currentPage - 1} + '&pageSize=' + ${pageSize}}" tabindex="-1" aria-disabled="true">
+								<a class="page-link"  th:if="${currentPage > 1}"  th:href="@{'/shop2?pageNumber=' + ${currentPage - 1} + '&pageSize=' + ${pageSize}}" tabindex="-1" aria-disabled="true">
 									<i class="fa-solid fa-angles-left"></i>
 								</a>
 							</li>
 							
-							
 							<li class="page-item active"  th:each="page : ${#numbers.sequence(1, totalPages)}"   th:class="${currentPage == page} ? 'disabled' : ''">
-								<a class="page-link"  th:href="@{'/shop?pageNumber=' + ${page} + '&pageSize=' + ${pageSize}}" th:text="${page}"></a>
+								<a class="page-link"  th:href="@{'/shop2?pageNumber=' + ${page} + '&pageSize=' + ${pageSize}}" th:text="${page}"></a>
 							</li>
 							
 							<li class="page-item">
-								<a class="page-link"  th:if="${currentPage != totalPages}"  th:href="@{'/shop?pageNumber=' + ${currentPage + 1} + '&pageSize=' + ${pageSize}}">
+								<a class="page-link"  th:if="${currentPage != totalPages}"  th:href="@{'/shop2?pageNumber=' + ${currentPage + 1} + '&pageSize=' + ${pageSize}}">
 									<i class="fa-solid fa-angles-right"></i>
 								</a>
 							</li>
 						</ul>
 					</nav>
+				
 
 					<!--================================================ Paginaation code end ==========================================================================-->
 				</div>

@@ -64,7 +64,7 @@ public class reviewsDao {
 	@Autowired
 	private ReviewsRepository reviewsRepository;
 
-	public Review productReviews(Review review, Principal principal, int pid) {
+	public Review productReviews(Review review, Principal principal, int pid, int rating ) {
 
 		// User user = uDao.getLoggedInUser(principal);
 
@@ -83,17 +83,50 @@ public class reviewsDao {
 			if (existingRating == null) {
 			 review.setProduct(product);
 				review.setUser(user);
+				review.setRating(rating);
 				review.setReviewdate(LocalDate.now());
 
 				Review r = reviewsRepository.save(review);
 				return r;
 			} else {
-				System.out.println("user has not bought the product");
+				System.out.println("user only give a review one time to a perticular order");
 			}
 
 		}
 		return null;
 
 	}
+	
+	
+	
+
+	
+	
+	/*
+	 * public int averageOfProductRating( int pid) {
+	 * 
+	 * 
+	 * int countReviewsByProductId = reviewsRepository.countReviewsByProductId(pid);
+	 * 
+	 * int sumRatingByProductId = reviewsRepository.sumRatingByProductId(pid);
+	 * 
+	 * double averageRatingOfProduct = sumRatingByProductId/countReviewsByProductId;
+	 * return sumRatingByProductId; }
+	 */
+	
+	
+	public double averageOfProductRating(int pid) { 
+	    int countReviewsByProductId = reviewsRepository.countReviewsByProductId(pid);
+	    int sumRatingByProductId = reviewsRepository.sumRatingByProductId(pid);
+	    
+	    // Ensure we don't divide by zero and perform division as double
+	    double averageRatingOfProduct = 0.0;
+	    if (countReviewsByProductId != 0) {
+	        averageRatingOfProduct = (double) sumRatingByProductId / countReviewsByProductId;
+	    }
+	    
+	    return averageRatingOfProduct;
+	}
+
 
 }

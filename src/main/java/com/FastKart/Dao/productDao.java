@@ -5,6 +5,8 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.FastKart.Repository.CategoryRepository;
@@ -63,12 +65,23 @@ public class productDao {
 			return findProductByCategory;
 			
 		}
+		
+		
+		
 
 //=================================================================FIND by MULTIPLE CATEGORY WISE PRODUCT METHOD  using filter===========================================================
-
-		public List<Product> findProductByCategories(List<Integer> categoryId) {
-		    List<Product> findProductByCategory = productRepository.findProductsByCategoryIds(categoryId);
-		    return findProductByCategory;
+		/*
+		 * public Page<Product> findProductByCategories(List<Integer> categoryId,
+		 * Pageable pageable) { List<Product> findProductByCategory =
+		 * productRepository.findProductsByCategoryIds(categoryId,pageable); return
+		 * findProductByCategory; }
+		 */
+		
+		
+		public Page<Product> findProductByCategories(List<Integer> categoryId, Pageable pageable) {
+		    // Call the repository method that returns a Page<Product>
+		    Page<Product> productPage = productRepository.findProductsByCategoryIds(categoryId, pageable);
+		    return productPage;
 		}
 	
 //=========================================================== Find PRODUCT BY ID ===================================================================

@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
 
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/product-bottom-thumbnail.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 11:45:36 GMT -->
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Fastkart">
-	<meta name="keywords" content="Fastkart">
-	<meta name="author" content="Fastkart">
-	<link rel="icon" href="../assets/images/favicon/1.png" type="image/x-icon">
-	<title>Product Right Thumbnail</title>
-	
-	 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fastkart">
+<meta name="keywords" content="Fastkart">
+<meta name="author" content="Fastkart">
+<link rel="icon" href="../assets/images/favicon/1.png"
+	type="image/x-icon">
+<title>Product Right Thumbnail</title>
+
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"
+	rel="stylesheet">
 
 
 </head>
@@ -23,11 +27,7 @@
 
 	<!-- Loader Start -->
 	<div class="fullpage-loader">
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
+		<span></span> <span></span> <span></span> <span></span> <span></span>
 		<span></span>
 	</div>
 	<!-- Loader End -->
@@ -37,40 +37,25 @@
 	<!-- mobile fix menu start -->
 	<div class="mobile-menu d-md-none d-block mobile-cart">
 		<ul>
-			<li class="active">
-				<a href="index.html">
-					<i class="iconly-Home icli"></i>
-					<span>Home</span>
-				</a>
-			</li>
+			<li class="active"><a href="index.html"> <i
+					class="iconly-Home icli"></i> <span>Home</span>
+			</a></li>
 
-			<li class="mobile-category">
-				<a href="javascript:void(0)">
-					<i class="iconly-Category icli js-link"></i>
-					<span>Category</span>
-				</a>
-			</li>
+			<li class="mobile-category"><a href="javascript:void(0)"> <i
+					class="iconly-Category icli js-link"></i> <span>Category</span>
+			</a></li>
 
-			<li>
-				<a href="search.html" class="search-box">
-					<i class="iconly-Search icli"></i>
-					<span>Search</span>
-				</a>
-			</li>
+			<li><a href="search.html" class="search-box"> <i
+					class="iconly-Search icli"></i> <span>Search</span>
+			</a></li>
 
-			<li>
-				<a href="wishlist.html" class="notifi-wishlist">
-					<i class="iconly-Heart icli"></i>
-					<span>My Wish</span>
-				</a>
-			</li>
+			<li><a href="wishlist.html" class="notifi-wishlist"> <i
+					class="iconly-Heart icli"></i> <span>My Wish</span>
+			</a></li>
 
-			<li>
-				<a href="cart.html">
-					<i class="iconly-Bag-2 icli fly-cate"></i>
-					<span>Cart</span>
-				</a>
-			</li>
+			<li><a href="cart.html"> <i
+					class="iconly-Bag-2 icli fly-cate"></i> <span>Cart</span>
+			</a></li>
 		</ul>
 	</div>
 	<!-- mobile fix menu end -->
@@ -84,11 +69,9 @@
 						<h2>Creamy Chocolate Cake</h2>
 						<nav>
 							<ol class="breadcrumb mb-0">
-								<li class="breadcrumb-item">
-									<a href="index.html">
-										<i class="fa-solid fa-house"></i>
-									</a>
-								</li>
+								<li class="breadcrumb-item"><a href="index.html"> <i
+										class="fa-solid fa-house"></i>
+								</a></li>
 
 								<li class="breadcrumb-item active">Creamy Chocolate Cake</li>
 							</ol>
@@ -163,7 +146,8 @@
 									</div>
 
 									<div class="col-12">
-										<div class="bottom-slider-image left-slider no-arrow slick-top">
+										<div
+											class="bottom-slider-image left-slider no-arrow slick-top">
 											<div>
 												<div class="sidebar-image">
 													<img src="../assets/images/product/category/1.jpg"
@@ -225,15 +209,18 @@
 									<!--<h3 class="theme-color price" th:text="${p.price}">$49.50 <del class="text-content">$58.46</del> <span
                                             class="offer theme-color">(8% off)</span></h3>-->
 									<h6>
-										<i class="fa fa-inr  theme-color" style="margin-right: 2px; font-size: 20px;"
-											aria-hidden="true"></i>
-										<span class=" price theme-color" th:text="${p.price}">$35.10</span>
+										<i class="fa fa-inr  theme-color"
+											style="margin-right: 2px; font-size: 20px;"
+											aria-hidden="true"></i> <span class=" price theme-color"
+											th:text="${p.price}">$35.10</span>
 									</h6>
 
 
 									<!-- PRODUCT RATING SECTION  -->
 									<div class="product-rating custom-rate">
-										<ul class="rating">
+										<!-- <ul class="rating">
+										
+										
 											<li>
 												<i data-feather="star" class="fill"></i>
 											</li>
@@ -249,17 +236,26 @@
 											<li>
 												<i data-feather="star"></i>
 											</li>
+										</ul> -->
+
+										<ul class="rating">
+											<th:block th:each="i : ${#numbers.sequence(1, 5)}">
+												<li><i data-feather="star"
+													th:class="${i le averageOfProductRating ? 'fill' : ''}"></i>
+												</li>
+											</th:block>
 										</ul>
-										<span class="review">23 Customer Review</span>
+
+										<span class="review"> <span style="font-size: 15px;"
+											th:text="${reviewCount}"></span> Customer Review
+										</span>
 									</div>
 								</div>
 
 								<div class="procuct-contain">
-									<p>Lollipop cake chocolate chocolate cake dessert jujubes. Shortbread sugar plum
-										dessert
-										powder cookie sweet brownie. Cake cookie apple pie dessert sugar plum muffin
-										cheesecake.
-									</p>
+									<p>Lollipop cake chocolate chocolate cake dessert jujubes.
+										Shortbread sugar plum dessert powder cookie sweet brownie.
+										Cake cookie apple pie dessert sugar plum muffin cheesecake.</p>
 								</div>
 
 
@@ -270,13 +266,14 @@
 									style="display: grid; grid-template-columns: 30% 70%;">
 									<div class="cart_qty qty-box product-qty">
 										<div class="input-group">
-											<button type="button" class="qty-right-plus" data-type="plus" data-field="">
+											<button type="button" class="qty-right-plus" data-type="plus"
+												data-field="">
 												<i class="fa fa-plus" aria-hidden="true"></i>
 											</button>
-											<input class="form-control input-number qty-input" type="text"
-												name="quantity" value="0">
-											<button type="button" class="qty-left-minus" data-type="minus"
-												data-field="">
+											<input class="form-control input-number qty-input"
+												type="text" name="quantity" value="0">
+											<button type="button" class="qty-left-minus"
+												data-type="minus" data-field="">
 												<i class="fa fa-minus" aria-hidden="true"></i>
 											</button>
 										</div>
@@ -284,10 +281,11 @@
 									<div>
 										<form action="/addToCart" method="post">
 
-											<input name="pid" type="hidden" th:value="${p.id}">
-											<input name="quntity" type="hidden" th:value="1">
-											<button class="btn btn-md bg-dark cart-button text-white w-100">Add To
-												Cart</button>
+											<input name="pid" type="hidden" th:value="${p.id}"> <input
+												name="quntity" type="hidden" th:value="1">
+											<button
+												class="btn btn-md bg-dark cart-button text-white w-100">Add
+												To Cart</button>
 										</form>
 									</div>
 								</div>
@@ -295,23 +293,22 @@
 
 
 								<div class="buy-box">
-									<a href="wishlist.html">
-										<i data-feather="heart"></i>
-										<span>Add To Wishlist</span>
+									<a href="wishlist.html"> <i data-feather="heart"></i> <span>Add
+											To Wishlist</span>
 									</a>
 
-									
-										<!--<a href="">
+
+									<!--<a href="">
 											<i data-feather="shuffle"></i>
 											<span>Rate Product</span>
 										</a>
 									-->
-									
+
 									<!-- Button to trigger the modal -->
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-    Open modal
-  </button>
-									
+									<button type="button" class="btn btn-primary"
+										data-bs-toggle="modal" data-bs-target="#myModal">
+										Open modal</button>
+
 
 								</div>
 
@@ -321,8 +318,9 @@
 									</div>
 
 									<div class="pickup-detail">
-										<h4 class="text-content">Lollipop cake chocolate chocolate cake dessert jujubes.
-											Shortbread sugar plum dessert powder cookie sweet brownie.</h4>
+										<h4 class="text-content">Lollipop cake chocolate
+											chocolate cake dessert jujubes. Shortbread sugar plum dessert
+											powder cookie sweet brownie.</h4>
 									</div>
 
 									<div class="product-info">
@@ -330,9 +328,10 @@
 											<li>Type : <a href="javascript:void(0)">Black Forest</a></li>
 											<li>SKU : <a href="javascript:void(0)">SDFVW65467</a></li>
 											<li>MFG : <a href="javascript:void(0)">Jun 4, 2022</a></li>
-											<li>Stock : <a href="javascript:void(0)">2 Items Left</a></li>
+											<li>Stock : <a href="javascript:void(0)">2 Items
+													Left</a></li>
 											<li>Tags : <a href="javascript:void(0)">Cake,</a> <a
-													href="javascript:void(0)">Backery</a></li>
+												href="javascript:void(0)">Backery</a></li>
 										</ul>
 									</div>
 								</div>
@@ -342,36 +341,26 @@
 										<h4>Guaranteed Safe Checkout</h4>
 									</div>
 									<ul>
-										<li>
-											<a href="javascript:void(0)">
-												<img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/1.svg"
-													class="blur-up lazyload" alt="">
-											</a>
-										</li>
-										<li>
-											<a href="javascript:void(0)">
-												<img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/2.svg"
-													class="blur-up lazyload" alt="">
-											</a>
-										</li>
-										<li>
-											<a href="javascript:void(0)">
-												<img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/3.svg"
-													class="blur-up lazyload" alt="">
-											</a>
-										</li>
-										<li>
-											<a href="javascript:void(0)">
-												<img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/4.svg"
-													class="blur-up lazyload" alt="">
-											</a>
-										</li>
-										<li>
-											<a href="javascript:void(0)">
-												<img src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/5.svg"
-													class="blur-up lazyload" alt="">
-											</a>
-										</li>
+										<li><a href="javascript:void(0)"> <img
+												src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/1.svg"
+												class="blur-up lazyload" alt="">
+										</a></li>
+										<li><a href="javascript:void(0)"> <img
+												src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/2.svg"
+												class="blur-up lazyload" alt="">
+										</a></li>
+										<li><a href="javascript:void(0)"> <img
+												src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/3.svg"
+												class="blur-up lazyload" alt="">
+										</a></li>
+										<li><a href="javascript:void(0)"> <img
+												src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/4.svg"
+												class="blur-up lazyload" alt="">
+										</a></li>
+										<li><a href="javascript:void(0)"> <img
+												src="https://themes.pixelstrap.com/fastkart/assets/images/product/payment/5.svg"
+												class="blur-up lazyload" alt="">
+										</a></li>
 									</ul>
 								</div>
 							</div>
@@ -381,27 +370,30 @@
 							<div class="product-section-box">
 								<ul class="nav nav-tabs custom-nav" id="myTab" role="tablist">
 									<li class="nav-item" role="presentation">
-										<button class="nav-link active" id="description-tab" data-bs-toggle="tab"
-											data-bs-target="#description" type="button" role="tab"
-											aria-controls="description" aria-selected="true">Description</button>
+										<button class="nav-link active" id="description-tab"
+											data-bs-toggle="tab" data-bs-target="#description"
+											type="button" role="tab" aria-controls="description"
+											aria-selected="true">Description</button>
 									</li>
 
 									<li class="nav-item" role="presentation">
 										<button class="nav-link" id="info-tab" data-bs-toggle="tab"
-											data-bs-target="#info" type="button" role="tab" aria-controls="info"
-											aria-selected="false">Additional info</button>
+											data-bs-target="#info" type="button" role="tab"
+											aria-controls="info" aria-selected="false">Additional
+											info</button>
 									</li>
 
 									<li class="nav-item" role="presentation">
 										<button class="nav-link" id="care-tab" data-bs-toggle="tab"
-											data-bs-target="#care" type="button" role="tab" aria-controls="care"
-											aria-selected="false">Care Instuctions</button>
+											data-bs-target="#care" type="button" role="tab"
+											aria-controls="care" aria-selected="false">Care
+											Instuctions</button>
 									</li>
 
 									<li class="nav-item" role="presentation">
 										<button class="nav-link" id="review-tab" data-bs-toggle="tab"
-											data-bs-target="#review" type="button" role="tab" aria-controls="review"
-											aria-selected="false">Review</button>
+											data-bs-target="#review" type="button" role="tab"
+											aria-controls="review" aria-selected="false">Review</button>
 									</li>
 								</ul>
 
@@ -409,8 +401,8 @@
 								<div class="tab-content custom-tab" id="myTabContent">
 
 									<!--========================================= Product Description SECTION START====================================================-->
-									<div class="tab-pane fade show active" id="description" role="tabpanel"
-										aria-labelledby="description-tab">
+									<div class="tab-pane fade show active" id="description"
+										role="tabpanel" aria-labelledby="description-tab">
 										<div class="product-description">
 											<div class="nav-desh">
 												<p th:text="${p.description}"></p>
@@ -421,7 +413,8 @@
 									</div>
 
 									<!--========================================= Product INFORMATION SECTION START====================================================-->
-									<div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+									<div class="tab-pane fade" id="info" role="tabpanel"
+										aria-labelledby="info-tab">
 										<div class="table-responsive">
 											<table class="table info-table">
 												<tbody>
@@ -462,22 +455,23 @@
 										</div>
 									</div>
 									<!--========================================= Product CARE INDTRUCTION SECTION START====================================================-->
-									<div class="tab-pane fade" id="care" role="tabpanel" aria-labelledby="care-tab">
+									<div class="tab-pane fade" id="care" role="tabpanel"
+										aria-labelledby="care-tab">
 										<div class="information-box">
 											<ul>
-												<li>Store cream cakes in a refrigerator. Fondant cakes should be
-													stored in an air conditioned environment.</li>
+												<li>Store cream cakes in a refrigerator. Fondant cakes
+													should be stored in an air conditioned environment.</li>
 
-												<li>Slice and serve the cake at room temperature and make sure
-													it is not exposed to heat.</li>
+												<li>Slice and serve the cake at room temperature and
+													make sure it is not exposed to heat.</li>
 
 												<li>Use a serrated knife to cut a fondant cake.</li>
 
-												<li>Sculptural elements and figurines may contain wire supports
-													or toothpicks or wooden skewers for support.</li>
+												<li>Sculptural elements and figurines may contain wire
+													supports or toothpicks or wooden skewers for support.</li>
 
-												<li>Please check the placement of these items before serving to
-													small children.</li>
+												<li>Please check the placement of these items before
+													serving to small children.</li>
 
 												<li>The cake should be consumed within 24 hours.</li>
 
@@ -486,7 +480,8 @@
 										</div>
 									</div>
 									<!--========================================= Product REVIEWS SECTION START====================================================-->
-									<div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+									<div class="tab-pane fade" id="review" role="tabpanel"
+										aria-labelledby="review-tab">
 										<div class="review-box">
 											<div class="row g-4">
 												<div class="col-xl-6">
@@ -497,21 +492,11 @@
 													<div class="d-flex">
 														<div class="product-rating">
 															<ul class="rating">
-																<li>
-																	<i data-feather="star" class="fill"></i>
-																</li>
-																<li>
-																	<i data-feather="star" class="fill"></i>
-																</li>
-																<li>
-																	<i data-feather="star" class="fill"></i>
-																</li>
-																<li>
-																	<i data-feather="star"></i>
-																</li>
-																<li>
-																	<i data-feather="star"></i>
-																</li>
+																<li><i data-feather="star" class="fill"></i></li>
+																<li><i data-feather="star" class="fill"></i></li>
+																<li><i data-feather="star" class="fill"></i></li>
+																<li><i data-feather="star"></i></li>
+																<li><i data-feather="star"></i></li>
 															</ul>
 														</div>
 														<h6 class="ms-3">4.2 Out Of 5</h6>
@@ -525,9 +510,7 @@
 																	<div class="progress">
 																		<div class="progress-bar" role="progressbar"
 																			style="width: 68%" aria-valuenow="100"
-																			aria-valuemin="0" aria-valuemax="100">
-																			68%
-																		</div>
+																			aria-valuemin="0" aria-valuemax="100">68%</div>
 																	</div>
 																</div>
 															</li>
@@ -538,9 +521,7 @@
 																	<div class="progress">
 																		<div class="progress-bar" role="progressbar"
 																			style="width: 67%" aria-valuenow="100"
-																			aria-valuemin="0" aria-valuemax="100">
-																			67%
-																		</div>
+																			aria-valuemin="0" aria-valuemax="100">67%</div>
 																	</div>
 																</div>
 															</li>
@@ -551,9 +532,7 @@
 																	<div class="progress">
 																		<div class="progress-bar" role="progressbar"
 																			style="width: 42%" aria-valuenow="100"
-																			aria-valuemin="0" aria-valuemax="100">
-																			42%
-																		</div>
+																			aria-valuemin="0" aria-valuemax="100">42%</div>
 																	</div>
 																</div>
 															</li>
@@ -564,9 +543,7 @@
 																	<div class="progress">
 																		<div class="progress-bar" role="progressbar"
 																			style="width: 30%" aria-valuenow="100"
-																			aria-valuemin="0" aria-valuemax="100">
-																			30%
-																		</div>
+																			aria-valuemin="0" aria-valuemax="100">30%</div>
 																	</div>
 																</div>
 															</li>
@@ -577,9 +554,7 @@
 																	<div class="progress">
 																		<div class="progress-bar" role="progressbar"
 																			style="width: 24%" aria-valuenow="100"
-																			aria-valuemin="0" aria-valuemax="100">
-																			24%
-																		</div>
+																			aria-valuemin="0" aria-valuemax="100">24%</div>
 																	</div>
 																</div>
 															</li>
@@ -596,16 +571,16 @@
 														<div class="col-md-6">
 															<div class="form-floating theme-form-floating">
 																<input type="text" class="form-control" id="name"
-																	placeholder="Name">
-																<label for="name">Your Name</label>
+																	placeholder="Name"> <label for="name">Your
+																	Name</label>
 															</div>
 														</div>
 
 														<div class="col-md-6">
 															<div class="form-floating theme-form-floating">
 																<input type="email" class="form-control" id="email"
-																	placeholder="Email Address">
-																<label for="email">Email Address</label>
+																	placeholder="Email Address"> <label for="email">Email
+																	Address</label>
 															</div>
 														</div>
 
@@ -620,8 +595,8 @@
 														<div class="col-md-6">
 															<div class="form-floating theme-form-floating">
 																<input type="url" class="form-control" id="review1"
-																	placeholder="Give your review a title">
-																<label for="review1">Review Title</label>
+																	placeholder="Give your review a title"> <label
+																	for="review1">Review Title</label>
 															</div>
 														</div>
 
@@ -629,8 +604,7 @@
 															<div class="form-floating theme-form-floating">
 																<textarea class="form-control"
 																	placeholder="Leave a comment here"
-																	id="floatingTextarea2"
-																	style="height: 150px"></textarea>
+																	id="floatingTextarea2" style="height: 150px"></textarea>
 																<label for="floatingTextarea2">Write Your
 																	Comment</label>
 															</div>
@@ -651,7 +625,8 @@
 					</div>
 				</div>
 				<!--============================================================= RIGHT SIDE CONTENT SECTION START===================================================-->
-				<div class="col-xxl-3 col-xl-4 col-lg-5 d-none d-lg-block wow fadeInUp">
+				<div
+					class="col-xxl-3 col-xl-4 col-lg-5 d-none d-lg-block wow fadeInUp">
 					<div class="right-sidebar-box">
 
 						<!-- Trending Product -->
@@ -664,15 +639,14 @@
 										<div class="offer-product">
 											<a href="product-left-thumbnail.html" class="offer-image">
 												<img src="../assets/images/vegetable/product/23.png"
-													class="img-fluid blur-up lazyload" alt="">
+												class="img-fluid blur-up lazyload" alt="">
 											</a>
 
 											<div class="offer-detail">
 												<div>
 													<a href="product-left-thumbnail.html">
 														<h6 class="name">Meatigo Premium Goat Curry</h6>
-													</a>
-													<span>450 G</span>
+													</a> <span>450 G</span>
 													<h6 class="price theme-color">$ 70.00</h6>
 												</div>
 											</div>
@@ -683,15 +657,14 @@
 										<div class="offer-product">
 											<a href="product-left-thumbnail.html" class="offer-image">
 												<img src="../assets/images/vegetable/product/24.png"
-													class="blur-up lazyload" alt="">
+												class="blur-up lazyload" alt="">
 											</a>
 
 											<div class="offer-detail">
 												<div>
 													<a href="product-left-thumbnail.html">
 														<h6 class="name">Dates Medjoul Premium Imported</h6>
-													</a>
-													<span>450 G</span>
+													</a> <span>450 G</span>
 													<h6 class="price theme-color">$ 40.00</h6>
 												</div>
 											</div>
@@ -702,15 +675,14 @@
 										<div class="offer-product">
 											<a href="product-left-thumbnail.html" class="offer-image">
 												<img src="../assets/images/vegetable/product/25.png"
-													class="blur-up lazyload" alt="">
+												class="blur-up lazyload" alt="">
 											</a>
 
 											<div class="offer-detail">
 												<div>
 													<a href="product-left-thumbnail.html">
 														<h6 class="name">Good Life Walnut Kernels</h6>
-													</a>
-													<span>200 G</span>
+													</a> <span>200 G</span>
 													<h6 class="price theme-color">$ 52.00</h6>
 												</div>
 											</div>
@@ -721,15 +693,14 @@
 										<div class="offer-product">
 											<a href="product-left-thumbnail.html" class="offer-image">
 												<img src="../assets/images/vegetable/product/26.png"
-													class="blur-up lazyload" alt="">
+												class="blur-up lazyload" alt="">
 											</a>
 
 											<div class="offer-detail">
 												<div>
 													<a href="product-left-thumbnail.html">
 														<h6 class="name">Apple Red Premium Imported</h6>
-													</a>
-													<span>1 KG</span>
+													</a> <span>1 KG</span>
 													<h6 class="price theme-color">$ 80.00</h6>
 												</div>
 											</div>
@@ -742,17 +713,19 @@
 						<!-- Banner Section -->
 						<div class="ratio_156 pt-25">
 							<div class="home-contain">
-								<img src="../assets/images/vegetable/banner/8.jpg" class="bg-img blur-up lazyload"
-									alt="">
+								<img src="../assets/images/vegetable/banner/8.jpg"
+									class="bg-img blur-up lazyload" alt="">
 								<div class="home-detail p-top-left home-p-medium">
 									<div>
 										<h6 class="text-yellow home-banner">Seafood</h6>
-										<h3 class="text-uppercase fw-normal"><span
-												class="theme-color fw-bold">Freshes</span> Products</h3>
+										<h3 class="text-uppercase fw-normal">
+											<span class="theme-color fw-bold">Freshes</span> Products
+										</h3>
 										<h3 class="fw-light">every hour</h3>
 										<button onclick="location.href = 'shop-left-sidebar.html';"
-											class="btn btn-animation btn-md fw-bold mend-auto">Shop Now <i
-												class="fa-solid fa-arrow-right icon"></i></button>
+											class="btn btn-animation btn-md fw-bold mend-auto">
+											Shop Now <i class="fa-solid fa-arrow-right icon"></i>
+										</button>
 									</div>
 								</div>
 							</div>
@@ -771,9 +744,9 @@
 		<div class="container-fluid-lg">
 			<div class="title">
 				<h2>Related Products</h2>
-				<span class="title-leaf">
-					<svg class="icon-width">
-						<use xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf"></use>
+				<span class="title-leaf"> <svg class="icon-width">
+						<use
+							xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf"></use>
 					</svg>
 				</span>
 			</div>
@@ -784,67 +757,56 @@
 							<div class="product-box-3 wow fadeInUp">
 								<div class="product-header">
 									<div class="product-image">
-										<a href="product-left-2.html">
-											<img src="../assets/images/cake/product/11.png"
-												class="img-fluid blur-up lazyload" alt="">
+										<a href="product-left-2.html"> <img
+											src="../assets/images/cake/product/11.png"
+											class="img-fluid blur-up lazyload" alt="">
 										</a>
 
 										<ul class="product-option">
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-												<a href="javascript:void(0)" data-bs-toggle="modal"
-													data-bs-target="#view">
-													<i data-feather="eye"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="View"><a href="javascript:void(0)"
+												data-bs-toggle="modal" data-bs-target="#view"> <i
+													data-feather="eye"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
-												<a href="compare.html">
-													<i data-feather="refresh-cw"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Compare"><a href="compare.html"> <i
+													data-feather="refresh-cw"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
-												<a href="wishlist.html" class="notifi-wishlist">
-													<i data-feather="heart"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Wishlist"><a href="wishlist.html"
+												class="notifi-wishlist"> <i data-feather="heart"></i>
+											</a></li>
 										</ul>
 									</div>
 								</div>
 
 								<div class="product-footer">
 									<div class="product-detail">
-										<span class="span-name">Cake</span>
-										<a href="product-left-thumbnail.html">
+										<span class="span-name">Cake</span> <a
+											href="product-left-thumbnail.html">
 											<h5 class="name">Chocolate Chip Cookies 250 g</h5>
 										</a>
 										<div class="product-rating mt-2">
 											<ul class="rating">
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
 											</ul>
 											<span>(5.0)</span>
 										</div>
 										<h6 class="unit">500 G</h6>
-										<h5 class="price"><span class="theme-color">$10.25</span> <del>$12.57</del>
+										<h5 class="price">
+											<span class="theme-color">$10.25</span>
+											<del>$12.57</del>
 										</h5>
 										<div class="add-to-cart-box bg-white">
-											<button class="btn btn-add-cart addcart-button">Add
-												<span class="add-icon bg-light-gray">
-													<i class="fa-solid fa-plus"></i>
+											<button class="btn btn-add-cart addcart-button">
+												Add <span class="add-icon bg-light-gray"> <i
+													class="fa-solid fa-plus"></i>
 												</span>
 											</button>
 											<div class="cart_qty qty-box">
@@ -853,8 +815,8 @@
 														data-type="minus" data-field="">
 														<i class="fa fa-minus" aria-hidden="true"></i>
 													</button>
-													<input class="form-control input-number qty-input" type="text"
-														name="quantity" value="0">
+													<input class="form-control input-number qty-input"
+														type="text" name="quantity" value="0">
 													<button type="button" class="qty-right-plus bg-gray"
 														data-type="plus" data-field="">
 														<i class="fa fa-plus" aria-hidden="true"></i>
@@ -871,66 +833,55 @@
 							<div class="product-box-3 wow fadeInUp" data-wow-delay="0.05s">
 								<div class="product-header">
 									<div class="product-image">
-										<a href="product-left-thumbnail.html">
-											<img src="../assets/images/cake/product/2.png"
-												class="img-fluid blur-up lazyload" alt="">
+										<a href="product-left-thumbnail.html"> <img
+											src="../assets/images/cake/product/2.png"
+											class="img-fluid blur-up lazyload" alt="">
 										</a>
 
 										<ul class="product-option">
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-												<a href="javascript:void(0)" data-bs-toggle="modal"
-													data-bs-target="#view">
-													<i data-feather="eye"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="View"><a href="javascript:void(0)"
+												data-bs-toggle="modal" data-bs-target="#view"> <i
+													data-feather="eye"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
-												<a href="compare.html">
-													<i data-feather="refresh-cw"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Compare"><a href="compare.html"> <i
+													data-feather="refresh-cw"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
-												<a href="wishlist.html" class="notifi-wishlist">
-													<i data-feather="heart"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Wishlist"><a href="wishlist.html"
+												class="notifi-wishlist"> <i data-feather="heart"></i>
+											</a></li>
 										</ul>
 									</div>
 								</div>
 								<div class="product-footer">
 									<div class="product-detail">
-										<span class="span-name">Vegetable</span>
-										<a href="product-left-thumbnail.html">
+										<span class="span-name">Vegetable</span> <a
+											href="product-left-thumbnail.html">
 											<h5 class="name">Fresh Bread and Pastry Flour 200 g</h5>
 										</a>
 										<div class="product-rating mt-2">
 											<ul class="rating">
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star"></i>
-												</li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star"></i></li>
 											</ul>
 											<span>(4.0)</span>
 										</div>
 										<h6 class="unit">250 ml</h6>
-										<h5 class="price"><span class="theme-color">$08.02</span> <del>$15.15</del>
+										<h5 class="price">
+											<span class="theme-color">$08.02</span>
+											<del>$15.15</del>
 										</h5>
 										<div class="add-to-cart-box bg-white">
-											<button class="btn btn-add-cart addcart-button">Add
-												<span class="add-icon bg-light-gray">
-													<i class="fa-solid fa-plus"></i>
+											<button class="btn btn-add-cart addcart-button">
+												Add <span class="add-icon bg-light-gray"> <i
+													class="fa-solid fa-plus"></i>
 												</span>
 											</button>
 											<div class="cart_qty qty-box">
@@ -939,8 +890,8 @@
 														data-type="minus" data-field="">
 														<i class="fa fa-minus" aria-hidden="true"></i>
 													</button>
-													<input class="form-control input-number qty-input" type="text"
-														name="quantity" value="0">
+													<input class="form-control input-number qty-input"
+														type="text" name="quantity" value="0">
 													<button type="button" class="qty-right-plus bg-gray"
 														data-type="plus" data-field="">
 														<i class="fa fa-plus" aria-hidden="true"></i>
@@ -957,67 +908,57 @@
 							<div class="product-box-3 wow fadeInUp" data-wow-delay="0.1s">
 								<div class="product-header">
 									<div class="product-image">
-										<a href="product-left-thumbnail.html">
-											<img src="../assets/images/cake/product/3.png"
-												class="img-fluid blur-up lazyload" alt="">
+										<a href="product-left-thumbnail.html"> <img
+											src="../assets/images/cake/product/3.png"
+											class="img-fluid blur-up lazyload" alt="">
 										</a>
 
 										<ul class="product-option">
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-												<a href="javascript:void(0)" data-bs-toggle="modal"
-													data-bs-target="#view">
-													<i data-feather="eye"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="View"><a href="javascript:void(0)"
+												data-bs-toggle="modal" data-bs-target="#view"> <i
+													data-feather="eye"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
-												<a href="compare.html">
-													<i data-feather="refresh-cw"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Compare"><a href="compare.html"> <i
+													data-feather="refresh-cw"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
-												<a href="wishlist.html" class="notifi-wishlist">
-													<i data-feather="heart"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Wishlist"><a href="wishlist.html"
+												class="notifi-wishlist"> <i data-feather="heart"></i>
+											</a></li>
 										</ul>
 									</div>
 								</div>
 
 								<div class="product-footer">
 									<div class="product-detail">
-										<span class="span-name">Vegetable</span>
-										<a href="product-left-thumbnail.html">
-											<h5 class="name">Peanut Butter Bite Premium Butter Cookies 600 g</h5>
+										<span class="span-name">Vegetable</span> <a
+											href="product-left-thumbnail.html">
+											<h5 class="name">Peanut Butter Bite Premium Butter
+												Cookies 600 g</h5>
 										</a>
 										<div class="product-rating mt-2">
 											<ul class="rating">
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star"></i>
-												</li>
-												<li>
-													<i data-feather="star"></i>
-												</li>
-												<li>
-													<i data-feather="star"></i>
-												</li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star"></i></li>
+												<li><i data-feather="star"></i></li>
+												<li><i data-feather="star"></i></li>
 											</ul>
 											<span>(2.4)</span>
 										</div>
 										<h6 class="unit">350 G</h6>
-										<h5 class="price"><span class="theme-color">$04.33</span> <del>$10.36</del>
+										<h5 class="price">
+											<span class="theme-color">$04.33</span>
+											<del>$10.36</del>
 										</h5>
 										<div class="add-to-cart-box bg-white">
-											<button class="btn btn-add-cart addcart-button">Add
-												<span class="add-icon bg-light-gray">
-													<i class="fa-solid fa-plus"></i>
+											<button class="btn btn-add-cart addcart-button">
+												Add <span class="add-icon bg-light-gray"> <i
+													class="fa-solid fa-plus"></i>
 												</span>
 											</button>
 											<div class="cart_qty qty-box">
@@ -1026,8 +967,8 @@
 														data-type="minus" data-field="">
 														<i class="fa fa-minus" aria-hidden="true"></i>
 													</button>
-													<input class="form-control input-number qty-input" type="text"
-														name="quantity" value="0">
+													<input class="form-control input-number qty-input"
+														type="text" name="quantity" value="0">
 													<button type="button" class="qty-right-plus bg-gray"
 														data-type="plus" data-field="">
 														<i class="fa fa-plus" aria-hidden="true"></i>
@@ -1044,67 +985,57 @@
 							<div class="product-box-3 wow fadeInUp" data-wow-delay="0.15s">
 								<div class="product-header">
 									<div class="product-image">
-										<a href="product-left-thumbnail.html">
-											<img src="../assets/images/cake/product/4.png"
-												class="img-fluid blur-up lazyload" alt="">
+										<a href="product-left-thumbnail.html"> <img
+											src="../assets/images/cake/product/4.png"
+											class="img-fluid blur-up lazyload" alt="">
 										</a>
 
 										<ul class="product-option">
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-												<a href="javascript:void(0)" data-bs-toggle="modal"
-													data-bs-target="#view">
-													<i data-feather="eye"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="View"><a href="javascript:void(0)"
+												data-bs-toggle="modal" data-bs-target="#view"> <i
+													data-feather="eye"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
-												<a href="compare.html">
-													<i data-feather="refresh-cw"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Compare"><a href="compare.html"> <i
+													data-feather="refresh-cw"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
-												<a href="wishlist.html" class="notifi-wishlist">
-													<i data-feather="heart"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Wishlist"><a href="wishlist.html"
+												class="notifi-wishlist"> <i data-feather="heart"></i>
+											</a></li>
 										</ul>
 									</div>
 								</div>
 
 								<div class="product-footer">
 									<div class="product-detail">
-										<span class="span-name">Snacks</span>
-										<a href="product-left-thumbnail.html">
-											<h5 class="name">SnackAmor Combo Pack of Jowar Stick and Jowar Chips</h5>
+										<span class="span-name">Snacks</span> <a
+											href="product-left-thumbnail.html">
+											<h5 class="name">SnackAmor Combo Pack of Jowar Stick and
+												Jowar Chips</h5>
 										</a>
 										<div class="product-rating mt-2">
 											<ul class="rating">
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
 											</ul>
 											<span>(5.0)</span>
 										</div>
 										<h6 class="unit">570 G</h6>
-										<h5 class="price"><span class="theme-color">$12.52</span> <del>$13.62</del>
+										<h5 class="price">
+											<span class="theme-color">$12.52</span>
+											<del>$13.62</del>
 										</h5>
 										<div class="add-to-cart-box bg-white">
-											<button class="btn btn-add-cart addcart-button">Add
-												<span class="add-icon bg-light-gray">
-													<i class="fa-solid fa-plus"></i>
+											<button class="btn btn-add-cart addcart-button">
+												Add <span class="add-icon bg-light-gray"> <i
+													class="fa-solid fa-plus"></i>
 												</span>
 											</button>
 											<div class="cart_qty qty-box">
@@ -1113,8 +1044,8 @@
 														data-type="minus" data-field="">
 														<i class="fa fa-minus" aria-hidden="true"></i>
 													</button>
-													<input class="form-control input-number qty-input" type="text"
-														name="quantity" value="0">
+													<input class="form-control input-number qty-input"
+														type="text" name="quantity" value="0">
 													<button type="button" class="qty-right-plus bg-gray"
 														data-type="plus" data-field="">
 														<i class="fa fa-plus" aria-hidden="true"></i>
@@ -1131,67 +1062,57 @@
 							<div class="product-box-3 wow fadeInUp" data-wow-delay="0.2s">
 								<div class="product-header">
 									<div class="product-image">
-										<a href="product-left-thumbnail.html">
-											<img src="../assets/images/cake/product/5.png"
-												class="img-fluid blur-up lazyload" alt="">
+										<a href="product-left-thumbnail.html"> <img
+											src="../assets/images/cake/product/5.png"
+											class="img-fluid blur-up lazyload" alt="">
 										</a>
 
 										<ul class="product-option">
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-												<a href="javascript:void(0)" data-bs-toggle="modal"
-													data-bs-target="#view">
-													<i data-feather="eye"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="View"><a href="javascript:void(0)"
+												data-bs-toggle="modal" data-bs-target="#view"> <i
+													data-feather="eye"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
-												<a href="compare.html">
-													<i data-feather="refresh-cw"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Compare"><a href="compare.html"> <i
+													data-feather="refresh-cw"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
-												<a href="wishlist.html" class="notifi-wishlist">
-													<i data-feather="heart"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Wishlist"><a href="wishlist.html"
+												class="notifi-wishlist"> <i data-feather="heart"></i>
+											</a></li>
 										</ul>
 									</div>
 								</div>
 
 								<div class="product-footer">
 									<div class="product-detail">
-										<span class="span-name">Snacks</span>
-										<a href="product-left-thumbnail.html">
-											<h5 class="name">Yumitos Chilli Sprinkled Potato Chips 100 g</h5>
+										<span class="span-name">Snacks</span> <a
+											href="product-left-thumbnail.html">
+											<h5 class="name">Yumitos Chilli Sprinkled Potato Chips
+												100 g</h5>
 										</a>
 										<div class="product-rating mt-2">
 											<ul class="rating">
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star"></i>
-												</li>
-												<li>
-													<i data-feather="star"></i>
-												</li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star"></i></li>
+												<li><i data-feather="star"></i></li>
 											</ul>
 											<span>(3.8)</span>
 										</div>
 										<h6 class="unit">100 G</h6>
-										<h5 class="price"><span class="theme-color">$10.25</span> <del>$12.36</del>
+										<h5 class="price">
+											<span class="theme-color">$10.25</span>
+											<del>$12.36</del>
 										</h5>
 										<div class="add-to-cart-box bg-white">
-											<button class="btn btn-add-cart addcart-button">Add
-												<span class="add-icon bg-light-gray">
-													<i class="fa-solid fa-plus"></i>
+											<button class="btn btn-add-cart addcart-button">
+												Add <span class="add-icon bg-light-gray"> <i
+													class="fa-solid fa-plus"></i>
 												</span>
 											</button>
 											<div class="cart_qty qty-box">
@@ -1200,8 +1121,8 @@
 														data-type="minus" data-field="">
 														<i class="fa fa-minus" aria-hidden="true"></i>
 													</button>
-													<input class="form-control input-number qty-input" type="text"
-														name="quantity" value="0">
+													<input class="form-control input-number qty-input"
+														type="text" name="quantity" value="0">
 													<button type="button" class="qty-right-plus bg-gray"
 														data-type="plus" data-field="">
 														<i class="fa fa-plus" aria-hidden="true"></i>
@@ -1218,69 +1139,58 @@
 							<div class="product-box-3 wow fadeInUp" data-wow-delay="0.25s">
 								<div class="product-header">
 									<div class="product-image">
-										<a href="product-left-thumbnail.html">
-											<img src="../assets/images/cake/product/6.png"
-												class="img-fluid blur-up lazyload" alt="">
+										<a href="product-left-thumbnail.html"> <img
+											src="../assets/images/cake/product/6.png"
+											class="img-fluid blur-up lazyload" alt="">
 										</a>
 
 										<ul class="product-option">
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-												<a href="javascript:void(0)" data-bs-toggle="modal"
-													data-bs-target="#view">
-													<i data-feather="eye"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="View"><a href="javascript:void(0)"
+												data-bs-toggle="modal" data-bs-target="#view"> <i
+													data-feather="eye"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
-												<a href="compare.html">
-													<i data-feather="refresh-cw"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Compare"><a href="compare.html"> <i
+													data-feather="refresh-cw"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
-												<a href="wishlist.html" class="notifi-wishlist">
-													<i data-feather="heart"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Wishlist"><a href="wishlist.html"
+												class="notifi-wishlist"> <i data-feather="heart"></i>
+											</a></li>
 										</ul>
 									</div>
 								</div>
 
 								<div class="product-footer">
 									<div class="product-detail">
-										<span class="span-name">Vegetable</span>
-										<a href="product-left-thumbnail.html">
+										<span class="span-name">Vegetable</span> <a
+											href="product-left-thumbnail.html">
 											<h5 class="name">Fantasy Crunchy Choco Chip Cookies</h5>
 										</a>
 										<div class="product-rating mt-2">
 											<ul class="rating">
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star"></i>
-												</li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star"></i></li>
 											</ul>
 											<span>(4.0)</span>
 										</div>
 
 										<h6 class="unit">550 G</h6>
 
-										<h5 class="price"><span class="theme-color">$14.25</span> <del>$16.57</del>
+										<h5 class="price">
+											<span class="theme-color">$14.25</span>
+											<del>$16.57</del>
 										</h5>
 										<div class="add-to-cart-box bg-white">
-											<button class="btn btn-add-cart addcart-button">Add
-												<span class="add-icon bg-light-gray">
-													<i class="fa-solid fa-plus"></i>
+											<button class="btn btn-add-cart addcart-button">
+												Add <span class="add-icon bg-light-gray"> <i
+													class="fa-solid fa-plus"></i>
 												</span>
 											</button>
 											<div class="cart_qty qty-box">
@@ -1289,8 +1199,8 @@
 														data-type="minus" data-field="">
 														<i class="fa fa-minus" aria-hidden="true"></i>
 													</button>
-													<input class="form-control input-number qty-input" type="text"
-														name="quantity" value="0">
+													<input class="form-control input-number qty-input"
+														type="text" name="quantity" value="0">
 													<button type="button" class="qty-right-plus bg-gray"
 														data-type="plus" data-field="">
 														<i class="fa fa-plus" aria-hidden="true"></i>
@@ -1307,68 +1217,58 @@
 							<div class="product-box-3 wow fadeInUp" data-wow-delay="0.3s">
 								<div class="product-header">
 									<div class="product-image">
-										<a href="product-left-thumbnail.html">
-											<img src="../assets/images/cake/product/7.png" class="img-fluid" alt="">
+										<a href="product-left-thumbnail.html"> <img
+											src="../assets/images/cake/product/7.png" class="img-fluid"
+											alt="">
 										</a>
 
 										<ul class="product-option">
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-												<a href="javascript:void(0)" data-bs-toggle="modal"
-													data-bs-target="#view">
-													<i data-feather="eye"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="View"><a href="javascript:void(0)"
+												data-bs-toggle="modal" data-bs-target="#view"> <i
+													data-feather="eye"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
-												<a href="compare.html">
-													<i data-feather="refresh-cw"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Compare"><a href="compare.html"> <i
+													data-feather="refresh-cw"></i>
+											</a></li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
-												<a href="wishlist.html" class="notifi-wishlist">
-													<i data-feather="heart"></i>
-												</a>
-											</li>
+											<li data-bs-toggle="tooltip" data-bs-placement="top"
+												title="Wishlist"><a href="wishlist.html"
+												class="notifi-wishlist"> <i data-feather="heart"></i>
+											</a></li>
 										</ul>
 									</div>
 								</div>
 
 								<div class="product-footer">
 									<div class="product-detail">
-										<span class="span-name">Vegetable</span>
-										<a href="product-left-thumbnail.html">
+										<span class="span-name">Vegetable</span> <a
+											href="product-left-thumbnail.html">
 											<h5 class="name">Fresh Bread and Pastry Flour 200 g</h5>
 										</a>
 										<div class="product-rating mt-2">
 											<ul class="rating">
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star" class="fill"></i>
-												</li>
-												<li>
-													<i data-feather="star"></i>
-												</li>
-												<li>
-													<i data-feather="star"></i>
-												</li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star" class="fill"></i></li>
+												<li><i data-feather="star"></i></li>
+												<li><i data-feather="star"></i></li>
 											</ul>
 											<span>(3.8)</span>
 										</div>
 
 										<h6 class="unit">1 Kg</h6>
 
-										<h5 class="price"><span class="theme-color">$12.68</span> <del>$14.69</del>
+										<h5 class="price">
+											<span class="theme-color">$12.68</span>
+											<del>$14.69</del>
 										</h5>
 										<div class="add-to-cart-box bg-white">
-											<button class="btn btn-add-cart addcart-button">Add
-												<span class="add-icon bg-light-gray">
-													<i class="fa-solid fa-plus"></i>
+											<button class="btn btn-add-cart addcart-button">
+												Add <span class="add-icon bg-light-gray"> <i
+													class="fa-solid fa-plus"></i>
 												</span>
 											</button>
 											<div class="cart_qty qty-box">
@@ -1377,8 +1277,8 @@
 														data-type="minus" data-field="">
 														<i class="fa fa-minus" aria-hidden="true"></i>
 													</button>
-													<input class="form-control input-number qty-input" type="text"
-														name="quantity" value="0">
+													<input class="form-control input-number qty-input"
+														type="text" name="quantity" value="0">
 													<button type="button" class="qty-right-plus bg-gray"
 														data-type="plus" data-field="">
 														<i class="fa fa-plus" aria-hidden="true"></i>
@@ -1400,12 +1300,14 @@
 
 
 	<!-- Quick View Modal Box Start -->
-	<div class="modal fade theme-modal view-modal" id="view" tabindex="-1" aria-labelledby="exampleModalLabel"
-		aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
+	<div class="modal fade theme-modal view-modal" id="view" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div
+			class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-sm-down">
 			<div class="modal-content">
 				<div class="modal-header p-0">
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close">
 						<i class="fa-solid fa-xmark"></i>
 					</button>
 				</div>
@@ -1413,43 +1315,35 @@
 					<div class="row g-sm-4 g-2">
 						<div class="col-lg-6">
 							<div class="slider-image">
-								<img src="../assets/images/product/category/1.jpg" class="img-fluid blur-up lazyload"
-									alt="">
+								<img src="../assets/images/product/category/1.jpg"
+									class="img-fluid blur-up lazyload" alt="">
 							</div>
 						</div>
 
 						<div class="col-lg-6">
 							<div class="right-sidebar-modal">
-								<h4 class="title-name">Peanut Butter Bite Premium Butter Cookies 600 g</h4>
+								<h4 class="title-name">Peanut Butter Bite Premium Butter
+									Cookies 600 g</h4>
 								<h4 class="price">$36.99</h4>
 								<div class="product-rating">
 									<ul class="rating">
-										<li>
-											<i data-feather="star" class="fill"></i>
-										</li>
-										<li>
-											<i data-feather="star" class="fill"></i>
-										</li>
-										<li>
-											<i data-feather="star" class="fill"></i>
-										</li>
-										<li>
-											<i data-feather="star" class="fill"></i>
-										</li>
-										<li>
-											<i data-feather="star"></i>
-										</li>
+										<li><i data-feather="star" class="fill"></i></li>
+										<li><i data-feather="star" class="fill"></i></li>
+										<li><i data-feather="star" class="fill"></i></li>
+										<li><i data-feather="star" class="fill"></i></li>
+										<li><i data-feather="star"></i></li>
 									</ul>
-									<span class="ms-2">8 Reviews</span>
-									<span class="ms-2 text-danger">6 sold in last 16 hours</span>
+									<span class="ms-2">8 Reviews</span> <span
+										class="ms-2 text-danger">6 sold in last 16 hours</span>
 								</div>
 
 								<div class="product-detail">
 									<h4>Product Details :</h4>
-									<p>Candy canes sugar plum tart cotton candy chupa chups sugar plum chocolate I love.
-										Caramels marshmallow icing dessert candy canes I love soufflé I love toffee.
-										Marshmallow pie sweet sweet roll sesame snaps tiramisu jelly bear claw. Bonbon
-										muffin I love carrot cake sugar plum dessert bonbon.</p>
+									<p>Candy canes sugar plum tart cotton candy chupa chups
+										sugar plum chocolate I love. Caramels marshmallow icing
+										dessert candy canes I love soufflé I love toffee. Marshmallow
+										pie sweet sweet roll sesame snaps tiramisu jelly bear claw.
+										Bonbon muffin I love carrot cake sugar plum dessert bonbon.</p>
 								</div>
 
 								<ul class="brand-list">
@@ -1489,8 +1383,7 @@
 
 								<div class="modal-button">
 									<button onclick="location.href = 'cart.html';"
-										class="btn btn-md add-cart-button icon">Add
-										To Cart</button>
+										class="btn btn-md add-cart-button icon">Add To Cart</button>
 									<button onclick="location.href = 'product-left.html';"
 										class="btn theme-bg-color view-button icon text-white fw-bold btn-md">
 										View More Details</button>
@@ -1505,22 +1398,27 @@
 	<!-- Quick View Modal Box End -->
 
 	<!-- Location Modal Start -->
-	<div class="modal location-modal fade theme-modal" id="locationModal" tabindex="-1"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+	<div class="modal location-modal fade theme-modal" id="locationModal"
+		tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div
+			class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Choose your Delivery Location</h5>
-					<p class="mt-1 text-content">Enter your address and we will specify the offer for your area.</p>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+					<h5 class="modal-title" id="exampleModalLabel">Choose your
+						Delivery Location</h5>
+					<p class="mt-1 text-content">Enter your address and we will
+						specify the offer for your area.</p>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close">
 						<i class="fa-solid fa-xmark"></i>
 					</button>
 				</div>
 				<div class="modal-body">
 					<div class="location-list">
 						<div class="search-input">
-							<input type="search" class="form-control" placeholder="Search Your Area">
-							<i class="fa-solid fa-magnifying-glass"></i>
+							<input type="search" class="form-control"
+								placeholder="Search Your Area"> <i
+								class="fa-solid fa-magnifying-glass"></i>
 						</div>
 
 						<div class="disabled-box">
@@ -1528,75 +1426,45 @@
 						</div>
 
 						<ul class="location-select custom-height">
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Alabama</h6>
-									<span>Min: $130</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Alabama</h6> <span>Min: $130</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Arizona</h6>
-									<span>Min: $150</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Arizona</h6> <span>Min: $150</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>California</h6>
-									<span>Min: $110</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>California</h6> <span>Min: $110</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Colorado</h6>
-									<span>Min: $140</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Colorado</h6> <span>Min: $140</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Florida</h6>
-									<span>Min: $160</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Florida</h6> <span>Min: $160</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Georgia</h6>
-									<span>Min: $120</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Georgia</h6> <span>Min: $120</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Kansas</h6>
-									<span>Min: $170</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Kansas</h6> <span>Min: $170</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Minnesota</h6>
-									<span>Min: $120</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Minnesota</h6> <span>Min: $120</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>New York</h6>
-									<span>Min: $110</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>New York</h6> <span>Min: $110</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Washington</h6>
-									<span>Min: $130</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Washington</h6> <span>Min: $130</span>
+							</a></li>
 						</ul>
 					</div>
 				</div>
@@ -1606,16 +1474,18 @@
 	<!-- Location Modal End -->
 
 	<!-- Deal Box Modal Start -->
-	<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
-		aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+	<div class="modal fade theme-modal deal-modal" id="deal-box"
+		tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div
+			class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
 			<div class="modal-content">
 				<div class="modal-header">
 					<div>
 						<h5 class="modal-title w-100" id="deal_today">Deal Today</h5>
 						<p class="mt-1 text-content">Recommended deals for you.</p>
 					</div>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close">
 						<i class="fa-solid fa-xmark"></i>
 					</button>
 				</div>
@@ -1624,56 +1494,64 @@
 						<ul class="deal-offer-list">
 							<li class="list-1">
 								<div class="deal-offer-contain">
-									<a href="shop-left-sidebar.html" class="deal-image">
-										<img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
-											alt="">
-									</a>
-
-									<a href="shop-left-sidebar.html" class="deal-contain">
+									<a href="shop-left-sidebar.html" class="deal-image"> <img
+										src="../assets/images/vegetable/product/10.png"
+										class="blur-up lazyload" alt="">
+									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+										<h6>
+											$52.57
+											<del>57.62</del>
+											<span>500 G</span>
+										</h6>
 									</a>
 								</div>
 							</li>
 
 							<li class="list-2">
 								<div class="deal-offer-contain">
-									<a href="shop-left-sidebar.html" class="deal-image">
-										<img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
-											alt="">
-									</a>
-
-									<a href="shop-left-sidebar.html" class="deal-contain">
+									<a href="shop-left-sidebar.html" class="deal-image"> <img
+										src="../assets/images/vegetable/product/11.png"
+										class="blur-up lazyload" alt="">
+									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+										<h6>
+											$52.57
+											<del>57.62</del>
+											<span>500 G</span>
+										</h6>
 									</a>
 								</div>
 							</li>
 
 							<li class="list-3">
 								<div class="deal-offer-contain">
-									<a href="shop-left-sidebar.html" class="deal-image">
-										<img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
-											alt="">
-									</a>
-
-									<a href="shop-left-sidebar.html" class="deal-contain">
+									<a href="shop-left-sidebar.html" class="deal-image"> <img
+										src="../assets/images/vegetable/product/12.png"
+										class="blur-up lazyload" alt="">
+									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+										<h6>
+											$52.57
+											<del>57.62</del>
+											<span>500 G</span>
+										</h6>
 									</a>
 								</div>
 							</li>
 
 							<li class="list-1">
 								<div class="deal-offer-contain">
-									<a href="shop-left-sidebar.html" class="deal-image">
-										<img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
-											alt="">
-									</a>
-
-									<a href="shop-left-sidebar.html" class="deal-contain">
+									<a href="shop-left-sidebar.html" class="deal-image"> <img
+										src="../assets/images/vegetable/product/13.png"
+										class="blur-up lazyload" alt="">
+									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+										<h6>
+											$52.57
+											<del>57.62</del>
+											<span>500 G</span>
+										</h6>
 									</a>
 								</div>
 							</li>
@@ -1684,68 +1562,77 @@
 		</div>
 	</div>
 	<!-- Deal Box Modal End -->
-	
-	
+
+
 	<!--============================================== Rate Product Model Start======================================-->
 
- 
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Form inside the modal -->
-          <form>
-            <div class="mb-3">
-              <!-- Radio buttons for star rating -->
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="rating" id="rating1" value="1">
-                <label class="form-check-label" for="rating1">1 star</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="rating" id="rating2" value="2">
-                <label class="form-check-label" for="rating2">2 stars</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="rating" id="rating3" value="3">
-                <label class="form-check-label" for="rating3">3 stars</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="rating" id="rating4" value="4">
-                <label class="form-check-label" for="rating4">4 stars</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="rating" id="rating5" value="5">
-                <label class="form-check-label" for="rating5">5 stars</label>
-              </div>
-            </div>
-            <div class="mb-3">
-              <!-- Text input for name -->
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" name="name">
-            </div>
-            <div class="mb-3">
-              <!-- Textarea for comments -->
-              <label for="comments" class="form-label">Comments</label>
-              <textarea class="form-control" id="comments" name="comments" rows="3"></textarea>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
-<!--============================================== Rate Product Model End======================================-->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<!-- Form inside the modal -->
+					<form>
+						<div class="mb-3">
+							<!-- Radio buttons for star rating -->
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="rating"
+									id="rating1" value="1"> <label class="form-check-label"
+									for="rating1">1 star</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="rating"
+									id="rating2" value="2"> <label class="form-check-label"
+									for="rating2">2 stars</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="rating"
+									id="rating3" value="3"> <label class="form-check-label"
+									for="rating3">3 stars</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="rating"
+									id="rating4" value="4"> <label class="form-check-label"
+									for="rating4">4 stars</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="rating"
+									id="rating5" value="5"> <label class="form-check-label"
+									for="rating5">5 stars</label>
+							</div>
+						</div>
+						<div class="mb-3">
+							<!-- Text input for name -->
+							<label for="name" class="form-label">Name</label> <input
+								type="text" class="form-control" id="name" name="name">
+						</div>
+						<div class="mb-3">
+							<!-- Textarea for comments -->
+							<label for="comments" class="form-label">Comments</label>
+							<textarea class="form-control" id="comments" name="comments"
+								rows="3"></textarea>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--============================================== Rate Product Model End======================================-->
 
 	<!-- Add to cart Modal Start -->
 	<div class="add-cart-box">
@@ -1775,8 +1662,9 @@
 							</div>
 							<div class="theme-setting-button color-picker">
 								<form class="form-control">
-									<label for="colorPick" class="form-label mb-0">Theme Color</label>
-									<input type="color" class="form-control form-control-color" id="colorPick"
+									<label for="colorPick" class="form-label mb-0">Theme
+										Color</label> <input type="color"
+										class="form-control form-control-color" id="colorPick"
 										value="#0da487" title="Choose your color">
 								</form>
 							</div>
@@ -1807,14 +1695,13 @@
 		</div>
 
 		<div class="back-to-top">
-			<a id="back-to-top" href="#">
-				<i class="fas fa-chevron-up"></i>
+			<a id="back-to-top" href="#"> <i class="fas fa-chevron-up"></i>
 			</a>
 		</div>
 	</div>
 	<!-- Tap to top end -->
 
-	
+
 
 	<!-- Sticky Cart Box Start -->
 	<div class="sticky-bottom-cart">
@@ -1823,11 +1710,15 @@
 				<div class="col-12">
 					<div class="cart-content">
 						<div class="product-image">
-							<img src="../assets/images/product/category/1.jpg" class="img-fluid blur-up lazyload"
-								alt="">
+							<img src="../assets/images/product/category/1.jpg"
+								class="img-fluid blur-up lazyload" alt="">
 							<div class="content">
 								<h5>Creamy Chocolate Cake</h5>
-								<h6>$32.96<del class="text-danger">$96.00</del><span>55% off</span></h6>
+								<h6>
+									$32.96
+									<del class="text-danger">$96.00</del>
+									<span>55% off</span>
+								</h6>
 							</div>
 						</div>
 						<div class="selection-section">
@@ -1841,22 +1732,24 @@
 							</div>
 							<div class="cart_qty qty-box product-qty m-0">
 								<div class="input-group h-100">
-									<button type="button" class="qty-left-minus" data-type="minus" data-field="">
+									<button type="button" class="qty-left-minus" data-type="minus"
+										data-field="">
 										<i class="fa fa-minus" aria-hidden="true"></i>
 									</button>
-									<input class="form-control input-number qty-input" type="text" name="quantity"
-										value="1">
-									<button type="button" class="qty-right-plus" data-type="plus" data-field="">
+									<input class="form-control input-number qty-input" type="text"
+										name="quantity" value="1">
+									<button type="button" class="qty-right-plus" data-type="plus"
+										data-field="">
 										<i class="fa fa-plus" aria-hidden="true"></i>
 									</button>
 								</div>
 							</div>
 						</div>
 						<div class="add-btn">
-							<a class="btn theme-bg-color text-white wishlist-btn" href="wishlist.html"><i
-									class="fa fa-bookmark"></i> Wishlist</a>
+							<a class="btn theme-bg-color text-white wishlist-btn"
+								href="wishlist.html"><i class="fa fa-bookmark"></i> Wishlist</a>
 							<a class="btn theme-bg-color text-white" href="cart.html"><i
-									class="fas fa-shopping-cart"></i> Add To Cart</a>
+								class="fas fa-shopping-cart"></i> Add To Cart</a>
 						</div>
 					</div>
 				</div>
@@ -1921,10 +1814,10 @@
 
 	<!-- thme setting js -->
 	<script src="../assets/js/theme-setting.js"></script>
- 
- <!-- Bootstrap and Bootstrap Bundle JS -->
- 
- <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Bootstrap and Bootstrap Bundle JS -->
+
+	<script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
 

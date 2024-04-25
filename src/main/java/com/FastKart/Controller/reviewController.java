@@ -20,9 +20,9 @@ public class reviewController {
 	private reviewsDao rDao;
 	
 	@PostMapping("/rateProduct")
-	public  String productReview(Principal principal, @ModelAttribute Review review,@RequestParam("pid")  int pid) {
+	public  String productReview(Principal principal, @ModelAttribute Review review,@RequestParam("pid")  int pid, @RequestParam("rating") int rating) {
 		 
-		rDao.productReviews(review, principal, pid);
+		rDao.productReviews(review, principal, pid, rating);
 		
 		return "redirect:/userDashboard";
 		

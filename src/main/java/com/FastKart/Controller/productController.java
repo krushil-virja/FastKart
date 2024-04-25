@@ -23,9 +23,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.FastKart.Dao.categoryDao;
 import com.FastKart.Dao.productDao;
+import com.FastKart.Dao.reviewsDao;
 import com.FastKart.Dao.subCategoryDao;
 import com.FastKart.Repository.CategoryRepository;
 import com.FastKart.Repository.ProductRepository;
+import com.FastKart.Repository.ReviewsRepository;
 import com.FastKart.entities.Category;
 import com.FastKart.entities.Product;
 
@@ -42,12 +44,20 @@ public class productController {
 	@Autowired
  private subCategoryDao scdao;
 	
+	
+	@Autowired
+	private reviewsDao rdao;
+	
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
 	@Autowired
 	private ProductRepository productRepository;
 
+	@Autowired
+	private ReviewsRepository reviewsRepository;
+	
+	
 	@PostMapping("insertProduct")
 	public String addProduct(@ModelAttribute Product product, @RequestParam("image") MultipartFile file, @RequestParam("cid") int cid, @RequestParam("scid") int scid) {
 		
@@ -110,6 +120,25 @@ public class productController {
 	@GetMapping("/productDetails/{id}")
 	public String productDetails(@PathVariable("id") int id, Model m) {
 		Product findProductById = pdao.findProductById(id);
+		
+		 int reviewCount =  reviewsRepository.countReviewsByProductId(id);
+		 
+		 System.out.println(reviewCount);
+		 
+		 int sumRatingByProductId = reviewsRepository.sumRatingByProductId(id);
+		 
+		 System.out.println(sumRatingByProductId);
+		 
+		double averageOfProductRating = rdao.averageOfProductRating(id);
+		m.addAttribute("averageOfProductRating", averageOfProductRating);
+		
+		System.out.println(averageOfProductRating);
+		
+		
+		
+
+	        // Add the rating counts to the model to pass them to the view
+	        m.addAttribute("reviewCount", reviewCount);
 		
 		m.addAttribute("productDetails", findProductById);
 		return "productDetails";
