@@ -69,7 +69,7 @@ public class myConfig {
 					.loginPage("/login")
 					//.usernameParameter("email")
 					.successHandler(loginSuccessEventListener())
-					.failureUrl("/home")
+					.failureUrl("/login")
 					.failureHandler((request, response, exception) -> System.out.println(exception))
 					.permitAll()
 					

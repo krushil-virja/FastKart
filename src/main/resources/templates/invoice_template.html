@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .invoice-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .invoice-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .invoice-details div {
+            flex: 1;
+        }
+        .customer-info {
+            margin-bottom: 20px;
+        }
+        .item-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .item-table th, .item-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+        .item-table th {
+            background-color: #f2f2f2;
+        }
+        .total {
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="header">
+            <h1>Invoice</h1>
+        </div>
+        <div class="invoice-details">
+            <div>
+                <p><strong>Order ID:</strong> <span th:text="${order.id}"></span></p>
+                <p><strong>Order Date:</strong> <span th:text="${order.orderDate}"></span></p>
+            </div>
+            <div>
+                <p><strong>Bill To:</strong> John Doe</p>
+                <p><strong>Ship To:</strong> 123 Main St, City, Country</p>
+            </div>
+        </div>
+        <table class="item-table">
+            <thead>
+                <tr>
+                    <th>Product Image</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each=" o : ${order}">
+                    <td><img src="product-image.jpg" alt="Product Image" style="max-width: 100px;" /></td>
+                    <td th:text="${o.product.pname}" ></td>
+                    <td  th:text="${o.product.price}" ></td>
+                    <td  th:text="${o.quantity}"></td>
+                    <td th:text="${o.quantity}" >$100.00</td>
+                </tr>
+                <!-- Add more rows for additional items -->
+            </tbody>
+        </table>
+        <div class="total">Total Amount: $100.00</div>
+    </div>
+</body>
+</html>

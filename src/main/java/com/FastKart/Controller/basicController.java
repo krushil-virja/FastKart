@@ -335,6 +335,13 @@ public class basicController {
 		m.addAttribute("viewWishList", viewWishList);
 		return "userDashboard";
 	}
+	
+	
+	@GetMapping("invoice_template")
+	public String invoice_template() {
+		
+		return "invoice_template";
+	}
 
 //======================================================= PRODUCTDETAILS PAGE METHOD ============================================================================	
 	@GetMapping("/productDetails")
@@ -423,6 +430,13 @@ public class basicController {
 	public String successOrder() {
 		
 		return "orderSuccess";
+	}
+	
+	
+	@GetMapping("/invoice")
+	public String invoice() {
+		
+		return "invoice";
 	}
 	
 	

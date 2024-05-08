@@ -463,6 +463,16 @@
 													<h6 class="text-content">Caerphilly port-salut parmesan pecorino
 														croque monsieur dolcelatte melted cheese cheese and wine.</h6>
 												</div>
+												
+												<div class="order-detail" style="display: flex;">
+													<button> <a  th:href="@{'/invoice/' + ${o.id}}">Generate Invoice</a></button>
+													
+												</div>
+												
+												<div class="order-detail" style="display: flex;">
+													<button> <a  th:href="@{htmlToPdf}">HTML TO PDF </a></button>
+													
+												</div>
 											</div>
 
 											<div class="product-order-detail">
@@ -532,6 +542,8 @@
 																<h5>250 G</h5>
 															</div>
 														</li>
+														
+														
 													</ul>
 												</div>
 											</div>
