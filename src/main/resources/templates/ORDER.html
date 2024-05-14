@@ -99,13 +99,13 @@
 
 								<li>
 									<h4>Shipping</h4>
-									<h4 class="price" th:text="${shippingTotal}">$8.90</h4>
+									<h4 class="price" >
+									<i class="fa fa-inr" style="margin-right: 2px;" aria-hidden="true"></i>
+									<span th:text="${shippingTotal}"></span>
+									</h4>
 								</li>
 
-								<li>
-									<h4>Tax</h4>
-									<h4 class="price">$29.498</h4>
-								</li>
+								
 
 								<li>
 									<h4>Coupon/Code</h4>
@@ -113,8 +113,11 @@
 								</li>
 
 								<li class="list-total">
-									<h4>Total (USD)</h4>
-									<h4 class="price">$19.28</h4>
+									<h4>Total</h4>
+									<h4 class="price">
+									<i class="fa fa-inr" style="margin-right: 2px;" aria-hidden="true"></i>
+									<span th:text="${grandTotal}"></span>
+									</h4>
 								</li>
 							</ul>
 						</div>

@@ -175,6 +175,8 @@ public class cartDao {
 		Coupon coupon = couponRepository.findByCouponCode(couponCode);
 
 		int discount = coupon.getDiscount();
+		
+		
 
 		return discount;
 	}

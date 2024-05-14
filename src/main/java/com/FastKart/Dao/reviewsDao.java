@@ -32,8 +32,6 @@ public class reviewsDao {
 	@Autowired
 	private UserRepository userRepository;
 
-	
-
 	private boolean userHasBoughtProduct(Principal principal, int pid) {
 
 		// first we find that order who contain that product but according to user
@@ -48,8 +46,8 @@ public class reviewsDao {
 
 			// get the product ID of the current order's product
 			/* int productId = o.getCart().getProduct().getId(); */
-			
-			 int productId = o.getProduct().getId(); 
+
+			int productId = o.getProduct().getId();
 
 			if (productId == pid) {
 				// if the product ID matches, return true indicating the user has bought this
@@ -64,7 +62,7 @@ public class reviewsDao {
 	@Autowired
 	private ReviewsRepository reviewsRepository;
 
-	public Review productReviews(Review review, Principal principal, int pid, int rating ) {
+	public Review productReviews(Review review, Principal principal, int pid, int rating) {
 
 		// User user = uDao.getLoggedInUser(principal);
 
@@ -81,7 +79,7 @@ public class reviewsDao {
 			System.out.println("Existing Rating: " + existingRating); // Log existing rating
 
 			if (existingRating == null) {
-			 review.setProduct(product);
+				review.setProduct(product);
 				review.setUser(user);
 				review.setRating(rating);
 				review.setReviewdate(LocalDate.now());
@@ -96,12 +94,7 @@ public class reviewsDao {
 		return null;
 
 	}
-	
-	
-	
 
-	
-	
 	/*
 	 * public int averageOfProductRating( int pid) {
 	 * 
@@ -113,7 +106,29 @@ public class reviewsDao {
 	 * double averageRatingOfProduct = sumRatingByProductId/countReviewsByProductId;
 	 * return sumRatingByProductId; }
 	 */
-	
+
+	/*
+	 * public double averageOfProductRating(int pid) { int countReviewsByProductId =
+	 * reviewsRepository.countReviewsByProductId(pid); int sumRatingByProductId =
+	 * reviewsRepository.sumRatingByProductId(pid);
+	 * 
+	 * // Ensure we don't divide by zero and perform division as double double
+	 * averageRatingOfProduct = 0.0;
+	 * 
+	 * if (countReviewsByProductId == 0 || sumRatingByProductId ==0) { return
+	 * averageRatingOfProduct; // No reviews available, return default value }
+	 * 
+	 * 
+	 * if (countReviewsByProductId != 0 && sumRatingByProductId!=0 ) {
+	 * averageRatingOfProduct = (double) sumRatingByProductId /
+	 * countReviewsByProductId; }
+	 * 
+	 * 
+	 * averageRatingOfProduct = (double) sumRatingByProductId /
+	 * countReviewsByProductId;
+	 * 
+	 * return averageRatingOfProduct; }
+	 */
 	
 	public double averageOfProductRating(int pid) { 
 	    int countReviewsByProductId = reviewsRepository.countReviewsByProductId(pid);
@@ -121,9 +136,12 @@ public class reviewsDao {
 	    
 	    // Ensure we don't divide by zero and perform division as double
 	    double averageRatingOfProduct = 0.0;
-	    if (countReviewsByProductId != 0) {
-	        averageRatingOfProduct = (double) sumRatingByProductId / countReviewsByProductId;
-	    }
+	    
+	    if (countReviewsByProductId == 0 || sumRatingByProductId == 0) {
+	        return averageRatingOfProduct; // No reviews available, return default value
+	    } 
+	    
+	    averageRatingOfProduct = (double) sumRatingByProductId / countReviewsByProductId;
 	    
 	    return averageRatingOfProduct;
 	}

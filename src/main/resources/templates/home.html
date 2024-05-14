@@ -239,7 +239,7 @@
                                 </div>
 
                                 <div class="product-detail">
-                                    <ul class="rating">
+                                     <ul class="rating">
                                         <li>
                                             <i data-feather="star" class="fill"></i>
                                         </li>
@@ -256,6 +256,8 @@
                                             <i data-feather="star"></i>
                                         </li>
                                     </ul>
+                                    
+                                   
                                     <a href="product-left-thumbnail.html">
                                         <h5 class="name text-title" th:text="${p.pname}" ></h5>
                                     </a>
@@ -427,21 +429,20 @@
 <!--===================================================Top selling item  section start ==========================================================--> 
 
     <!-- Deal Section Start -->
-    <section class="product-section product-section-3">
+   <section class="product-section product-section-3">
         <div class="container-fluid-lg">
             <div class="title">
                 <h2>Top Selling Items</h2>
             </div>
             <div class="row g-sm-4 g-3">
-				
-				 <!--Special Offer section Start-->
-				 
-				 
+           
+<!-- special offer div start -->
                 <div class="col-xxl-4 col-lg-5 order-lg-2">
                     <div class="product-bg-image wow fadeInUp">
                         <div class="product-title product-warning">
                             <h2>Special Offer</h2>
                         </div>
+
 
                         <div class="product-box-4 product-box-3 rounded-0">
                             <div class="deal-box">
@@ -454,6 +455,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="top-selling-slider product-arrow">
                                 <div>
                                     <div class="product-image">
@@ -466,12 +468,12 @@
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Quick View">
                                                 <a href="javascript:void(0)" data-bs-toggle="modal"
                                                     data-bs-target="#view">
-                                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                                    <i class="iconly-Show icli"></i>
                                                 </a>
                                             </li>
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
                                                 <a href="javascript:void(0)" class="notifi-wishlist">
-                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                    <i class="iconly-Heart icli"></i>
                                                 </a>
                                             </li>
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
@@ -561,12 +563,12 @@
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Quick View">
                                                 <a href="javascript:void(0)" data-bs-toggle="modal"
                                                     data-bs-target="#view">
-                                                   <i class="fa fa-eye" aria-hidden="true"></i>
+                                                    <i class="iconly-Show icli"></i>
                                                 </a>
                                             </li>
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
                                                 <a href="javascript:void(0)" class="notifi-wishlist">
-                                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                    <i class="iconly-Heart icli"></i>
                                                 </a>
                                             </li>
                                             <li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
@@ -644,42 +646,34 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-                                
                             </div>
                         </div>
                     </div>
                 </div>
-                
-     <!--Special Offer section end-->
+               <!--  special offer div end -->
 
                 <div class="col-xxl-8 col-lg-7 order-lg-1">
                     <div class="slider-5_2 img-slider">
-                      
-
-                       <!--Upper row-->
-                       
-                       
-                       
-                        <div style="display:grid;grid-template-columns:auto auto auto auto;width:100%">
-							
-							
-                            <div class="product-box-4 wow fadeInUp" th:each=" p :${topSellingProducts}">
+                    
+                    <!-- first column div start -->
+                        <div  style="display: grid;  grid-template-columns: auto auto auto auto;  background-color: red; position: relative;    right: 266px; ">
+                        
+                            <div class="product-box-4 wow fadeInUp" th:each="p:${topSellingProducts}">
                                 <div class="product-image product-image-2">
                                     <a href="product-left-thumbnail.html">
-                                        <img th:src="@{'/assets1/images/' + ${p.pimage}}"
+                                        <img src="../assets/images/grocery/deal/1.png"
                                             class="img-fluid blur-up lazyload" alt="">
                                     </a>
 
                                     <ul class="option">
                                         <li data-bs-toggle="tooltip" data-bs-placement="top" title="Quick View">
                                             <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#view">
-                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                <i class="iconly-Show icli"></i>
                                             </a>
                                         </li>
                                         <li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
                                             <a href="javascript:void(0)" class="notifi-wishlist">
-                                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                <i class="iconly-Heart icli"></i>
                                             </a>
                                         </li>
                                         <li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
@@ -709,9 +703,9 @@
                                         </li>
                                     </ul>
                                     <a href="product-left-thumbnail.html">
-                                        <h5 class="name text-title" th:text="${p.pname}">Fresh Cilantro</h5>
+                                        <h5 class="name text-title" th:text="${p.pname}">Potato Chips</h5>
                                     </a>
-                                    <h5 class="price theme-color">$65.21<del>$71.25</del></h5>
+                                    <h5 class="price theme-color" th:text="${p.price}">$65.21<del>$71.25</del></h5>
                                     <div class="addtocart_btn">
                                         <button class="add-button addcart-button btn buy-button text-light">
                                             <i class="fa-solid fa-plus"></i>
@@ -734,13 +728,25 @@
                                 </div>
                             </div>
 
-
+                          
                         </div>
+                        <!-- first column div end -->
 
-  
-                        
-                        
-                        
+                        <!-- second column div start -->
+                       
+                     <!-- second column div end -->
+                     
+                     <!-- third column div start -->
+                       
+                        <!-- third column div end -->
+
+                        <!-- fourth column div start -->
+                      
+                        <!-- fourth column div end -->
+
+                        <!-- fifth column div start -->
+                      
+                        <!-- fifth column div end -->
                         
                     </div>
                 </div>

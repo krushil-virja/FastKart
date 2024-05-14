@@ -20,14 +20,19 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
     
     List<Order> getOrdersByUser(User user);
     
-
+	/*
+	 * @Query("SELECT o.product, SUM(o.quantity) AS totalSold " + "FROM Order o " +
+	 * "GROUP BY o.product " + "ORDER BY totalSold DESC") List<Object[]>
+	 * findTopSellingProducts();
+	 */
+    
+    
+    
     @Query("SELECT o.product, SUM(o.quantity) AS totalSold " +
             "FROM Order o " +
             "GROUP BY o.product " +
-            "ORDER BY totalSold DESC")
-     List<Object[]> findTopSellingProducts();
- 
-    
-    
-    
+            "ORDER BY totalSold DESC " +
+            "LIMIT 8")
+    List<Object[]> findTopSellingProducts();
+
 }

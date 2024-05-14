@@ -76,7 +76,7 @@ public class basicController {
 	
 	@Autowired
 	private orderDao oDao;
-
+	
 	@Autowired
 	private CartRepository cartRepository;
 
@@ -105,13 +105,16 @@ public class basicController {
 //========================================================= HOME PAGE METHOD ==========================================================================	
 	@GetMapping("/home")
 	public String home(Model m, Principal principal) {
+		
 
 		List<Category> showAllCategory = cdao.showAllCategory();
 		m.addAttribute("category", showAllCategory);
-
+		
 		int id1 = 1;
 		List<Product> product1 = pdao.findProductByCategory(id1);
 		m.addAttribute("product1", product1);
+		  
+	
 
 		int id2 = 2;
 		List<Product> product2 = pdao.findProductByCategory(id2);
@@ -300,6 +303,13 @@ public class basicController {
 
 			int subTotalOfCart = cartdao.getTotalOfCart(viewCart);
 			m.addAttribute("subTotalOfCart", subTotalOfCart);
+			
+			int shippingTotal = cartdao.getShippingTotal(viewCart);
+			m.addAttribute("shippingTotal",shippingTotal);
+			
+			int totalWithShipping = cartdao.getTotalWithShipping(viewCart);
+			m.addAttribute("grandTotal", totalWithShipping);
+			
 			return "CKECHOUT";
 		} else {
 			return null;
@@ -330,6 +340,9 @@ public class basicController {
 		
 		List<Order> orders = orderRepository.getOrdersByUser(loggedInUser);
 		 m.addAttribute("orders", orders);
+		 
+		 List<Address> showAllAddress = addao.showAllAddress(principal);
+		 m.addAttribute("showAllAddress", showAllAddress);
 		
 		List<WishList> viewWishList = wdao.viewWishList(principal);
 		m.addAttribute("viewWishList", viewWishList);
@@ -409,12 +422,16 @@ public class basicController {
 
 		int shippingTotal = cartdao.getShippingTotal(viewCart);
 		m.addAttribute("shippingTotal", shippingTotal);
+		
+		int totalWithShipping = cartdao.getTotalWithShipping(viewCart);
+		m.addAttribute("grandTotal", totalWithShipping);
+		
 
 		 Integer checkoutId = (Integer) session.getAttribute("checkoutId");
 		System.out.println("comfirmOrder method called with checkoutId: " + checkoutId);
 
 		m.addAttribute("checkoutId", checkoutId);
-
+		
 		return "ORDER";
 	}
 	
@@ -429,7 +446,7 @@ public class basicController {
 	@GetMapping("/successOrder")
 	public String successOrder() {
 		
-		return "orderSuccess";
+		return "order_success";
 	}
 	
 	
@@ -439,7 +456,7 @@ public class basicController {
 		return "invoice";
 	}
 	
-	
+
 	
 	
 	/*

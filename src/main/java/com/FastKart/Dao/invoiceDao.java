@@ -53,12 +53,11 @@ public class invoiceDao {
 	    context.setVariable("order", order);
 
 	    // Render HTML template using Thymeleaf
+	  //  String htmlContent = templateEngine.process("invoice_template", context)
 	    String htmlContent = templateEngine.process("invoice", context);
 	    logger.info("Generated HTML Content: {}", htmlContent);
 	    
-	    // while converting html to pdf it not detect external css so we add css here 
-	    InputStream css = getClass().getResourceAsStream("/assets/css/invoice.css");
-	    
+	 
 	    /* logger.info(htmlContent); */
 	    
 	    // Convert HTML to PDF
@@ -77,7 +76,8 @@ try {
             // Example with Flying Saucer:
 			
 			ITextRenderer renderer = new ITextRenderer();
-			renderer.setDocumentFromString(htmlContent);
+			/* renderer.setDocumentFromString(htmlContent); */
+			renderer.setDocumentFromString(htmlContent, "");
 				            
 			renderer.layout();
 			renderer.createPDF(outputStream);

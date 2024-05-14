@@ -556,7 +556,7 @@
 								aria-labelledby="pills-address-tab">
 								<div class="dashboard-address">
 									<div class="title title-flex">
-										<div>
+										<div data-bs-toggle="modal" data-bs-target="#add-address">
 											<h2>My Address Book</h2>
 											<span class="title-leaf">
 												<svg class="icon-width bg-gray">
@@ -573,7 +573,7 @@
 									</div>
 
 									<div class="row g-sm-4 g-3">
-										<div class="col-xxl-4 col-xl-6 col-lg-12 col-md-6">
+										<div class="col-xxl-4 col-xl-6 col-lg-12 col-md-6"  th:each="a : ${showAllAddress}">
 											<div class="address-box">
 												<div>
 													<div class="form-check">
@@ -589,20 +589,20 @@
 														<table class="table">
 															<tbody>
 																<tr>
-																	<td colspan="2">Jack Jennas</td>
+																	<td colspan="2" th:text="${a.firstName}">Jack Jennas</td>
 																</tr>
 
 																<tr>
 																	<td>Address :</td>
 																	<td>
-																		<p>8424 James Lane South San Francisco, CA 94080
+																		<p  th:text="${a.addressText}">8424 James Lane South San Francisco, CA 94080
 																		</p>
 																	</td>
 																</tr>
 
 																<tr>
 																	<td>Pin Code :</td>
-																	<td>+380</td>
+																	<td th:text="${a.pinCode}">+380</td>
 																</tr>
 
 																<tr>
@@ -618,218 +618,17 @@
 													<button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
 														data-bs-target="#editProfile"><i data-feather="edit"></i>
 														Edit</button>
-													<button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
-														data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
-														Remove</button>
+													<!-- <button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
+														data-bs-target="#removeProfile"><a th:href="@{'/deleteAddress/' + ${a.id}}"><i data-feather="trash-2"></i>
+														Remove </a></button> -->
 												</div>
 											</div>
 										</div>
 
-										<div class="col-xxl-4 col-xl-6 col-lg-12 col-md-6">
-											<div class="address-box">
-												<div>
-													<div class="form-check">
-														<input class="form-check-input" type="radio" name="jack"
-															id="flexRadioDefault3">
-													</div>
+										
 
-													<div class="label">
-														<label>Office</label>
-													</div>
-
-													<div class="table-responsive address-table">
-														<table class="table">
-															<tbody>
-																<tr>
-																	<td colspan="2">Terry S. Sutton</td>
-																</tr>
-
-																<tr>
-																	<td>Address :</td>
-																	<td>
-																		<p>2280 Rose Avenue Kenner, LA 70062</p>
-																	</td>
-																</tr>
-
-																<tr>
-																	<td>Pin Code :</td>
-																	<td>+25</td>
-																</tr>
-
-																<tr>
-																	<td>Phone :</td>
-																	<td>+ 504-228-0969</td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-												<div class="button-group">
-													<button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
-														data-bs-target="#editProfile"><i data-feather="edit"></i>
-														Edit</button>
-													<button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
-														data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
-														Remove</button>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-xxl-4 col-xl-6 col-lg-12 col-md-6">
-											<div class="address-box">
-												<div>
-													<div class="form-check">
-														<input class="form-check-input" type="radio" name="jack"
-															id="flexRadioDefault4">
-													</div>
-
-													<div class="label">
-														<label>Neighbour</label>
-													</div>
-
-													<div class="table-responsive address-table">
-														<table class="table">
-															<tbody>
-																<tr>
-																	<td colspan="2">Juan M. McKeon</td>
-																</tr>
-
-																<tr>
-																	<td>Address :</td>
-																	<td>
-																		<p>1703 Carson Street Lexington, KY 40593</p>
-																	</td>
-																</tr>
-
-																<tr>
-																	<td>Pin Code :</td>
-																	<td>+78</td>
-																</tr>
-
-																<tr>
-																	<td>Phone :</td>
-																	<td>+ 859-257-0509</td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-												<div class="button-group">
-													<button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
-														data-bs-target="#editProfile"><i data-feather="edit"></i>
-														Edit</button>
-													<button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
-														data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
-														Remove</button>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-xxl-4 col-xl-6 col-lg-12 col-md-6">
-											<div class="address-box">
-												<div>
-													<div class="form-check">
-														<input class="form-check-input" type="radio" name="jack"
-															id="flexRadioDefault5">
-													</div>
-
-													<div class="label">
-														<label>Home 2</label>
-													</div>
-
-													<div class="table-responsive address-table">
-														<table class="table">
-															<tbody>
-																<tr>
-																	<td colspan="2">Gary M. Bailey</td>
-																</tr>
-
-																<tr>
-																	<td>Address :</td>
-																	<td>
-																		<p>2135 Burning Memory Lane Philadelphia, PA
-																			19135</p>
-																	</td>
-																</tr>
-
-																<tr>
-																	<td>Pin Code :</td>
-																	<td>+26</td>
-																</tr>
-
-																<tr>
-																	<td>Phone :</td>
-																	<td>+ 215-335-9916</td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-												<div class="button-group">
-													<button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
-														data-bs-target="#editProfile"><i data-feather="edit"></i>
-														Edit</button>
-													<button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
-														data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
-														Remove</button>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-xxl-4 col-xl-6 col-lg-12 col-md-6">
-											<div class="address-box">
-												<div>
-													<div class="form-check">
-														<input class="form-check-input" type="radio" name="jack"
-															id="flexRadioDefault1">
-													</div>
-
-													<div class="label">
-														<label>Home 2</label>
-													</div>
-
-													<div class="table-responsive address-table">
-														<table class="table">
-															<tbody>
-																<tr>
-																	<td colspan="2">Gary M. Bailey</td>
-																</tr>
-
-																<tr>
-																	<td>Address :</td>
-																	<td>
-																		<p>2135 Burning Memory Lane Philadelphia, PA
-																			19135</p>
-																	</td>
-																</tr>
-
-																<tr>
-																	<td>Pin Code :</td>
-																	<td>+26</td>
-																</tr>
-
-																<tr>
-																	<td>Phone :</td>
-																	<td>+ 215-335-9916</td>
-																</tr>
-															</tbody>
-														</table>
-													</div>
-												</div>
-
-												<div class="button-group">
-													<button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
-														data-bs-target="#editProfile"><i data-feather="edit"></i>
-														Edit</button>
-													<button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
-														data-bs-target="#removeProfile"><i data-feather="trash-2"></i>
-														Remove</button>
-												</div>
-											</div>
-										</div>
+									
+										
 									</div>
 								</div>
 							</div>
@@ -1380,61 +1179,88 @@
 	<!-- Bg overlay End -->
 
 	<!-- Add address modal box start -->
-	<div class="modal fade theme-modal" id="add-address" tabindex="-1" aria-labelledby="exampleModalLabel"
-		aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Add a new address</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-						<i class="fa-solid fa-xmark"></i>
-					</button>
-				</div>
-				<div class="modal-body">
-					<form>
-						<div class="form-floating mb-4 theme-form-floating">
-							<input type="text" class="form-control" id="fname" placeholder="Enter First Name">
-							<label for="fname">First Name</label>
-						</div>
-					</form>
+	<section>
+		<div class="modal fade theme-modal" id="add-address" tabindex="-1" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Add a new address</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							<i class="fa-solid fa-xmark"></i>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form th:action="@{/addAddress}" action="#" method="post">
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="firstName" type="text" class="form-control" id="firstName"
+									placeholder="Enter First Name">
+								<label for="firstName">First Name</label>
+							</div>
 
-					<form>
-						<div class="form-floating mb-4 theme-form-floating">
-							<input type="text" class="form-control" id="lname" placeholder="Enter Last Name">
-							<label for="lname">Last Name</label>
-						</div>
-					</form>
 
-					<form>
-						<div class="form-floating mb-4 theme-form-floating">
-							<input type="email" class="form-control" id="email" placeholder="Enter Email Address">
-							<label for="email">Email Address</label>
-						</div>
-					</form>
 
-					<form>
-						<div class="form-floating mb-4 theme-form-floating">
-							<textarea class="form-control" placeholder="Leave a comment here" id="address"
-								style="height: 100px"></textarea>
-							<label for="address">Enter Address</label>
-						</div>
-					</form>
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="lastName" type="text" class="form-control" id="lastName"
+									placeholder="Enter Last Name">
+								<label for="lastName">Last Name</label>
+							</div>
 
-					<form>
-						<div class="form-floating mb-4 theme-form-floating">
-							<input type="email" class="form-control" id="pin" placeholder="Enter Pin Code">
-							<label for="pin">Pin Code</label>
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary btn-md" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn theme-bg-color btn-md text-white" data-bs-dismiss="modal">Save
-						changes</button>
+
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="email" type="email" class="form-control" id="email"
+									placeholder="Enter Email Address">
+								<label for="email">Email Address</label>
+							</div>
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="number" type="number" class="form-control" id="number"
+									placeholder="Enter Mobile Number">
+								<label for="number">MObile Number</label>
+							</div>
+
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<textarea name="addressText" class="form-control" placeholder="Enter Your Address"
+									id="addressText" style="height: 100px"></textarea>
+								<label for="addressText">Enter Address</label>
+							</div>
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="state" type="text" class="form-control" id="state"
+									placeholder="Enter Your State Name">
+								<label for="state">State Name</label>
+							</div>
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="country" type="text" class="form-control" id="country"
+									placeholder="Enter Your Country Name">
+								<label for="country">Country Name</label>
+							</div>
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="pinCode" type="text" class="form-control" id="pin"
+									placeholder="Enter Pin Code">
+								<label for="pin">Pin Code</label>
+							</div>
+
+							<div class="modal-footer">
+								<!--<button type="button" class="btn btn-secondary btn-md"
+									data-bs-dismiss="modal">Close</button>-->
+								<button type="submit" class="btn theme-bg-color btn-md text-white">Add Address</button>
+							</div>
+
+						</form>
+
+					</div>
+
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
+	<!-- Add address modal box end -->
+
 	<!-- Add address modal box end -->
 
 	<!-- Location Modal Start -->

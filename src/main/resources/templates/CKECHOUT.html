@@ -195,17 +195,19 @@
 																	</h6>
 																</li>
 
-																<div>
+																<div >
 																	<a style="text-decoration: underline; color: rgb(0, 128, 0);"
 																		href="#">EDIT</a>
-																	<a style="margin-left: 130px; text-decoration: underline; color: red;"
+																	<!-- <a style="margin-left: 130px; text-decoration: underline; color: red;"
 																		th:href="@{'/deleteAddress/' + ${a.id}}"
-																		href="#">DELETE</a>
+																		href="#">DELETE</a> -->
 																</div>
 															</ul>
 														</div>
 													</div>
 												</div>
+												
+												<button id="loadMoreButton" class="btn btn-primary">Load More</button>
 
 
 											</div>
@@ -251,26 +253,26 @@
 									<h4>Subtotal</h4>
 									<h4 class="price"> <i class="fa fa-inr " style="margin-right: 2px;"
 											aria-hidden="true"></i>
-										<span th:text="${subTotalOfCart}">$29.69</span></h4>
+										<span th:text="${subTotalOfCart}"></span></h4>
 
 								<li>
 									<h4>Shipping</h4>
-									<h4 class="price">$8.90</h4>
+									<h4 class="price">   <i class="fa fa-inr " style="margin-right: 2px;"
+											aria-hidden="true"></i> <span th:text="${shippingTotal}"></span></h4>
 								</li>
 
-								<li>
-									<h4>Tax</h4>
-									<h4 class="price">$29.498</h4>
-								</li>
+								
 
 								<li>
 									<h4>Coupon/Code</h4>
-									<h4 class="price">$-23.10</h4>
+									<h4 class="price"><i class="fa fa-inr " style="margin-right: 2px;"
+											aria-hidden="true"></i> <span></span></h4>
 								</li>
 
 								<li class="list-total">
-									<h4>Total (USD)</h4>
-									<h4 class="price">$19.28</h4>
+									<h4>Total </h4>
+									<h4 class="price"> <i class="fa fa-inr " style="margin-right: 2px;"
+											aria-hidden="true"></i> <span th:text="${grandTotal}"></span></h4>
 								</li>
 							</ul>
 						</div>
