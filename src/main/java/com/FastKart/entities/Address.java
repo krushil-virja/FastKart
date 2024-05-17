@@ -31,31 +31,12 @@ public class Address {
 	@JoinColumn(name="pinCode")
 	private int pinCode;
 	
+	@JoinColumn(name="addressType")
+	private String addressType;
+	
 	 @ManyToOne
      @JoinColumn(name="uid")
 	private User user;
-	
-	 
-	 
-	public Address() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Address(int id, String firstName, String lastName, String email, long number, String addressText,
-			String state, String country, int pinCode, User user) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.number = number;
-		this.addressText = addressText;
-		this.state = state;
-		this.country = country;
-		this.pinCode = pinCode;
-		this.user = user;
-	}
 
 	public int getId() {
 		return id;
@@ -129,6 +110,14 @@ public class Address {
 		this.pinCode = pinCode;
 	}
 
+	public String getAddressType() {
+		return addressType;
+	}
+
+	public void setAddressType(String addressType) {
+		this.addressType = addressType;
+	}
+
 	public User getUser() {
 		return user;
 	}
@@ -137,14 +126,36 @@ public class Address {
 		this.user = user;
 	}
 
-	
-
 	@Override
 	public String toString() {
 		return "Address [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", number=" + number + ", addressText=" + addressText + ", state=" + state + ", country=" + country
-				+ ", pinCode=" + pinCode + ", user=" + user + "]";
+				+ ", pinCode=" + pinCode + ", addressType=" + addressType + ", user=" + user + "]";
 	}
 
+	public Address(int id, String firstName, String lastName, String email, long number, String addressText,
+			String state, String country, int pinCode, String addressType, User user) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.number = number;
+		this.addressText = addressText;
+		this.state = state;
+		this.country = country;
+		this.pinCode = pinCode;
+		this.addressType = addressType;
+		this.user = user;
+	}
+
+	public Address() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	 
+	 
+	
   
 }

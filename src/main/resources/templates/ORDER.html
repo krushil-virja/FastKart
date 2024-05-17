@@ -18,6 +18,12 @@
 </head>
 
 <body>
+
+	<style>
+		.razorpay-payment-button {
+			display: none;
+		}
+	</style>
 	<!-- Loader Start -->
 	<div class="fullpage-loader">
 		<span></span>
@@ -79,7 +85,9 @@
 								<li th:each="v : ${viewCart}">
 									<img src="#" th:src="@{'assets1/images/' + ${v.product.pimage}}"
 										class="img-fluid blur-up lazyloaded checkout-image" alt="">
-									<h4><span th:text="${v.product.pname}">Broccoli</span> X <span
+									<h4><span
+											style="   width: 200px; text-overflow: ellipsis; white-space: nowrap;  overflow: hidden;"
+											th:text="${v.product.pname}">Broccoli</span> X <span
 											th:text="${v.quntity}"></span></h4>
 									<h4 class="price">
 										<i class="fa fa-inr" style="margin-right: 2px;" aria-hidden="true"></i>
@@ -93,30 +101,33 @@
 									<h4>Subtotal</h4>
 									<h4 class="price">
 										<i class="fa fa-inr" style="margin-right: 2px;" aria-hidden="true"></i>
-										<span th:text="${subTotalOfCart}">$111.81</span>
+										<span th:text="${session.subTotalOfCart}">$111.81</span>
 									</h4>
 								</li>
 
 								<li>
 									<h4>Shipping</h4>
-									<h4 class="price" >
-									<i class="fa fa-inr" style="margin-right: 2px;" aria-hidden="true"></i>
-									<span th:text="${shippingTotal}"></span>
+									<h4 class="price">
+										<i class="fa fa-inr" style="margin-right: 2px;" aria-hidden="true"></i>
+										<span th:text="${session.shippingTotal}"></span>
 									</h4>
 								</li>
 
-								
+
 
 								<li>
 									<h4>Coupon/Code</h4>
-									<h4 class="price">$-23.10</h4>
+									<h4 class="price">
+										<i class="fa fa-inr" style="margin-right: 2px;" aria-hidden="true"></i>
+										<span th:text="${session.discount}"></span>
+									</h4>
 								</li>
 
 								<li class="list-total">
 									<h4>Total</h4>
 									<h4 class="price">
-									<i class="fa fa-inr" style="margin-right: 2px;" aria-hidden="true"></i>
-									<span th:text="${grandTotal}"></span>
+										<i class="fa fa-inr" style="margin-right: 2px;" aria-hidden="true"></i>
+										<span th:text="${session.grandTotal}"></span>
 									</h4>
 								</li>
 							</ul>
@@ -132,20 +143,38 @@
 							<input name="checkOut" type="hidden"  th:value="${checkoutId}">
 							<button class="btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold">Place Order</button>
 						</form>-->
-						
-						
-						<form action="/order" method="post">  
-							
+
+
+						<form action="/order" method="post">
+
 							<div th:each="v : ${viewCart}">
-								 <input type="hidden" name="pid"  th:value="${v.product.id}">
-								 <input name="quantity" type="hidden" th:value="${v.quntity}">
-								
+								<input type="hidden" name="pid" th:value="${v.product.id}">
+								<input name="quantity" type="hidden" th:value="${v.quntity}">
+
 							</div>
-							
-							
+
+
 							<input name="status" type="hidden" th:value="1">
-							<input name="checkOut" type="hidden"  th:value="${checkoutId}">
+							<input name="checkOut" type="hidden" th:value="${checkoutId}">
 							<button class="btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold">Place Order</button>
+
+							<!--Face Payment Rozer Pay Script-->
+							<script src="https://checkout.razorpay.com/v1/checkout.js"
+								data-key="rzp_test_bilBagOBVTi4lE" data-amount=100 data-currency="INR"
+								data-buttontext="Pay with Razorpay" data-name="${user.username}"
+								data-theme.color="#F37254" data-description="" data-image="" data-prefill.name="krushil"
+								data-prefill.email="${user.email}">
+								</script>
+
+							<script>
+								document.addEventListener("DOMContentLoaded", function () {
+									var razorpayButton = document.querySelector('.razorpay-payment-button');
+									if (razorpayButton) {
+										razorpayButton.style.display = 'none';
+									}
+								});
+							</script>
+							<input type="hidden" custom="Hidden Element" name="hidden">
 						</form>
 					</div>
 				</div>
@@ -253,6 +282,7 @@
 	<!-- Bg overlay Start -->
 	<div class="bg-overlay"></div>
 	<!-- Bg overlay End -->
+
 
 
 </body>

@@ -27,4 +27,20 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	Page<Product> findProductsByCategoryIds(@Param("categoryIds") List<Integer> categoryIds,Pageable pageable);
 	  
 	int countByCategory(Category category);
+	
+	Page<Product> findByPriceBetween(double minPrice, double maxPrice, Pageable pageable);
+	
+
+	 // Count products within the price range 0 to 1000
+    @Query("SELECT COUNT(p) FROM Product p WHERE p.price BETWEEN 0 AND 1000")
+    int countProductsInRange0To1000();
+
+    // Count products within the price range 1000 to 10000
+    @Query("SELECT COUNT(p) FROM Product p WHERE p.price BETWEEN 1000 AND 10000")
+    int countProductsInRange1000To10000();
+
+    // Count products within the price range 10000 to 100000
+    @Query("SELECT COUNT(p) FROM Product p WHERE p.price BETWEEN 10000 AND 100000")
+    int countProductsInRange10000To100000();
+
 }

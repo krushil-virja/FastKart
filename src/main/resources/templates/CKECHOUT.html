@@ -13,9 +13,8 @@
 	<meta name="author" content="Fastkart">
 	<link rel="icon" href="../assets/images/favicon/1.png" type="image/x-icon">
 	<title>Checkout</title>
-	
+
 	<style>
- 
 		@keyframes slideIn {
 			0% {
 				left: -100%;
@@ -112,197 +111,211 @@
 	<!-- Checkout section Start -->
 	<section class="checkout-section-2 section-b-space">
 		<form action="/checkOut" method="post">
-		<div class="container-fluid-lg">
-			<div class="row g-sm-4 g-3">
-				<div class="col-lg-8">
-					<div class="left-sidebar-checkout">
-						<div class="checkout-detail-box">
 
 
-							<!--<div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>-->
 
-							<!--==================================================== TOAST FOR SHOW MESSAGE ==============================================================-->
 
-							<div th:if="${error}"
-								class="toast-container fixed-top top-0 start-0 p-3 border-l-4 border-first"
-								style="animation: slideIn 0.5s e	ase-in-out forwards; z-index: 100;">
-								<div style="background-color:rgb(0, 189, 0)" class="toast fade show" id="errorToast">
-									<div class="toast-body text-white"><i class="fa fa-check-square"></i> <span
-											th:text="${error}"></span></div>
+			<div class="container-fluid-lg">
+				<div class="row g-sm-4 g-3">
+					<div class="col-lg-8">
+						<div class="left-sidebar-checkout">
+							<div class="checkout-detail-box">
+
+
+								<!--<div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>-->
+
+								<!--==================================================== TOAST FOR SHOW MESSAGE ==============================================================-->
+
+								<div th:if="${error}"
+									class="toast-container fixed-top top-0 start-0 p-3 border-l-4 border-first"
+									style="animation: slideIn 0.5s e	ase-in-out forwards; z-index: 100;">
+									<div style="background-color:rgb(0, 189, 0)" class="toast fade show"
+										id="errorToast">
+										<div class="toast-body text-white"><i class="fa fa-check-square"></i> <span
+												th:text="${error}"></span></div>
+									</div>
 								</div>
-							</div>
 
-							<!--================================================== TOAST END =============================================================================-->
-
-
-							<ul>
-								<li>
-
-									<div class="checkout-box">
-										<div class="checkout-title">
-											<h4>Delivery Address</h4>
-										</div>
-
-										<div class="checkout-detail">
-											<div class="row g-4">
-												<div class="col-xxl-6 col-lg-12 col-md-6" th:each="a:${showAllAddress}">
-													<div class="delivery-address-box">
-														<div>
-															<div class="form-check">
-																<input class="form-check-input" type="radio" th:value="${a.id}" name="address_id"
-																	id="flexRadioDefault1">
-															</div>
-
-															<div class="label">
-																<label>Home</label>
-															</div>
-
-															<ul class="delivery-address-detail">
-																<li>
-																	<div style="display: flex; gap: 5px;">
-																		<h4 class="fw-500" th:text="${a.firstName}">Jack
-																			Jennas </h4>
-																		<h4 th:text="${a.lastName}"></h4>
-																	</div>
-																</li>
+								<!--================================================== TOAST END =============================================================================-->
 
 
+								<ul>
+									<li>
 
-																<li>
-																	<p class="text-content">
-																	<div style="display: flex; gap: 5px;">
-																		<span class="text-title">Address:</span>
-																		<span th:text="${a.addressText}"></span>
-																	</div>
-																	</p>
-																</li>
+										<div class="checkout-box">
+											<div class="checkout-title">
+												<h4>Delivery Address</h4>
+											</div>
 
-																<li>
-																	<h6 class="text-content">
+											<div class="checkout-detail">
+												<div class="row g-4">
+													<div class="col-xxl-6 col-lg-12 col-md-6"
+														th:each="a:${showAllAddress}">
+														<div class="delivery-address-box">
+															<div>
+																<div class="form-check">
+																	<input class="form-check-input" type="radio"
+																		th:value="${a.id}" name="address_id"
+																		id="flexRadioDefault1">
+																</div>
+
+																<div class="label">
+																	<label th:text="${a.addressType}">Home</label>
+																</div>
+
+																<ul class="delivery-address-detail">
+																	<li>
 																		<div style="display: flex; gap: 5px;">
-																			<span class="text-title">Pin Code:</span>
-																			<span th:text="${a.pinCode}"></span>
+																			<h4 class="fw-500" th:text="${a.firstName}">
+																				Jack
+																				Jennas </h4>
+																			<h4 th:text="${a.lastName}"></h4>
 																		</div>
-																	</h6>
-																</li>
+																	</li>
 
-																<li>
-																	<h6 class="text-content mb-0">
+
+
+																	<li>
+																		<p class="text-content">
 																		<div style="display: flex; gap: 5px;">
-																			<span class="text-title">Phone :</span>
-																			<span th:text="${a.number}"></span>
+																			<span class="text-title">Address:</span>
+																			<span th:text="${a.addressText}"></span>
 																		</div>
-																	</h6>
-																</li>
+																		</p>
+																	</li>
 
-																<div >
-																	<a style="text-decoration: underline; color: rgb(0, 128, 0);"
-																		href="#">EDIT</a>
-																	<!-- <a style="margin-left: 130px; text-decoration: underline; color: red;"
+																	<li>
+																		<h6 class="text-content">
+																			<div style="display: flex; gap: 5px;">
+																				<span class="text-title">Pin
+																					Code:</span>
+																				<span th:text="${a.pinCode}"></span>
+																			</div>
+																		</h6>
+																	</li>
+
+																	<li>
+																		<h6 class="text-content mb-0">
+																			<div style="display: flex; gap: 5px;">
+																				<span class="text-title">Phone :</span>
+																				<span th:text="${a.number}"></span>
+																			</div>
+																		</h6>
+																	</li>
+
+																	<div>
+																		<a style="text-decoration: underline; color: rgb(0, 128, 0);"
+																			href="#">EDIT</a>
+																		<!-- <a style="margin-left: 130px; text-decoration: underline; color: red;"
 																		th:href="@{'/deleteAddress/' + ${a.id}}"
 																		href="#">DELETE</a> -->
-																</div>
-															</ul>
+																	</div>
+																</ul>
+															</div>
 														</div>
 													</div>
+
+
+
+
 												</div>
-												
-												<button id="loadMoreButton" class="btn btn-primary">Load More</button>
-
-
 											</div>
 										</div>
-									</div>
-								</li>
+									</li>
 
-								<li>
-									<div class="checkout-box" style="padding: 15px; cursor: pointer;"
-										data-bs-toggle="modal" data-bs-target="#add-address">
-										<i style="color: dodgerblue;" class="fa fa-plus" aria-hidden="true"></i>
-										<a href="#" style="border: none; color: dodgerblue;">Add New Address</a>
-									</div>
-								</li>
+									<li>
+										<div class="checkout-box" style="padding: 15px; cursor: pointer;"
+											data-bs-toggle="modal" data-bs-target="#add-address">
+											<i style="color: dodgerblue;" class="fa fa-plus" aria-hidden="true"></i>
+											<a href="#" style="border: none; color: dodgerblue;">Add New Address</a>
+										</div>
+									</li>
 
 
-							</ul>
+								</ul>
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-lg-4">
-					<div class="right-side-summery-box">
-						<div class="summery-box-2">
-							<div class="summery-header">
-								<h3>Order Summery</h3>
+					<div class="col-lg-4">
+						<div class="right-side-summery-box">
+							<div class="summery-box-2">
+								<div class="summery-header">
+									<h3>Order Summery</h3>
+								</div>
+
+								<ul class="summery-contain">
+
+									<li th:each="c:${viewCart}">
+										<img src="#" th:src="@{'assets1/images/' + ${c.product.pimage}}"
+											class="img-fluid blur-up lazyloaded checkout-image" alt="">
+										<h4 style="   width: 200px; text-overflow: ellipsis; white-space: nowrap;  overflow: hidden;"
+											th:text="${c.product.pname}">Broccoli</h4> <span>X 2</span>
+										<h4 class="price"> <i class="fa fa-inr " aria-hidden="true"></i>
+											<span th:text="${c.product.price}">$29.69</span>
+										</h4>
+									</li>
+								</ul>
+
+								<ul class="summery-total">
+									<li>
+										<h4>Subtotal</h4>
+										<h4 class="price"> <i class="fa fa-inr " style="margin-right: 2px;"
+												aria-hidden="true"></i>
+											<span th:text="${session.subTotalOfCart}"></span>
+										</h4>
+
+									<li>
+										<h4>Shipping</h4>
+										<h4 class="price"> <i class="fa fa-inr " style="margin-right: 2px;"
+												aria-hidden="true"></i> <span th:text="${session.shippingTotal}"></span>
+										</h4>
+									</li>
+
+
+
+									<li>
+										<h4>Discount</h4>
+										<h4 class="price"><i class="fa fa-inr " style="margin-right: 2px;"
+												aria-hidden="true"></i> <span th:text="${session.discount}"></span></h4>
+									</li>
+
+									<li class="list-total">
+										<h4>Total </h4>
+										<h4 class="price"> <i class="fa fa-inr " style="margin-right: 2px;"
+												aria-hidden="true"></i> <span th:text="${session.grandTotal}"></span>
+										</h4>
+									</li>
+								</ul>
 							</div>
 
-							<ul class="summery-contain">
-
-								<li th:each="c:${viewCart}">
-									<img src="#" th:src="@{'assets1/images/' + ${c.product.pimage}}"
-										class="img-fluid blur-up lazyloaded checkout-image" alt="">
-									<h4 th:text="${c.product.pname}">Broccoli <span>X 2</span></h4>
-									<h4 class="price"> <i class="fa fa-inr " 
-											aria-hidden="true"></i>
-										<span th:text="${c.product.price}">$29.69</span></h4>
-								</li>
-							</ul>
-
-							<ul class="summery-total">
-								<li>
-									<h4>Subtotal</h4>
-									<h4 class="price"> <i class="fa fa-inr " style="margin-right: 2px;"
-											aria-hidden="true"></i>
-										<span th:text="${subTotalOfCart}"></span></h4>
-
-								<li>
-									<h4>Shipping</h4>
-									<h4 class="price">   <i class="fa fa-inr " style="margin-right: 2px;"
-											aria-hidden="true"></i> <span th:text="${shippingTotal}"></span></h4>
-								</li>
-
-								
-
-								<li>
-									<h4>Coupon/Code</h4>
-									<h4 class="price"><i class="fa fa-inr " style="margin-right: 2px;"
-											aria-hidden="true"></i> <span></span></h4>
-								</li>
-
-								<li class="list-total">
-									<h4>Total </h4>
-									<h4 class="price"> <i class="fa fa-inr " style="margin-right: 2px;"
-											aria-hidden="true"></i> <span th:text="${grandTotal}"></span></h4>
-								</li>
-							</ul>
-						</div>
-
-						<div class="checkout-offer">
-							<div class="offer-title">
-								<div class="offer-icon">
-									<img src="https://themes.pixelstrap.com/fastkart/assets/images/inner-page/offer.svg"
-										class="img-fluid" alt="">
+							<div class="checkout-offer">
+								<div class="offer-title">
+									<div class="offer-icon">
+										<img src="https://themes.pixelstrap.com/fastkart/assets/images/inner-page/offer.svg"
+											class="img-fluid" alt="">
+									</div>
+									<div class="offer-name">
+										<h6>Available Offers</h6>
+									</div>
 								</div>
-								<div class="offer-name">
-									<h6>Available Offers</h6>
-								</div>
+
+								<ul class="offer-detail">
+									<li>
+										<p>Combo: BB Royal Almond/Badam Californian, Extra Bold 100 gm...</p>
+									</li>
+									<li>
+										<p>combo: Royal Cashew Californian, Extra Bold 100 gm + BB Royal Honey 500 gm
+										</p>
+									</li>
+								</ul>
 							</div>
 
-							<ul class="offer-detail">
-								<li>
-									<p>Combo: BB Royal Almond/Badam Californian, Extra Bold 100 gm...</p>
-								</li>
-								<li>
-									<p>combo: Royal Cashew Californian, Extra Bold 100 gm + BB Royal Honey 500 gm</p>
-								</li>
-							</ul>
+							<button class="btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold">Place Order</button>
 						</div>
-
-						<button  class="btn theme-bg-color text-white btn-md w-100 mt-4 fw-bold">Place Order</button>
 					</div>
 				</div>
 			</div>
-		</div>
 		</form>
 	</section>
 	<!-- Checkout section End -->
@@ -479,6 +492,22 @@
 								<label for="pin">Pin Code</label>
 							</div>
 
+							<label for="form-check" style="font-size: 16px;"> Address Type</label><br>
+							<div style="display: flex;margin-top: 5px;">
+
+								<div class="form-check" style="margin-right: 10px;">
+									<input class="form-check-input" value="Home" type="radio" name="addressType"
+										id="flexRadioDefault1" style="font-size: 14px;">
+									<label class="form-check-label" for="flexRadioDefault1">Home</label>
+								</div>
+
+								<div class="form-check" style="margin-left: 10px;">
+									<input class="form-check-input" value="Work" type="radio" name="addressType"
+										id="flexRadioDefault2" style="font-size: 14px;">
+									<label class="form-check-label" for="flexRadioDefault2">Work</label>
+								</div>
+							</div>
+
 							<div class="modal-footer">
 								<!--<button type="button" class="btn btn-secondary btn-md"
 									data-bs-dismiss="modal">Close</button>-->
@@ -633,20 +662,20 @@
 	<!-- Bg overlay Start -->
 	<div class="bg-overlay"></div>
 	<!-- Bg overlay End -->
-<!--====================================================== TOAST MESSAGE JAVA SCRIPT ===========================================================-->
+	<!--====================================================== TOAST MESSAGE JAVA SCRIPT ===========================================================-->
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
 			setTimeout(function () {
 				var errorToast = document.getElementById('errorToast');
 				var bsToast = new bootstrap.Toast(errorToast);
 				bsToast.hide();
-				
+
 			}, 1300); console.log("hello word"); // Adjust the time in milliseconds as needed
 		});
 	</script>
 
 	<script>
-			document.addEventListener('DOMContentLoaded', function () {
+		document.addEventListener('DOMContentLoaded', function () {
 			var toastContainer = document.querySelector('.toast-container');
 			var toast = document.querySelector('.toast');
 
@@ -657,7 +686,7 @@
 			});
 		});
 	</script>
-<!--========================================================== TOAST MESSAGE JAVA SCRIPT END ==================================================-->
+	<!--========================================================== TOAST MESSAGE JAVA SCRIPT END ==================================================-->
 
 </body>
 

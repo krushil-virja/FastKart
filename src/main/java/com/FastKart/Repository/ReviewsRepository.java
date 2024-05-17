@@ -23,14 +23,20 @@ public interface ReviewsRepository  extends JpaRepository<Review, Integer>{
 	 * List<Object[]> countReviewsByProduct();
 	 */
     
+	/*
+	 * @Query("SELECT COUNT(r) FROM Review r WHERE r.product.id = :pid") int
+	 * countReviewsByProductId(@Param("pid")int pid);
+	 * 
+	 * @Query("SELECT SUM(r.rating) FROM Review r WHERE r.product.id = :pid") int
+	 * sumRatingByProductId(@Param("pid") int pid);
+	 */
     
-    @Query("SELECT COUNT(r) FROM Review r WHERE r.product.id = :pid")
-    int countReviewsByProductId(@Param("pid")int pid);
     
-    @Query("SELECT SUM(r.rating) FROM Review r WHERE r.product.id = :pid")
-    int sumRatingByProductId(@Param("pid") int pid);
+	@Query("SELECT COUNT(r) FROM Review r WHERE r.product.id = :pid")
+	Integer countReviewsByProductId(@Param("pid") int pid);
 
-    
-    
+	@Query("SELECT SUM(r.rating) FROM Review r WHERE r.product.id = :pid")
+	Integer sumRatingByProductId(@Param("pid") int pid);
+
 
 }

@@ -32,7 +32,7 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
             "FROM Order o " +
             "GROUP BY o.product " +
             "ORDER BY totalSold DESC " +
-            "LIMIT 8")
+            "LIMIT 4")
     List<Object[]> findTopSellingProducts();
 
 }

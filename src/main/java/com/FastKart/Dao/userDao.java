@@ -2,6 +2,7 @@ package com.FastKart.Dao;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,4 +59,22 @@ public class userDao {
 		
 		return findAll;
 	}
+	
+	
+//=================================================== get UserBy Id  Method =========================================================================
+
+	public User getUserById(int id) {
+		
+		User u = userRepository.findById(id).get();
+		return u;
+	}
+//=================================================== Update User Profile Method =========================================================================
+			
+	
+	public User updateUser(User u) {
+		
+		return userRepository.save(u);
+	}
+	
+	
 }

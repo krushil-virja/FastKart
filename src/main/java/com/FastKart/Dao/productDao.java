@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -84,6 +85,10 @@ public class productDao {
 		    return productPage;
 		}
 	
+		public Page<Product> findProductsByPriceRange(double minPrice, double maxPrice, int pageNumber, int pageSize) {
+		    Pageable pageable = PageRequest.of(pageNumber - 1, pageSize);
+		    return productRepository.findByPriceBetween(minPrice, maxPrice, pageable);
+		}
 //=========================================================== Find PRODUCT BY ID ===================================================================
 		
 		public Product findProductById(int id){
@@ -117,6 +122,8 @@ public class productDao {
 	        // Return the top N products (in this case, top 10)
 	        return products.subList(0, Math.min(n, products.size()));
 	    }
+
+
 		
 		
 		

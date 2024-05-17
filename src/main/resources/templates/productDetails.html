@@ -66,14 +66,14 @@
 			<div class="row">
 				<div class="col-12">
 					<div class="breadscrumb-contain">
-						<h2>Creamy Chocolate Cake</h2>
+						<h2 th:text="${productDetails.pname}" >Creamy Chocolate Cake</h2>
 						<nav>
 							<ol class="breadcrumb mb-0">
 								<li class="breadcrumb-item"><a href="index.html"> <i
 										class="fa-solid fa-house"></i>
 								</a></li>
 
-								<li class="breadcrumb-item active">Creamy Chocolate Cake</li>
+								<li class="breadcrumb-item active" th:text="${productDetails.pname}">Creamy Chocolate Cake</li>
 							</ol>
 						</nav>
 					</div>
@@ -201,7 +201,7 @@
 						<!--============================================================= PRODUCT DETAIL SECTION START=====================================================-->
 						<div class="col-xl-6 wow fadeInUp" data-wow-delay="0.1s">
 							<div class="right-box-contain">
-								<h6 class="offer-top">30% Off</h6>
+								
 
 								<h2 class="name" th:text="${p.pname}">Creamy Chocolate Cake</h2>
 
@@ -312,7 +312,7 @@
 
 								</div>
 
-								<div class="pickup-box">
+								<!--<div class="pickup-box">
 									<div class="product-title">
 										<h4>Store Information</h4>
 									</div>
@@ -335,8 +335,8 @@
 										</ul>
 									</div>
 								</div>
-
-								<div class="paymnet-option">
+-->
+								<!--<div class="paymnet-option">
 									<div class="product-title">
 										<h4>Guaranteed Safe Checkout</h4>
 									</div>
@@ -362,7 +362,7 @@
 												class="blur-up lazyload" alt="">
 										</a></li>
 									</ul>
-								</div>
+								</div>-->
 							</div>
 						</div>
 
@@ -499,7 +499,9 @@
 																<li><i data-feather="star"></i></li>
 															</ul>
 														</div>
-														<h6 class="ms-3">4.2 Out Of 5</h6>
+														<!--<h6 class="ms-3">4.2 Out Of 5</h6>-->
+														
+														<h6 class="ms-3"><span th:text="${averageOfProductRating >= 5 ? '5' : averageOfProductRating}"></span> Out Of 5</h6>
 													</div>
 
 													<div class="rating-box">
@@ -507,10 +509,10 @@
 															<li>
 																<div class="rating-list">
 																	<h5>5 Star</h5>
-																	<div class="progress">
+																		<div class="progress">
 																		<div class="progress-bar" role="progressbar"
-																			style="width: 68%" aria-valuenow="100"
-																			aria-valuemin="0" aria-valuemax="100">68%</div>
+																			th:style="'width: ' + ${fiveStarPercentage} + '%'" aria-valuenow="${fiveStarPercentage}"
+																			aria-valuemin="0" aria-valuemax="100"> <span  style="color: black;" th:text="${fiveStarPercentage + '%'}">68%</span></div>
 																	</div>
 																</div>
 															</li>
@@ -520,8 +522,8 @@
 																	<h5>4 Star</h5>
 																	<div class="progress">
 																		<div class="progress-bar" role="progressbar"
-																			style="width: 67%" aria-valuenow="100"
-																			aria-valuemin="0" aria-valuemax="100">67%</div>
+																			th:style="'width: ' + ${fourStarPercentage} + '%'" aria-valuenow="${fourStarPercentage}"
+																			aria-valuemin="0" aria-valuemax="100"> <span style="color: black;" th:text="${fourStarPercentage + '%'}">68%</span></div>
 																	</div>
 																</div>
 															</li>
@@ -531,8 +533,8 @@
 																	<h5>3 Star</h5>
 																	<div class="progress">
 																		<div class="progress-bar" role="progressbar"
-																			style="width: 42%" aria-valuenow="100"
-																			aria-valuemin="0" aria-valuemax="100">42%</div>
+																			th:style="'width: ' + ${threeStarPercentage} + '%'" aria-valuenow="${threeStarPercentage}"
+																			aria-valuemin="0" aria-valuemax="100"> <span style="color: black;" th:text="${threeStarPercentage + '%'}">68%</span></div>
 																	</div>
 																</div>
 															</li>
@@ -542,8 +544,8 @@
 																	<h5>2 Star</h5>
 																	<div class="progress">
 																		<div class="progress-bar" role="progressbar"
-																			style="width: 30%" aria-valuenow="100"
-																			aria-valuemin="0" aria-valuemax="100">30%</div>
+																			th:style="'width: ' + ${twoStarPercentage} + '%'" aria-valuenow="${twoStarPercentage}"
+																			aria-valuemin="0" aria-valuemax="100"> <span style="color: black;" th:text="${twoStarPercentage + '%'}">68%</span></div>
 																	</div>
 																</div>
 															</li>
@@ -553,8 +555,8 @@
 																	<h5>1 Star</h5>
 																	<div class="progress">
 																		<div class="progress-bar" role="progressbar"
-																			style="width: 24%" aria-valuenow="100"
-																			aria-valuemin="0" aria-valuemax="100">24%</div>
+																			th:style="'width: ' + ${oneStarPercentage} + '%'" aria-valuenow="${oneStarPercentage}"
+																			aria-valuemin="0" aria-valuemax="100"> <span style="color: black;" th:text="${oneStarPercentage + '%'}">68%</span></div>
 																	</div>
 																</div>
 															</li>
@@ -567,42 +569,43 @@
 														<h4 class="fw-500">Add a review</h4>
 													</div>
 
+													
+													<form method="post" action="#" th:action="@{/rateProduct}">
+																				
+																				<input type="hidden" name="pid" th:value="${product}">
 													<div class="row g-4">
-														<div class="col-md-6">
+														<div class="col-md-12">
 															<div class="form-floating theme-form-floating">
-																<input type="text" class="form-control" id="name"
+																<input name = "reviewtitle" type="text" class="form-control" id="name"
 																	placeholder="Name"> <label for="name">Your
 																	Name</label>
 															</div>
 														</div>
 
-														<div class="col-md-6">
-															<div class="form-floating theme-form-floating">
-																<input type="email" class="form-control" id="email"
-																	placeholder="Email Address"> <label for="email">Email
-																	Address</label>
-															</div>
-														</div>
+														
+														<div class="col-md-12">
+                                                            <div class="form-floating theme-form-floating" style="display: flex;align-items: center;">
+															
+																<div>	<span for="star-rating">Give Rating</span></div>
+																<div>
+																
+																<span class="star-rating" id="star-rating" style="margin: 0px 20px  !Important;">
+																								<input type="radio" name="rating" th:value="@{1}"><i></i>
+																								<input type="radio" name="rating" th:value="@{2}"><i></i>
+																								<input type="radio" name="rating" th:value="@{3}"><i></i>
+																								<input type="radio" name="rating" th:value="@{4}"><i></i>
+																								<input type="radio" name="rating" th:value="@{5}"><i></i>
+																							</span>
 
-														<!-- <div class="col-md-6">
-                                                            <div class="form-floating theme-form-floating">
-                                                                <input type="url" class="form-control" id="website"
-                                                                    placeholder="Website">
-                                                                <label for="website">Website</label>
+																							</div>
                                                             </div>
-                                                        </div>-->
+                                                        </div>
 
-														<div class="col-md-6">
-															<div class="form-floating theme-form-floating">
-																<input type="url" class="form-control" id="review1"
-																	placeholder="Give your review a title"> <label
-																	for="review1">Review Title</label>
-															</div>
-														</div>
+														
 
 														<div class="col-12">
 															<div class="form-floating theme-form-floating">
-																<textarea class="form-control"
+																<textarea name = "message" class="form-control"
 																	placeholder="Leave a comment here"
 																	id="floatingTextarea2" style="height: 150px"></textarea>
 																<label for="floatingTextarea2">Write Your
@@ -610,6 +613,7 @@
 															</div>
 														</div>
 													</div>
+													</form>
 												</div>
 
 
@@ -632,104 +636,32 @@
 						<!-- Trending Product -->
 						<div class="pt-25">
 							<div class="category-menu">
-								<h3>Trending Products</h3>
+								<h3>Top Selling Products</h3>
 
 								<ul class="product-list product-right-sidebar border-0 p-0">
-									<li>
+									<li th:each="topProduct : ${topSellingProducts}">
 										<div class="offer-product">
 											<a href="product-left-thumbnail.html" class="offer-image">
-												<img src="../assets/images/vegetable/product/23.png"
+												<img th:src="@{'/assets1/images/' + ${topProduct[0].pimage}}"
 												class="img-fluid blur-up lazyload" alt="">
 											</a>
 
 											<div class="offer-detail">
 												<div>
 													<a href="product-left-thumbnail.html">
-														<h6 class="name">Meatigo Premium Goat Curry</h6>
-													</a> <span>450 G</span>
-													<h6 class="price theme-color">$ 70.00</h6>
+														<h6 class="name" th:text="${topProduct[0].pname}">Meatigo Premium Goat Curry</h6>
+													</a> <span th:text="${topProduct[0].brand}">450 G</span>
+													<h6 class="price theme-color" th:text="${topProduct[0].price}">$ 70.00</h6>
 												</div>
 											</div>
 										</div>
 									</li>
 
-									<li>
-										<div class="offer-product">
-											<a href="product-left-thumbnail.html" class="offer-image">
-												<img src="../assets/images/vegetable/product/24.png"
-												class="blur-up lazyload" alt="">
-											</a>
-
-											<div class="offer-detail">
-												<div>
-													<a href="product-left-thumbnail.html">
-														<h6 class="name">Dates Medjoul Premium Imported</h6>
-													</a> <span>450 G</span>
-													<h6 class="price theme-color">$ 40.00</h6>
-												</div>
-											</div>
-										</div>
-									</li>
-
-									<li>
-										<div class="offer-product">
-											<a href="product-left-thumbnail.html" class="offer-image">
-												<img src="../assets/images/vegetable/product/25.png"
-												class="blur-up lazyload" alt="">
-											</a>
-
-											<div class="offer-detail">
-												<div>
-													<a href="product-left-thumbnail.html">
-														<h6 class="name">Good Life Walnut Kernels</h6>
-													</a> <span>200 G</span>
-													<h6 class="price theme-color">$ 52.00</h6>
-												</div>
-											</div>
-										</div>
-									</li>
-
-									<li class="mb-0">
-										<div class="offer-product">
-											<a href="product-left-thumbnail.html" class="offer-image">
-												<img src="../assets/images/vegetable/product/26.png"
-												class="blur-up lazyload" alt="">
-											</a>
-
-											<div class="offer-detail">
-												<div>
-													<a href="product-left-thumbnail.html">
-														<h6 class="name">Apple Red Premium Imported</h6>
-													</a> <span>1 KG</span>
-													<h6 class="price theme-color">$ 80.00</h6>
-												</div>
-											</div>
-										</div>
-									</li>
 								</ul>
 							</div>
 						</div>
 
-						<!-- Banner Section -->
-						<div class="ratio_156 pt-25">
-							<div class="home-contain">
-								<img src="../assets/images/vegetable/banner/8.jpg"
-									class="bg-img blur-up lazyload" alt="">
-								<div class="home-detail p-top-left home-p-medium">
-									<div>
-										<h6 class="text-yellow home-banner">Seafood</h6>
-										<h3 class="text-uppercase fw-normal">
-											<span class="theme-color fw-bold">Freshes</span> Products
-										</h3>
-										<h3 class="fw-light">every hour</h3>
-										<button onclick="location.href = 'shop-left-sidebar.html';"
-											class="btn btn-animation btn-md fw-bold mend-auto">
-											Shop Now <i class="fa-solid fa-arrow-right icon"></i>
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 				<!--============================================================= RIGHT SIDE CONTENT SECTION END===================================================-->

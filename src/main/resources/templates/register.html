@@ -126,8 +126,9 @@
 										<input name="password" type="password" th:classappend="${#fields.hasErrors('password')? 'is-invalid': ''}" th:value="${user.password}" class="form-control" id="password"
 											placeholder="Password">
 										<label for="password">Password</label>
-										<div th:each="e:${#fields.errors('password')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback">
-											Please provide a valid city.
+												
+									<div th:each="e:${#fields.errors('password')}" th:text="${e}" id="validationServer03Feedback" class="invalid-feedback">
+										Please provide a valid city.
 										</div>
 									</div>
 								</div>
@@ -149,6 +150,13 @@
 								</div>
 								-->
 								
+								
+								   <input type="hidden" name="profileImage" value="">
+								   <input  type="hidden" name="contact" value="">
+								   <input  type="hidden" name="birthDate" value="">
+								   <input type="hidden" name="gender" value="">
+								   <input   type="hidden" name="address" value="">
+								
 								<div class="col-12">
 									<div class="forgot-box">
 										<div class="form-check  border-none  " style="margin-left: -20px;">
@@ -164,6 +172,8 @@
 										</div>
 									</div>
 								</div>
+								
+								
 
 								<div class="col-12">
 									<button class="btn btn-animation w-100" type="submit">Register</button>

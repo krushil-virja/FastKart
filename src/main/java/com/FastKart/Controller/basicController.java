@@ -38,7 +38,9 @@ import com.FastKart.entities.Order;
 import com.FastKart.entities.Product;
 import com.FastKart.entities.User;
 import com.FastKart.entities.WishList;
+import com.nimbusds.oauth2.sdk.http.HTTPRequest;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -178,8 +180,11 @@ public class basicController {
 
 	@GetMapping("/shop")
 	public String shop( Model m, @RequestParam(required = false, name = "category") List<Integer> categoryId ,
+			 @RequestParam(required = false, name = "minPrice") Double minPrice,
+             @RequestParam(required = false, name = "maxPrice") Double maxPrice,
 			@RequestParam(value="pageNumber", required = false, defaultValue = "1") Integer pageNumber,
 	        @RequestParam(value="paeSize", required = false, defaultValue = "12") Integer pageSize
+	        
 			
 			) {
 
@@ -209,6 +214,13 @@ public class basicController {
 		    m.addAttribute("pageSize", pageSize);
 		}
 		
+		 else if (minPrice != null && maxPrice != null) {
+		        // If minPrice and maxPrice are provided, filter products by price range
+		        Page<Product> productsByPriceRange = pdao.findProductsByPriceRange(minPrice, maxPrice, pageNumber, pageSize);
+		        m.addAttribute("products", productsByPriceRange.getContent());
+		        m.addAttribute("totalPages", productsByPriceRange.getTotalPages());
+		        m.addAttribute("currentPage", pageNumber);
+		    }
 		
 		else {
 			
@@ -260,7 +272,7 @@ public class basicController {
 	}
 
 //======================================================= VIEWCART PAGE METHOD ============================================================================	
-	@GetMapping("/viewCart")
+/*	@GetMapping("/viewCart")
 	public String showCart(Model m, Principal principal, Cart cart) {
 
 		if (principal != null) {
@@ -282,6 +294,57 @@ public class basicController {
 			// Redirect to the login page
 			return "redirect:/login";
 		}
+	}*/
+	
+	@GetMapping("/viewCart")
+	public String showCart(Model m, Principal principal, Cart cart, HttpServletRequest request, HttpSession session) {
+
+	    if (principal != null) {
+	        int subTotalOfCart = 0;
+	        int totalWithShipping = 0;
+	        int shippingTotal = 0;
+	        int discount = 0;
+	        int grandTotal = 0;
+	        
+	        if (request.getParameter("subTotalOfCart") != null && request.getParameter("shippingTotal") != null && 
+	            request.getParameter("totalWithShipping") != null && request.getParameter("discount") != null && 
+	            request.getParameter("grandTotal") != null) {
+	            
+	            subTotalOfCart = Integer.parseInt(request.getParameter("subTotalOfCart"));
+	            shippingTotal = Integer.parseInt(request.getParameter("shippingTotal"));
+	            totalWithShipping = Integer.parseInt(request.getParameter("totalWithShipping"));
+	            discount = Integer.parseInt(request.getParameter("discount"));
+	            grandTotal = Integer.parseInt(request.getParameter("grandTotal"));
+	        } else {
+	            List<Cart> viewCart = cartdao.viewCart(principal);
+	            subTotalOfCart = cartdao.getTotalOfCart(viewCart);
+	            grandTotal = cartdao.getTotalWithShipping(viewCart);
+	            shippingTotal = cartdao.getShippingTotal(viewCart);
+	            System.out.println(shippingTotal);
+	            m.addAttribute("cart", viewCart);
+	            // Add attributes to the model
+		       
+
+	        }
+	        
+	        // Set session attributes
+	        session.setAttribute("subTotalOfCart", subTotalOfCart);
+	        session.setAttribute("totalWithShipping", totalWithShipping);
+	        session.setAttribute("shippingTotal", shippingTotal);
+	        session.setAttribute("discount", discount);
+	        session.setAttribute("grandTotal", grandTotal);
+	        
+	        m.addAttribute("subTotalOfCart", subTotalOfCart);
+	        m.addAttribute("grandTotal", grandTotal);
+	        m.addAttribute("shippingTotal", shippingTotal);
+	        m.addAttribute("discount", discount);
+	        
+	       
+	        return "Cart";
+	    } else {
+	        // Redirect to the login page
+	        return "redirect:/login";
+	    }
 	}
 
 //======================================================= CHECKOUT PAGE METHOD ============================================================================
@@ -332,8 +395,9 @@ public class basicController {
 //======================================================= USERDASHBOARD PAGE METHOD ============================================================================
 	@GetMapping("/userDashboard")
 	public String userDashboard(Model m , Principal principal) {
-
-		User loggedInUser = udao.getLoggedInUser(principal);
+	
+			User loggedInUser = udao.getLoggedInUser(principal);
+			m.addAttribute("user", loggedInUser);
 		/*
 		 * List<Order> orders = oDao.allOrder(); m.addAttribute("orders", orders);
 		 */
@@ -346,6 +410,8 @@ public class basicController {
 		
 		List<WishList> viewWishList = wdao.viewWishList(principal);
 		m.addAttribute("viewWishList", viewWishList);
+		
+		
 		return "userDashboard";
 	}
 	
@@ -431,6 +497,10 @@ public class basicController {
 		System.out.println("comfirmOrder method called with checkoutId: " + checkoutId);
 
 		m.addAttribute("checkoutId", checkoutId);
+		
+		
+		User user = userRepository.getUserByUserName(principal.getName());
+		m.addAttribute("user", user);
 		
 		return "ORDER";
 	}
@@ -536,6 +606,27 @@ public class basicController {
 		
 	}
 	
+	@ModelAttribute("countProductsInRange0To1000")
+	public int countProductsInRange0To1000() {
+		
+		int countProductsInRange0To1000 = productRepository.countProductsInRange0To1000();
+		return countProductsInRange0To1000;
+	}
+	
+	@ModelAttribute("countProductsInRange1000To10000")
+	public int countProductsInRange1000To10000() {
+		
+		int countProductsInRange1000To10000 = productRepository.countProductsInRange1000To10000();
+		return countProductsInRange1000To10000;
+	}
+	
+	
+	@ModelAttribute("countProductsInRange10000To100000")
+	public int countProductsInRange10000To100000() {
+		
+		int countProductsInRange10000To100000 = productRepository.countProductsInRange10000To100000();
+		return countProductsInRange10000To100000;
+	}
 	
 	/*
 	 * @ModelAttribute("countRatingByProduct") public int

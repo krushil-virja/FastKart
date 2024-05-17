@@ -148,8 +148,17 @@
                 </div>
                   
                    <div th:unless="${viewWishList != null and viewWishList.size() > 0}" class="col-12">
-                                  <!-- Show this when the wishlist is empty -->
-                                  <p>Your wishlist is empty.</p>
+					<!-- Show this when the wishlist is empty -->
+									<div class="text-center">
+										<img src="#" th:src="@{/assets/images/wishlist_empty.jpg}"
+											class="img-fluid blur-up lazyload" alt=""
+											style="width: 50%; height: 50%;">
+										<p> Looks like Your wishlist is empty.</p>
+										<button style="background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+															<a href="#" th:href="@{home}" style="color: white;">add Your Wishish
+															</a>
+														</button>
+									</div>
             </div>
          
 

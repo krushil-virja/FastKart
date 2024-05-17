@@ -100,65 +100,68 @@
 	<!-- Shop Section Start -->
 	<section class="section-b-space shop-section">
 		<div class="container-fluid-lg">
-			
-			
-			
-			<form>
-			<div class="row">
-				<div class="col-12">
-					<div class="show-button">
-						<div class="top-filter-menu-2">
-							<div class="sidebar-filter-menu" data-bs-toggle="collapse"
-								data-bs-target="#collapseExample">
-								<a href="javascript:void(0)"><i class="fa-solid fa-filter"></i> Filter Menu</a>
-								<button>Filter</button>
-							</div>
 
-							<div class="ms-auto d-flex align-items-center">
-								<div class="category-dropdown me-md-3">
-									<h5 class="text-content">Sort By :</h5>
-									<div class="dropdown">
-										<button class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-											data-bs-toggle="dropdown">
-											<span>Most Popular</span> <i class="fa-solid fa-angle-down"></i>
-										</button>
-										<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-											<li>
-												<a class="dropdown-item" id="pop"
-													href="javascript:void(0)">Popularity</a>
-											</li>
-											<li>
-												<a class="dropdown-item" id="low" href="javascript:void(0)">Low - High
-													Price</a>
-											</li>
-											<li>
-												<a class="dropdown-item" id="high" href="javascript:void(0)">High - Low
-													Price</a>
-											</li>
-											<li>
-												<a class="dropdown-item" id="rating" href="javascript:void(0)">Average
-													Rating</a>
-											</li>
-											<li>
-												<a class="dropdown-item" id="aToz" href="javascript:void(0)">A - Z
-													Order</a>
-											</li>
-											<li>
-												<a class="dropdown-item" id="zToa" href="javascript:void(0)">Z - A
-													Order</a>
-											</li>
-											<li>
-												<a class="dropdown-item" id="off" href="javascript:void(0)">% Off -
-													Hight To
-													Low</a>
-											</li>
-										</ul>
+
+
+			<form>
+				<div class="row">
+					<div class="col-12">
+						<div class="show-button">
+							<div class="top-filter-menu-2">
+								<div class="sidebar-filter-menu" data-bs-toggle="collapse"
+									data-bs-target="#collapseExample">
+									<a href="javascript:void(0)"><i class="fa-solid fa-filter"></i> Filter Menu</a>
+									<div class="text-center" style="text-align: center; margin-top: 20px;">
+										<button id="filterButtonPrice"
+											style="border: none; border-radius: 10px; background-color: aqua; padding: 10px 20px; font-size: 16px;">Filter</button>
 									</div>
+
 								</div>
 
-								<div class="grid-option grid-option-2">
-									<ul>
-										<li class="three-grid">
+								<div class="ms-auto d-flex align-items-center">
+									<div class="category-dropdown me-md-3">
+										<h5 class="text-content">Sort By :</h5>
+										<div class="dropdown">
+											<button class="dropdown-toggle" type="submit" id="dropdownMenuButton1"
+												data-bs-toggle="dropdown">
+												<span>Most Popular</span> <i class="fa-solid fa-angle-down"></i>
+											</button>
+											<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+												<li>
+													<a class="dropdown-item" id="pop"
+														href="javascript:void(0)">Popularity</a>
+												</li>
+												<li>
+													<a class="dropdown-item" id="low" href="javascript:void(0)">Low -
+														High Price</a>
+												</li>
+												<li>
+													<a class="dropdown-item" id="high" href="javascript:void(0)">High -
+														Low Price</a>
+												</li>
+												<li>
+													<a class="dropdown-item" id="rating"
+														href="javascript:void(0)">Average Rating</a>
+												</li>
+												<li>
+													<a class="dropdown-item" id="aToz" href="javascript:void(0)">A - Z
+														Order</a>
+												</li>
+												<li>
+													<a class="dropdown-item" id="zToa" href="javascript:void(0)">Z - A
+														Order</a>
+												</li>
+												<li>
+													<a class="dropdown-item" id="off" href="javascript:void(0)">% Off -
+														High To Low</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="grid-option grid-option-2">
+										<ul>
+											<!--<li class="three-grid">
 											<a href="javascript:void(0)">
 												<img src="https://themes.pixelstrap.com/fastkart/assets/svg/grid-3.svg"
 													class="blur-up lazyload" alt="">
@@ -169,65 +172,61 @@
 												<img src="https://themes.pixelstrap.com/fastkart/assets/svg/grid-4.svg"
 													class="blur-up lazyload d-lg-inline-block d-none" alt="">
 											</a>
-										</li>
-										<li class="five-grid d-xxl-inline-block d-none active">
-											<a href="javascript:void(0)">
-												<img src="https://themes.pixelstrap.com/fastkart/assets/svg/grid-5.svg"
-													class="blur-up lazyload d-lg-inline-block d-none" alt="">
-											</a>
-										</li>
-										<li class="list-btn">
-											<a href="javascript:void(0)">
-												<img src="https://themes.pixelstrap.com/fastkart/assets/svg/list.svg"
-													class="blur-up lazyload" alt="">
-											</a>
-										</li>
-									</ul>
+										</li>-->
+											<li class="five-grid d-xxl-inline-block d-none active">
+												<a href="javascript:void(0)">
+													<img src="https://themes.pixelstrap.com/fastkart/assets/svg/grid-5.svg"
+														class="blur-up lazyload d-lg-inline-block d-none" alt="">
+												</a>
+											</li>
+											<li class="list-btn">
+												<a href="javascript:void(0)">
+													<img src="https://themes.pixelstrap.com/fastkart/assets/svg/list.svg"
+														class="blur-up lazyload" alt="">
+												</a>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="top-filter-category" id="collapseExample">
-						<div class="row g-sm-4 g-3">
+						<div class="top-filter-category" id="collapseExample">
+							<div class="row g-sm-4 g-3">
 
 
-                           
-							<!--Filter Category Section-->
-							<div class="col-xl-3 col-md-6">
-								<div class="category-title">
-									<h3>Pack Size</h3>
+
+								<!--Filter Category Section-->
+								<div class="col-xl-3 col-md-6">
+									<div class="category-title">
+										<h3>Category</h3>
+									</div>
+									<ul class="category-list custom-padding custom-height ">
+										<li th:each="c : ${category}">
+											<div class="form-check ps-0 m-0 category-list-box">
+
+
+												<input name="category" class="checkbox_animated" type="checkbox"
+													id="category-[[${c.id}]]" th:value="${c.id}"
+													onchange="filterProducts()">
+												<label class="form-check-label" th:for="'category-' + ${c.id}">
+													<span class="name" th:text="${c.cname}">Fruits & Vegetables</span>
+													<span class="number"
+														th:text="${ '(' + c.products.size()  + ')'}">(15)</span>
+												</label>
+
+
+											</div>
+										</li>
+									</ul>
+
+
+
 								</div>
-								<ul class="category-list custom-padding custom-height " >
-									<li  th:each="c : ${category}">
-										<div class="form-check ps-0 m-0 category-list-box">
-											
-											
-											<input name="category" class="checkbox_animated" type="checkbox" id="category-[[${c.id}]]"
-												th:value="${c.id}" onchange="filterProducts()">
-											<label class="form-check-label" th:for="'category-' + ${c.id}">
-												<span class="name" th:text="${c.cname}">Fruits & Vegetables</span>
-												<span class="number">(15)</span>
-											</label>
-											
-										
-										</div>
-									</li>
-								</ul>
 
-							</div>
-					    
 
-							<div class="col-xl-3 col-md-6">
-								<div class="category-title">
-									<h3>Price</h3>
-								</div>
-								<div class="range-slider">
-									<input type="text" class="js-range-slider" value="">
-								</div>
-							</div>
 
-							<div class="col-xl-3 col-md-6">
+								<!--<div class="col-xl-3 col-md-6">
 								<div class="category-title">
 									<h3>Discount</h3>
 								</div>
@@ -239,7 +238,7 @@
 												<span class="name">upto 5%</span>
 												<span class="number">(15)</span>
 											</label>
-										</div>
+										</div> 
 									</li>
 
 									<li>
@@ -282,275 +281,128 @@
 										</div>
 									</li>
 								</ul>
-							</div>
+							</div>-->
 
-							<div class="col-xl-3 col-md-6">
-								<div class="category-title">
-									<h3>Category</h3>
+								<div class="col-xl-3 col-md-6">
+									<div class="category-title">
+										<h3>Prices</h3>
+									</div>
+									<ul class="category-list custom-padding custom-height">
+										<li>
+											<div class="form-check ps-0 m-0 category-list-box">
+												<input class="checkbox_animated price-filter" type="checkbox"
+													id="flexCheckDefault5" data-min="0" data-max="1000">
+												<label class="form-check-label" for="flexCheckDefault5">
+													<span class="name">0 to 1000 Rs</span>
+													<span class="number"> <span
+															th:text="${ '(' + countProductsInRange0To1000 + ')'}"></span>
+													</span>
+												</label>
+											</div>
+										</li>
+
+										<li>
+											<div class="form-check ps-0 m-0 category-list-box">
+												<input class="checkbox_animated price-filter" type="checkbox"
+													id="flexCheckDefault6" data-min="1000" data-max="10000">
+												<label class="form-check-label" for="flexCheckDefault6">
+													<span class="name">1000 to 10000 Rs</span>
+													<span class="number"> <span
+															th:text="${ '(' + countProductsInRange1000To10000 + ')'}"></span>
+													</span>
+												</label>
+											</div>
+										</li>
+
+										<li>
+											<div class="form-check ps-0 m-0 category-list-box">
+												<input class="checkbox_animated" type="checkbox" id="flexCheckDefault7"
+													data-min="10000" data-max="100000">
+												<label class="form-check-label" for="flexCheckDefault7">
+													<span class="name">10000 to 100000 Rs</span>
+													<span class="number"> <span
+															th:text="${ '(' + countProductsInRange10000To100000 + ')'}"></span>
+													</span>
+												</label>
+											</div>
+										</li>
+
+
+
+
+
+
+
+
+									</ul>
 								</div>
-								<ul class="category-list custom-padding custom-height">
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault5">
-											<label class="form-check-label" for="flexCheckDefault5">
-												<span class="name">400 to 500 g</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault6">
-											<label class="form-check-label" for="flexCheckDefault6">
-												<span class="name">500 to 700 g</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault7">
-											<label class="form-check-label" for="flexCheckDefault7">
-												<span class="name">700 to 1 kg</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault8">
-											<label class="form-check-label" for="flexCheckDefault8">
-												<span class="name">120 - 150 g each Vacuum 2 pcs</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault9">
-											<label class="form-check-label" for="flexCheckDefault9">
-												<span class="name">1 pc</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault10">
-											<label class="form-check-label" for="flexCheckDefault10">
-												<span class="name">1 to 1.2 kg</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault11">
-											<label class="form-check-label" for="flexCheckDefault11">
-												<span class="name">2 x 24 pcs Multipack</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault12">
-											<label class="form-check-label" for="flexCheckDefault12">
-												<span class="name">2x6 pcs Multipack</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault13">
-											<label class="form-check-label" for="flexCheckDefault13">
-												<span class="name">4x6 pcs Multipack</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault14">
-											<label class="form-check-label" for="flexCheckDefault14">
-												<span class="name">5x6 pcs Multipack</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault15">
-											<label class="form-check-label" for="flexCheckDefault15">
-												<span class="name">Combo 2 Items</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault16">
-											<label class="form-check-label" for="flexCheckDefault16">
-												<span class="name">Combo 3 Items</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault17">
-											<label class="form-check-label" for="flexCheckDefault17">
-												<span class="name">2 pcs</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault18">
-											<label class="form-check-label" for="flexCheckDefault18">
-												<span class="name">3 pcs</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault19">
-											<label class="form-check-label" for="flexCheckDefault19">
-												<span class="name">2 pcs Vacuum (140 g to 180 g each
-													)</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault20">
-											<label class="form-check-label" for="flexCheckDefault20">
-												<span class="name">4 pcs</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault21">
-											<label class="form-check-label" for="flexCheckDefault21">
-												<span class="name">4 pcs Vacuum (140 g to 180 g each
-													)</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault22">
-											<label class="form-check-label" for="flexCheckDefault22">
-												<span class="name">6 pcs</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault23">
-											<label class="form-check-label" for="flexCheckDefault23">
-												<span class="name">6 pcs carton</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault24">
-											<label class="form-check-label" for="flexCheckDefault24">
-												<span class="name">6 pcs Pouch</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-								</ul>
 							</div>
 						</div>
-					</div>
 
-					<div
-						class="row g-sm-4 g-3 row-cols-xxl-5 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2 product-list-section">
+						<div
+							class="row g-sm-4 g-3 row-cols-xxl-5 row-cols-xl-3 row-cols-lg-2 row-cols-md-3 row-cols-2 product-list-section">
 
-                   <!--  FILTER PRODUCT SECTION START  -->
-                   
-                   <!--this is for filter -->
-                   <div  style=" display: grid; grid-template-columns: auto auto auto auto; width:100%;  gap: 25px; padding: 10px; margin-top: 50px;">
-						<div th:each="product : ${productByCategories}" style="width: 100%; width: 100%; height: 100%;">
-							<div class="product-box-3 h-100 wow  fadeInUp" >
-								<div class="product-header">
-									<div class="product-image">
-										<a href="product-left-thumbnail.html">
-											<img src="#" th:src="@{'/assets1/images/' + ${product.pimage}}"
-												class="img-fluid blur-up lazyload" alt="">
-										</a>
+							<!--  FILTER PRODUCT SECTION START  -->
 
-										<ul class="product-option">
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-												<a href="javascript:void(0)" data-bs-toggle="modal"
-													data-bs-target="#view">
-													<i data-feather="eye"></i>
+							<!--this is for filter -->
+							<div
+								style=" display: grid; grid-template-columns: auto auto auto auto; width:100%;  gap: 25px; padding: 10px; margin-top: 50px;">
+								<div th:each="product : ${productByCategories}"
+									style="width: 100%; width: 100%; height: 100%;">
+									<div class="product-box-3 h-100 wow  fadeInUp">
+										<div class="product-header">
+											<div class="product-image">
+												<a href="product-left-thumbnail.html">
+													<img src="#" th:src="@{'/assets1/images/' + ${product.pimage}}"
+														class="img-fluid blur-up lazyload" alt="">
 												</a>
-											</li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
-												<a href="compare.html">
-													<i data-feather="refresh-cw"></i>
+												<ul class="product-option">
+													<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+														<a href="javascript:void(0)" data-bs-toggle="modal"
+															data-bs-target="#view">
+															<i data-feather="eye"></i>
+														</a>
+													</li>
+
+													<li data-bs-toggle="tooltip" data-bs-placement="top"
+														title="Compare">
+														<a href="compare.html">
+															<i data-feather="refresh-cw"></i>
+														</a>
+													</li>
+
+													<li data-bs-toggle="tooltip" data-bs-placement="top"
+														title="Wishlist">
+														<a href="wishlist.html" class="notifi-wishlist">
+															<i data-feather="heart"></i>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="product-footer">
+											<div class="product-detail">
+
+												<span class="span-name" th:text="${product.subcategory.sub_cat_name}">
+												</span>
+
+												<a href="product-left-thumbnail.html">
+
+													<h5 class="name" th:text="${product.pname}">Fresh Bread and Pastry
+														Flour 200
+														g</h5>
 												</a>
-											</li>
+												<p class="text-content mt-1 mb-2 product-content">Cheesy feet cheesy
+													grin brie.
+													Mascarpone cheese and wine hard cheese the big cheese everyone loves
+													smelly
+													cheese macaroni cheese croque monsieur.</p>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
-												<a href="wishlist.html" class="notifi-wishlist">
-													<i data-feather="heart"></i>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<div class="product-footer">
-									<div class="product-detail">
+												<!--================================================ Show Product Rating =============================================================================-->
 
-										<span class="span-name" th:text="${product.subcategory.sub_cat_name}"> </span>
-
-										<a href="product-left-thumbnail.html">
-
-											<h5 class="name" th:text="${product.pname}">Fresh Bread and Pastry Flour 200
-												g</h5>
-										</a>
-										<p class="text-content mt-1 mb-2 product-content">Cheesy feet cheesy grin brie.
-											Mascarpone cheese and wine hard cheese the big cheese everyone loves smelly
-											cheese macaroni cheese croque monsieur.</p>
-
-										<!--================================================ Show Product Rating =============================================================================-->
-
-										<!-- commented if i have to show product rating in future than  will use  this code.-->
-										<!--<div class="product-rating mt-2">
+												<!-- commented if i have to show product rating in future than  will use  this code.-->
+												<!--<div class="product-rating mt-2">
                                             <ul class="rating">
                                                 <li>
                                                     <i data-feather="star" class="fill"></i>
@@ -571,134 +423,151 @@
                                             <span>(4.0)</span>
                                         </div>-->
 
-										<!--================================================ Show Product Rating end =============================================================================-->
+												<!--================================================ Show Product Rating end =============================================================================-->
 
-										<h5 class="price"><span class="theme-color"
-												th:text="${product.price}">$08.02</span> <del>$15.15</del>
-										</h5>
+												<h5 class="price"> <i class="fa fa-inr  theme-color"
+														style="margin-right: 2px;" aria-hidden="true"></i> <span
+														class="theme-color" th:text="${product.price}">$08.02</span>
+													<del>$15.15</del>
+												</h5>
 
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					    </div>
-					    
-					 <!-- if User direct redirect on this shope page he is able to see all the product -->
-					 <!--all product Section start-->   
-					    
-					           <div  style="display: grid; grid-template-columns: auto auto auto auto; justify-content:  center; width:100%; margin: auto; gap: 25px; padding: 10px;">
-						<div th:each="product : ${products}">
-							<div class="product-box-3 h-100 wow fadeInUp">
-								<div class="product-header">
-									<div class="product-image">
-										<a href="product-left-thumbnail.html">
-											<img src="#" th:src="@{'/assets1/images/' + ${product.pimage}}"
-												class="img-fluid blur-up lazyload" alt="">
-										</a>
 
-										<ul class="product-option">
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-												<a href="javascript:void(0)" data-bs-toggle="modal"
-													data-bs-target="#view">
-													<i data-feather="eye"></i>
+							<!-- if User direct redirect on this shope page he is able to see all the product -->
+							<!--all product Section start-->
+
+							<div
+								style="display: grid; grid-template-columns: auto auto auto auto; justify-content:  center; width:100%; margin: auto; gap: 25px; padding: 10px;">
+								<div th:each="product : ${products}">
+									<div class="product-box-3 h-100 wow fadeInUp">
+										<div class="product-header">
+											<div class="product-image">
+												<a href="product-left-thumbnail.html">
+													<img src="#" th:src="@{'/assets1/images/' + ${product.pimage}}"
+														class="img-fluid blur-up lazyload" alt="">
 												</a>
-											</li>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Compare">
-												<a href="compare.html">
-													<i data-feather="refresh-cw"></i>
+												<ul class="product-option">
+													<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
+														<a href="javascript:void(0)" data-bs-toggle="modal"
+															data-bs-target="#view">
+															<i data-feather="eye"></i>
+														</a>
+													</li>
+
+													<li data-bs-toggle="tooltip" data-bs-placement="top"
+														title="Compare">
+														<a href="compare.html">
+															<i data-feather="refresh-cw"></i>
+														</a>
+													</li>
+
+													<li data-bs-toggle="tooltip" data-bs-placement="top"
+														title="Wishlist">
+														<a href="wishlist.html" class="notifi-wishlist">
+															<i data-feather="heart"></i>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="product-footer">
+											<div class="product-detail">
+												
+												<span class="span-name" th:text="${product.subcategory.sub_cat_name}">
+												</span>
+
+												<a href="product-left-thumbnail.html">
+
+													<h5 class="name" th:text="${product.pname}">Fresh Bread and Pastry
+														Flour 200
+														g</h5>
 												</a>
-											</li>
+												<p class="text-content mt-1 mb-2 product-content">Cheesy feet cheesy
+													grin brie.
+													Mascarpone cheese and wine hard cheese the big cheese everyone loves
+													smelly
+													cheese macaroni cheese croque monsieur.</p>
 
-											<li data-bs-toggle="tooltip" data-bs-placement="top" title="Wishlist">
-												<a href="wishlist.html" class="notifi-wishlist">
-													<i data-feather="heart"></i>
-												</a>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<div class="product-footer">
-									<div class="product-detail">
-d
-										<span class="span-name" th:text="${product.subcategory.sub_cat_name}"> </span>
+												<!--================================================ Show Product Rating =============================================================================-->
 
-										<a href="product-left-thumbnail.html">
+												<!-- commented if i have to show product rating in future than  will use  this code.-->
+												<!--<div class="product-rating mt-2">
+	                                            <ul class="rating">
+	                                                <li>
+	                                                    <i data-feather="star" class="fill"></i>
+	                                                </li>
+	                                                <li>
+	                                                    <i data-feather="star" class="fill"></i>
+	                                                </li>
+	                                                <li>
+	                                                    <i data-feather="star" class="fill"></i>
+	                                                </li>
+	                                                <li>
+	                                                    <i data-feather="star" class="fill"></i>
+	                                                </li>
+	                                                <li>
+	                                                    <i data-feather="star"></i>
+	                                                </li>
+	                                            </ul>
+	                                            <span>(4.0)</span>
+	                                        </div>-->
 
-											<h5 class="name" th:text="${product.pname}">Fresh Bread and Pastry Flour 200
-												g</h5>
-										</a>
-										<p class="text-content mt-1 mb-2 product-content">Cheesy feet cheesy grin brie.
-											Mascarpone cheese and wine hard cheese the big cheese everyone loves smelly
-											cheese macaroni cheese croque monsieur.</p>
+												<!--================================================ Show Product Rating end =============================================================================-->
 
-										<!--================================================ Show Product Rating =============================================================================-->
+												<h5 class="price"> <i class="fa fa-inr  theme-color"
+														style="margin-right: 2px;" aria-hidden="true"></i> <span
+														class="theme-color" th:text="${product.price}">$08.02</span>
+													<del>$15.15</del>
+												</h5>
 
-										<!-- commented if i have to show product rating in future than  will use  this code.-->
-										<!--<div class="product-rating mt-2">
-                                            <ul class="rating">
-                                                <li>
-                                                    <i data-feather="star" class="fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i data-feather="star" class="fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i data-feather="star" class="fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i data-feather="star" class="fill"></i>
-                                                </li>
-                                                <li>
-                                                    <i data-feather="star"></i>
-                                                </li>
-                                            </ul>
-                                            <span>(4.0)</span>
-                                        </div>-->
-
-										<!--================================================ Show Product Rating end =============================================================================-->
-
-										<h5 class="price"><span class="theme-color"
-												th:text="${product.price}">$08.02</span> <del>$15.15</del>
-										</h5>
-
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
+
+							<!--all product Section start-->
+
+
 						</div>
-					    </div>
-					    
-					     <!--all product Section start-->   
+						<!-- ============================================== Pagination code =====================================================================================-->
+
+						<nav class="custome-pagination" th:if="${totalPages > 1}">
+							<ul class="pagination justify-content-center">
+								<li class="page-item disabled" th:class="${currentPage == 1} ? 'disabled' : ''">
+									<a class="page-link" th:if="${currentPage > 1}"
+										th:href="@{'/shop?pageNumber=' + ${currentPage - 1} + '&pageSize=' + ${pageSize}}"
+										tabindex="-1" aria-disabled="true">
+										<i class="fa-solid fa-angles-left"></i>
+									</a>
+								</li>
 
 
+								<li class="page-item active" th:each="page : ${#numbers.sequence(1, totalPages)}"
+									th:class="${currentPage == page} ? 'disabled' : ''">
+									<a class="page-link"
+										th:href="@{'/shop?pageNumber=' + ${page} + '&pageSize=' + ${pageSize}}"
+										th:text="${page}"></a>
+								</li>
+
+								<li class="page-item">
+									<a class="page-link" th:if="${currentPage != totalPages}"
+										th:href="@{'/shop?pageNumber=' + ${currentPage + 1} + '&pageSize=' + ${pageSize}}">
+										<i class="fa-solid fa-angles-right"></i>
+									</a>
+								</li>
+							</ul>
+						</nav>
+
+						<!--================================================ Paginaation code end ==========================================================================-->
 					</div>
-					<!-- ============================================== Pagination code =====================================================================================-->
-
-					<nav class="custome-pagination" th:if="${totalPages > 1}">
-						<ul class="pagination justify-content-center">
-							<li class="page-item disabled" th:class="${currentPage == 1} ? 'disabled' : ''">
-								<a class="page-link"  th:if="${currentPage > 1}"  th:href="@{'/shop?pageNumber=' + ${currentPage - 1} + '&pageSize=' + ${pageSize}}" tabindex="-1" aria-disabled="true">
-									<i class="fa-solid fa-angles-left"></i>
-								</a>
-							</li>
-							
-							
-							<li class="page-item active"  th:each="page : ${#numbers.sequence(1, totalPages)}"   th:class="${currentPage == page} ? 'disabled' : ''">
-								<a class="page-link"  th:href="@{'/shop?pageNumber=' + ${page} + '&pageSize=' + ${pageSize}}" th:text="${page}"></a>
-							</li>
-							
-							<li class="page-item">
-								<a class="page-link"  th:if="${currentPage != totalPages}"  th:href="@{'/shop?pageNumber=' + ${currentPage + 1} + '&pageSize=' + ${pageSize}}">
-									<i class="fa-solid fa-angles-right"></i>
-								</a>
-							</li>
-						</ul>
-					</nav>
-
-					<!--================================================ Paginaation code end ==========================================================================-->
 				</div>
-			</div>
-			
+
 			</form>
 		</div>
 	</section>
@@ -1326,7 +1195,7 @@ d
 			});
 			$.ajax({
 				type: "GET",
-				url: "/findProductByCategory",
+				url: "/findProductByCategory",  // use findProductByCategory method
 				data: {id: selectedCategories},
 				success: function (response) {
 					// Handle the response, update product list or perform other actions
@@ -1338,6 +1207,59 @@ d
 		}
 	</script>
 
+	<script th:inline="javascript">
+		// Function to filter products based on category
+		function filterProductsByCategory() {
+			var selectedCategories = [];
+			$("input[type=checkbox]:checked").each(function () {
+				selectedCategories.push($(this).val());
+			});
+			$.ajax({
+				type: "GET",
+				url: "/findProductByCategory",  // use findProductByCategory method
+				data: {id: selectedCategories},
+				success: function (response) {
+					// Handle the response, update product list or perform other actions
+				},
+				error: function (xhr, status, error) {
+					console.error(xhr.responseText);
+				}
+			});
+		}
+	</script>
+
+	<div class="text-center" style="text-align: center; margin-top: 20px;">
+		<button id="filterButtonCategory"
+			style="border: none; border-radius: 10px; background-color: aqua; padding: 10px 20px; font-size: 16px;">Filter</button>
+	</div>
+
+	<script th:inline="javascript">
+		// Function to filter products based on price range
+		function filterProductsByPriceRange() {
+			var minPrice, maxPrice;
+			// Loop through all price filter checkboxes
+			document.querySelectorAll('.price-filter').forEach(function (checkbox) {
+				if (checkbox.checked) {
+					// Get min and max price from data attributes
+					minPrice = parseInt(checkbox.getAttribute('data-min'));
+					maxPrice = parseInt(checkbox.getAttribute('data-max'));
+				}
+			});
+
+			// Send AJAX request to filter products by price range
+			fetch('/shop?minPrice=' + minPrice + '&maxPrice=' + maxPrice)
+				.then(response => response.text())
+				.then(data => {
+					document.getElementById('product-list').innerHTML = data;
+				})
+				.catch(error => {
+					console.error('Error:', error);
+				});
+		}
+
+		// Add event listener to the Price Filter button
+		document.getElementById('filterButtonPrice').addEventListener('click', filterProductsByPriceRange);
+	</script>
 
 
 

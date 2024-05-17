@@ -83,6 +83,8 @@ public class reviewsDao {
 				review.setUser(user);
 				review.setRating(rating);
 				review.setReviewdate(LocalDate.now());
+				
+				System.out.println(rating);
 
 				Review r = reviewsRepository.save(review);
 				return r;
@@ -129,7 +131,7 @@ public class reviewsDao {
 	 * 
 	 * return averageRatingOfProduct; }
 	 */
-	
+/*	
 	public double averageOfProductRating(int pid) { 
 	    int countReviewsByProductId = reviewsRepository.countReviewsByProductId(pid);
 	    int sumRatingByProductId = reviewsRepository.sumRatingByProductId(pid);
@@ -143,8 +145,30 @@ public class reviewsDao {
 	    
 	    averageRatingOfProduct = (double) sumRatingByProductId / countReviewsByProductId;
 	    
+	   
 	    return averageRatingOfProduct;
 	}
+	*/
+	
+	public double averageOfProductRating(int pid) { 
+	    Integer countReviewsByProductId = reviewsRepository.countReviewsByProductId(pid);
+	    Integer sumRatingByProductId = reviewsRepository.sumRatingByProductId(pid);
+	    
+	    // Ensure we don't divide by zero and perform division as double
+	    double averageRatingOfProduct = 0.0;
+	    
+	    if (countReviewsByProductId == null || sumRatingByProductId == null  || countReviewsByProductId == 0) {
+	        return averageRatingOfProduct; // No reviews available, return default value
+	    } 
+	    
+	    // Check if sum is not zero before dividing
+	    if (countReviewsByProductId != 0) {
+	        averageRatingOfProduct = (double) sumRatingByProductId / countReviewsByProductId;
+	    }
+	    
+	    return averageRatingOfProduct;
+	}
+
 
 
 }

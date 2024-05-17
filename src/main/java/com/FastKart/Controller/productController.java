@@ -26,6 +26,7 @@ import com.FastKart.Dao.productDao;
 import com.FastKart.Dao.reviewsDao;
 import com.FastKart.Dao.subCategoryDao;
 import com.FastKart.Repository.CategoryRepository;
+import com.FastKart.Repository.OrderRepository;
 import com.FastKart.Repository.ProductRepository;
 import com.FastKart.Repository.ReviewsRepository;
 import com.FastKart.entities.Category;
@@ -56,6 +57,9 @@ public class productController {
 
 	@Autowired
 	private ReviewsRepository reviewsRepository;
+	
+	@Autowired
+	private OrderRepository orderRepository;
 	
 	
 	@PostMapping("insertProduct")
@@ -121,18 +125,47 @@ public class productController {
 	public String productDetails(@PathVariable("id") int id, Model m) {
 		Product findProductById = pdao.findProductById(id);
 		
+		List<Object[]> topSellingProducts = orderRepository.findTopSellingProducts();
+		m.addAttribute("topSellingProducts", topSellingProducts);
+		
 		 int reviewCount =  reviewsRepository.countReviewsByProductId(id);
 		 
-		 System.out.println(reviewCount);
+		 System.out.println( "count reviews by product: " + reviewCount);
 		 
 		 int sumRatingByProductId = reviewsRepository.sumRatingByProductId(id);
 		 
-		 System.out.println(sumRatingByProductId);
+		 System.out.println("sum rating by product: " + sumRatingByProductId);
+		 
 		 
 		double averageOfProductRating = rdao.averageOfProductRating(id);
 		m.addAttribute("averageOfProductRating", averageOfProductRating);
 		
-		System.out.println(averageOfProductRating);
+		// to calculate avgerage of 5 star rating product
+		
+		double  fiveStarPercentage  = (averageOfProductRating*5.0)/100;
+		m.addAttribute("fiveStarPercentage", fiveStarPercentage);
+		System.out.println("product five Star rating is:" +fiveStarPercentage);
+		
+		
+		double fourStarPercentage = (averageOfProductRating*4.0)/100;
+		m.addAttribute("fourStarPercentage", fourStarPercentage);
+		System.out.println("product four Star rating is:" +fourStarPercentage);
+		
+		double threeStarPercentage = (averageOfProductRating*3.0)/100;
+		m.addAttribute("threeStarPercentage", threeStarPercentage);
+		System.out.println("product four Star rating is:" +threeStarPercentage);
+		
+		double twoStarPercentage = (averageOfProductRating*2.0)/100;
+		m.addAttribute("twoStarPercentage", twoStarPercentage);
+		System.out.println("product four Star rating is:" +twoStarPercentage);
+		
+		double oneStarPercentage = (averageOfProductRating*1.0)/100;
+		m.addAttribute("oneStarPercentage", oneStarPercentage);
+		System.out.println("product four Star rating is:" + oneStarPercentage);
+		
+		
+		
+		System.out.println("product average Star rating is:" + averageOfProductRating);
 		
 		
 		
