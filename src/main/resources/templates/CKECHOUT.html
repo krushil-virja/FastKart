@@ -250,7 +250,7 @@
 										<img src="#" th:src="@{'assets1/images/' + ${c.product.pimage}}"
 											class="img-fluid blur-up lazyloaded checkout-image" alt="">
 										<h4 style="   width: 200px; text-overflow: ellipsis; white-space: nowrap;  overflow: hidden;"
-											th:text="${c.product.pname}">Broccoli</h4> <span>X 2</span>
+											th:text="${c.product.pname}">Broccoli</h4><span>X <span th:text="${c.quntity}"></span></span>
 										<h4 class="price"> <i class="fa fa-inr " aria-hidden="true"></i>
 											<span th:text="${c.product.price}">$29.69</span>
 										</h4>

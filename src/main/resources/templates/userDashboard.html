@@ -640,15 +640,13 @@
 														</table>
 													</div>
 												</div>
-
 												<div class="button-group">
-													<button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
-														data-bs-target="#editProfile"><i data-feather="edit"></i>
-														Edit</button>
-													<!-- <button class="btn btn-sm add-button w-100" data-bs-toggle="modal"
-														data-bs-target="#removeProfile"><a th:href="@{'/deleteAddress/' + ${a.id}}"><i data-feather="trash-2"></i>
-														Remove </a></button> -->
+													<a class="btn btn-sm add-button w-100" data-bs-toggle="modal"
+														th:data-bs-target="'#edit-address-' + ${a.id}">
+														<i data-feather="edit"></i> Edit
+													</a>
 												</div>
+
 											</div>
 										</div>
 
@@ -1116,20 +1114,22 @@
 								<label for="pin">Pin Code</label>
 							</div>
 
-								<label for="form-check" style="font-size: 16px;"> Address Type</label><br>
+							<label for="form-check" style="font-size: 16px;"> Address Type</label><br>
 							<div style="display: flex;margin-top: 5px;">
-								
-							    <div class="form-check" style="margin-right: 10px;">
-							        <input class="form-check-input" value="Home" type="radio" name="addressType" id="flexRadioDefault1" style="font-size: 14px;">
-							        <label class="form-check-label" for="flexRadioDefault1">Home</label>
-							    </div>
 
-							    <div class="form-check" style="margin-left: 10px;">
-							        <input class="form-check-input" value="Work" type="radio" name="addressType" id="flexRadioDefault2" style="font-size: 14px;">
-							        <label class="form-check-label" for="flexRadioDefault2">Work</label>
-							    </div>
+								<div class="form-check" style="margin-right: 10px;">
+									<input class="form-check-input" value="Home" type="radio" name="addressType"
+										id="flexRadioDefault1" style="font-size: 14px;">
+									<label class="form-check-label" for="flexRadioDefault1">Home</label>
+								</div>
+
+								<div class="form-check" style="margin-left: 10px;">
+									<input class="form-check-input" value="Work" type="radio" name="addressType"
+										id="flexRadioDefault2" style="font-size: 14px;">
+									<label class="form-check-label" for="flexRadioDefault2">Work</label>
+								</div>
 							</div>
-								
+
 
 							<div class="modal-footer">
 								<!--<button type="button" class="btn btn-secondary btn-md"
@@ -1146,6 +1146,55 @@
 		</div>
 	</section>
 	<!-- Add address modal box end -->
+
+	<!--EDIT ADDRESS MODEL-->
+
+	<div th:each="a:${showAllAddress}">
+		<div class="modal fade" th:id="'edit-address-' + ${a.id}" tabindex="-1" aria-labelledby="editAddressLabel"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="editAddressLabel">Edit Address</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form th:action="@{/updateAddress}" th:object="${a}" method="post">
+							<input type="hidden" th:field="*{id}">
+							<div class="mb-3">
+								<label for="firstName" class="form-label">First Name</label>
+								<input type="text" class="form-control" th:id="'firstName-' + ${a.id}"
+									th:field="*{firstName}">
+							</div>
+							<div class="mb-3">
+								<label for="addressText" class="form-label">Address</label>
+								<input type="text" class="form-control" th:id="'addressText-' + ${a.id}"
+									th:field="*{addressText}">
+							</div>
+							<div class="mb-3">
+								<label for="pinCode" class="form-label">Pin Code</label>
+								<input type="text" class="form-control" th:id="'pinCode-' + ${a.id}"
+									th:field="*{pinCode}">
+							</div>
+							<div class="mb-3">
+								<label for="phoneNumber" class="form-label">Phone Number</label>
+								<input type="text" class="form-control" th:id="'phoneNumber-' + ${a.id}"
+									th:field="*{phoneNumber}">
+							</div>
+							<div class="mb-3">
+								<label for="addressType" class="form-label">Address Type</label>
+								<input type="text" class="form-control" th:id="'addressType-' + ${a.id}"
+									th:field="*{addressType}">
+							</div>
+							<button type="submit" class="btn btn-primary">Save changes</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
 
 	<!-- Add address modal box end -->
 

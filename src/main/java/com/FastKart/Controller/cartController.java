@@ -118,9 +118,10 @@ public String getDiscount( @RequestParam("couponCode") String couponCode, Princi
 	    int discount = cartdao.getDiscount(couponCode, principal);
 
 	  
-	    System.out.println();
-	    System.out.println();
-	    System.out.println();
+	    System.out.println(totalOfCart);
+	    System.out.println(shippingTotal);
+	    System.out.println(totalWithShipping);
+	    System.out.println(discount);
 	    // Update the model attributes
 	    m.addAttribute("subTotalOfCart", totalOfCart);
 	    m.addAttribute("shippingTotal", shippingTotal);
@@ -134,7 +135,7 @@ public String getDiscount( @RequestParam("couponCode") String couponCode, Princi
 	    
 	    // Add flash attribute to show discount applied message
 	   
-	        redirectAttributes.addFlashAttribute("error", "Discount applied successfully.");
+	    redirectAttributes.addFlashAttribute("success", "Coupon Applied");
 	    
 
 	    // Redirect to the "viewCart" page
@@ -143,6 +144,8 @@ public String getDiscount( @RequestParam("couponCode") String couponCode, Princi
 	else {
 		
 		  System.out.println("invalid Coupon Code");
+		  redirectAttributes.addFlashAttribute("error", "invalid Coupon Code");
+		    
 	   return "redirect:/viewCart";
 	}
 

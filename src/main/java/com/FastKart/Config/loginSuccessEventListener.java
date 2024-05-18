@@ -8,7 +8,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
+import com.FastKart.Repository.UserRepository;
 import com.FastKart.email.emailServices;
+import com.FastKart.entities.User;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,6 +22,9 @@ public class loginSuccessEventListener implements AuthenticationSuccessHandler {
 
 	@Autowired
 	private emailServices mailEmailServices;
+	
+	@Autowired
+	private UserRepository userRepository;
 	
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
@@ -36,7 +41,16 @@ public class loginSuccessEventListener implements AuthenticationSuccessHandler {
 		
 		mailEmailServices.sendMail(to, subject, message);
 		
-		response.sendRedirect("home");
+		String username = authUser.getUsername();
+		
+        User user = userRepository.getUserByUserName(username);
+        
+        String role = user.getRole();
+        if ("user".equals(role)) {
+            response.sendRedirect("home");
+        } else {
+            response.sendRedirect("index");
+        }
 		
 	}
 

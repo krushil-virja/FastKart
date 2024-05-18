@@ -15,8 +15,8 @@
     <meta name="author" content="pixelstrap">
     
     <title>Fastkart - Add New Product</title>
-    <link rel="icon" href="assets1/images/favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon"  th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
+    <link rel="shortcut icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
 
  <!-- Google font -->
     <link
@@ -24,40 +24,40 @@
         rel="stylesheet">
 
     <!-- Linear Icon css -->
-    <link rel="stylesheet" href="assets1/css/linearicon.css">
+    <link rel="stylesheet" th:href="@{/assets1/css/linearicon.css}">
 
     <!-- Fontawesome css -->
-    <link rel="stylesheet" type="text/css" href="assets1/css/vendors/font-awesome.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/font-awesome.css}">
 
     <!-- Themify icon css -->
-    <link rel="stylesheet" type="text/css" href="assets1/css/vendors/themify.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/themify.css}">
 
     <!--Dropzon css -->
-    <link rel="stylesheet" type="text/css" href="assets1/css/vendors/dropzone.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/dropzone.css}">
 
     <!-- Feather icon css-->
-    <link rel="stylesheet" type="text/css" href="assets1/css/vendors/feather-icon.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/feather-icon.css}">
 
     <!-- remixicon css -->
-    <link rel="stylesheet" type="text/css" href="assets1/css/remixicon.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/remixicon.css}">
 
     <!-- Select2 css -->
-    <link rel="stylesheet" type="text/css" href="assets1/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/select2.min.css}">
 
     <!-- Plugins css -->
-    <link rel="stylesheet" type="text/css" href="assets1/css/vendors/scrollbar.css">
-    <link rel="stylesheet" type="text/css" href="assets1/css/vendors/animate.css">
-    <link rel="stylesheet" type="text/css" href="assets1/css/vendors/chartist.css">
-    <link rel="stylesheet" type="text/css" href="assets1/css/vendors/date-picker.css">
+    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/vendors/scrollbar.css}">
+    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/vendors/animate.css}">
+    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/vendors/chartist.css}">
+    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/vendors/date-picker.css}">
 
     <!-- Bootstrap css -->
-    <link rel="stylesheet" type="text/css" href="assets1/css/vendors/bootstrap.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/bootstrap.css}">
 
     <!-- Bootstrap-tag input css -->
-    <link rel="stylesheet" type="text/css" href="assets1/css/vendors/bootstrap-tagsinput.css">
+    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/vendors/bootstrap-tagsinput.css}">
 
     <!-- App css -->
-    <link rel="stylesheet" type="text/css" href="assets1/css/style.css">
+    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/style.css}">
 
    </head>
 
@@ -80,14 +80,14 @@
                 <div class="header-logo-wrapper p-0">
                     <div class="logo-wrapper">
                         <a href="index.html">
-                            <img class="img-fluid main-logo" src="assets1/images/logo/1.png" alt="logo">
-                            <img class="img-fluid white-logo" src="assets1/images/logo/1-white.png" alt="logo">
+                            <img class="img-fluid main-logo" th:src="@{/assets1/images/logo/1.png}" alt="logo">
+                            <img class="img-fluid white-logo" th:src="@{/assets1/images/logo/1-white.png}" alt="logo">
                         </a>
                     </div>
                     <div class="toggle-sidebar">
                         <i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i>
                         <a href="index.html">
-                            <img src="assets1/images/logo/1.png" class="img-fluid" alt="">
+                            <img th:src="@{/assets1/images/logo/1.png}" class="img-fluid" alt="">
                         </a>
                     </div>
                 </div>
@@ -161,7 +161,7 @@
                         </li>
                         <li class="profile-nav onhover-dropdown pe-0 me-0">
                             <div class="media profile-media">
-                                <img class="user-profile rounded-circle" src="assets1/images/users/4.jpg" alt="">
+                                <img class="user-profile rounded-circle" th:src="@{/assets1/images/users/4.jpg}" alt="">
                                 <div class="user-name-hide media-body">
                                     <span>Emay Walter</span>
                                     <p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
@@ -218,7 +218,7 @@
                 <div>
                     <div class="logo-wrapper logo-wrapper-center">
                         <a href="index.html" data-bs-original-title="" title="">
-                            <img class="img-fluid for-white" src="assets1/images/logo/full-white.png" alt="logo">
+                            <img class="img-fluid for-white" th:src="@{/assets1/images/logo/full-white.png}" alt="logo">
                         </a>
                         <div class="back-btn">
                             <i class="fa fa-angle-left"></i>
@@ -229,8 +229,8 @@
                     </div>
                     <div class="logo-icon-wrapper">
                         <a href="index.html">
-                            <img class="img-fluid main-logo main-white" src="assets1/images/logo/1-white.png" alt="logo">
-                            <img class="img-fluid main-logo main-dark" src="assets1/images/logo/logo-white.png"
+                            <img class="img-fluid main-logo main-white"  th:src="@{/assets1/images/logo/1-white.png}" alt="logo">
+                            <img class="img-fluid main-logo main-dark"  th:src="@{/assets1/images/logo/logo-white.png}"
                                 alt="logo">
                         </a>
                     </div>
@@ -432,13 +432,15 @@
                                                 <h5>Category Information</h5>
                                             </div>
 <!--=============================================================== FORM STARTED =====================================================================-->
-                                            <form  action="#" 	 method="post" enctype="multipart/form-data"  class="theme-form theme-form-2 mega-form">
+                                            <form  th:action="@{/updateCategory}" method="post" enctype="multipart/form-data"  class="theme-form theme-form-2 mega-form">
+												
+												<input type="hidden" name="id" th:value="${category.id}">
 												
                                                 <div class="mb-4 row align-items-center">
 													
                                                     <label class="form-label-title col-sm-3 mb-0">Category Name</label>
                                                     <div class="col-sm-9">
-                                                        <input name="cname"  class="form-control" type="text" placeholder="Category Name">
+                                                        <input name="cname"  class="form-control" type="text" placeholder="Category Name" th:value="${category.cname}">
                                                     </div>
                                                 </div>
                                                 
@@ -512,46 +514,46 @@
     <!-- Modal End -->
 
 <!-- latest js -->
-    <script src="assets1/js/jquery-3.6.0.min.js"></script>
+    <script  th:src="@{/assets1/js/jquery-3.6.0.min.js}"></script>
 
     <!-- Bootstrap js -->
-    <script src="assets1/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script  th:src="@{/assets1/js/bootstrap/bootstrap.bundle.min.js}"></script>
 
     <!-- feather icon js -->
-    <script src="assets1/js/icons/feather-icon/feather.min.js"></script>
-    <script src="assets1/js/icons/feather-icon/feather-icon.js"></script>
+    <script  th:src="@{/assets1/js/icons/feather-icon/feather.min.js}"></script>
+    <script  th:src="@{/assets1/js/icons/feather-icon/feather-icon.js}"></script>
 
     <!-- scrollbar simplebar js -->
-    <script src="assets1/js/scrollbar/simplebar.js"></script>
-    <script src="assets1/js/scrollbar/custom.js"></script>
+    <script  th:src="@{/assets1/js/scrollbar/simplebar.js}"></script>
+    <script  th:src="@{/assets1/js/scrollbar/custom.js}"></script>
 
     <!-- Sidebar js -->
-    <script src="assets1/js/config.js"></script>
+    <script  th:src="@{/assets1/js/config.js}"></script>
 
     <!-- bootstrap tag-input js -->
-    <script src="assets1/js/bootstrap-tagsinput.min.js"></script>
-    <script src="assets1/js/sidebar-menu.js"></script>
+    <script  th:src="@{/assets1/js/bootstrap-tagsinput.min.js}"></script>
+    <script  th:src="@{/assets1/js/sidebar-menu.js}"></script>
 
     <!-- customizer js -->
-    <script src="assets1/js/customizer.js"></script>
+    <script  th:src="@{/assets1/js/customizer.js}"></script>
 
     <!--Dropzon js -->
-    <script src="assets1/js/dropzone/dropzone.js"></script>
-    <script src="assets1/js/dropzone/dropzone-script.js"></script>
+    <script  th:src="@{/assets1/js/dropzone/dropzone.js}"></script>
+    <script  th:src="@{/assets1/js/dropzone/dropzone-script.js}"></script>
 
     <!-- Plugins js -->
-    <script src="assets1/js/notify/bootstrap-notify.min.js"></script>
-    <script src="assets1/js/notify/index.js"></script>
+    <script  th:src="@{/assets1/js/notify/bootstrap-notify.min.js}"></script>
+    <script  th:src="@{/assets1/js/notify/index.js}"></script>
 
     <!-- select2 js -->
-    <script src="assets1/js/select2.min.js"></script>
-    <script src="assets1/js/select2-custom.js"></script>
+    <script th:src="@{/assets1/js/select2.min.js}"></script>
+    <script th:src="@{/assets1/js/select2-custom.js}"></script>
 
     <!-- sidebar effect -->
-    <script src="assets1/js/sidebareffect.js"></script>
+    <script th:src="@{/assets1/js/sidebareffect.js}"></script>
 
     <!-- Theme js -->
-    <script src="assets1/js/script.js"></script>
+    <script th:src="@{/assets1/js/script.js}"></script>
    
 
 </body>

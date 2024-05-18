@@ -29,7 +29,16 @@
     </div>
     <!-- Loader End -->
 
-   
+	<!--==================================================== TOAST FOR SHOW MESSAGE ==============================================================-->
+
+	<div th:if="${wishlisterror}" class="log-in-box">
+										<div class="alert alert-danger" role="alert">
+											<span th:text="${wishlisterror}"></span>
+										</div>
+									</div>
+									<!--================================================== TOAST END =============================================================================-->
+
+
 
     <!-- mobile fix menu start -->
     <div class="mobile-menu d-md-none d-block mobile-cart">

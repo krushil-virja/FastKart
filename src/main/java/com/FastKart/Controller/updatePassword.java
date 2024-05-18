@@ -23,35 +23,34 @@ public class updatePassword {
 
 	@PostMapping("/updatePassword")
 	public String UpdatePassword(@RequestParam("newPassword") String newPassword,
-	        @RequestParam("oldPassword") String oldPassword, Principal principal, RedirectAttributes redirAttrs) {
+	                             @RequestParam("oldPassword") String oldPassword,
+	                             Principal principal, RedirectAttributes redirAttrs) {
 
 	    String name = principal.getName(); // we set email as a userName in our security configuration
 	    
 	    User user = userRepository.getUserByUserName(name);
 	    
-	    if(user!=null) {
+	    if (user != null) {
+	        String password = user.getPassword();
+	        
+	        if (!passwordEncoder.matches(oldPassword, password)) {
+	            redirAttrs.addFlashAttribute("error", "Old password is incorrect");
+	            return "redirect:/updatePassword"; // Redirect back to the password change form
+	        }
+	        
+	        if (newPassword.equals(oldPassword)) {
+	            redirAttrs.addFlashAttribute("error", "New password cannot be the same as the old password");
+	            return "redirect:/updatePassword"; // Redirect back to the password change form
+	        }
 
-	    if (newPassword.equals(oldPassword)) {
-	    	
-	        redirAttrs.addFlashAttribute("error", "You cannot choose the same password as the old one");
-	        
-	        return "redirect:/updatePassword"; // Redirect back to the password change form
-	        
-	    } else {
-	    	
 	        user.setPassword(passwordEncoder.encode(newPassword));
-	        
 	        userRepository.save(user); // Save the updated user entity with the new password
 	        
 	        redirAttrs.addFlashAttribute("success", "Your password has been successfully updated");
-	        
 	        return "redirect:/home"; // Redirect to the dashboard or any other page
-	    }
-	    }
-	    else {
-	    	
-	    	return "redirect:/login";
+	    } else {
+	        return "redirect:/login";
 	    }
 	}
-
 }
+	

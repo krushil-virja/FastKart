@@ -16,5 +16,8 @@ public interface WishListRepository  extends CrudRepository<WishList, Integer >{
 	// this method is automatically count cart item according to user login
 	int countByUser(User user);
 	
+	boolean existsByUserAndProduct(User user , Product product);
+
+	
 	
 }

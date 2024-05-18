@@ -6,4 +6,5 @@ import com.FastKart.entities.Category;
 
 public interface CategoryRepository extends CrudRepository<Category, Integer> {
 
+	  boolean existsByCname(String cname);
 }

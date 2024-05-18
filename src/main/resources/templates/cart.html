@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="~{base::layout(~{::section})}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
 
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 11:45:41 GMT -->
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Fastkart">
-<meta name="keywords" content="Fastkart">
-<meta name="author" content="Fastkart">
-<link rel="icon" href="../assets/images/favicon/1.png"
-	type="image/x-icon">
-<title>Cart</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Fastkart">
+	<meta name="keywords" content="Fastkart">
+	<meta name="author" content="Fastkart">
+	<link rel="icon" href="../assets/images/favicon/1.png" type="image/x-icon">
+	<title>Cart</title>
 
 
 </head>
@@ -29,45 +27,41 @@
 	<!-- Loader End -->
 	<!-- Check if the "success" flash attribute is present -->
 	<div th:if="${error}">
-	    <!-- Display the error message in a toast -->
-	    <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
-	        <div class="toast" style="position: absolute; top: 0; right: 0;">
-	            <div class="toast-header">
-	                <strong class="mr-auto">Error</strong>
-	                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-	                    <span aria-hidden="true">&times;</span>
-	                </button>
-	            </div>
-	            <div class="toast-body">
-	                <span th:text="${error}">Error message here.</span>
-	            </div>
-	        </div>
-	    </div>
+		<!-- Display the error message in a toast -->
+		<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+			<div class="toast" style="position: absolute; top: 0; right: 0;">
+				<div class="toast-header">
+					<strong class="mr-auto">Error</strong>
+					<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="toast-body">
+					<span th:text="${error}">Error message here.</span>
+				</div>
+			</div>
+		</div>
 	</div>
 
 
 	<!-- mobile fix menu start -->
 	<div class="mobile-menu d-md-none d-block mobile-cart">
 		<ul>
-			<li class="active"><a href="index.html"> <i
-					class="iconly-Home icli"></i> <span>Home</span>
-			</a></li>
+			<li class="active"><a href="index.html"> <i class="iconly-Home icli"></i> <span>Home</span>
+				</a></li>
 
-			<li class="mobile-category"><a href="javascript:void(0)"> <i
-					class="iconly-Category icli js-link"></i> <span>Category</span>
-			</a></li>
+			<li class="mobile-category"><a href="javascript:void(0)"> <i class="iconly-Category icli js-link"></i>
+					<span>Category</span>
+				</a></li>
 
-			<li><a href="search.html" class="search-box"> <i
-					class="iconly-Search icli"></i> <span>Search</span>
-			</a></li>
+			<li><a href="search.html" class="search-box"> <i class="iconly-Search icli"></i> <span>Search</span>
+				</a></li>
 
-			<li><a href="wishlist.html" class="notifi-wishlist"> <i
-					class="iconly-Heart icli"></i> <span>My Wish</span>
-			</a></li>
+			<li><a href="wishlist.html" class="notifi-wishlist"> <i class="iconly-Heart icli"></i> <span>My Wish</span>
+				</a></li>
 
-			<li><a href="cart.html"> <i
-					class="iconly-Bag-2 icli fly-cate"></i> <span>Cart</span>
-			</a></li>
+			<li><a href="cart.html"> <i class="iconly-Bag-2 icli fly-cate"></i> <span>Cart</span>
+				</a></li>
 		</ul>
 	</div>
 	<!-- mobile fix menu end -->
@@ -81,9 +75,8 @@
 						<h2>Cart</h2>
 						<nav>
 							<ol class="breadcrumb mb-0">
-								<li class="breadcrumb-item"><a href="index.html"> <i
-										class="fa-solid fa-house"></i>
-								</a></li>
+								<li class="breadcrumb-item"><a href="index.html"> <i class="fa-solid fa-house"></i>
+									</a></li>
 								<li class="breadcrumb-item active" aria-current="page">Cart</li>
 							</ol>
 						</nav>
@@ -98,8 +91,7 @@
 	<!-- Cart Section Start -->
 	<section class="cart-section section-b-space">
 		<div class="container-fluid-lg">
-			<div th:if="${cart != null and cart.size() > 0}"
-				class="row g-sm-5 g-3">
+			<div th:if="${cart != null and cart.size() > 0}" class="row g-sm-5 g-3">
 				<div class="col-xxl-9">
 					<div class="cart-table">
 						<div class="table-responsive-xl">
@@ -112,9 +104,8 @@
 										<td style="background: none;" class="product-detail">
 											<div class="product border-0">
 												<a href="product-left-thumbnail.html" class="product-image">
-													<img src="#"
-													th:src="@{'/assets1/images/' + ${c.product.pimage}}"
-													class="img-fluid blur-up lazyload" alt="">
+													<img src="#" th:src="@{'/assets1/images/' + ${c.product.pimage}}"
+														class="img-fluid blur-up lazyload" alt="">
 												</a>
 
 											</div>
@@ -124,9 +115,9 @@
 												<ul>
 													<li class="name">
 														<h4 class="table-title text-content">Name</h4> <a href="#"
-														style="color: rgb(36, 132, 219);"
-														th:href="@{'/productDetails/'+ ${c.product.id}}"
-														th:text="${c.product.pname}">Bell pepper</a>
+															style="color: rgb(36, 132, 219);"
+															th:href="@{'/productDetails/'+ ${c.product.id}}"
+															th:text="${c.product.pname}">Bell pepper</a>
 													</li>
 												</ul>
 											</div>
@@ -135,8 +126,8 @@
 											<h4 class="table-title text-content">Price</h4>
 
 											<h5>
-												<i class="fa fa-inr" style="margin-right: 5px;"
-													aria-hidden="true"></i> <span th:text="${c.product.price}">$35.10</span>
+												<i class="fa fa-inr" style="margin-right: 5px;" aria-hidden="true"></i>
+												<span th:text="${c.product.price}">$35.10</span>
 											</h5>
 										</td>
 
@@ -167,9 +158,9 @@
 
 										<td class="save-remove" style="background: none;">
 											<h4 class="table-title text-content">Action</h4> <a
-											class="save notifi-wishlist" href="#">Save for later</a> <a
-											class="remove close_button" href="#"
-											th:href="@{'/deleteCart/' + ${c.id}}">Remove</a>
+												class="save notifi-wishlist" href="#">Save for later</a> <a
+												class="remove close_button" href="#"
+												th:href="@{'/deleteCart/' + ${c.id}}">Remove</a>
 										</td>
 									</tr>
 
@@ -192,14 +183,28 @@
 						<div class="summery-contain">
 							<div class="coupon-cart">
 								<h6 class="text-content mb-2">Coupon Apply</h6>
+
+								<!--show success message if coupon applied-->
+								<div th:if="${success}" class="log-in-box">
+								    <div class="alert alert-success" role="alert">
+								        <span th:text="${success}"></span>
+								    </div>
+								</div>
+
+								<!--show error message if coupon  not applied-->
+								<div th:if="${error}" class="log-in-box">
+									<div class="alert alert-danger" role="alert">
+										<span th:text="${error}"></span>
+									</div>
+								</div>
+
 								<form action="/discount" method="post">
 									<div class="mb-3 coupon-box input-group">
-										<!--	<input type="hidden" name="id" th:value="${c.id}">-->
+									
 										<input type="text" name="couponCode" class="form-control"
-											id="exampleFormControlInput1"
-											placeholder="Enter Coupon Code Here...">
+											id="exampleFormControlInput1" placeholder="Enter Coupon Code Here...">
 										<button type="submit" class="btn-apply">Apply</button>
-									</div>
+										
 								</form>
 							</div>
 							<ul>
@@ -220,7 +225,8 @@
 								</li>
 
 								<li class="align-items-start">
-									<h4>Shipping</h4> <!-- <h4 class="price text-end" th:text="${shippingTotal}">$6.90</h4> -->
+									<h4>Shipping</h4>
+									<!-- <h4 class="price text-end" th:text="${shippingTotal}">$6.90</h4> -->
 									<h4 class="price text-end">
 										<i class="fa fa-inr " aria-hidden="true"></i> <span
 											th:text="${shippingTotal}"></span>
@@ -234,8 +240,7 @@
 								<h4>Total (USD)</h4>
 
 								<h4 class="price theme-color">
-									<i class="fa fa-inr " aria-hidden="true"></i> <span
-										th:text="${grandTotal}"></span>
+									<i class="fa fa-inr " aria-hidden="true"></i> <span th:text="${grandTotal}"></span>
 								</h4>
 							</li>
 						</ul>
@@ -253,8 +258,8 @@
 								<li>
 									<button class="btn btn-light shopping-button text-dark">
 										<a href="#" th:href="@{home}" style="color: black;"> <i
-											class="fa-solid fa-arrow-left-long"
-											style="margin-right: 5px;"></i> Return To Shopping
+												class="fa-solid fa-arrow-left-long" style="margin-right: 5px;"></i>
+											Return To Shopping
 										</a>
 									</button>
 								</li>
@@ -268,14 +273,14 @@
 			<div th:unless="${cart != null and cart.size() > 0}" class="col-12">
 				<!-- Show this when the wishlist is empty -->
 				<div class="text-center">
-					<img src="#" th:src="@{/assets/images/cart_empty.jpg}"
-						class="img-fluid blur-up lazyload" alt=""
+					<img src="#" th:src="@{/assets/images/cart_empty.jpg}" class="img-fluid blur-up lazyload" alt=""
 						style="width: 300px; height: 300px;">
 					<p> Looks like Your cart is empty.</p>
-					<button style="background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
-										<a href="#" th:href="@{home}" style="color: white;">Fill Your Cart
-										</a>
-									</button>
+					<button
+						style="background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+						<a href="#" th:href="@{home}" style="color: white;">Fill Your Cart
+						</a>
+					</button>
 				</div>
 			</div>
 
@@ -286,26 +291,23 @@
 
 
 	<!-- Location Modal Start -->
-	<div class="modal location-modal fade theme-modal" id="locationModal"
-		tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div
-			class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+	<div class="modal location-modal fade theme-modal" id="locationModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">Choose your
 						Delivery Location</h5>
 					<p class="mt-1 text-content">Enter your address and we will
 						specify the offer for your area.</p>
-					<button type="button" class="btn-close" data-bs-dismiss="modal"
-						aria-label="Close">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 						<i class="fa-solid fa-xmark"></i>
 					</button>
 				</div>
 				<div class="modal-body">
 					<div class="location-list">
 						<div class="search-input">
-							<input type="search" class="form-control"
-								placeholder="Search Your Area"> <i
+							<input type="search" class="form-control" placeholder="Search Your Area"> <i
 								class="fa-solid fa-magnifying-glass"></i>
 						</div>
 
@@ -316,43 +318,43 @@
 						<ul class="location-select custom-height">
 							<li><a href="javascript:void(0)">
 									<h6>Alabama</h6> <span>Min: $130</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Arizona</h6> <span>Min: $150</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>California</h6> <span>Min: $110</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Colorado</h6> <span>Min: $140</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Florida</h6> <span>Min: $160</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Georgia</h6> <span>Min: $120</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Kansas</h6> <span>Min: $170</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Minnesota</h6> <span>Min: $120</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>New York</h6> <span>Min: $110</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Washington</h6> <span>Min: $130</span>
-							</a></li>
+								</a></li>
 						</ul>
 					</div>
 				</div>
@@ -362,18 +364,16 @@
 	<!-- Location Modal End -->
 
 	<!-- Deal Box Modal Start -->
-	<div class="modal fade theme-modal deal-modal" id="deal-box"
-		tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div
-			class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+	<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
 			<div class="modal-content">
 				<div class="modal-header">
 					<div>
 						<h5 class="modal-title w-100" id="deal_today">Deal Today</h5>
 						<p class="mt-1 text-content">Recommended deals for you.</p>
 					</div>
-					<button type="button" class="btn-close" data-bs-dismiss="modal"
-						aria-label="Close">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 						<i class="fa-solid fa-xmark"></i>
 					</button>
 				</div>
@@ -383,8 +383,8 @@
 							<li class="list-1">
 								<div class="deal-offer-contain">
 									<a href="shop-left-sidebar.html" class="deal-image"> <img
-										src="../assets/images/vegetable/product/10.png"
-										class="blur-up lazyload" alt="">
+											src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
+											alt="">
 									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
 										<h6>
@@ -399,8 +399,8 @@
 							<li class="list-2">
 								<div class="deal-offer-contain">
 									<a href="shop-left-sidebar.html" class="deal-image"> <img
-										src="../assets/images/vegetable/product/11.png"
-										class="blur-up lazyload" alt="">
+											src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
+											alt="">
 									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
 										<h6>
@@ -415,8 +415,8 @@
 							<li class="list-3">
 								<div class="deal-offer-contain">
 									<a href="shop-left-sidebar.html" class="deal-image"> <img
-										src="../assets/images/vegetable/product/12.png"
-										class="blur-up lazyload" alt="">
+											src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
+											alt="">
 									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
 										<h6>
@@ -431,8 +431,8 @@
 							<li class="list-1">
 								<div class="deal-offer-contain">
 									<a href="shop-left-sidebar.html" class="deal-image"> <img
-										src="../assets/images/vegetable/product/13.png"
-										class="blur-up lazyload" alt="">
+											src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
+											alt="">
 									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
 										<h6>
@@ -468,9 +468,8 @@
 							<div class="theme-setting-button color-picker">
 								<form class="form-control">
 									<label for="colorPick" class="form-label mb-0">Theme
-										Color</label> <input type="color"
-										class="form-control form-control-color" id="colorPick"
-										value="#0da487" title="Choose your color">
+										Color</label> <input type="color" class="form-control form-control-color"
+										id="colorPick" value="#0da487" title="Choose your color">
 								</form>
 							</div>
 						</li>

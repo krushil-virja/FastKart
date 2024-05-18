@@ -191,7 +191,7 @@
 							</div>
 						</div>
 
-						<div class="top-filter-category" id="collapseExample">
+						<div class="top-filter-category collapse " id="collapseExample">
 							<div class="row g-sm-4 g-3">
 
 
@@ -290,8 +290,8 @@
 									<ul class="category-list custom-padding custom-height">
 										<li>
 											<div class="form-check ps-0 m-0 category-list-box">
-												<input class="checkbox_animated price-filter" type="checkbox"
-													id="flexCheckDefault5" data-min="0" data-max="1000">
+												<input name="filterByPrice" class="checkbox_animated price-filter" type="checkbox"
+													id="flexCheckDefault5" th:value="${1}" >
 												<label class="form-check-label" for="flexCheckDefault5">
 													<span class="name">0 to 1000 Rs</span>
 													<span class="number"> <span
@@ -303,8 +303,8 @@
 
 										<li>
 											<div class="form-check ps-0 m-0 category-list-box">
-												<input class="checkbox_animated price-filter" type="checkbox"
-													id="flexCheckDefault6" data-min="1000" data-max="10000">
+												<input  name="filterByPrice" class="checkbox_animated price-filter" type="checkbox"
+													id="flexCheckDefault6"  th:value="${2}" >
 												<label class="form-check-label" for="flexCheckDefault6">
 													<span class="name">1000 to 10000 Rs</span>
 													<span class="number"> <span
@@ -316,8 +316,8 @@
 
 										<li>
 											<div class="form-check ps-0 m-0 category-list-box">
-												<input class="checkbox_animated" type="checkbox" id="flexCheckDefault7"
-													data-min="10000" data-max="100000">
+												<input name="filterByPrice" class="checkbox_animated" type="checkbox" id="flexCheckDefault7"
+													 th:value="${3}" >
 												<label class="form-check-label" for="flexCheckDefault7">
 													<span class="name">10000 to 100000 Rs</span>
 													<span class="number"> <span
@@ -359,7 +359,7 @@
 
 												<ul class="product-option">
 													<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-														<a href="javascript:void(0)" data-bs-toggle="modal"
+														<a th:href="@{'/productDetails/'+ ${product.id}}"
 															data-bs-target="#view">
 															<i data-feather="eye"></i>
 														</a>
@@ -374,9 +374,14 @@
 
 													<li data-bs-toggle="tooltip" data-bs-placement="top"
 														title="Wishlist">
-														<a href="wishlist.html" class="notifi-wishlist">
-															<i data-feather="heart"></i>
-														</a>
+														<form action="/addToWishList" method="post">
+															<input name="pid" type="hidden" th:value="${product.id}">
+															<button class=" bg-transparent border-0"><a
+																	class="notifi-wishlist">
+																	<i data-feather="heart"></i>
+																</a>
+															</button>
+														</form>
 													</li>
 												</ul>
 											</div>
@@ -453,7 +458,7 @@
 
 												<ul class="product-option">
 													<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-														<a href="javascript:void(0)" data-bs-toggle="modal"
+														<a th:href="@{'/productDetails/'+ ${product.id}}"
 															data-bs-target="#view">
 															<i data-feather="eye"></i>
 														</a>
@@ -468,16 +473,21 @@
 
 													<li data-bs-toggle="tooltip" data-bs-placement="top"
 														title="Wishlist">
-														<a href="wishlist.html" class="notifi-wishlist">
-															<i data-feather="heart"></i>
-														</a>
+														<form action="/addToWishList" method="post">
+															<input name="pid" type="hidden" th:value="${product.id}">
+															<button class=" bg-transparent border-0"><a
+																	class="notifi-wishlist">
+																	<i data-feather="heart"></i>
+																</a>
+															</button>
+														</form>
 													</li>
 												</ul>
 											</div>
 										</div>
 										<div class="product-footer">
 											<div class="product-detail">
-												
+
 												<span class="span-name" th:text="${product.subcategory.sub_cat_name}">
 												</span>
 

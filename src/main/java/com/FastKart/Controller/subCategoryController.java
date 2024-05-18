@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -20,6 +21,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.FastKart.Dao.categoryDao;
 import com.FastKart.Dao.subCategoryDao;
+import com.FastKart.Repository.SubCategoryRepository;
+import com.FastKart.entities.Category;
 import com.FastKart.entities.subCategory;
 
 @Controller
@@ -27,6 +30,9 @@ public class subCategoryController {
 
 @Autowired
 private subCategoryDao scDao;
+
+@Autowired
+private SubCategoryRepository  subCategoryRepository;
 
 @Autowired
 private categoryDao cdao;
@@ -74,11 +80,56 @@ public String deketeSubCategory(@PathVariable("id") Integer id, Model m) {
 	
 	
 }
+//============================================================= get subcategory by id =============================================================
 
-// i implement just for dependent dropdown 
-//pending  
-/*
- * @GetMapping("/subcategories/{cid}") public List<subCategory>
- * getSubCategories(@RequestParam int cid) { return ""; }
- */
+@GetMapping("/updateSubCategory/{id}")
+public String getSubCategory(@PathVariable("id") int id, Model m ) {
+	
+	subCategory sc = subCategoryRepository.findById(id).get();
+	m.addAttribute("subCategory", sc);
+	
+	List<Category> showAllCategory = cdao.showAllCategory();
+	m.addAttribute("category", showAllCategory);
+	
+	return "admin/admin-updateSubCategory";
+	
+}
+
+//============================================================= Update subCategory Handler ===========================================================
+
+@PostMapping("/updateSubCategory")
+public String updateSubCategory(@RequestParam("id") int id, @RequestParam("cid") int cid,@RequestParam("sub_cat_name") String sub_cat_name, @RequestParam("cat_image") MultipartFile file) {
+	
+	subCategory sc = subCategoryRepository.findById(id).get();
+	Category c = cdao.getCategory(cid);
+	try {
+		
+		if(file.isEmpty()) {
+			
+			System.out.print("file is empty");
+		}
+		
+		else {
+			sc.setSub_cat_image(file.getOriginalFilename());
+			sc.setSub_cat_name(sub_cat_name);
+			sc.setCategory(c);
+			
+			File saveFile = new ClassPathResource("static/assets1/images").getFile();
+			
+			Path path = Paths.get(saveFile.getAbsolutePath() + File.separator + file.getOriginalFilename());
+			
+			Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
+			
+			System.out.println("file is uploaded");
+			System.out.println(path);
+			
+		}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	
+	subCategoryRepository.save(sc);
+	return "redirect:/subCategory";
+	
+}
 }

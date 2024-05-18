@@ -14,13 +14,17 @@ import com.FastKart.Dao.categoryDao;
 import com.FastKart.Dao.couponDao;
 import com.FastKart.Dao.orderDao;
 import com.FastKart.Dao.productDao;
+import com.FastKart.Dao.reviewsDao;
 import com.FastKart.Dao.subCategoryDao;
 import com.FastKart.Dao.userDao;
 import com.FastKart.Repository.CategoryRepository;
+import com.FastKart.Repository.OrderRepository;
+import com.FastKart.Repository.ProductRepository;
 import com.FastKart.entities.Category;
 import com.FastKart.entities.Coupon;
 import com.FastKart.entities.Order;
 import com.FastKart.entities.Product;
+import com.FastKart.entities.Review;
 import com.FastKart.entities.User;
 import com.FastKart.entities.subCategory;
 
@@ -45,14 +49,45 @@ public class adminController {
 
 	@Autowired
 	private orderDao oDao;
+	
+	@Autowired
+	private reviewsDao rdao;
 
 	@Autowired
 	private CategoryRepository categoryRepository;
+	
+	@Autowired
+	private ProductRepository productRepository;
+	
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	
+	
+
 
 //========================================================== Handler to get Admin index page ==============================================================
 	@GetMapping("/index")
-	public String adminDashboard() {
+	public String adminDashboard(Model m ) {
+		
+		int countAllProducts = productRepository.countAllProducts();
+		int countAllOrders = orderRepository.countAllBy();
+		int countDistinctUsers = orderRepository.countDistinctUsers();
+		
+		
+List<Category> showAllCategory = cdao.showAllCategory();
+m.addAttribute("showAllCategory", showAllCategory);
+		
+List<Order> latestOrders = orderRepository.findLatestOrders();
+m.addAttribute("latestOrders", latestOrders);
 
+
+List<Object[]> topSellingProducts = orderRepository.findTopSellingProducts();
+m.addAttribute("topSellingProducts", topSellingProducts);
+
+		m.addAttribute("countAllProducts", countAllProducts);
+		m.addAttribute("countAllOrders", countAllOrders);
+       m.addAttribute("countDistinctUsers", countDistinctUsers);
 		return "admin/admin-index";
 	}
 
@@ -81,6 +116,13 @@ public class adminController {
 		m.addAttribute("category", showAllCategory);
 		return "admin/admin-addSubCategory";
 	}
+	
+	
+	@GetMapping("/updateCategory")
+	public String updateCategory() {
+		
+		return "admin/admin-updateCategory";
+	}
 
 //========================================================= Handler to get Admin subCategory page=========================================================
 	@GetMapping("/subCategory")
@@ -92,6 +134,13 @@ public class adminController {
 		return "admin/admin-subCategory";
 	}
 
+//========================================================= Handler to get Admin Update subCategory page=========================================================
+
+	@GetMapping("/updateSubCategory")
+	public String updateSubCategory() {
+		
+		return "admin/admin-updateSubCategory";
+	}
 //========================================================= Handler to get Admin addProduct page =========================================================
 	@GetMapping("/addProduct")
 	public String addProduct(Model m) {
@@ -102,6 +151,13 @@ public class adminController {
 		List<subCategory> showAllSubCategory = scdao.showAllSubCategory();
 		m.addAttribute("subCategory", showAllSubCategory);
 		return "admin/admin-addProduct";
+	}
+	
+	@GetMapping("/updateProduct")
+	public String updateProduct(Model m) {
+		
+		
+		return "admin/admin-updateProduct";
 	}
 
 //========================================================= Handler to get Admin Product page ============================================================
@@ -211,9 +267,15 @@ public class adminController {
 
 //======================================================= Handler to get productReview Page ============================================================
 	@GetMapping("/productReview")
-	public String productReview() {
+	public String productReview(Model m) {
+		
+		List<Review> showAllreviews = rdao.showAllreviews();
+		m.addAttribute("showAllreviews", showAllreviews);
 
 		return "admin/admin-productReview";
 	}
+	
+	
+	
 
 }

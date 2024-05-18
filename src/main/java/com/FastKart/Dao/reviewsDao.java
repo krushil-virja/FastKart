@@ -170,5 +170,10 @@ public class reviewsDao {
 	}
 
 
+	public List<Review> showAllreviews(){
+		
+		List<Review> all = reviewsRepository.findAll();
+		return all;
+	}
 
 }

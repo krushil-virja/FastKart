@@ -448,46 +448,6 @@
 
 														<td  th:text="${o.orderDate}">Sep 20, 2022</td>
 
-														<!--<div th:switch="${o.status}">
-															<div th:case="1">
-																<td class="order-pending">
-																	<span>Pending</span>
-																</td>
-															</div>
-														</div>
-														
-														<div th:switch="${o.status}">
-															<div th:case="2">
-																<td class="order-pending">
-																	<span>Active</span>
-																</td>
-															</div>
-														</div>
-														
-														<div th:switch="${o.status}">
-															<div th:case="3">
-																<td class="order-pending">
-																	<span>Shipping</span>
-																</td>
-															</div>
-														</div>
-														
-														<div th:switch="${o.status}">
-															<div th:case="4">
-																<td class="order-pending">
-																	<span>Delivered</span>
-																</td>
-															</div>
-														</div>
-														
-														<div th:switch="${o.status}">
-															<div th:case="5">
-																<td class="order-pending">
-																	<span>Cancelled</span>
-																</td>
-															</div>
-														</div>
-														-->
 
 														<td>
 															<span th:switch="${o.status}">
@@ -505,7 +465,7 @@
 														<td>
 															<ul>
 																<li>
-																	<a href="order-detail.html">
+																	<a th:href="@{orderDetails}">
 																		<i class="ri-eye-line"></i>
 																	</a>
 																</li>
@@ -631,6 +591,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<!-- Delete Modal Box End -->
 
 	<!-- Offcanvas Box Start -->
