@@ -76,7 +76,7 @@
                     <th>Total</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody> 
                 <tr th:each=" o : ${order}">
                     <td><img src="product-image.jpg" alt="Product Image" style="max-width: 100px;" /></td>
                     <td th:text="${o.product.pname}" ></td>
@@ -87,7 +87,7 @@
                 <!-- Add more rows for additional items -->
             </tbody>
         </table>
-        <div class="total">Total Amount: $100.00</div>
+        <div class="total">Total Amount: <span></span></div>
     </div>
 </body>
 </html>

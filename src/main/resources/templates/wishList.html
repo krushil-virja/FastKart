@@ -129,12 +129,13 @@
                         </div>
                         <div class="product-footer">
                             <div class="product-detail">
-                                <span class="span-name" >Vegetable</span>
+                                <span class="span-name" th:text="${w.product.category.cname}" >Vegetable</span>
                                 <a href="product-left-thumbnail.html">
                                     <h5 class="name" th:text="${w.product.pname}">Fresh Bread and Pastry Flour 200 g</h5>
                                 </a>
-                                <h6 class="unit mt-1">250 ml</h6>
                                 <h5 class="price">
+									<i class="fa fa-inr  theme-color"
+									style="margin-right: 2px;" aria-hidden="true"></i>
                                     <span class="theme-color" th:text="${w.product.price}">$08.02</span>
                                    
                                 </h5>
@@ -146,7 +147,7 @@
 												<input name="pid" type="hidden" th:value="${w.product.id}">
 												<input name="quntity" type="hidden" th:value="1">
 												
-                                    <button class="btn btn-add-cart addcart-button">Add To Cart </button>
+                                    <button class="btn btn-add-cart addcart-button" style="bottom: 0%; background-color: #007bff;">Add To Cart </button>
                                     
 									</form>
                                 </div>

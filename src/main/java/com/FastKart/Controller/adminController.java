@@ -1,5 +1,6 @@
 package com.FastKart.Controller;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -68,11 +69,18 @@ public class adminController {
 
 //========================================================== Handler to get Admin index page ==============================================================
 	@GetMapping("/index")
-	public String adminDashboard(Model m ) {
+	public String adminDashboard(Model m, Principal principal ) {
+		
+		if(principal!=null) {
 		
 		int countAllProducts = productRepository.countAllProducts();
 		int countAllOrders = orderRepository.countAllBy();
 		int countDistinctUsers = orderRepository.countDistinctUsers();
+		
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
+
 		
 		
 List<Category> showAllCategory = cdao.showAllCategory();
@@ -89,6 +97,10 @@ m.addAttribute("topSellingProducts", topSellingProducts);
 		m.addAttribute("countAllOrders", countAllOrders);
        m.addAttribute("countDistinctUsers", countDistinctUsers);
 		return "admin/admin-index";
+		}
+		else {
+			return "redirect:/login";
+		}
 	}
 
 //========================================================= Handler to get Admin addCategory page =========================================================	

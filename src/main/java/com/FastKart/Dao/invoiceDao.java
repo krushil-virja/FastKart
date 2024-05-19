@@ -54,7 +54,7 @@ public class invoiceDao {
 
 	    // Render HTML template using Thymeleaf
 	  //  String htmlContent = templateEngine.process("invoice_template", context)
-	    String htmlContent = templateEngine.process("invoice", context);
+	    String htmlContent = templateEngine.process("invoice_template", context);
 	    logger.info("Generated HTML Content: {}", htmlContent);
 	    
 	 

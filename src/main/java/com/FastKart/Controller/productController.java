@@ -22,9 +22,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.FastKart.Dao.categoryDao;
 import com.FastKart.Dao.productDao;
+import com.FastKart.Dao.reviewsDao;
 import com.FastKart.Dao.subCategoryDao;
 import com.FastKart.Repository.CategoryRepository;
+import com.FastKart.Repository.OrderRepository;
 import com.FastKart.Repository.ProductRepository;
+import com.FastKart.Repository.ReviewsRepository;
 import com.FastKart.Repository.SubCategoryRepository;
 import com.FastKart.entities.Category;
 import com.FastKart.entities.Product;
@@ -50,6 +53,15 @@ public class productController {
 	
 	@Autowired
 	private SubCategoryRepository subCategoryRepository;
+	
+	@Autowired
+	private ReviewsRepository reviewsRepository;
+	
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	@Autowired
+	private reviewsDao rdao;
 
 	@PostMapping("insertProduct")
 	private String addProduct(@ModelAttribute Product product, @RequestParam("image") MultipartFile file,
@@ -99,7 +111,11 @@ public class productController {
 	@GetMapping("/findProductByCategory/{id}")
 	public String findProductByCategory(@PathVariable("id") int id, Model model) {
 		List<Product> productsByCategory = pdao.findProductByCategory(id);
-		model.addAttribute("productsByCategory", productsByCategory);
+		model.addAttribute("productByCategories", productsByCategory);
+		
+		List<Category> category = cdao.showAllCategory();
+		model.addAttribute("category", category);
+
 		return "shop"; // Assuming your view name is "home.html"
 	}
 
@@ -110,6 +126,34 @@ public class productController {
 		Product findProductById = pdao.findProductById(id);
 
 		m.addAttribute("productDetails", findProductById);
+		
+		
+		double averageOfProductRating = rdao.averageOfProductRating(id);
+		m.addAttribute("averageOfProductRating", averageOfProductRating);
+		
+		double fiveStarPercentage  = (averageOfProductRating*5)/100;
+		m.addAttribute("fiveStarPercentage", fiveStarPercentage);
+		
+		double fourStarPercentage = (averageOfProductRating*4)/100;
+		m.addAttribute("fourStarPercentage", fourStarPercentage);
+		
+		double threeStarPercentage = (averageOfProductRating*3)/100;
+		m.addAttribute("threeStarPercentage", threeStarPercentage);
+		
+		double twoStarPercentage = (averageOfProductRating*2)/100;
+		m.addAttribute("twoStarPercentage", twoStarPercentage);
+		
+		double oneStarPercentage = (averageOfProductRating*1)/100;
+		m.addAttribute("oneStarPercentage", oneStarPercentage);
+		
+		Integer countReview = reviewsRepository.countReviewsByProductId(id);
+		m.addAttribute("countReview", countReview);
+		
+		System.out.println(countReview);
+		
+		List<Object[]> topSellingProducts = orderRepository.findTopSellingProducts();
+		m.addAttribute("topSellingProducts", topSellingProducts);
+		
 		return "productDetails";
 	}
 

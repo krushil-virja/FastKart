@@ -400,7 +400,7 @@
 			<!-- Page Sidebar Ends-->
 
 			<!-- Order section Start -->
-			<div class="page-body">
+			<div class="page-body" th:if="${allOrder.size() > 0}">
 				<!-- Table Start -->
 				<div class="container-fluid">
 					<div class="row">
@@ -541,6 +541,12 @@
 						</div>
 					</footer>
 				</div>
+			</div>
+			
+			<div th:unless="${allOrder.size() > 0}">
+				
+				
+				order is null
 			</div>
 			<!-- Order section End -->
 		</div>

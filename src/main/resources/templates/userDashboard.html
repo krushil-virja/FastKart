@@ -145,7 +145,7 @@
 							<div class="profile-contain">
 								<div class="profile-image">
 									<div class="position-relative">
-										<img src="../assets/images/inner-page/user/1.jpg"
+										<img th:src="@{'/assets1/images/' + ${loggedInUser.profileImage}}"
 											class="blur-up lazyload update_img" alt="">
 										<div class="cover-icon">
 											<i class="fa-solid fa-pen">
@@ -379,7 +379,7 @@
 
 												<div class="product-footer">
 													<div class="product-detail">
-														<span class="span-name">Vegetable</span>
+														<span class="span-name" th:text="${w.product.category.cname}">Vegetable</span>
 														<a href="product-left-thumbnail.html">
 															<h5 class="name" th:text="${w.product.pname}">Fresh Bread
 																and Pastry Flour 200 g</h5>
@@ -388,10 +388,11 @@
 															cottage cheese cheese strings. Red leicester paneer danish
 															fontina queso lancashire when the cheese comes out
 															everybody's happy cottage cheese paneer.</p>
-														<h6 class="unit mt-1">250 ml</h6>
 														<h5 class="price">
-															<span class="theme-color">$08.02</span>
-															<del>$15.15</del>
+															<i class="fa fa-inr  theme-color"
+														style="margin-right: 2px;" aria-hidden="true"></i>
+															<span class="theme-color" th:text="${w.product.price}">$08.02</span>
+															
 														</h5>
 														<div class="add-to-cart-box mt-2">
 															<button class="btn btn-add-cart addcart-button"
@@ -517,7 +518,8 @@
 														<li>
 															<div class="size-box">
 																<h6 class="text-content">Price : </h6>
-																<h5 th:text="${o.product.price}">$20.68</h5>
+																<h5> <i class="fa fa-inr "
+															style="margin-right: 2px;" aria-hidden="true"></i> <span th:text="${o.product.price}"> $20.68</span> </h5>
 															</div>
 														</li>
 
@@ -641,10 +643,12 @@
 													</div>
 												</div>
 												<div class="button-group">
-													<a class="btn btn-sm add-button w-100" data-bs-toggle="modal"
-														th:data-bs-target="'#edit-address-' + ${a.id}">
-														<i data-feather="edit"></i> Edit
+													<a class="btn btn-sm add-button w-100" th:data-bs-toggle="modal" th:data-bs-target="'#edit-address-' + ${a.id}">
+													    <i data-feather="edit"></i> Edit
 													</a>
+
+
+
 												</div>
 
 											</div>
@@ -1147,53 +1151,109 @@
 	</section>
 	<!-- Add address modal box end -->
 
+
 	<!--EDIT ADDRESS MODEL-->
 
-	<div th:each="a:${showAllAddress}">
-		<div class="modal fade" th:id="'edit-address-' + ${a.id}" tabindex="-1" aria-labelledby="editAddressLabel"
-			aria-hidden="true">
-			<div class="modal-dialog">
+	<!-- Modal section with dynamic ID -->
+	<section >
+		<div th:each="a : ${addresses}">
+	    <div class="modal fade theme-modal" th:id="'edit-address-' + ${a.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	        <!-- Modal content -->
+			<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="editAddressLabel">Edit Address</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<h5 class="modal-title" id="exampleModalLabel">Add a new address</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							<i class="fa-solid fa-xmark"></i>
+						</button>
 					</div>
 					<div class="modal-body">
-						<form th:action="@{/updateAddress}" th:object="${a}" method="post">
-							<input type="hidden" th:field="*{id}">
-							<div class="mb-3">
-								<label for="firstName" class="form-label">First Name</label>
-								<input type="text" class="form-control" th:id="'firstName-' + ${a.id}"
-									th:field="*{firstName}">
+						<form th:action="@{/newAddress}" action="#" method="post">
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="firstName" type="text" class="form-control" id="firstName"
+									placeholder="Enter First Name">
+								<label for="firstName">First Name</label>
 							</div>
-							<div class="mb-3">
-								<label for="addressText" class="form-label">Address</label>
-								<input type="text" class="form-control" th:id="'addressText-' + ${a.id}"
-									th:field="*{addressText}">
+
+
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="lastName" type="text" class="form-control" id="lastName"
+									placeholder="Enter Last Name">
+								<label for="lastName">Last Name</label>
 							</div>
-							<div class="mb-3">
-								<label for="pinCode" class="form-label">Pin Code</label>
-								<input type="text" class="form-control" th:id="'pinCode-' + ${a.id}"
-									th:field="*{pinCode}">
+
+
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="email" type="email" class="form-control" id="email"
+									placeholder="Enter Email Address">
+								<label for="email">Email Address</label>
 							</div>
-							<div class="mb-3">
-								<label for="phoneNumber" class="form-label">Phone Number</label>
-								<input type="text" class="form-control" th:id="'phoneNumber-' + ${a.id}"
-									th:field="*{phoneNumber}">
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="number" type="number" class="form-control" id="number"
+									placeholder="Enter Mobile Number">
+								<label for="number">MObile Number</label>
 							</div>
-							<div class="mb-3">
-								<label for="addressType" class="form-label">Address Type</label>
-								<input type="text" class="form-control" th:id="'addressType-' + ${a.id}"
-									th:field="*{addressType}">
+
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<textarea name="addressText" class="form-control" placeholder="Enter Your Address"
+									id="addressText" style="height: 100px"></textarea>
+								<label for="addressText">Enter Address</label>
 							</div>
-							<button type="submit" class="btn btn-primary">Save changes</button>
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="state" type="text" class="form-control" id="state"
+									placeholder="Enter Your State Name">
+								<label for="state">State Name</label>
+							</div>
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="country" type="text" class="form-control" id="country"
+									placeholder="Enter Your Country Name">
+								<label for="country">Country Name</label>
+							</div>
+
+							<div class="form-floating mb-4 theme-form-floating">
+								<input name="pinCode" type="text" class="form-control" id="pin"
+									placeholder="Enter Pin Code">
+								<label for="pin">Pin Code</label>
+							</div>
+
+							<label for="form-check" style="font-size: 16px;"> Address Type</label><br>
+							<div style="display: flex;margin-top: 5px;">
+
+								<div class="form-check" style="margin-right: 10px;">
+									<input class="form-check-input" value="Home" type="radio" name="addressType"
+										id="flexRadioDefault1" style="font-size: 14px;">
+									<label class="form-check-label" for="flexRadioDefault1">Home</label>
+								</div>
+
+								<div class="form-check" style="margin-left: 10px;">
+									<input class="form-check-input" value="Work" type="radio" name="addressType"
+										id="flexRadioDefault2" style="font-size: 14px;">
+									<label class="form-check-label" for="flexRadioDefault2">Work</label>
+								</div>
+							</div>
+
+
+							<div class="modal-footer">
+								<!--<button type="button" class="btn btn-secondary btn-md"
+									data-bs-dismiss="modal">Close</button>-->
+								<button type="submit" class="btn theme-bg-color btn-md text-white">Add Address</button>
+							</div>
+
 						</form>
+
 					</div>
+
 				</div>
 			</div>
+	    </div>
 		</div>
-
-	</div>
+	</section>
 
 
 	<!-- Add address modal box end -->
@@ -1344,7 +1404,7 @@
 								<div class="col-xxl-6">
 
 									<div class="form-floating theme-form-floating">
-										<input class="form-control" type="tel" name="password" id="password"
+										<input class="form-control" type="password" name="password" id="password"
 											th:value="${user.password}" readonly>
 										<label for="password">Password</label>
 									</div>

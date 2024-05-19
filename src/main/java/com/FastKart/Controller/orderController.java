@@ -70,7 +70,7 @@ public class orderController {
 		
 		/* return "redirect:/comfirmOrder?checkoutId=" +  o.getCheckOut();  THIS RETURN FOR THE HANDLER WICH WE PASS CHECKOUT AS A QUERY PARAMETER*/
 		
-		return "redirect:/comfirmOrder"; // this return for the handler which we use httpsession to set checkout id
+		return "redirect:/userDashboard"; // this return for the handler which we use httpsession to set checkout id
 	}
 	
 	

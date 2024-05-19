@@ -8,6 +8,7 @@ import java.util.Optional;
 import javax.print.attribute.standard.PageRanges;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.convert.ReadingConverter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -16,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.FastKart.Dao.WishListDao;
@@ -46,6 +48,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
+
 public class basicController {
 
 	@Autowired
@@ -429,6 +432,7 @@ public class basicController {
 	@GetMapping("/userDashboard")
 	public String userDashboard(Model m, Principal principal) {
 
+		if(principal!=null) {
 		User loggedInUser = udao.getLoggedInUser(principal);
 		m.addAttribute("user", loggedInUser);
 		/*
@@ -445,6 +449,10 @@ public class basicController {
 		m.addAttribute("viewWishList", viewWishList);
 
 		return "userDashboard";
+		}
+		else {
+			return "redirect:/login";
+		}
 	}
 
 	@GetMapping("invoice_template")

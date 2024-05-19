@@ -1,8 +1,14 @@
 package com.FastKart.Controller;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -19,6 +25,7 @@ import com.FastKart.Repository.UserRepository;
 import com.FastKart.email.emailServices;
 import com.FastKart.entities.User;
 
+import ch.qos.logback.classic.spi.ClassPackagingData;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
@@ -148,20 +155,38 @@ public class userController {
 		User user = userRepository.findById(id).get();
 		  System.out.println(user);
 		
-		if(user!=null) {			 
-			 user.setId(id);
-			user.setName(name);
-			user.setEmail(email);
-			user.setPassword(password);
-			user.setContact(contact);
-			user.setGender(gender);
-			user.setBirthDate(birthdate);
-			user.setAddress(address);
+		if(user!=null) {	
 			
-			
-			user.setProfileImage(user.getProfileImage());
+			if(file.isEmpty()) {
+				
+				System.out.println("your file is empty");
+			}
+			else {
+			try {
+				
+				 user.setId(id);
+					user.setName(name);
+					user.setEmail(email);
+					user.setPassword(password);
+					user.setContact(contact);
+					user.setGender(gender);
+					user.setBirthDate(birthdate);
+					user.setAddress(address);
+					user.setProfileImage(file.getOriginalFilename());
+					
+					File saveFile = new ClassPathResource("static/assets1/images").getFile();
+					Path path = Paths.get(saveFile.getAbsolutePath() + File.separator + file.getOriginalFilename());
+					Files.copy(file.getInputStream(), path,  StandardCopyOption.REPLACE_EXISTING);
+					
+					System.out.println("file is uploaded");
+					System.out.println(path);
+					
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			
 			userRepository.save(user);
+			}
 		}
 		
 		return  "redirect:/userDashboard";

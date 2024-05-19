@@ -19,14 +19,22 @@ public class reviewController {
 	@Autowired
 	private reviewsDao rDao;
 	
-	@PostMapping("/rateProduct")
-	public  String productReview(Principal principal, @ModelAttribute Review review,@RequestParam("pid")  int pid, @RequestParam("rating") int rating) {
-		 
-		rDao.productReviews(review, principal, pid, rating);
-		
-		return "redirect:/userDashboard";
-		
-	}
+		@PostMapping("/rateProduct")
+		public  String productReview(Principal principal, @ModelAttribute Review review,@RequestParam("pid")  int pid, @RequestParam("rating") int rating,
+				@RequestParam(value="reviewFormFlag", required = false) boolean flag)
+				 {
+			 
+			rDao.productReviews(review, principal, pid, rating);
+			
+			
+			if(flag==true) {
+			return "redirect:/userDashboard";
+			}
+			else {
+				  return "redirect:/productDetails/" + pid;
+			}
+			
+		}
 	
 	
 }
