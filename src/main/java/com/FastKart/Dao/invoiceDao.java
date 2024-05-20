@@ -77,8 +77,8 @@ try {
 			
 			ITextRenderer renderer = new ITextRenderer();
 			/* renderer.setDocumentFromString(htmlContent); */
-			renderer.setDocumentFromString(htmlContent, "");
-				            
+			  String basePath = "file:///D:/FastKart/target/classes/static/";
+	            renderer.setDocumentFromString(htmlContent, basePath);
 			renderer.layout();
 			renderer.createPDF(outputStream);
 			

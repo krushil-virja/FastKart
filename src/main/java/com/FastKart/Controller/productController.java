@@ -110,12 +110,23 @@ public class productController {
 //========================================================= FIND CATEGORY WISE PRODUCT HANDLER ========================================================	
 	@GetMapping("/findProductByCategory/{id}")
 	public String findProductByCategory(@PathVariable("id") int id, Model model) {
+		
+		
 		List<Product> productsByCategory = pdao.findProductByCategory(id);
 		model.addAttribute("productByCategories", productsByCategory);
 		
 		List<Category> category = cdao.showAllCategory();
 		model.addAttribute("category", category);
-
+		
+		int countProductsInRange0To1000 = productRepository.countProductsInRange0To1000();
+		model.addAttribute("countProductsInRange0To1000", countProductsInRange0To1000);
+		
+		int countProductsInRange1000To10000 = productRepository.countProductsInRange1000To10000();
+		model.addAttribute("countProductsInRange1000To10000", countProductsInRange1000To10000);
+		
+		int countProductsInRange10000To100000 = productRepository.countProductsInRange10000To100000();
+		model.addAttribute("countProductsInRange10000To100000", countProductsInRange10000To100000);
+	
 		return "shop"; // Assuming your view name is "home.html"
 	}
 
@@ -153,6 +164,11 @@ public class productController {
 		
 		List<Object[]> topSellingProducts = orderRepository.findTopSellingProducts();
 		m.addAttribute("topSellingProducts", topSellingProducts);
+		
+		
+		List<Product> relatedProducts = pdao.findRelatedProducts(findProductById);
+		m.addAttribute("relatedProducts", relatedProducts);
+
 		
 		return "productDetails";
 	}

@@ -76,6 +76,7 @@ public class adminController {
 		int countAllProducts = productRepository.countAllProducts();
 		int countAllOrders = orderRepository.countAllBy();
 		int countDistinctUsers = orderRepository.countDistinctUsers();
+		Double calculateTotalRevenue = orderRepository.calculateTotalRevenue();
 		
 		
 		User loggedInUser = udao.getLoggedInUser(principal);
@@ -93,9 +94,11 @@ m.addAttribute("latestOrders", latestOrders);
 List<Object[]> topSellingProducts = orderRepository.findTopSellingProducts();
 m.addAttribute("topSellingProducts", topSellingProducts);
 
+m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 		m.addAttribute("countAllProducts", countAllProducts);
 		m.addAttribute("countAllOrders", countAllOrders);
        m.addAttribute("countDistinctUsers", countDistinctUsers);
+       
 		return "admin/admin-index";
 		}
 		else {

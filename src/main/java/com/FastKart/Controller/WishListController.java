@@ -69,10 +69,14 @@ public class WishListController {
 //============================================== DELETE WISHLIST ITEM HANDLER =========================================================================
 	
 	@GetMapping("/deleteWishList/{id}")
-	public String deleteWishList(@PathVariable("id") int id, Model m ) {
+	public String deleteWishList(@PathVariable("id") int id, Model m,  @RequestParam(value="source", required =  false) String source) {
 		
 		wdao.deleteWishList(id);
-		return "redirect:/wishList";
+		 if ("userDashboard".equals(source)) {
+		        return "redirect:/userDashboard";
+		    } else {
+		        return "redirect:/wishList";
+		    }
 	}
 	
 	

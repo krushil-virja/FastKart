@@ -51,4 +51,8 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
     // to count total customer (user) Distict give use unique value 
     @Query("SELECT COUNT(DISTINCT o.user.id) FROM Order o")
     int countDistinctUsers();
+    
+    @Query("SELECT SUM(o.product.price * o.quantity) FROM Order o")
+    Double calculateTotalRevenue();
 }
+

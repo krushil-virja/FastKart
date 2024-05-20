@@ -71,15 +71,21 @@
                 <tr>
                     <th>Product Image</th>
                     <th>Product Name</th>
+					<th>Unit Price</th>
                     <th>Quantity</th>
-                    <th>Unit Price</th>
                     <th>Total</th>
-                </tr>
+                </tr> 
             </thead>
             <tbody> 
                 <tr th:each=" o : ${order}">
-                    <td><img src="product-image.jpg" alt="Product Image" style="max-width: 100px;" /></td>
-                    <td th:text="${o.product.pname}" ></td>
+					<td>
+					    <img 
+					        th:src="@{'file:///D:/FastKart/target/classes/static/assets1/images/' + ${order.product.pimage}}"  
+					        alt="Product Image" 
+					        style="max-width: 50px; height: 50px;" 
+					    />
+					</td>
+					<td th:text="${o.product.pname}" ></td>
                     <td  th:text="${o.product.price}" ></td>
                     <td  th:text="${o.quantity}"></td>
                     <td th:text="${o.quantity}" >$100.00</td>

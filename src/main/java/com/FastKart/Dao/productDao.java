@@ -123,9 +123,13 @@ public class productDao {
 	        return products.subList(0, Math.min(n, products.size()));
 	    }
 
-
+//================================================ Find Related Product ==============================================
+	    
+	    public List<Product> findRelatedProducts(Product p){
+	    
+	    return productRepository.findProductByCategory(p.getCategory());
 		
-		
+	    }
 		
 		
 } 

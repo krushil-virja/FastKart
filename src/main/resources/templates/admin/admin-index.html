@@ -107,45 +107,7 @@
 								<i class="ri-search-line"></i>
 							</span>
 						</li>
-						<li class="onhover-dropdown">
-							<div class="notification-box">
-								<i class="ri-notification-line"></i>
-								<span class="badge rounded-pill badge-theme">4</span>
-							</div>
-							<ul class="notification-dropdown onhover-show-div">
-								<li>
-									<i class="ri-notification-line"></i>
-									<h6 class="f-18 mb-0">Notitications</h6>
-								</li>
-								<li>
-									<p>
-										<i class="fa fa-circle me-2 font-primary"></i>Delivery processing <span
-											class="pull-right">10 min.</span>
-									</p>
-								</li>
-								<li>
-									<p>
-										<i class="fa fa-circle me-2 font-success"></i>Order Complete<span
-											class="pull-right">1 hr</span>
-									</p>
-								</li>
-								<li>
-									<p>
-										<i class="fa fa-circle me-2 font-info"></i>Tickets Generated<span
-											class="pull-right">3 hr</span>
-									</p>
-								</li>
-								<li>
-									<p>
-										<i class="fa fa-circle me-2 font-danger"></i>Delivery Complete<span
-											class="pull-right">6 hr</span>
-									</p>
-								</li>
-								<li>
-									<a class="btn btn-primary" href="javascript:void(0)">Check all notification</a>
-								</li>
-							</ul>
-						</li>
+			
 
 						<li>
 							<div class="mode">
@@ -154,9 +116,9 @@
 						</li>
 						<li class="profile-nav onhover-dropdown pe-0 me-0">
 							<div class="media profile-media">
-								<img class="user-profile rounded-circle" th:src="@{'/assets1/images/' + ${loggedInUser.profileImage}}" alt="">
+								<img class="user-profile rounded-circle" th:src="@{'/assets1/images/' + ${user.profileImage}}" alt="">
 								<div class="user-name-hide media-body">
-									<span th:text="${loggedInUser.name}">Emay Walter</span>
+									<span th:text="${user.name}">Emay Walter</span>
 									<p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
 								</div>
 							</div>
@@ -369,32 +331,6 @@
 								</li>
 
 
-
-								<li class="sidebar-list">
-									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-										<i class="ri-settings-line"></i>
-										<span>Settings</span>
-									</a>
-									<ul class="sidebar-submenu">
-										<li>
-											<a href="profile-setting.html">Profile Setting</a>
-										</li>
-									</ul>
-								</li>
-
-								<li class="sidebar-list">
-									<a class="sidebar-link sidebar-title link-nav" href="reports.html">
-										<i class="ri-file-chart-line"></i>
-										<span>Reports</span>
-									</a>
-								</li>
-
-								<li class="sidebar-list">
-									<a class="sidebar-link sidebar-title link-nav" href="list-page.html">
-										<i class="ri-list-check"></i>
-										<span>List Page</span>
-									</a>
-								</li>
 							</ul>
 						</div>
 
@@ -416,7 +352,7 @@
 									<div class="media align-items-center static-top-widget">
 										<div class="media-body p-0">
 											<span class="m-0">Total Revenue</span>
-											<h4 class="mb-0 counter">$6659
+											<h4 class="mb-0 counter" th:text="${calculateTotalRevenue}">$6659
 												<span class="badge badge-light-primary grow">
 													<i data-feather="trending-up"></i>8.5%</span>
 											</h4>
@@ -587,7 +523,7 @@
 							<div class="card o-hidden card-hover">
 								<div class="card-header card-header-top card-header--2 px-0 pt-0">
 									<div class="card-header-title">
-										<h4>Best Selling Product</h4>
+										<h4>Recent Order</h4>
 									</div>
 
 
@@ -605,7 +541,7 @@
 														<td>
 															<div class="best-product-box">
 																<div class="product-image">
-																	<imgth:src="@{'/assets1/images/' + ${latest.product.pimage}}"
+																	<img th:src="@{'/assets1/images/' + ${latest.product.pimage}}"
 																		class="img-fluid" alt="Product">
 																</div>
 																<div class="product-name">

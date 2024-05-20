@@ -119,7 +119,7 @@
 								</div>
 
 								<div class="ms-auto d-flex align-items-center">
-								<!--
+									<!--
 									<div class="category-dropdown me-md-3">
 										<h5 class="text-content">Sort By :</h5>
 										<div class="dropdown">
@@ -292,8 +292,8 @@
 									<ul class="category-list custom-padding custom-height">
 										<li>
 											<div class="form-check ps-0 m-0 category-list-box">
-												<input name="filterByPrice" class="checkbox_animated price-filter" type="checkbox"
-													id="flexCheckDefault5" th:value="${1}" >
+												<input name="filterByPrice" class="checkbox_animated price-filter"
+													type="checkbox" id="flexCheckDefault5" th:value="${1}">
 												<label class="form-check-label" for="flexCheckDefault5">
 													<span class="name">0 to 1000 Rs</span>
 													<span class="number"> <span
@@ -305,8 +305,8 @@
 
 										<li>
 											<div class="form-check ps-0 m-0 category-list-box">
-												<input  name="filterByPrice" class="checkbox_animated price-filter" type="checkbox"
-													id="flexCheckDefault6"  th:value="${2}" >
+												<input name="filterByPrice" class="checkbox_animated price-filter"
+													type="checkbox" id="flexCheckDefault6" th:value="${2}">
 												<label class="form-check-label" for="flexCheckDefault6">
 													<span class="name">1000 to 10000 Rs</span>
 													<span class="number"> <span
@@ -318,8 +318,8 @@
 
 										<li>
 											<div class="form-check ps-0 m-0 category-list-box">
-												<input name="filterByPrice" class="checkbox_animated" type="checkbox" id="flexCheckDefault7"
-													 th:value="${3}" >
+												<input name="filterByPrice" class="checkbox_animated" type="checkbox"
+													id="flexCheckDefault7" th:value="${3}">
 												<label class="form-check-label" for="flexCheckDefault7">
 													<span class="name">10000 to 100000 Rs</span>
 													<span class="number"> <span
@@ -368,10 +368,15 @@
 													</li>
 
 													<li data-bs-toggle="tooltip" data-bs-placement="top"
-														title="Compare">
-														<a href="compare.html">
-															<i data-feather="refresh-cw"></i>
-														</a>
+														title="add TO Cart">
+														<form action="/addToCart" method="post">
+															<input name="pid" type="hidden" th:value="${product.id}">
+															<input name="quntity" type="hidden" th:value="1">
+															<input name="shipping" type="hidden" th:value="50">
+															<button class=" bg-transparent border-0"> <a>
+																	<i data-feather="shopping-cart"></i>
+																</a></button>
+														</form>
 													</li>
 
 													<li data-bs-toggle="tooltip" data-bs-placement="top"
@@ -435,7 +440,6 @@
 												<h5 class="price"> <i class="fa fa-inr  theme-color"
 														style="margin-right: 2px;" aria-hidden="true"></i> <span
 														class="theme-color" th:text="${product.price}">$08.02</span>
-													<del>$15.15</del>
 												</h5>
 
 											</div>
@@ -467,10 +471,15 @@
 													</li>
 
 													<li data-bs-toggle="tooltip" data-bs-placement="top"
-														title="Compare">
-														<a href="compare.html">
-															<i data-feather="refresh-cw"></i>
-														</a>
+														title="add TO Cart">
+														<form action="/addToCart" method="post">
+															<input name="pid" type="hidden" th:value="${product.id}">
+															<input name="quntity" type="hidden" th:value="1">
+															<input name="shipping" type="hidden" th:value="50">
+															<button class=" bg-transparent border-0"> <a>
+																	<i data-feather="shopping-cart"></i>
+																</a></button>
+														</form>
 													</li>
 
 													<li data-bs-toggle="tooltip" data-bs-placement="top"
@@ -534,7 +543,6 @@
 												<h5 class="price"> <i class="fa fa-inr  theme-color"
 														style="margin-right: 2px;" aria-hidden="true"></i> <span
 														class="theme-color" th:text="${product.price}">$08.02</span>
-													<del>$15.15</del>
 												</h5>
 
 											</div>

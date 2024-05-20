@@ -99,45 +99,7 @@
                                 <i class="ri-search-line"></i>
                             </span>
                         </li>
-                        <li class="onhover-dropdown">
-                            <div class="notification-box">
-                                <i class="ri-notification-line"></i>
-                                <span class="badge rounded-pill badge-theme">4</span>
-                            </div>
-                            <ul class="notification-dropdown onhover-show-div">
-                                <li>
-                                    <i class="ri-notification-line"></i>
-                                    <h6 class="f-18 mb-0">Notitications</h6>
-                                </li>
-                                <li>
-                                    <p>
-                                        <i class="fa fa-circle me-2 font-primary"></i>Delivery processing <span
-                                            class="pull-right">10 min.</span>
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        <i class="fa fa-circle me-2 font-success"></i>Order Complete<span
-                                            class="pull-right">1 hr</span>
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        <i class="fa fa-circle me-2 font-info"></i>Tickets Generated<span
-                                            class="pull-right">3 hr</span>
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        <i class="fa fa-circle me-2 font-danger"></i>Delivery Complete<span
-                                            class="pull-right">6 hr</span>
-                                    </p>
-                                </li>
-                                <li>
-                                    <a class="btn btn-primary" href="javascript:void(0)">Check all notification</a>
-                                </li>
-                            </ul>
-                        </li>
+                      
 
                         <li>
                             <div class="mode">
@@ -359,33 +321,7 @@
                                     </a>
                                 </li>
 
-                               
-
-                                <li class="sidebar-list">
-                                    <a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-                                        <i class="ri-settings-line"></i>
-                                        <span>Settings</span>
-                                    </a>
-                                    <ul class="sidebar-submenu">
-                                        <li>
-                                            <a href="profile-setting.html">Profile Setting</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="reports.html">
-                                        <i class="ri-file-chart-line"></i>
-                                        <span>Reports</span>
-                                    </a>
-                                </li>
-
-                                <li class="sidebar-list">
-                                    <a class="sidebar-link sidebar-title link-nav" href="list-page.html">
-                                        <i class="ri-list-check"></i>
-                                        <span>List Page</span>
-                                    </a>
-                                </li>
+                              
                             </ul>
                         </div>
 
@@ -440,11 +376,7 @@
                                                         <td th:text="${c.cname}" ></td>
                                                         <td>
                                                     	        <ul>
-                                                                <li>
-                                                                    <a th:href="@{'/updateCategory/' + ${c.id}}">
-                                                                        <i class="ri-eye-line"></i>
-                                                                    </a>
-                                                                </li>
+                                                              
                                                 <!--edit category through pot mapping. not completed-->
                                                                <!-- <li>
 																	<form method="post" action="#" th:action="@{'/updateCategory/' + ${c.id}}">

@@ -199,12 +199,19 @@
 									Profile</button>
 							</li>
 
-							<li class="nav-item" role="presentation">
+							<!--<li class="nav-item" role="presentation">
 								<button class="nav-link" id="pills-security-tab" data-bs-toggle="pill"
 									data-bs-target="#pills-security" type="button" role="tab"
 									aria-controls="pills-security" aria-selected="false"><i data-feather="shield"></i>
 									Privacy</button>
+							</li>-->
+							<li class="nav-item" role="presentation">
+								<a th:href="@{/logout}" class="nav-link" role="tab" aria-controls="pills-security"
+									aria-selected="false">
+									<i data-feather="log-out"></i> Logout
+								</a>
 							</li>
+
 						</ul>
 					</div>
 				</div>
@@ -369,9 +376,12 @@
 																class="img-fluid blur-up lazyload" alt="">
 														</a>
 
+
 														<div class="product-header-top">
 															<button class="btn wishlist-button close_button">
-																<i data-feather="x"></i>
+																<a
+																	th:href="@{'/deleteWishList/' + ${w.id} + '?source=userDashboard'}">
+																	<i data-feather="x"></i> </a>
 															</button>
 														</div>
 													</div>
@@ -379,7 +389,8 @@
 
 												<div class="product-footer">
 													<div class="product-detail">
-														<span class="span-name" th:text="${w.product.category.cname}">Vegetable</span>
+														<span class="span-name"
+															th:text="${w.product.category.cname}">Vegetable</span>
 														<a href="product-left-thumbnail.html">
 															<h5 class="name" th:text="${w.product.pname}">Fresh Bread
 																and Pastry Flour 200 g</h5>
@@ -389,32 +400,23 @@
 															fontina queso lancashire when the cheese comes out
 															everybody's happy cottage cheese paneer.</p>
 														<h5 class="price">
-															<i class="fa fa-inr  theme-color"
-														style="margin-right: 2px;" aria-hidden="true"></i>
-															<span class="theme-color" th:text="${w.product.price}">$08.02</span>
-															
+															<i class="fa fa-inr  theme-color" style="margin-right: 2px;"
+																aria-hidden="true"></i>
+															<span class="theme-color"
+																th:text="${w.product.price}">$08.02</span>
+
 														</h5>
 														<div class="add-to-cart-box mt-2">
-															<button class="btn btn-add-cart addcart-button"
-																tabindex="0">Add
-																<span class="add-icon">
-																	<i class="fa-solid fa-plus"></i>
-																</span>
-															</button>
-															<div class="cart_qty qty-box">
-																<div class="input-group">
-																	<button type="button" class="qty-left-minus"
-																		data-type="minus" data-field="">
-																		<i class="fa fa-minus" aria-hidden="true"></i>
-																	</button>
-																	<input class="form-control input-number qty-input"
-																		type="text" name="quantity" value="0">
-																	<button type="button" class="qty-right-plus"
-																		data-type="plus" data-field="">
-																		<i class="fa fa-plus" aria-hidden="true"></i>
-																	</button>
-																</div>
-															</div>
+															<form action="/addToCart" method="post">
+
+																<input name="pid" type="hidden"
+																	th:value="${w.product.id}">
+																<input name="quntity" type="hidden" th:value="1">
+																<button class="btn btn-add-cart addcart-button"
+																	tabindex="0">Add
+																</button>
+																</form>
+
 														</div>
 													</div>
 												</div>
@@ -518,8 +520,10 @@
 														<li>
 															<div class="size-box">
 																<h6 class="text-content">Price : </h6>
-																<h5> <i class="fa fa-inr "
-															style="margin-right: 2px;" aria-hidden="true"></i> <span th:text="${o.product.price}"> $20.68</span> </h5>
+																<h5> <i class="fa fa-inr " style="margin-right: 2px;"
+																		aria-hidden="true"></i> <span
+																		th:text="${o.product.price}"> $20.68</span>
+																</h5>
 															</div>
 														</li>
 
@@ -642,15 +646,13 @@
 														</table>
 													</div>
 												</div>
-												<div class="button-group">
+												<!--	<div class="button-group">
 													<a class="btn btn-sm add-button w-100" th:data-bs-toggle="modal" th:data-bs-target="'#edit-address-' + ${a.id}">
 													    <i data-feather="edit"></i> Edit
 													</a>
 
-
-
 												</div>
-
+-->
 											</div>
 										</div>
 
@@ -1155,103 +1157,105 @@
 	<!--EDIT ADDRESS MODEL-->
 
 	<!-- Modal section with dynamic ID -->
-	<section >
+	<section>
 		<div th:each="a : ${addresses}">
-	    <div class="modal fade theme-modal" th:id="'edit-address-' + ${a.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	        <!-- Modal content -->
-			<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Add a new address</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-							<i class="fa-solid fa-xmark"></i>
-						</button>
-					</div>
-					<div class="modal-body">
-						<form th:action="@{/newAddress}" action="#" method="post">
-							<div class="form-floating mb-4 theme-form-floating">
-								<input name="firstName" type="text" class="form-control" id="firstName"
-									placeholder="Enter First Name">
-								<label for="firstName">First Name</label>
-							</div>
-
-
-
-							<div class="form-floating mb-4 theme-form-floating">
-								<input name="lastName" type="text" class="form-control" id="lastName"
-									placeholder="Enter Last Name">
-								<label for="lastName">Last Name</label>
-							</div>
-
-
-
-							<div class="form-floating mb-4 theme-form-floating">
-								<input name="email" type="email" class="form-control" id="email"
-									placeholder="Enter Email Address">
-								<label for="email">Email Address</label>
-							</div>
-
-							<div class="form-floating mb-4 theme-form-floating">
-								<input name="number" type="number" class="form-control" id="number"
-									placeholder="Enter Mobile Number">
-								<label for="number">MObile Number</label>
-							</div>
-
-
-							<div class="form-floating mb-4 theme-form-floating">
-								<textarea name="addressText" class="form-control" placeholder="Enter Your Address"
-									id="addressText" style="height: 100px"></textarea>
-								<label for="addressText">Enter Address</label>
-							</div>
-
-							<div class="form-floating mb-4 theme-form-floating">
-								<input name="state" type="text" class="form-control" id="state"
-									placeholder="Enter Your State Name">
-								<label for="state">State Name</label>
-							</div>
-
-							<div class="form-floating mb-4 theme-form-floating">
-								<input name="country" type="text" class="form-control" id="country"
-									placeholder="Enter Your Country Name">
-								<label for="country">Country Name</label>
-							</div>
-
-							<div class="form-floating mb-4 theme-form-floating">
-								<input name="pinCode" type="text" class="form-control" id="pin"
-									placeholder="Enter Pin Code">
-								<label for="pin">Pin Code</label>
-							</div>
-
-							<label for="form-check" style="font-size: 16px;"> Address Type</label><br>
-							<div style="display: flex;margin-top: 5px;">
-
-								<div class="form-check" style="margin-right: 10px;">
-									<input class="form-check-input" value="Home" type="radio" name="addressType"
-										id="flexRadioDefault1" style="font-size: 14px;">
-									<label class="form-check-label" for="flexRadioDefault1">Home</label>
+			<div class="modal fade theme-modal" th:id="'edit-address-' + ${a.id}" tabindex="-1"
+				aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<!-- Modal content -->
+				<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Add a new address</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+								<i class="fa-solid fa-xmark"></i>
+							</button>
+						</div>
+						<div class="modal-body">
+							<form th:action="@{/newAddress}" action="#" method="post">
+								<div class="form-floating mb-4 theme-form-floating">
+									<input name="firstName" type="text" class="form-control" id="firstName"
+										placeholder="Enter First Name">
+									<label for="firstName">First Name</label>
 								</div>
 
-								<div class="form-check" style="margin-left: 10px;">
-									<input class="form-check-input" value="Work" type="radio" name="addressType"
-										id="flexRadioDefault2" style="font-size: 14px;">
-									<label class="form-check-label" for="flexRadioDefault2">Work</label>
+
+
+								<div class="form-floating mb-4 theme-form-floating">
+									<input name="lastName" type="text" class="form-control" id="lastName"
+										placeholder="Enter Last Name">
+									<label for="lastName">Last Name</label>
 								</div>
-							</div>
 
 
-							<div class="modal-footer">
-								<!--<button type="button" class="btn btn-secondary btn-md"
+
+								<div class="form-floating mb-4 theme-form-floating">
+									<input name="email" type="email" class="form-control" id="email"
+										placeholder="Enter Email Address">
+									<label for="email">Email Address</label>
+								</div>
+
+								<div class="form-floating mb-4 theme-form-floating">
+									<input name="number" type="number" class="form-control" id="number"
+										placeholder="Enter Mobile Number">
+									<label for="number">MObile Number</label>
+								</div>
+
+
+								<div class="form-floating mb-4 theme-form-floating">
+									<textarea name="addressText" class="form-control" placeholder="Enter Your Address"
+										id="addressText" style="height: 100px"></textarea>
+									<label for="addressText">Enter Address</label>
+								</div>
+
+								<div class="form-floating mb-4 theme-form-floating">
+									<input name="state" type="text" class="form-control" id="state"
+										placeholder="Enter Your State Name">
+									<label for="state">State Name</label>
+								</div>
+
+								<div class="form-floating mb-4 theme-form-floating">
+									<input name="country" type="text" class="form-control" id="country"
+										placeholder="Enter Your Country Name">
+									<label for="country">Country Name</label>
+								</div>
+
+								<div class="form-floating mb-4 theme-form-floating">
+									<input name="pinCode" type="text" class="form-control" id="pin"
+										placeholder="Enter Pin Code">
+									<label for="pin">Pin Code</label>
+								</div>
+
+								<label for="form-check" style="font-size: 16px;"> Address Type</label><br>
+								<div style="display: flex;margin-top: 5px;">
+
+									<div class="form-check" style="margin-right: 10px;">
+										<input class="form-check-input" value="Home" type="radio" name="addressType"
+											id="flexRadioDefault1" style="font-size: 14px;">
+										<label class="form-check-label" for="flexRadioDefault1">Home</label>
+									</div>
+
+									<div class="form-check" style="margin-left: 10px;">
+										<input class="form-check-input" value="Work" type="radio" name="addressType"
+											id="flexRadioDefault2" style="font-size: 14px;">
+										<label class="form-check-label" for="flexRadioDefault2">Work</label>
+									</div>
+								</div>
+
+
+								<div class="modal-footer">
+									<!--<button type="button" class="btn btn-secondary btn-md"
 									data-bs-dismiss="modal">Close</button>-->
-								<button type="submit" class="btn theme-bg-color btn-md text-white">Add Address</button>
-							</div>
+									<button type="submit" class="btn theme-bg-color btn-md text-white">Add
+										Address</button>
+								</div>
 
-						</form>
+							</form>
+
+						</div>
 
 					</div>
-
 				</div>
 			</div>
-	    </div>
 		</div>
 	</section>
 
