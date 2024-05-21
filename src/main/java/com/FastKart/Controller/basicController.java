@@ -37,6 +37,7 @@ import com.FastKart.Repository.WishListRepository;
 import com.FastKart.entities.Address;
 import com.FastKart.entities.Cart;
 import com.FastKart.entities.Category;
+import com.FastKart.entities.Contact;
 import com.FastKart.entities.Order;
 import com.FastKart.entities.Product;
 import com.FastKart.entities.User;
@@ -309,8 +310,9 @@ public class basicController {
 
 //======================================================= CONTACT PAGE Handler ============================================================================
 	@GetMapping("/contact")
-	public String contact() {
-
+	public String contact(Model m) {
+m.addAttribute("contact", new Contact());
+		
 		return "contact-us";
 	}
 

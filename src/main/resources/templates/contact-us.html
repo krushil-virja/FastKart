@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="~{base::layout(~{::section})}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
 
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/contact-us.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 11:45:41 GMT -->
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Fastkart">
-<meta name="keywords" content="Fastkart">
-<meta name="author" content="Fastkart">
-<link rel="icon" href="../assets/images/favicon/1.png"
-	type="image/x-icon">
-<title>Contact Us</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Fastkart">
+	<meta name="keywords" content="Fastkart">
+	<meta name="author" content="Fastkart">
+	<link rel="icon" href="../assets/images/favicon/1.png" type="image/x-icon">
+	<title>Contact Us</title>
 
 
 </head>
@@ -32,25 +30,21 @@
 	<!-- mobile fix menu start -->
 	<div class="mobile-menu d-md-none d-block mobile-cart">
 		<ul>
-			<li class="active"><a href="index.html"> <i
-					class="iconly-Home icli"></i> <span>Home</span>
-			</a></li>
+			<li class="active"><a href="index.html"> <i class="iconly-Home icli"></i> <span>Home</span>
+				</a></li>
 
-			<li class="mobile-category"><a href="javascript:void(0)"> <i
-					class="iconly-Category icli js-link"></i> <span>Category</span>
-			</a></li>
+			<li class="mobile-category"><a href="javascript:void(0)"> <i class="iconly-Category icli js-link"></i>
+					<span>Category</span>
+				</a></li>
 
-			<li><a href="search.html" class="search-box"> <i
-					class="iconly-Search icli"></i> <span>Search</span>
-			</a></li>
+			<li><a href="search.html" class="search-box"> <i class="iconly-Search icli"></i> <span>Search</span>
+				</a></li>
 
-			<li><a href="wishlist.html" class="notifi-wishlist"> <i
-					class="iconly-Heart icli"></i> <span>My Wish</span>
-			</a></li>
+			<li><a href="wishlist.html" class="notifi-wishlist"> <i class="iconly-Heart icli"></i> <span>My Wish</span>
+				</a></li>
 
-			<li><a href="cart.html"> <i
-					class="iconly-Bag-2 icli fly-cate"></i> <span>Cart</span>
-			</a></li>
+			<li><a href="cart.html"> <i class="iconly-Bag-2 icli fly-cate"></i> <span>Cart</span>
+				</a></li>
 		</ul>
 	</div>
 	<!-- mobile fix menu end -->
@@ -64,9 +58,8 @@
 						<h2>Contact Us</h2>
 						<nav>
 							<ol class="breadcrumb mb-0">
-								<li class="breadcrumb-item"><a href="index.html"> <i
-										class="fa-solid fa-house"></i>
-								</a></li>
+								<li class="breadcrumb-item"><a href="index.html"> <i class="fa-solid fa-house"></i>
+									</a></li>
 								<li class="breadcrumb-item active" aria-current="page">Contact
 									Us</li>
 							</ol>
@@ -169,7 +162,7 @@
 						<h2>Contact Us</h2>
 					</div>
 					<!--========================================================= CONTACT US FORM START ===============================================================-->
-					<form action="/contact_us" method="post">
+					<form action="/contact_us" method="post" th:object="${contact}">
 						<div class="right-sidebar-box">
 							<div class="row">
 
@@ -179,8 +172,14 @@
 											Name</label>
 										<div class="custom-input">
 											<input name="firstName" type="text" class="form-control"
-												id="exampleFormControlInput" placeholder="Enter First Name">
+												id="exampleFormControlInput" placeholder="Enter First Name"
+												th:classappend="${#fields.hasErrors('firstName') ?'is-invalid': ''}"
+												th:value="${contact.firstName}">
 											<i class="fa-solid fa-user"></i>
+											<div th:each="e:${#fields.errors('firstName')}" th:text="${e}"
+												id="validationServer03Feedback" class="invalid-feedback">
+												Please provide a valid city.
+											</div>
 										</div>
 									</div>
 								</div>
@@ -191,8 +190,14 @@
 											Name</label>
 										<div class="custom-input">
 											<input name="lastName" type="text" class="form-control"
-												id="exampleFormControlInput1" placeholder="Enter Last Name">
+											th:classappend="${#fields.hasErrors('lastName') ?'is-invalid': ''}"
+												id="exampleFormControlInput1" placeholder="Enter Last Name"
+												th:value="${contact.lastName}">
 											<i class="fa-solid fa-user"></i>
+											<div th:each="e:${#fields.errors('lastName')}" th:text="${e}"
+												id="validationServer03Feedback" class="invalid-feedback">
+												Please provide a valid city.
+											</div>
 										</div>
 									</div>
 								</div>
@@ -203,10 +208,18 @@
 											Address</label>
 										<div class="custom-input">
 											<input name="email" type="email" class="form-control"
-												id="exampleFormControlInput2"
-												placeholder="Enter Email Address"> <i
-												class="fa-solid fa-envelope"></i>
+												th:classappend="${#fields.hasErrors('email') ?'is-invalid': ''}"
+												id="exampleFormControlInput2" placeholder="Enter Email Address"
+												th:value="${contact.email}"> <i class="fa-solid fa-envelope"></i>
+											<div th:each="e:${#fields.errors('email')}" th:text="${e}"
+												id="validationServer03Feedback" class="invalid-feedback">
+												Please provide a valid city.
+											</div>
+
 										</div>
+
+
+
 									</div>
 								</div>
 
@@ -215,12 +228,15 @@
 										<label for="exampleFormControlInput3" class="form-label">Phone
 											Number</label>
 										<div class="custom-input">
-											<input name="number" type="tel" class="form-control"
-												id="exampleFormControlInput3"
-												placeholder="Enter Your Phone Number" maxlength="10"
-												oninput="javascript: if (this.value.length > this.maxLength) this.value =
-                                            this.value.slice(0, this.maxLength);">
+											<input name="number" type="number" class="form-control"
+												th:classappend="${#fields.hasErrors('number') ?'is-invalid': ''}"
+												id="exampleFormControlInput3" placeholder="Enter Your Phone Number"
+												maxlength="10">
 											<i class="fa-solid fa-mobile-screen-button"></i>
+											<div th:each="e:${#fields.errors('number')}" th:text="${e}"
+												id="validationServer03Feedback" class="invalid-feedback">
+												Please provide a valid city.
+											</div>
 										</div>
 									</div>
 								</div>
@@ -230,9 +246,14 @@
 										<label for="exampleFormControlTextarea" class="form-label">Message</label>
 										<div class="custom-textarea">
 											<textarea name="message" class="form-control"
-												id="exampleFormControlTextarea"
-												placeholder="Enter Your Message" rows="6"></textarea>
+												id="exampleFormControlTextarea" placeholder="Enter Your Message"
+												th:classappend="${#fields.hasErrors('message') ?'is-invalid': ''}"
+												rows="6" th:text="${contact.message}"></textarea>
 											<i class="fa-solid fa-message"></i>
+											<div th:each="e:${#fields.errors('message')}" th:text="${e}"
+												id="validationServer03Feedback" class="invalid-feedback">
+												Please provide a valid city.
+											</div>
 										</div>
 									</div>
 								</div>
@@ -260,8 +281,8 @@
 
 				<iframe
 					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.796940146207!2d72.55486187689348!3d23.03122682545286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84ac54a18239%3A0x558f4eb0ff0df853!2sMaxgen%20Technologies%20Pvt.Ltd!5e0!3m2!1sen!2sin!4v1715249302420!5m2!1sen!2sin"
-					width="600" height="450" style="border: 0;" allowfullscreen=""
-					loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					width="600" height="450" style="border: 0;" allowfullscreen="" loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 		</div>
 	</section>
@@ -270,26 +291,23 @@
 
 
 	<!-- Location Modal Start -->
-	<div class="modal location-modal fade theme-modal" id="locationModal"
-		tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div
-			class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+	<div class="modal location-modal fade theme-modal" id="locationModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">Choose your
 						Delivery Location</h5>
 					<p class="mt-1 text-content">Enter your address and we will
 						specify the offer for your area.</p>
-					<button type="button" class="btn-close" data-bs-dismiss="modal"
-						aria-label="Close">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 						<i class="fa-solid fa-xmark"></i>
 					</button>
 				</div>
 				<div class="modal-body">
 					<div class="location-list">
 						<div class="search-input">
-							<input type="search" class="form-control"
-								placeholder="Search Your Area"> <i
+							<input type="search" class="form-control" placeholder="Search Your Area"> <i
 								class="fa-solid fa-magnifying-glass"></i>
 						</div>
 
@@ -300,43 +318,43 @@
 						<ul class="location-select custom-height">
 							<li><a href="javascript:void(0)">
 									<h6>Alabama</h6> <span>Min: $130</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Arizona</h6> <span>Min: $150</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>California</h6> <span>Min: $110</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Colorado</h6> <span>Min: $140</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Florida</h6> <span>Min: $160</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Georgia</h6> <span>Min: $120</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Kansas</h6> <span>Min: $170</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Minnesota</h6> <span>Min: $120</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>New York</h6> <span>Min: $110</span>
-							</a></li>
+								</a></li>
 
 							<li><a href="javascript:void(0)">
 									<h6>Washington</h6> <span>Min: $130</span>
-							</a></li>
+								</a></li>
 						</ul>
 					</div>
 				</div>
@@ -346,18 +364,16 @@
 	<!-- Location Modal End -->
 
 	<!-- Deal Box Modal Start -->
-	<div class="modal fade theme-modal deal-modal" id="deal-box"
-		tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div
-			class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+	<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
 			<div class="modal-content">
 				<div class="modal-header">
 					<div>
 						<h5 class="modal-title w-100" id="deal_today">Deal Today</h5>
 						<p class="mt-1 text-content">Recommended deals for you.</p>
 					</div>
-					<button type="button" class="btn-close" data-bs-dismiss="modal"
-						aria-label="Close">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 						<i class="fa-solid fa-xmark"></i>
 					</button>
 				</div>
@@ -367,8 +383,8 @@
 							<li class="list-1">
 								<div class="deal-offer-contain">
 									<a href="shop-left-sidebar.html" class="deal-image"> <img
-										src="../assets/images/vegetable/product/10.png"
-										class="blur-up lazyload" alt="">
+											src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
+											alt="">
 									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
 										<h6>
@@ -383,8 +399,8 @@
 							<li class="list-2">
 								<div class="deal-offer-contain">
 									<a href="shop-left-sidebar.html" class="deal-image"> <img
-										src="../assets/images/vegetable/product/11.png"
-										class="blur-up lazyload" alt="">
+											src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
+											alt="">
 									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
 										<h6>
@@ -399,8 +415,8 @@
 							<li class="list-3">
 								<div class="deal-offer-contain">
 									<a href="shop-left-sidebar.html" class="deal-image"> <img
-										src="../assets/images/vegetable/product/12.png"
-										class="blur-up lazyload" alt="">
+											src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
+											alt="">
 									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
 										<h6>
@@ -415,8 +431,8 @@
 							<li class="list-1">
 								<div class="deal-offer-contain">
 									<a href="shop-left-sidebar.html" class="deal-image"> <img
-										src="../assets/images/vegetable/product/13.png"
-										class="blur-up lazyload" alt="">
+											src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
+											alt="">
 									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
 										<h6>
@@ -452,9 +468,8 @@
 							<div class="theme-setting-button color-picker">
 								<form class="form-control">
 									<label for="colorPick" class="form-label mb-0">Theme
-										Color</label> <input type="color"
-										class="form-control form-control-color" id="colorPick"
-										value="#0da487" title="Choose your color">
+										Color</label> <input type="color" class="form-control form-control-color"
+										id="colorPick" value="#0da487" title="Choose your color">
 								</form>
 							</div>
 						</li>
