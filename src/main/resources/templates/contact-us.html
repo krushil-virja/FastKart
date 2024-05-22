@@ -181,6 +181,7 @@
 												Please provide a valid city.
 											</div>
 										</div>
+
 									</div>
 								</div>
 
@@ -190,7 +191,7 @@
 											Name</label>
 										<div class="custom-input">
 											<input name="lastName" type="text" class="form-control"
-											th:classappend="${#fields.hasErrors('lastName') ?'is-invalid': ''}"
+												th:classappend="${#fields.hasErrors('lastName') ?'is-invalid': ''}"
 												id="exampleFormControlInput1" placeholder="Enter Last Name"
 												th:value="${contact.lastName}">
 											<i class="fa-solid fa-user"></i>
@@ -229,7 +230,7 @@
 											Number</label>
 										<div class="custom-input">
 											<input name="number" type="number" class="form-control"
-												th:classappend="${#fields.hasErrors('number') ?'is-invalid': ''}"
+												th:classappend="${#fields.hasErrors('number') ?'is-invalid': ''}"  th:value="${contact.number}"
 												id="exampleFormControlInput3" placeholder="Enter Your Phone Number"
 												maxlength="10">
 											<i class="fa-solid fa-mobile-screen-button"></i>

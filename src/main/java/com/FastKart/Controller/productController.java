@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,6 +33,9 @@ import com.FastKart.Repository.SubCategoryRepository;
 import com.FastKart.entities.Category;
 import com.FastKart.entities.Product;
 import com.FastKart.entities.subCategory;
+import com.itextpdf.text.log.SysoCounter;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class productController {
@@ -64,13 +68,40 @@ public class productController {
 	private reviewsDao rdao;
 
 	@PostMapping("insertProduct")
-	private String addProduct(@ModelAttribute Product product, @RequestParam("image") MultipartFile file,
-			@RequestParam("cid") int cid, @RequestParam("scid") int scid) {
+	private String addProduct(@Valid @ModelAttribute Product product,BindingResult result, @RequestParam("image") MultipartFile file,
+			@RequestParam("cid") int cid, @RequestParam("scid") int scid, Model m) {
+		
+		if(result.hasErrors() || cid==0 || scid==0) {
+			
+			System.out.println(result);
+			
+			List<Category> showAllCategory = cdao.showAllCategory();
+			m.addAttribute("category", showAllCategory);
 
+			List<subCategory> showAllSubCategory = scdao.showAllSubCategory();
+			m.addAttribute("subCategory", showAllSubCategory);
+			
+			return "admin/admin-addProduct";
+		}
+		
+		boolean existsByPname = productRepository.existsByPname(product.getPname());
+		System.out.println(existsByPname);
+		
+		
 		try {
 			if (file.isEmpty()) {
 
 				System.out.println("Your File is Empty");
+				
+				List<Category> showAllCategory = cdao.showAllCategory();
+				m.addAttribute("category", showAllCategory);
+
+				List<subCategory> showAllSubCategory = scdao.showAllSubCategory();
+				m.addAttribute("subCategory", showAllSubCategory);
+				
+				return "admin/admin-addProduct";
+				
+				
 			}
 
 			else {
@@ -94,7 +125,7 @@ public class productController {
 			e.printStackTrace();
 		}
 
-		return "redirect:addProduct";
+		return "redirect:product";
 
 	}
 

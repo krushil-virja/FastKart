@@ -5,11 +5,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,6 +24,8 @@ import com.FastKart.Repository.CategoryRepository;
 import com.FastKart.entities.Category;
 import com.itextpdf.text.log.SysoCounter;
 
+import jakarta.validation.Valid;
+
 @Controller
 public class categoryController {
 
@@ -32,31 +36,43 @@ public class categoryController {
 	private CategoryRepository categoryRepository;
 
 	@PostMapping("/insertCategory")
-	public String addCategory(@ModelAttribute Category category, @RequestParam("cat_image") MultipartFile file) {
+	public String addCategory(@Valid @ModelAttribute("category") Category category, BindingResult result,
+			@RequestParam("cat_image") MultipartFile file, Model model) {
 
-		try {
+		if (result.hasErrors()) {
+	        return "admin/admin-addCategory";
+	    }
 
-			if (file.isEmpty()) {
+	    boolean existsByCname = categoryRepository.existsByCname(category.getCname());
+	    if (existsByCname) {
+	        result.rejectValue("cname", "error.category", "Category already exists");
+	        return "admin/admin-addCategory";
+	    }
 
-				System.out.println("your file is empty");
-			} else {
-				category.setCimage(file.getOriginalFilename());
-				File saveFile = new ClassPathResource("static/assets1/images").getFile();
+	    try {
+	        if (file.isEmpty()) {
+	            System.out.println("Your File Is Empty");
+	            result.rejectValue("cimage", "error.category", "Please select an image file");
+	            return "admin/admin-addCategory";
+	        } else {
+	            String filename = file.getOriginalFilename();
+	            category.setCimage(filename);
+	            File saveFile = new ClassPathResource("static/assets1/images").getFile();
 
-				Path path = Paths.get(saveFile.getAbsolutePath() + File.separator + file.getOriginalFilename());
+	            Path path = Paths.get(saveFile.getAbsolutePath() + File.separator + file.getOriginalFilename());
 
-				Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
+	            Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
 
-				System.out.println(path);
-				System.out.println("file is uploaded");
-			}
+	            System.out.println("File is uploaded");
+	        }
 
-			Category c = cdao.addCategory(category);
-
+	        cdao.addCategory(category);
+			// Save category to the database (cdao.addCategory(category))
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return "redirect:addCategory";
+
+		return "redirect:category";
 	}
 
 //===================================================== DELETE CATEGORY HANDLER =========================================================================
@@ -97,23 +113,22 @@ public class categoryController {
 					category.setCimage(file.getOriginalFilename());
 
 					File saveFile = new ClassPathResource("static/assets1/images").getFile();
-					
+
 					Path path = Paths.get(saveFile.getAbsolutePath() + File.separator + file.getOriginalFilename());
-					
-					Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING );
-					
+
+					Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
+
 					System.out.println(path);
 					System.out.println("file is uploaded");
 				}
-				
+
 				categoryRepository.save(category);
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-		}
-		else {
+		} else {
 			System.out.print("category is not found");
 		}
 		return "redirect:/category";

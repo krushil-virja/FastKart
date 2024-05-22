@@ -1,6 +1,5 @@
 package com.FastKart.entities;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -10,29 +9,31 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table(name="subcategory")
+@Table(name = "subcategory")
 public class subCategory {
-
-
-	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	@Column(name="subCatName")
+
+	@NotEmpty(message = "Please enter a subCategory name")
+	@Column(name = "subCatName")
 	private String sub_cat_name;
-	@Column(name="subCat_Image")
+
+	@Column(name = "subCat_Image")
+	@NotBlank(message = "Please select an image")
 	private String sub_cat_image;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cid")
-   private Category category;
+	@NotNull(message = "Please select a category")
+	private Category category;
 
-	
-
-	
 	public subCategory() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -77,12 +78,11 @@ public class subCategory {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	
-	
+
 	@Override
 	public String toString() {
 		return "subCategory [id=" + id + ", sub_cat_name=" + sub_cat_name + ", sub_cat_image=" + sub_cat_image
 				+ ", category=" + category + "]";
 	}
-	
+
 }

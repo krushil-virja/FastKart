@@ -31,7 +31,7 @@ public class Contact {
 	private String email;
 	
     @NotNull(message = "Please enter your phone number")
-    @Digits(integer = 10, fraction = 0, message = "Phone number must have exactly 10 digits")
+  //  @Digits(integer = 10, fraction = 0, message = "Phone number must have exactly 10 digits")
 	private Long number;
 	
     @NotEmpty(message="Please enter your Message")

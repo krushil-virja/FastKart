@@ -11,6 +11,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table(name="category")
@@ -21,10 +24,13 @@ public class Category {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(name="cname")
+	
+	@NotEmpty(message="Please enter a category name")
 	private String cname;
+	
+	 @NotNull(message = "Please upload a category image")
 	@Column(name="cimage")
 	private String cimage;
-	
 	
 	 @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
 	    private List<Product> products;

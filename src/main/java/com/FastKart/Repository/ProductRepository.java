@@ -58,5 +58,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 
 	// int countAllBy(); // Spring Data JPA can automatically implement a counting
 	// method without needing a custom query if you follow the naming conventions.
-
+ 
+	   boolean existsByPname(String pname);
 }

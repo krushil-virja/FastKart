@@ -108,7 +108,8 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 
 //========================================================= Handler to get Admin addCategory page =========================================================	
 	@GetMapping("/addCategory")
-	public String addCategory() {
+	public String addCategory( Model m ) {
+		m.addAttribute("category", new Category());
 
 		return "admin/admin-addCategory";
 	}
@@ -129,6 +130,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 
 		List<Category> showAllCategory = cdao.showAllCategory();
 		m.addAttribute("category", showAllCategory);
+		m.addAttribute("subCategory", new subCategory());
 		return "admin/admin-addSubCategory";
 	}
 	
@@ -165,6 +167,8 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 
 		List<subCategory> showAllSubCategory = scdao.showAllSubCategory();
 		m.addAttribute("subCategory", showAllSubCategory);
+		
+		m.addAttribute("product", new Product());
 		return "admin/admin-addProduct";
 	}
 	
