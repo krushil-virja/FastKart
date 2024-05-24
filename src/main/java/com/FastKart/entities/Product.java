@@ -26,7 +26,7 @@ public class Product {
 	@NotBlank(message = "Please enter product name")
 	private String pname;
 
-	@NotNull(message = "Please upload a category image")
+	//@NotNull(message = "Please upload a category image")
 	private String pimage;
 
 	@NotNull(message = "Category can't be null")

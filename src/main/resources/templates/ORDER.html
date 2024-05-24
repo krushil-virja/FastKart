@@ -73,6 +73,8 @@
 			<div class="row g-sm-4 g-3" style="display: flex; justify-content: center;">
 
 				<div class="col-lg-4">
+					
+					
 					<div class="right-side-summery-box">
 						<div class="summery-box-2">
 							<div class="summery-header">
@@ -146,10 +148,14 @@
 
 
 						<form action="/order" method="post">
-
+                             
 							<div th:each="v : ${viewCart}">
 								<input type="hidden" name="pid" th:value="${v.product.id}">
 								<input name="quantity" type="hidden" th:value="${v.quntity}">
+								<input name="subtotal" type="hidden" th:value="${session.subTotalOfCart}" >
+								<input  name="shipping" type="hidden" th:value="${session.shippingTotal}">
+								<input name="discount" type="hidden" th:value="${session.discount}">
+								<input name="total" type="hidden" th:value="${session.grandTotal}">
 
 							</div>
 

@@ -60,10 +60,12 @@ public class myConfig {
 		public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 			http
 			.authorizeHttpRequests((authorize) -> authorize
-					//.requestMatchers("/admin/**").hasRole("ADMIN")
+					.requestMatchers("/admin/**").hasRole("ADMIN")
 					.requestMatchers("/user/**").hasRole("USER")
 					.requestMatchers("/**").permitAll()
 					.requestMatchers("/css/**").permitAll()
+					.requestMatchers("/assets1/**").permitAll()
+					.requestMatchers("/js/**").permitAll()
 					.requestMatchers("/image/**").permitAll()
 					.requestMatchers("/do_register").permitAll()
 					.requestMatchers("/index").permitAll()

@@ -28,8 +28,9 @@ public class Category {
 	@NotEmpty(message="Please enter a category name")
 	private String cname;
 	
-	 @NotNull(message = "Please upload a category image")
+	 
 	@Column(name="cimage")
+	//@NotNull(message = "Please upload a category image")
 	private String cimage;
 	
 	 @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)

@@ -49,7 +49,7 @@ public class loginSuccessEventListener implements AuthenticationSuccessHandler {
         if ("user".equals(role)) {
             response.sendRedirect("home");
         } else {
-            response.sendRedirect("index");
+            response.sendRedirect("/admin/index");
         }
 		
 	}

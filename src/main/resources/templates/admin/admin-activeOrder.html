@@ -13,8 +13,8 @@
 	<meta name="keywords"
 		content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
 	<meta name="author" content="pixelstrap">
-	<link rel="icon" href="assets1/images/favicon.png" type="image/x-icon">
-	<link rel="shortcut icon" href="assets1/images/favicon.png" type="image/x-icon">
+	<link rel="icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
+	<link rel="shortcut icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
 	<title>Fastkart - Order List</title>
 
 	<!-- Google font-->
@@ -23,32 +23,32 @@
 		rel="stylesheet">
 
 	<!-- Fontawesome css -->
-	<link rel="stylesheet" type="text/css" href="assets1/css/vendors/font-awesome.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/font-awesome.css}">
 
 	<!-- Linear Icon -->
-	<link rel="stylesheet" href="../../../cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+	<link rel="stylesheet" href="../../../cdn.linearicons.com/free/1.0.0/icon-font.min.css}">
 
 	<!-- Themify icon css -->
-	<link rel="stylesheet" type="text/css" href="assets1/css/vendors/themify.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/themify.css}">
 
 	<!-- Feather icon css -->
-	<link rel="stylesheet" type="text/css" href="assets1/css/vendors/feather-icon.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/feather-icon.css}">
 
 	<!-- remixicon css -->
-	<link rel="stylesheet" type="text/css" href="assets1/css/remixicon.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/remixicon.css}">
 
 	<!-- Data Table css -->
-	<link rel="stylesheet" type="text/css" href="assets1/css/datatables.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/datatables.css}">
 
 	<!-- Plugins css -->
-	<link rel="stylesheet" type="text/css" href="assets1/css/vendors/scrollbar.css">
-	<link rel="stylesheet" type="text/css" href="assets1/css/vendors/animate.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/scrollbar.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/animate.css}">
 
 	<!-- Bootstrap css -->
-	<link rel="stylesheet" type="text/css" href="assets1/css/vendors/bootstrap.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/bootstrap.css}">
 
 	<!-- App css -->
-	<link rel="stylesheet" type="text/css" href="assets1/css/style.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/style.css}">
 </head>
 
 <body>
@@ -66,14 +66,14 @@
 				<div class="header-logo-wrapper p-0">
 					<div class="logo-wrapper">
 						<a href="index.html">
-							<img class="img-fluid main-logo" src="assets1/images/logo/1.png" alt="logo">
-							<img class="img-fluid white-logo" src="assets1/images/logo/1-white.png" alt="logo">
+							<img class="img-fluid main-logo" th:src="@{/assets1/images/logo/1.png}" alt="logo">
+							<img class="img-fluid white-logo" th:src="@{/assets1/images/logo/1-white.png}" alt="logo">
 						</a>
 					</div>
 					<div class="toggle-sidebar">
 						<i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i>
 						<a href="index.html">
-							<img src="assets1/images/logo/1.png" class="img-fluid" alt="">
+							<img th:src="@{/assets1/images/logo/1.png}" class="img-fluid" alt="">
 						</a>
 					</div>
 				</div>
@@ -109,7 +109,7 @@
 						</li>
 						<li class="profile-nav onhover-dropdown pe-0 me-0">
 							<div class="media profile-media">
-								<img class="user-profile rounded-circle" src="assets1/images/users/4.jpg" alt="">
+								<img class="user-profile rounded-circle" th:src="@{/assets1/images/users/4.jpg}" alt="">
 								<div class="user-name-hide media-body">
 									<span>Emay Walter</span>
 									<p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
@@ -163,7 +163,7 @@
 				<div>
 					<div class="logo-wrapper logo-wrapper-center">
 						<a href="index.html" data-bs-original-title="" title="">
-							<img class="img-fluid for-white" src="assets1/images/logo/full-white.png" alt="logo">
+							<img class="img-fluid for-white" th:src="@{/assets1/images/logo/full-white.png}" alt="logo">
 						</a>
 						<div class="back-btn">
 							<i class="fa fa-angle-left"></i>
@@ -174,9 +174,9 @@
 					</div>
 					<div class="logo-icon-wrapper">
 						<a href="index.html">
-							<img class="img-fluid main-logo main-white" src="assets1/images/logo/1-white.png"
+							<img class="img-fluid main-logo main-white" th:src="@{/assets1/images/logo/1-white.png}"
 								alt="logo">
-							<img class="img-fluid main-logo main-dark" src="assets1/images/logo/logo-white.png"
+							<img class="img-fluid main-logo main-dark" th:src="@{/assets1/images/logo/logo-white.png}"
 								alt="logo">
 						</a>
 					</div>
@@ -190,7 +190,7 @@
 								<li class="back-btn"></li>
 
 								<li class="sidebar-list">
-									<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/index}">
+									<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/index}">
 										<i class="ri-home-line"></i>
 										<span>Dashboard</span>
 									</a>
@@ -203,11 +203,11 @@
 									</a>
 									<ul class="sidebar-submenu">
 										<li>
-											<a href="#" th:href="@{/category}">Category List</a>
+											<a href="#" th:href="@{/admin/category}">Category List</a>
 										</li>
 
 										<li>
-											<a href="#" th:href="@{/addCategory}">Add New Category</a>
+											<a href="#" th:href="@{/admin/addCategory}">Add New Category</a>
 										</li>
 									</ul>
 								</li>
@@ -220,11 +220,11 @@
 									</a>
 									<ul class="sidebar-submenu">
 										<li>
-											<a href="#" th:href="@{/subCategory}">subCategory List</a>
+											<a href="#" th:href="@{/admin/subCategory}">subCategory List</a>
 										</li>
 
 										<li>
-											<a href="#" th:href="@{/addSubCategory}">Add New subCategory</a>
+											<a href="#" th:href="@{/admin/addSubCategory}">Add New subCategory</a>
 										</li>
 									</ul>
 								</li>
@@ -237,11 +237,11 @@
 									</a>
 									<ul class="sidebar-submenu">
 										<li>
-											<a href="#" th:href="@{/product}">Prodcts</a>
+											<a href="#" th:href="@{/admin/product}">Prodcts</a>
 										</li>
 
 										<li>
-											<a href="#" th:href="@{/addProduct}">Add New Products</a>
+											<a href="#" th:href="@{/admin/addProduct}">Add New Products</a>
 										</li>
 									</ul>
 								</li>
@@ -254,7 +254,7 @@
 									</a>
 									<ul class="sidebar-submenu">
 										<li>
-											<a href="#" th:href="@{allUser}">All users</a>
+											<a href="#" th:href="@{/admin/allUser}">All users</a>
 										</li>
 										<li>
 											<a href="#">Add new user</a>
@@ -273,26 +273,26 @@
                                     </a>
                                     <ul class="sidebar-submenu">
                                         <li>
-                                            <a href="#" th:href="@{allOrder}">Order List</a>
+                                            <a href="#" th:href="@{/admin/allOrder}">Order List</a>
                                         </li>
                                         
                                          <li>
-                                            <a href="#" th:href="@{/pendingOrder}">Pending  Order</a>
+                                            <a href="#" th:href="@{/admin/pendingOrder}">Pending  Order</a>
                                         </li>
                                          <li>
-                                            <a href="#" th:href="@{/activeOrder}">Active Order</a>
+                                            <a href="#" th:href="@{/admin/activeOrder}">Active Order</a>
                                         </li>
                                          <li>
-                                            <a href="#" th:href="@{/shippingOrder}">Shipping Order</a>
+                                            <a href="#" th:href="@{/admin/shippingOrder}">Shipping Order</a>
                                         </li>
                                         <li>
-                                            <a href="#" th:href="@{/deliveredOrder}">Delivered Order</a>
+                                            <a href="#" th:href="@{/admin/deliveredOrder}">Delivered Order</a>
                                         </li>
                                          <li>
-                                            <a href="#" th:href="@{/cancslledOrder}">Cancalled Order</a>
+                                            <a href="#" th:href="@{/admin/cancslledOrder}">Cancalled Order</a>
                                         </li>
                                         <li>
-                                            <a href="#" th:href="@{/orderTracking}">Order Tracking</a>
+                                            <a href="#" th:href="@{/admin/orderTracking}">Order Tracking</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -305,11 +305,11 @@
 									</a>
 									<ul class="sidebar-submenu">
 										<li>
-											<a href="#" th:href="@{allCoupon}">Coupon List</a>
+											<a href="#" th:href="@{/admin/allCoupon}">Coupon List</a>
 										</li>
 
 										<li>
-											<a href="#" th:href="@{createCoupon}">Create Coupon</a>
+											<a href="#" th:href="@{/admin/createCoupon}">Create Coupon</a>
 										</li>
 									</ul>
 								</li>
@@ -317,7 +317,7 @@
 
 
 								<li class="sidebar-list">
-									<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{productReview}">
+									<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/productReview}">
 										<i class="ri-star-line"></i>
 										<span>Product Review</span>
 									</a>
@@ -655,42 +655,42 @@
 	<!-- Offcanvas Box End -->
 
 	<!-- latest js -->
-	<script src="assets1/js/jquery-3.6.0.min.js"></script>
+	<script th:src="@{/assets1/js/jquery-3.6.0.min.js}"></script>
 
 	<!-- Bootstrap js -->
-	<script src="assets1/js/bootstrap/bootstrap.bundle.min.js"></script>
+	<script th:src="@{/assets1/js/bootstrap/bootstrap.bundle.min.js}"></script>
 
 	<!-- feather icon js -->
-	<script src="assets1/js/icons/feather-icon/feather.min.js"></script>
-	<script src="assets1/js/icons/feather-icon/feather-icon.js"></script>
+	<script th:src="@{/assets1/js/icons/feather-icon/feather.min.js}"></script>
+	<script th:src="@{/assets1/js/icons/feather-icon/feather-icon.js}"></script>
 
 	<!-- customizer js -->
-	<script src="assets1/js/customizer.js"></script>
+	<script th:src="@{/assets1/js/customizer.js}"></script>
 
 	<!-- scrollbar simplebar js -->
-	<script src="assets1/js/scrollbar/simplebar.js"></script>
-	<script src="assets1/js/scrollbar/custom.js"></script>
+	<script th:src="@{/assets1/js/scrollbar/simplebar.js}"></script>
+	<script th:src="@{/assets1/js/scrollbar/custom.js}"></script>
 
 	<!-- Sidebar js -->
-	<script src="assets1/js/config.js"></script>
+	<script th:src="@{/assets1/js/config.js}"></script>
 
 	<!-- Plugins js -->
-	<script src="assets1/js/sidebar-menu.js"></script>
-	<script src="assets1/js/notify/bootstrap-notify.min.js"></script>
-	<script src="assets1/js/notify/index.js"></script>
+	<script th:src="@{/assets1/js/sidebar-menu.js}"></script>
+	<script th:src="@{/assets1/js/notify/bootstrap-notify.min.js}"></script>
+	<script th:src="@{/assets1/js/notify/index.js}"></script>
 
 	<!-- Data table js -->
-	<script src="assets1/js/jquery.dataTables.js"></script>
-	<script src="assets1/js/custom-data-table.js"></script>
+	<script th:src="@{/assets1/js/jquery.dataTables.js}"></script>
+	<script th:src="@{/assets1/js/custom-data-table.js}"></script>
 
 	<!-- all checkbox select js -->
-	<script src="assets1/js/checkbox-all-check.js"></script>
+	<script th:src="@{/assets1/js/checkbox-all-check.js}"></script>
 
 	<!-- sidebar effect -->
-	<script src="assets1/js/sidebareffect.js"></script>
+	<script th:src="@{/assets1/js/sidebareffect.js}"></script>
 
 	<!-- Theme js -->
-	<script src="assets1/js/script.js"></script>
+	<script th:src="@{/assets1/js/script.js}"></script>
 </body>
 
 

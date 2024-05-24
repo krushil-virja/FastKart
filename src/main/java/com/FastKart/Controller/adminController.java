@@ -68,7 +68,7 @@ public class adminController {
 
 
 //========================================================== Handler to get Admin index page ==============================================================
-	@GetMapping("/index")
+	@GetMapping("/admin/index")
 	public String adminDashboard(Model m, Principal principal ) {
 		
 		if(principal!=null) {
@@ -107,7 +107,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 	}
 
 //========================================================= Handler to get Admin addCategory page =========================================================	
-	@GetMapping("/addCategory")
+	@GetMapping("/admin/addCategory")
 	public String addCategory( Model m ) {
 		m.addAttribute("category", new Category());
 
@@ -115,7 +115,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 	}
 
 //========================================================= Handler to get Admin Category page ===========================================================
-	@GetMapping("/category")
+	@GetMapping("/admin/category")
 	public String category(Model m) {
 
 		List<Category> showAllCategory = cdao.showAllCategory();
@@ -125,7 +125,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 	}
 
 //========================================================= Handler to get Admin addSubCategory page =====================================================
-	@GetMapping("/addSubCategory")
+	@GetMapping("/admin/addSubCategory")
 	public String addSubCategory(Model m) {
 
 		List<Category> showAllCategory = cdao.showAllCategory();
@@ -135,14 +135,14 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 	}
 	
 	
-	@GetMapping("/updateCategory")
+	@GetMapping("/admin/updateCategory")
 	public String updateCategory() {
 		
 		return "admin/admin-updateCategory";
 	}
 
 //========================================================= Handler to get Admin subCategory page=========================================================
-	@GetMapping("/subCategory")
+	@GetMapping("/admin/subCategory")
 	public String subCategory(Model m) {
 
 		List<subCategory> showAllSubCategory = scdao.showAllSubCategory();
@@ -159,7 +159,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 		return "admin/admin-updateSubCategory";
 	}
 //========================================================= Handler to get Admin addProduct page =========================================================
-	@GetMapping("/addProduct")
+	@GetMapping("/admin/addProduct")
 	public String addProduct(Model m) {
 
 		List<Category> showAllCategory = cdao.showAllCategory();
@@ -180,7 +180,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 	}
 
 //========================================================= Handler to get Admin Product page ============================================================
-	@GetMapping("/product")
+	@GetMapping("/admin/product")
 	public String product(Model m) {
 
 		List<Product> showAllProduct = pdao.showAllProduct();
@@ -190,7 +190,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 	}
 
 //========================================================= Handler to get Admin allUSer page ============================================================
-	@GetMapping("/allUser")
+	@GetMapping("/admin/allUser")
 	public String allUser(Model m) {
 
 		List<User> showAllUser = udao.ShowAllUser();
@@ -199,14 +199,14 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 	}
 
 //========================================================== Handler to get Admin Create Coupon page =====================================================
-	@GetMapping("/createCoupon")
+	@GetMapping("/admin/createCoupon")
 	public String createCoupon() {
 
 		return "admin/admin-createCoupon";
 	}
 
 //======================================================= Handler to get Admin allCoupon page ============================================================		
-	@GetMapping("/allCoupon")
+	@GetMapping("/admin/allCoupon")
 	public String allCoupon(Model m) {
 
 		List<Coupon> allCoupon = coupondao.allCoupon();
@@ -215,7 +215,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 	}
 
 //===================================================== Handler to get Admin allOrder page ==============================================================
-	@GetMapping("/allOrder")
+	@GetMapping("/admin/allOrder")
 	public String allOrder(Model m) {
 
 		List<Order> allOrder = oDao.allOrder();
@@ -226,7 +226,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 	}
 
 //===================================================== Handler to get Admin activeOrder page ==============================================================
-	@GetMapping("/activeOrder")
+	@GetMapping("/admin/activeOrder")
 	public String activeOrder(Model m) {
 		
 		List<Order> allOrder = oDao.allOrder();
@@ -238,7 +238,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 	}
 
 //===================================================== Handler to get Admin pendingOrder page ==============================================================
-	@GetMapping("/pendingOrder")
+	@GetMapping("/admin/pendingOrder")
 	public String pendingOrder(Model m) {
 
 		List<Order> allOrder = oDao.allOrder();
@@ -249,7 +249,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 	}
 
 //===================================================== Handler to get Admin shippingOrder page ==============================================================
-	@GetMapping("/shippingOrder")
+	@GetMapping("/admin/shippingOrder")
 	public String shippingOrder(Model m) {
 
 		List<Order> allOrder = oDao.allOrder();
@@ -260,7 +260,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 	}
 
 //===================================================== Handler to get Admin deliveredOrder page ==============================================================
-	@GetMapping("/deliveredOrder")
+	@GetMapping("/admin/deliveredOrder")
 	public String deliveredOrder(Model m) {
 
 		List<Order> allOrder = oDao.allOrder();
@@ -285,7 +285,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 	}
 
 //======================================================= Handler to get productReview Page ============================================================
-	@GetMapping("/productReview")
+	@GetMapping("/admin/productReview")
 	public String productReview(Model m) {
 		
 		List<Review> showAllreviews = rdao.showAllreviews();

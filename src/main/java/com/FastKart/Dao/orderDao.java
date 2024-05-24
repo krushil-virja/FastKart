@@ -86,13 +86,10 @@ public class orderDao {
 	 */	
 	
 	
-	public Order doOrder(Order o, Principal principal,int pid , int quantity) {
+	public Order doOrder(Order o, Principal principal,int pid , int quantity, double subtotal, double shipping, double discount, double total ) {
 
 		User user = uDao.getLoggedInUser(principal);
 		Product product = productRepository.findById(pid).get();
-		
-
-	   
 
 		if (user != null) {
       
@@ -101,6 +98,10 @@ public class orderDao {
 			o.setUser(user);
 		   o.setProduct(product);
 			o.setOrderDate(LocalDate.now());
+			o.setSubtotal(subtotal);
+			o.setShipping(shipping);
+			o.setDiscount(discount);
+			o.setTotal(total);
 			
 			      //	cartRepository.delete(cart);
 				  // Delete the cart item associated with the user and product

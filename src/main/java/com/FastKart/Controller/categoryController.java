@@ -39,22 +39,27 @@ public class categoryController {
 	public String addCategory(@Valid @ModelAttribute("category") Category category, BindingResult result,
 			@RequestParam("cat_image") MultipartFile file, Model model) {
 
-		if (result.hasErrors()) {
+
+	    if (file.isEmpty()) {
+	        result.rejectValue("cimage", "error.category", "Please upload a category image");
+	        
+	        
+	    }
+
+	    if (result.hasErrors()) {
 	        return "admin/admin-addCategory";
 	    }
 
 	    boolean existsByCname = categoryRepository.existsByCname(category.getCname());
+	    System.out.println(existsByCname);
 	    if (existsByCname) {
 	        result.rejectValue("cname", "error.category", "Category already exists");
 	        return "admin/admin-addCategory";
 	    }
 
-	    try {
-	        if (file.isEmpty()) {
-	            System.out.println("Your File Is Empty");
-	            result.rejectValue("cimage", "error.category", "Please select an image file");
-	            return "admin/admin-addCategory";
-	        } else {
+	    try { 
+	      
+	            
 	            String filename = file.getOriginalFilename();
 	            category.setCimage(filename);
 	            File saveFile = new ClassPathResource("static/assets1/images").getFile();
@@ -64,7 +69,7 @@ public class categoryController {
 	            Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
 
 	            System.out.println("File is uploaded");
-	        }
+	       
 
 	        cdao.addCategory(category);
 			// Save category to the database (cdao.addCategory(category))
@@ -80,7 +85,7 @@ public class categoryController {
 	public String deleteCategory(@PathVariable("id") Integer id, Model m) {
 
 		cdao.deleteCategory(id);
-		return "redirect:/category";
+		return "redirect:/admin/category";
 	}
 
 //======================================================== get Category detail by Id =============================================================
