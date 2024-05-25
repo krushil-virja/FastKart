@@ -706,4 +706,7 @@ public class basicController {
 	 * return reviewsRepository.countByProduct(product); }
 	 */
 
+	
+	
+
 }

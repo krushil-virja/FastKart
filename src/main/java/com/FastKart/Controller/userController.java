@@ -138,7 +138,7 @@ public class userController {
 	@PostMapping("/updateProfile")
 	public String userUpdate(@ModelAttribute User u, @RequestParam("name") String name,
 	        @RequestParam("email") String email, @RequestParam("password") String password,
-	        @RequestParam("contact") Long contact, @RequestParam("gender") String gender,
+	        @RequestParam(value = "contact", required = false) Long contact, @RequestParam("gender") String gender,
 	        @RequestParam(value = "birthDate", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date birthdate, @RequestParam("address") String address,
 	        @RequestParam("pImage") MultipartFile file, // Change the parameter type here
 	        @RequestParam("id") int id) {
@@ -157,11 +157,7 @@ public class userController {
 		
 		if(user!=null) {	
 			
-			if(file.isEmpty()) {
-				
-				System.out.println("your file is empty");
-			}
-			else {
+			
 			try {
 				
 				 user.setId(id);
@@ -172,6 +168,8 @@ public class userController {
 					user.setGender(gender);
 					user.setBirthDate(birthdate);
 					user.setAddress(address);
+					
+					if(!file.isEmpty()) {
 					user.setProfileImage(file.getOriginalFilename());
 					
 					File saveFile = new ClassPathResource("static/assets1/images").getFile();
@@ -180,6 +178,7 @@ public class userController {
 					
 					System.out.println("file is uploaded");
 					System.out.println(path);
+					}
 					
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -187,7 +186,7 @@ public class userController {
 			
 			userRepository.save(user);
 			}
-		}
+		
 		
 		return  "redirect:/userDashboard";
 		

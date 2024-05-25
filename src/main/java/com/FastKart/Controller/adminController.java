@@ -94,11 +94,14 @@ m.addAttribute("latestOrders", latestOrders);
 List<Object[]> topSellingProducts = orderRepository.findTopSellingProducts();
 m.addAttribute("topSellingProducts", topSellingProducts);
 
-m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
+       m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 		m.addAttribute("countAllProducts", countAllProducts);
 		m.addAttribute("countAllOrders", countAllOrders);
        m.addAttribute("countDistinctUsers", countDistinctUsers);
        
+       
+       String customImage = udao.customImage(principal);
+       m.addAttribute("customImage", customImage);
 		return "admin/admin-index";
 		}
 		else {

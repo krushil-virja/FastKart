@@ -17,6 +17,22 @@
 	<link rel="shortcut icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
 	<title>Fastkart - Dashboard</title>
 
+	<!--custom profile image css-->
+	<style>
+		
+		#profileImage {
+		  width: 50px;
+		  height: 50px;
+		  border-radius: 50%;
+		  background: #512DA8;
+		  font-size: 25px;
+		  color: #fff;
+		  text-align: center;
+		  line-height: 50px;
+		 
+		}
+		
+	</style>
 	<!-- Google font-->
 	<link
 		href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
@@ -116,7 +132,13 @@
 						</li>
 						<li class="profile-nav onhover-dropdown pe-0 me-0">
 							<div class="media profile-media">
+								<div th:if="${user.profileImage != null and !user.profileImage.isEmpty()}">
 								<img class="user-profile rounded-circle" th:src="@{'/assets1/images/' + ${user.profileImage}}" alt="">
+								</div>
+								<div th:if="${user.profileImage == null or user.profileImage.isEmpty()}" id="profileImage" th:text="${customImage}">
+								<div id="profileImage" th:text="${customImage}">kkk</div>
+								</div>
+								
 								<div class="user-name-hide media-body">
 									<span th:text="${user.name}">Emay Walter</span>
 									<p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
@@ -142,7 +164,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="profile-setting.html">
+									<a href="#"  data-bs-toggle="modal" data-bs-target="#editProfile">
 										<i data-feather="settings"></i>
 										<span>Settings</span>
 									</a>
@@ -628,6 +650,122 @@
 		</div>
 	</div>
 	<!-- Modal End -->
+	
+	<!-- Edit Profile Start -->
+
+
+	<section>
+		<div class="modal fade theme-modal" id="editProfile" tabindex="-1" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+
+			<form th:action="@{/updateProfile}" method="post" enctype="multipart/form-data">
+				<div class="modal-dialog modal-lg modal-dialog-centered modal-fullscreen-sm-down">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel2">Edit Profile</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+								<i class="fa-solid fa-xmark"></i>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class="row g-4">
+
+								<input type="hidden" name="id" th:value="${user.id}">
+
+								<div class="col-xxl-12">
+
+									<div class="form-floating theme-form-floating">
+										<input name="name" type="text" class="form-control" id="pname"
+											th:value="${user.name}">
+										<label for="name">Full Name</label>
+									</div>
+
+								</div>
+
+								<div class="col-xxl-6">
+
+									<div class="form-floating theme-form-floating">
+										<input name="email" type="email" class="form-control" id="email1"
+											th:value="${user.email}">
+										<label for="email1">Email address</label>
+									</div>
+
+								</div>
+
+
+								<div class="col-xxl-6">
+
+									<div class="form-floating theme-form-floating">
+										<input class="form-control" type="password" name="password" id="password"
+											th:value="${user.password}" >
+										<label for="password">Password</label>
+									</div>
+
+								</div>
+
+								<div class="col-xxl-4">
+									<div class="form-floating theme-form-floating">
+										<input class="form-control" type="tel" name="contact" th:value="${user.contact}"
+											id="contact" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value =
+														                                            this.value.slice(0, this.maxLength);">
+										<label for="mobile">Contact Number</label>
+									</div>
+								</div>
+
+								<div class="col-xxl-4">
+									<div class="form-floating theme-form-floating">
+										<select name="gender" th:value="${user.gender}" class="form-select"
+											id="floatingSelect">
+											<!--<option selected th;value="${user.gender}">Choose Your Gender</option>-->
+											<option>Choose Your Gender</option>
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+											<option value="Other">Other</option>
+
+										</select>
+										<label for="floatingSelect">Gender</label>
+									</div>
+								</div>
+
+								<div class="col-xxl-4">
+									<div class="form-floating theme-form-floating">
+										<input type="date" class="form-control" name="birthDate" id="birthDate"
+											th:value="${user.birthDate}">
+										<label for="birthDate">birthDate</label>
+									</div>
+								</div>
+
+
+
+								<div class="col-12">
+									<div class="form-floating theme-form-floating">
+										<input type="file" class="form-control" name="pImage" id="pImage">
+										<label for="pImage">Profile Image</label>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<div class="form-floating theme-form-floating">
+										<input type="text" class="form-control" name="address" id="address"
+											th:value="${user.address}">
+										<label for="address">Add Address</label>
+									</div>
+								</div>
+
+
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-animation btn-md fw-bold"
+								data-bs-dismiss="modal">Close</button>
+							<button class="btn theme-bg-color btn-md fw-bold text-light">Save changes</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<!-- Edit Profile End -->
 
 	<!-- latest js -->
 	<script th:src="@{/assets1/js/jquery-3.6.0.min.js}"></script>
@@ -677,6 +815,8 @@
 
 	<!-- Theme js -->
 	<script th:src="@{/assets1/js/script.js}"></script>
+	
+	
 </body>
 
 

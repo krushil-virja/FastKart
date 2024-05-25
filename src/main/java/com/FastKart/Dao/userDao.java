@@ -76,5 +76,34 @@ public class userDao {
 		return userRepository.save(u);
 	}
 	
+	public String customImage(Principal principal) {
+		
+		User user = getLoggedInUser(principal);
+		
+		String userName = user.getName();
+		
+		String[] splitName = userName.split(" ");
+		
+		String word = "";
+		
+		for(String s: splitName) {
+			
+			word += s.charAt(0);
+			
+		}
+		
+		String imageUsingUserFirstNameChar = "";
+		
+		if(word.length()>=2) {
+		 imageUsingUserFirstNameChar = word.substring(0, 2);
+		}
+		else {
+			 imageUsingUserFirstNameChar = word.substring(0);
+		}
+		
+		return imageUsingUserFirstNameChar;
+		
+	}
+	
 	
 }
