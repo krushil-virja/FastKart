@@ -45,7 +45,7 @@ public class subCategoryController {
 	@Autowired
 	private categoryDao cdao;
 
-	@PostMapping("/insertAddSubCategory")
+	@PostMapping("/admin/insertAddSubCategory")
 	public String addSubCategory(@Valid @ModelAttribute subCategory sc, BindingResult result,
 			@RequestParam("cat_image") MultipartFile file, @RequestParam("cid") int cid, Model m) {
 
@@ -100,21 +100,21 @@ public class subCategoryController {
 			e.printStackTrace();
 		}
 
-		return "redirect:subCategory";
+		return "redirect:/admin/subCategory";
 	}
 
 //============================================================================ DELETE SUBCATEGORY HANDLER ==============================================
 
-	@GetMapping("/deleteSubCategory/{id}")
+	@GetMapping("/admin/deleteSubCategory/{id}")
 	public String deketeSubCategory(@PathVariable("id") Integer id, Model m) {
 
 		scDao.deleteSubCategory(id);
-		return "redirect:/subCategory";
+		return "redirect:/admin/subCategory";
 
 	}
 //============================================================= get subcategory by id =============================================================
 
-	@GetMapping("/updateSubCategory/{id}")
+	@GetMapping("/admin/updateSubCategory/{id}")
 	public String getSubCategory(@PathVariable("id") int id, Model m) {
 
 		subCategory sc = subCategoryRepository.findById(id).get();
@@ -129,7 +129,7 @@ public class subCategoryController {
 
 //============================================================= Update subCategory Handler ===========================================================
 
-	@PostMapping("/updateSubCategory")
+	@PostMapping("/admin/updateSubCategory")
 	public String updateSubCategory(@RequestParam("id") int id, @RequestParam("cid") int cid,
 			@RequestParam("sub_cat_name") String sub_cat_name, @RequestParam("cat_image") MultipartFile file) {
 
@@ -137,15 +137,15 @@ public class subCategoryController {
 		Category c = cdao.getCategory(cid);
 		try {
 
-			if (file.isEmpty()) {
-
-				System.out.print("file is empty");
-			}
-
-			else {
-				sc.setSub_cat_image(file.getOriginalFilename());
-				sc.setSub_cat_name(sub_cat_name);
+			
+			sc.setSub_cat_name(sub_cat_name);
 				sc.setCategory(c);
+				
+				if(file!=null && !file.isEmpty()) {
+					
+			
+				
+				sc.setSub_cat_image(file.getOriginalFilename());
 
 				File saveFile = new ClassPathResource("static/assets1/images").getFile();
 
@@ -155,14 +155,15 @@ public class subCategoryController {
 
 				System.out.println("file is uploaded");
 				System.out.println(path);
+				}
 
-			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		subCategoryRepository.save(sc);
-		return "redirect:/subCategory";
+		return "redirect:/admin/subCategory";
 
 	}
 }

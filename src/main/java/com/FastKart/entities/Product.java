@@ -26,23 +26,20 @@ public class Product {
 	@NotBlank(message = "Please enter product name")
 	private String pname;
 
-	//@NotNull(message = "Please upload a category image")
+	@NotBlank(message="Please enter Product image")
 	private String pimage;
 
-	@NotNull(message = "Category can't be null")
-	@Valid
+	@NotNull(message = "Please enter category")
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cid")
 	private Category category;
 
-	@NotNull(message = "subCategory can't be null")
-	@Valid
+	@NotNull(message = "Please enter subCategory")
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "scid")
 	private subCategory subcategory;
 
 	@NotBlank(message = "Please enter brand name")
-	@Size(max = 50, message = "Brand must be less than 50 characters")
 	private String brand;
 
 	@NotNull(message = "Please enter a prices")

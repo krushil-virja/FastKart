@@ -59,5 +59,13 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	// int countAllBy(); // Spring Data JPA can automatically implement a counting
 	// method without needing a custom query if you follow the naming conventions.
  
+//======================================= TO CHECK THAT PRODUCT IS ALREADY EXIST  OR NOT ======================================================
 	   boolean existsByPname(String pname);
+	
+//===================================== TO IMPLEMENT SEARCH FINCTIONSLITY ====================================================================
+	   Page<Product> findByPnameContaining(String keyword, Pageable pageable);
+	   
+	   /*SELECT * FROM Product WHERE name LIKE '%keyword%';
+*/
+	   
 }

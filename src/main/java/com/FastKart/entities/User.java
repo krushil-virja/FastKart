@@ -28,21 +28,18 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@NotBlank(message="User name can not be null !!")
-	@Size(min=3, max=10, message="User name must be between 3-12 characters !!")
+	@NotBlank(message="Please enter your name")
 	private String name;
 	
-	@NotBlank(message="Email is neccessary")
+	@NotBlank(message="please enter your Email")
 	@Pattern(regexp = "^[a-zA-Z0-9._%+-]+@gmail\\.com$", message = "Invalid email format. Must be in the 'example@gmail.com' format.")
 	private String email;
 	
-	@NotBlank(message="Password is menatory")
-	/*
-	 * @Pattern(regexp =
-	 * "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\\\d)(?=.*[@$!%*?&])[A-Za-z\\\\d@$!%*?&]{8,}$",
-	 * message="Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character."
-	 * )
-	 */
+	@NotBlank(message="Please enter your password")
+	@Pattern(
+	        regexp = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$",
+	        message = "Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character."
+	    )
 	private String password;
 	private String role;
 	@JoinColumn(name="profileImage")
@@ -55,7 +52,7 @@ public class User {
 	
 	private String address;
 	
-	@AssertTrue
+	  @AssertTrue(message = "Please accept the terms and conditions")
 	private boolean checkbox;
 
 	public int getId() {

@@ -344,7 +344,7 @@
                                     <div class="title-header option-title">
                                         <h5>All Category</h5>
                                         <form class="d-inline-flex">
-                                            <a href="#" th:href="@{/addCategory}"
+                                            <a href="#" th:href="@{/admin/addSubCategory}"
                                                 class="align-items-center btn btn-theme d-flex">
                                                 <i data-feather="plus-square"></i>Add New
                                             </a>
@@ -387,7 +387,7 @@
                                                                 </li>-->
 
                                                                 <li>
-                                                                    <a th:href="@{'/updateSubCategory/' + ${sc.id}}">
+                                                                    <a th:href="@{'/admin/updateSubCategory/' + ${sc.id}}">
                                                                         <i class="ri-pencil-line"></i>
                                                                     </a>
                                                                 </li>
@@ -396,7 +396,7 @@
                                                                  <!--   <a href="javascript:void(0)" data-bs-toggle="modal"
                                                                         data-bs-target="#exampleModalToggle">-->
                                                                         
-                                                                         <a href="#" th:href="@{'/deleteSubCategory/' + ${sc.id}}">
+                                                                         <a href="#" th:href="@{'/admin/deleteSubCategory/' + ${sc.id}}">
                                                                         <i class="ri-delete-bin-line"></i>
                                                                     </a>
                                                                 </li>

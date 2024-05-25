@@ -159,6 +159,7 @@ m.addAttribute("calculateTotalRevenue", calculateTotalRevenue);
 		return "admin/admin-updateSubCategory";
 	}
 //========================================================= Handler to get Admin addProduct page =========================================================
+
 	@GetMapping("/admin/addProduct")
 	public String addProduct(Model m) {
 

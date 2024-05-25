@@ -351,7 +351,7 @@
                                                     <a href="javascript:void(0)">Export</a>
                                                 </li>
                                                 <li>
-                                                    <a class="btn btn-solid" href="add-new-product.html">Add Product</a>
+                                                    <a class="btn btn-solid" th:href="@{/admin/insertProduct}">Add Product</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -400,13 +400,13 @@
                                                                 </li>
 
                                                                 <li>
-                                                                    <a th:href="@{'/updateProduct/' + ${p.id}}">
+                                                                    <a th:href="@{'/admin/updateProduct/' + ${p.id}}">
                                                                         <i class="ri-pencil-line"></i>
                                                                     </a>
                                                                 </li>
 
                                                                 <li>
-                                                                    <a href="#" th:href="@{'/deleteProduct/' + ${p.id}}">
+                                                                    <a href="#" th:href="@{'/admin/deleteProduct/' + ${p.id}}">
                                                                         <i class="ri-delete-bin-line"></i>
                                                                     </a>
                                                                 </li>

@@ -102,7 +102,7 @@
 		<div class="container-fluid-lg">
 
 
-
+			
 			<form>
 				<div class="row">
 					<div class="col-12">
@@ -163,18 +163,7 @@
 
 									<div class="grid-option grid-option-2">
 										<ul>
-											<!--<li class="three-grid">
-											<a href="javascript:void(0)">
-												<img src="https://themes.pixelstrap.com/fastkart/assets/svg/grid-3.svg"
-													class="blur-up lazyload" alt="">
-											</a>
-										</li>
-										<li class="grid-btn five-grid d-xxl-inline-block d-none">
-											<a href="javascript:void(0)">
-												<img src="https://themes.pixelstrap.com/fastkart/assets/svg/grid-4.svg"
-													class="blur-up lazyload d-lg-inline-block d-none" alt="">
-											</a>
-										</li>-->
+											
 											<li class="five-grid d-xxl-inline-block d-none active">
 												<a href="javascript:void(0)">
 													<img src="https://themes.pixelstrap.com/fastkart/assets/svg/grid-5.svg"
@@ -221,69 +210,8 @@
 											</div>
 										</li>
 									</ul>
-
-
-
 								</div>
 
-
-
-								<!--<div class="col-xl-3 col-md-6">
-								<div class="category-title">
-									<h3>Discount</h3>
-								</div>
-								<ul class="category-list">
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault">
-											<label class="form-check-label" for="flexCheckDefault">
-												<span class="name">upto 5%</span>
-												<span class="number">(15)</span>
-											</label>
-										</div> 
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault1">
-											<label class="form-check-label" for="flexCheckDefault1">
-												<span class="name">5% - 10%</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault2">
-											<label class="form-check-label" for="flexCheckDefault2">
-												<span class="name">10% - 15%</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault3">
-											<label class="form-check-label" for="flexCheckDefault3">
-												<span class="name">15% - 25%</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-
-									<li>
-										<div class="form-check ps-0 m-0 category-list-box">
-											<input class="checkbox_animated" type="checkbox" id="flexCheckDefault4">
-											<label class="form-check-label" for="flexCheckDefault4">
-												<span class="name">More than 25%</span>
-												<span class="number">(15)</span>
-											</label>
-										</div>
-									</li>
-								</ul>
-							</div>-->
 
 								<div class="col-xl-3 col-md-6">
 									<div class="category-title">
@@ -328,13 +256,6 @@
 												</label>
 											</div>
 										</li>
-
-
-
-
-
-
-
 
 									</ul>
 								</div>
@@ -451,106 +372,7 @@
 							<!-- if User direct redirect on this shope page he is able to see all the product -->
 							<!--all product Section start-->
 
-							<div
-								style="display: grid; grid-template-columns: auto auto auto auto; justify-content:  center; width:100%; margin: auto; gap: 25px; padding: 10px;">
-								<div th:each="product : ${products}">
-									<div class="product-box-3 h-100 wow fadeInUp">
-										<div class="product-header">
-											<div class="product-image">
-												<a href="product-left-thumbnail.html">
-													<img src="#" th:src="@{'/assets1/images/' + ${product.pimage}}"
-														class="img-fluid blur-up lazyload" alt="">
-												</a>
-
-												<ul class="product-option">
-													<li data-bs-toggle="tooltip" data-bs-placement="top" title="View">
-														<a th:href="@{'/productDetails/'+ ${product.id}}"
-															data-bs-target="#view">
-															<i data-feather="eye"></i>
-														</a>
-													</li>
-
-													<li data-bs-toggle="tooltip" data-bs-placement="top"
-														title="add TO Cart">
-														<form action="/addToCart" method="post">
-															<input name="pid" type="hidden" th:value="${product.id}">
-															<input name="quntity" type="hidden" th:value="1">
-															<input name="shipping" type="hidden" th:value="50">
-															<button class=" bg-transparent border-0"> <a>
-																	<i data-feather="shopping-cart"></i>
-																</a></button>
-														</form>
-													</li>
-
-													<li data-bs-toggle="tooltip" data-bs-placement="top"
-														title="Wishlist">
-														<form action="/addToWishList" method="post">
-															<input name="pid" type="hidden" th:value="${product.id}">
-															<button class=" bg-transparent border-0"><a
-																	class="notifi-wishlist">
-																	<i data-feather="heart"></i>
-																</a>
-															</button>
-														</form>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="product-footer">
-											<div class="product-detail">
-
-												<span class="span-name" th:text="${product.subcategory.sub_cat_name}">
-												</span>
-
-												<a href="product-left-thumbnail.html">
-
-													<h5 class="name" th:text="${product.pname}">Fresh Bread and Pastry
-														Flour 200
-														g</h5>
-												</a>
-												<p class="text-content mt-1 mb-2 product-content">Cheesy feet cheesy
-													grin brie.
-													Mascarpone cheese and wine hard cheese the big cheese everyone loves
-													smelly
-													cheese macaroni cheese croque monsieur.</p>
-
-												<!--================================================ Show Product Rating =============================================================================-->
-
-												<!-- commented if i have to show product rating in future than  will use  this code.-->
-												<!--<div class="product-rating mt-2">
-	                                            <ul class="rating">
-	                                                <li>
-	                                                    <i data-feather="star" class="fill"></i>
-	                                                </li>
-	                                                <li>
-	                                                    <i data-feather="star" class="fill"></i>
-	                                                </li>
-	                                                <li>
-	                                                    <i data-feather="star" class="fill"></i>
-	                                                </li>
-	                                                <li>
-	                                                    <i data-feather="star" class="fill"></i>
-	                                                </li>
-	                                                <li>
-	                                                    <i data-feather="star"></i>
-	                                                </li>
-	                                            </ul>
-	                                            <span>(4.0)</span>
-	                                        </div>-->
-
-												<!--================================================ Show Product Rating end =============================================================================-->
-
-												<h5 class="price"> <i class="fa fa-inr  theme-color"
-														style="margin-right: 2px;" aria-hidden="true"></i> <span
-														class="theme-color" th:text="${product.price}">$08.02</span>
-												</h5>
-
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
+						
 							<!--all product Section start-->
 
 
@@ -589,6 +411,7 @@
 				</div>
 
 			</form>
+			
 		</div>
 	</section>
 	<!-- Shop Section End -->

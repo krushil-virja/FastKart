@@ -67,11 +67,12 @@ public class productController {
 	@Autowired
 	private reviewsDao rdao;
 
-	@PostMapping("insertProduct")
-	private String addProduct(@Valid @ModelAttribute Product product,BindingResult result, @RequestParam("image") MultipartFile file,
-			@RequestParam("cid") int cid, @RequestParam("scid") int scid, Model m) {
-		
-		if(result.hasErrors() || cid==0 || scid==0) {
+	@PostMapping("/admin/insertProduct")
+	private String addProduct(@Valid @ModelAttribute Product product, BindingResult result, 
+	                          @RequestParam("image") MultipartFile file, @RequestParam("cid") int cid, 
+	                          @RequestParam("scid") int scid, Model m) {
+
+if(result.hasErrors() && cid==0 && scid==0) {
 			
 			System.out.println(result);
 			
@@ -83,32 +84,44 @@ public class productController {
 			
 			return "admin/admin-addProduct";
 		}
+
+if (file.isEmpty()) {
+
+	System.out.println("Your File is Empty");
+	
+	List<Category> showAllCategory = cdao.showAllCategory();
+	m.addAttribute("category", showAllCategory);
+
+	List<subCategory> showAllSubCategory = scdao.showAllSubCategory();
+	m.addAttribute("subCategory", showAllSubCategory);
+	
+	return "admin/admin-addProduct";
+	
+	
+}
 		
+
 		boolean existsByPname = productRepository.existsByPname(product.getPname());
 		System.out.println(existsByPname);
-		
+		if (existsByPname) {
+			result.rejectValue("pname", "error", "Product  already exists");
+			List<Category> showAllCategory = cdao.showAllCategory();
+			m.addAttribute("category", showAllCategory);
+			
+			List<subCategory> showAllSubCategory = scdao.showAllSubCategory();
+			m.addAttribute("subCategory", showAllSubCategory);
+			
+			return "admin/admin-addProduct";
+		}
 		
 		try {
-			if (file.isEmpty()) {
+			
 
-				System.out.println("Your File is Empty");
-				
-				List<Category> showAllCategory = cdao.showAllCategory();
-				m.addAttribute("category", showAllCategory);
-
-				List<subCategory> showAllSubCategory = scdao.showAllSubCategory();
-				m.addAttribute("subCategory", showAllSubCategory);
-				
-				return "admin/admin-addProduct";
-				
-				
-			}
-
-			else {
+		
 				product.setPimage(file.getOriginalFilename());
-
 				product.setCategory(cdao.getCategory(cid));
 				product.setSubcategory(scdao.getSubCategory(scid));
+				
 
 				File saveFile = new ClassPathResource("static/assets1/images").getFile();
 
@@ -117,7 +130,7 @@ public class productController {
 				Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
 
 				System.out.println("File is uplosded");
-			}
+		
 
 			pdao.addProduct(product);
 		} catch (Exception e) {
@@ -125,17 +138,16 @@ public class productController {
 			e.printStackTrace();
 		}
 
-		return "redirect:product";
-
+		return "redirect:/admin/product";
 	}
 
 //============================================================= DELETE PRODUCT HANDLER =================================================================
 
-	@GetMapping("/deleteProduct/{id}")
+	@GetMapping("/admin/deleteProduct/{id}")
 	public String deleteProduct(@PathVariable("id") int id, Model m) {
 
 		pdao.deleteProduct(id);
-		return "redirect:/product";
+		return "redirect:/admin/product";
 	}
 
 //========================================================= FIND CATEGORY WISE PRODUCT HANDLER ========================================================	
@@ -205,7 +217,7 @@ public class productController {
 	}
 
 //========================================get Product Details for Update ========================================================================
-	@GetMapping("/updateProduct/{id}")
+	@GetMapping("/admin/updateProduct/{id}")
 	public String getProductDetails(@PathVariable("id") int id, Model m) {
 		
 		Product product = productRepository.findById(id).get();
@@ -222,7 +234,7 @@ public class productController {
 	}
 
 //================================================= Update Product Handler ===============================================================
-	@PostMapping("updateProduct")
+	@PostMapping("/admin/updateProduct")
 	public String updateProduct(@RequestParam("id") int id,@RequestParam("pname") String pname, @RequestParam("cid") int cid, @RequestParam("scid") int scid,
 			@RequestParam("brand") String brand, @RequestParam("price") int price, @RequestParam("description") String description, @RequestParam("image") MultipartFile file
 			, RedirectAttributes redirectAttributes)
@@ -234,16 +246,7 @@ public class productController {
 	   
 		try {
 			
-			if(file.isEmpty()) {
-				
-				System.out.println("file is empty");
-				
-				redirectAttributes.addFlashAttribute("error", "Please select a file");
 			
-				
-			}
-			
-			else {
 				
 				product.setPname(pname);
 				product.setCategory(category);
@@ -251,6 +254,8 @@ public class productController {
 				product.setBrand(brand);
 				product.setPrice(price);
 				product.setDescription(description);
+				
+				if(file!=null && !file.isEmpty()) {
 				product.setPimage(file.getOriginalFilename());
 				
 				File saveFile = new ClassPathResource("static/assets1/images").getFile();
@@ -262,15 +267,16 @@ public class productController {
 				System.out.println("file is uploaded");
 				
 				System.out.println(path);
+				}
 				
 				productRepository.save(product);
 				
 				redirectAttributes.addFlashAttribute("success", "product details updated");
-			}
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return "redirect:/product";
+		return "redirect:/admin/product";
 		
 	}
 

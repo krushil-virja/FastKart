@@ -13,28 +13,30 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name="contact")
+@Table(name = "contact")
 public class Contact {
-	
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-    
-    @NotEmpty(message="Please enter your firstName")
+
+	@NotEmpty(message = "Please enter your firstName")
 	private String firstName;
-    
-    @NotEmpty(message="Please enter your lastName")
+
+	@NotEmpty(message = "Please enter your lastName")
 	private String lastName;
-    
-    @NotEmpty(message="Please enter your Email")
-    @Email(message="Email address is not valid")
+
+	@NotEmpty(message = "Please enter your Email")
+	@Email(message = "Email address is not valid")
 	private String email;
-	
-    @NotNull(message = "Please enter your phone number")
-  //  @Digits(integer = 10, fraction = 0, message = "Phone number must have exactly 10 digits")
+
+	@NotNull(message = "Please enter your phone number")
+	// @Size(min = 10, max = 10, message = "Phone number must have exactly 10
+	// digits") We don't use any validation annotations directly on the number
+	// field. we have to create a custome annotation
 	private Long number;
-	
-    @NotEmpty(message="Please enter your Message")
+
+	@NotEmpty(message = "Please enter your Message")
 	private String message;
 
 	public int getId() {
@@ -110,6 +112,4 @@ public class Contact {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	
 }

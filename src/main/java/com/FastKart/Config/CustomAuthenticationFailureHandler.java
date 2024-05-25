@@ -32,7 +32,7 @@ public class CustomAuthenticationFailureHandler  implements AuthenticationFailur
        session.setAttribute("errorMessage", errorMessage);
 
         // Redirect the user back to the login page with the error message.
-        response.sendRedirect("/login");
+        response.sendRedirect("/login?error=true");
 	}
 
 }

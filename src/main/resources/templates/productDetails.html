@@ -61,11 +61,12 @@
 						<h2 th:text="${productDetails.pname}">Creamy Chocolate Cake</h2>
 						<nav>
 							<ol class="breadcrumb mb-0">
-								<li class="breadcrumb-item"><a href="index.html"> <i class="fa-solid fa-house"></i>
+								<li class="breadcrumb-item"><a th:href="@{/home}"> <i class="fa-solid fa-house"></i>
 									</a></li>
+									<li class="breadcrumb-item">
+									    <a th:href="@{'/productDetails/' + ${productDetails.id}}" th:text="${productDetails.pname}">Creamy Chocolate Cake</a>
+									</li>
 
-								<li class="breadcrumb-item active" th:text="${productDetails.pname}">Creamy Chocolate
-									Cake</li>
 							</ol>
 						</nav>
 					</div>
@@ -167,9 +168,6 @@
 										Cake cookie apple pie dessert sugar plum muffin cheesecake.</p>
 								</div>
 
-
-
-								<!-- Quntity increase/ decrease and add to cart button-->
 
 								<div class="note-box product-packege"
 									style="display: grid; grid-template-columns: 30% 70%;">
@@ -575,8 +573,10 @@
 														<h6 class="name" th:text="${topProduct[0].pname}">Meatigo
 															Premium Goat Curry</h6>
 													</a> <span th:text="${topProduct[0].brand}">450 G</span>
-													<h6 class="price theme-color" th:text="${topProduct[0].price}">$
-														70.00</h6>
+													<h6 class="price theme-color">
+														<i class="fa fa-inr  theme-color" style="margin-right: 2px;"aria-hidden="true"></i>
+														<span  class="theme-color" th:text="${topProduct[0].price}"></span>
+														</h6>
 												</div>
 											</div>
 										</div>

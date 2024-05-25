@@ -35,7 +35,7 @@ public class categoryController {
 	@Autowired
 	private CategoryRepository categoryRepository;
 
-	@PostMapping("/insertCategory")
+	@PostMapping("/admin/insertCategory")
 	public String addCategory(@Valid @ModelAttribute("category") Category category, BindingResult result,
 			@RequestParam("cat_image") MultipartFile file, Model model) {
 
@@ -77,11 +77,11 @@ public class categoryController {
 			e.printStackTrace();
 		}
 
-		return "redirect:category";
+		return "redirect:/admin/category";
 	}
 
 //===================================================== DELETE CATEGORY HANDLER =========================================================================
-	@GetMapping("/deleteCategory/{id}")
+	@GetMapping("/admin/deleteCategory/{id}")
 	public String deleteCategory(@PathVariable("id") Integer id, Model m) {
 
 		cdao.deleteCategory(id);
@@ -90,7 +90,7 @@ public class categoryController {
 
 //======================================================== get Category detail by Id =============================================================
 
-	@GetMapping("/updateCategory/{id}")
+	@GetMapping("/admin/updateCategory/{id}")
 	public String findCategoryById(@PathVariable("id") int id, Model m) {
 
 		Category category = cdao.getCategory(id);
@@ -100,9 +100,9 @@ public class categoryController {
 	}
 
 //========================================================== Update Category ================================================================
-	@PostMapping("/updateCategory")
+	@PostMapping("/admin/updateCategory")
 	public String updateCategory(@RequestParam("id") int id, @RequestParam("cname") String cname,
-			@RequestParam("cat_image") MultipartFile file) {
+			@RequestParam(value="cat_image", required = false ) MultipartFile file) {
 
 		Category category = cdao.getCategory(id);
 
@@ -110,13 +110,15 @@ public class categoryController {
 
 			try {
 
-				if (file.isEmpty()) {
-
-				} else {
-
 					category.setCname(cname);
+					
+					//  Check if a new image file is provided
+					if(file!=null && !file.isEmpty()) {
+						
+						// Set the new image filename
 					category.setCimage(file.getOriginalFilename());
 
+					 // Save the file to the server
 					File saveFile = new ClassPathResource("static/assets1/images").getFile();
 
 					Path path = Paths.get(saveFile.getAbsolutePath() + File.separator + file.getOriginalFilename());
@@ -125,7 +127,7 @@ public class categoryController {
 
 					System.out.println(path);
 					System.out.println("file is uploaded");
-				}
+					}
 
 				categoryRepository.save(category);
 
@@ -136,8 +138,8 @@ public class categoryController {
 		} else {
 			System.out.print("category is not found");
 		}
-		return "redirect:/category";
-
+		
+		return "redirect:/admin/category";
 	}
 
 }

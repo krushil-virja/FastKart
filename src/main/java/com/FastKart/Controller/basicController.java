@@ -174,8 +174,19 @@ public class basicController {
 //======================================================== LOGIN PAGE METHOD =========================================================================
 
 	@GetMapping("/login")
-	public String login() {
+	public String login(Model m, @RequestParam(value = "error", required = false) String error, HttpSession session) {
 
+		String errorMessage = (String) session.getAttribute("errorMessage");
+
+		if (error != null) {
+			
+			if (errorMessage != null) {
+				m.addAttribute("errorMessage", errorMessage);
+
+			}
+		} else {
+			session.removeAttribute("errorMessage");
+		}
 		return "login";
 	}
 //======================================================= SHOP PAGE Handler ============================================================================	
@@ -282,7 +293,7 @@ public class basicController {
 			Page<Product> page = productRepository.findAll(pageable);
 			List<Product> product = page.getContent();
 
-			m.addAttribute("products", product);
+			m.addAttribute("productByCategories", product);
 			m.addAttribute("totalPages", page.getTotalPages());
 
 			System.out.println(page.getTotalPages());
@@ -296,7 +307,6 @@ public class basicController {
 
 		}
 
-	
 		return "shop";
 	}
 
@@ -311,8 +321,8 @@ public class basicController {
 //======================================================= CONTACT PAGE Handler ============================================================================
 	@GetMapping("/contact")
 	public String contact(Model m) {
-m.addAttribute("contact", new Contact());
-		
+		m.addAttribute("contact", new Contact());
+
 		return "contact-us";
 	}
 
@@ -435,25 +445,24 @@ m.addAttribute("contact", new Contact());
 	@GetMapping("/userDashboard")
 	public String userDashboard(Model m, Principal principal) {
 
-		if(principal!=null) {
-		User loggedInUser = udao.getLoggedInUser(principal);
-		m.addAttribute("user", loggedInUser);
-		/*
-		 * List<Order> orders = oDao.allOrder(); m.addAttribute("orders", orders);
-		 */
+		if (principal != null) {
+			User loggedInUser = udao.getLoggedInUser(principal);
+			m.addAttribute("user", loggedInUser);
+			/*
+			 * List<Order> orders = oDao.allOrder(); m.addAttribute("orders", orders);
+			 */
 
-		List<Order> orders = orderRepository.getOrdersByUser(loggedInUser);
-		m.addAttribute("orders", orders);
+			List<Order> orders = orderRepository.getOrdersByUser(loggedInUser);
+			m.addAttribute("orders", orders);
 
-		List<Address> showAllAddress = addao.showAllAddress(principal);
-		m.addAttribute("showAllAddress", showAllAddress);
+			List<Address> showAllAddress = addao.showAllAddress(principal);
+			m.addAttribute("showAllAddress", showAllAddress);
 
-		List<WishList> viewWishList = wdao.viewWishList(principal);
-		m.addAttribute("viewWishList", viewWishList);
+			List<WishList> viewWishList = wdao.viewWishList(principal);
+			m.addAttribute("viewWishList", viewWishList);
 
-		return "userDashboard";
-		}
-		else {
+			return "userDashboard";
+		} else {
 			return "redirect:/login";
 		}
 	}
@@ -572,6 +581,33 @@ m.addAttribute("contact", new Contact());
 		m.addAttribute("product", p.getId());
 
 		return "rating";
+	}
+
+	@GetMapping("/search")
+	public String search(Model m, @RequestParam("keyword") String keyword,
+			@RequestParam(value = "pageNumber", required = false, defaultValue = "1") Integer pageNumber,
+			@RequestParam(value = "paeSize", required = false, defaultValue = "12") Integer pageSize) {
+
+		List<Category> category = cdao.showAllCategory();
+		m.addAttribute("category", category);
+
+		PageRequest pageable = PageRequest.of(pageNumber - 1, pageSize);
+		Page<Product> page = productRepository.findByPnameContaining(keyword, pageable);
+
+		List<Product> searchProduct = page.getContent();
+
+		m.addAttribute("productByCategories", searchProduct);
+
+		m.addAttribute("currentPage", pageNumber);
+		System.out.println(pageNumber);
+		m.addAttribute("totalPages", page.getTotalElements());
+		System.out.println(page.getTotalElements());
+		m.addAttribute("totalPages", page.getTotalPages());
+		System.out.println(page.getTotalPages());
+
+		m.addAttribute("pageSize", pageSize);
+
+		return "shop";
 	}
 
 //============================================================== ALL MODEL ==========================================================================

@@ -22549,7 +22549,7 @@ header .offcanvas-backdrop {
 
 .contact-box-section .right-sidebar-box .custom-form .custom-input .form-control {
     padding: calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320))) calc(15px + (20 - 15) * ((100vw - 320px) / (1920 - 320))) calc(41px + (52 - 41) * ((100vw - 320px) / (1920 - 320)));
-    border: none
+   /* border: none*/
 }
 
 [dir="rtl"] .contact-box-section .right-sidebar-box .custom-form .custom-input .form-control {
@@ -22588,7 +22588,7 @@ header .offcanvas-backdrop {
 
 .contact-box-section .right-sidebar-box .custom-form .custom-textarea .form-control {
     padding-left: 52px;
-    border: none
+    /*border: none*/
 }
 
 [dir="rtl"] .contact-box-section .right-sidebar-box .custom-form .custom-textarea .form-control {
