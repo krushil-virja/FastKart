@@ -3,551 +3,610 @@
 
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/back-end/products.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Oct 2023 06:44:59 GMT -->
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="pixelstrap">
-    <link rel="icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
-    <link rel="shortcut icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
-    <title>Fastkart - Product</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+	<meta name="keywords"
+		content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
+	<meta name="author" content="pixelstrap">
+	<link rel="icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
+	<link rel="shortcut icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
+	<title>Fastkart - Product</title>
 
-    <!-- Google font-->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-        rel="stylesheet">
 
-    <!-- Fontawesome css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/font-awesome.css}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <!-- Linear Icon css -->
-    <link rel="stylesheet" th:href="@{/assets1/css/linearicon.css}">
 
-    <!-- Themify icon css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/themify.css}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-    <!-- Feather icon css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/feather-icon.css}">
 
-    <!-- remixicon css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/remixicon.css}">
+	<!-- Google font-->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+		rel="stylesheet">
 
-    <!-- Data Table css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/datatables.css}">
+	<!-- Fontawesome css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/font-awesome.css}">
 
-    <!-- Plugins css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/scrollbar.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/animate.css}">
+	<!-- Linear Icon css -->
+	<link rel="stylesheet" th:href="@{/assets1/css/linearicon.css}">
 
-    <!-- Bootstrap css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/bootstrap.css}">
+	<!-- Themify icon css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/themify.css}">
 
-    <!-- App css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/style.css}">
+	<!-- Feather icon css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/feather-icon.css}">
+
+	<!-- remixicon css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/remixicon.css}">
+
+	<!-- Data Table css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/datatables.css}">
+
+	<!-- Plugins css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/scrollbar.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/animate.css}">
+
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/bootstrap.css}">
+
+	<!-- App css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/style.css}">
 </head>
 
 <body>
-    <!-- tap on top start-->
-    <div class="tap-top">
-        <span class="lnr lnr-chevron-up"></span>
-    </div>
-    <!-- tap on tap end-->
+	<!-- tap on top start-->
+	<div class="tap-top">
+		<span class="lnr lnr-chevron-up"></span>
+	</div>
+	<!-- tap on tap end-->
 
-    <!-- page-wrapper Start-->
-    <div class="page-wrapper compact-wrapper" id="pageWrapper">
-        <!-- Page Header Start-->
-        <div class="page-header">
-            <div class="header-wrapper m-0">
-                <div class="header-logo-wrapper p-0">
-                    <div class="logo-wrapper">
-                        <a href="index.html">
-                            <img class="img-fluid main-logo" th:src="@{/assets1/images/logo/1.png}" alt="logo">
-                            <img class="img-fluid white-logo" th:src="@{/assets1/images/logo/1-white.png}" alt="logo">
-                        </a>
-                    </div>
-                    <div class="toggle-sidebar">
-                        <i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i>
-                        <a href="index.html">
-                            <img th:src="@{/assets1images/logo/1.png}" class="img-fluid" alt="">
-                        </a>
-                    </div>
-                </div>
+	<!-- page-wrapper Start-->
+	<div class="page-wrapper compact-wrapper" id="pageWrapper">
+		<!-- Page Header Start-->
+		<div class="page-header">
+			<div class="header-wrapper m-0">
+				<div class="header-logo-wrapper p-0">
+					<div class="logo-wrapper">
+						<a href="index.html">
+							<img class="img-fluid main-logo" th:src="@{/assets1/images/logo/1.png}" alt="logo">
+							<img class="img-fluid white-logo" th:src="@{/assets1/images/logo/1-white.png}" alt="logo">
+						</a>
+					</div>
+					<div class="toggle-sidebar">
+						<i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i>
+						<a href="index.html">
+							<img th:src="@{/assets1images/logo/1.png}" class="img-fluid" alt="">
+						</a>
+					</div>
+				</div>
 
-                <form class="form-inline search-full" action="javascript:void(0)" method="get">
-                    <div class="form-group w-100">
-                        <div class="Typeahead Typeahead--twitterUsers">
-                            <div class="u-posRelative">
-                                <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
-                                    placeholder="Search Fastkart .." name="q" title="" autofocus>
-                                <i class="close-search" data-feather="x"></i>
-                                <div class="spinner-border Typeahead-spinner" role="status">
-                                    <span class="sr-only">Loading...</span>
-                                </div>
-                            </div>
-                            <div class="Typeahead-menu"></div>
-                        </div>
-                    </div>
-                </form>
-                <div class="nav-right col-6 pull-right right-header p-0">
-                    <ul class="nav-menus">
-                        <li>
-                            <span class="header-search">
-                                <i class="ri-search-line"></i>
-                            </span>
-                        </li>
-                     
-                        <li>
-                            <div class="mode">
-                                <i class="ri-moon-line"></i>
-                            </div>
-                        </li>
-                        <li class="profile-nav onhover-dropdown pe-0 me-0">
-                            <div class="media profile-media">
-                                <img class="user-profile rounded-circle" th:src="@{/assets1/images/users/4.jpg}" alt="">
-                                <div class="user-name-hide media-body">
-                                    <span>Emay Walter</span>
-                                    <p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
-                                </div>
-                            </div>
-                            <ul class="profile-dropdown onhover-show-div">
-                                <li>
-                                    <a href="all-users.html">
-                                        <i data-feather="users"></i>
-                                        <span>Users</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="order-list.html">
-                                        <i data-feather="archive"></i>
-                                        <span>Orders</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="support-ticket.html">
-                                        <i data-feather="phone"></i>
-                                        <span>Spports Tickets</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="profile-setting.html">
-                                        <i data-feather="settings"></i>
-                                        <span>Settings</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                                        href="javascript:void(0)">
-                                        <i data-feather="log-out"></i>
-                                        <span>Log out</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Page Header Ends-->
+				<form class="form-inline search-full" action="javascript:void(0)" method="get">
+					<div class="form-group w-100">
+						<div class="Typeahead Typeahead--twitterUsers">
+							<div class="u-posRelative">
+								<input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
+									placeholder="Search Fastkart .." name="q" title="" autofocus>
+								<i class="close-search" data-feather="x"></i>
+								<div class="spinner-border Typeahead-spinner" role="status">
+									<span class="sr-only">Loading...</span>
+								</div>
+							</div>
+							<div class="Typeahead-menu"></div>
+						</div>
+					</div>
+				</form>
+				<div class="nav-right col-6 pull-right right-header p-0">
+					<ul class="nav-menus">
+						<li>
+							<span class="header-search">
+								<i class="ri-search-line"></i>
+							</span>
+						</li>
 
-        <!-- Page Body Start-->
-        <div class="page-body-wrapper">
-           <!-- Page Sidebar Start-->
-		   <div class="sidebar-wrapper">
-		   			<div id="sidebarEffect"></div>
-		   			<div>
-		   				<div class="logo-wrapper logo-wrapper-center">
-		   					<a href="index.html" data-bs-original-title="" title="">
-		   						<img class="img-fluid for-white" th:src="@{/assets1/images/logo/full-white.png}" alt="logo">
-		   					</a>
-		   					<div class="back-btn">
-		   						<i class="fa fa-angle-left"></i>
-		   					</div>
-		   					<div class="toggle-sidebar">
-		   						<i class="ri-apps-line status_toggle middle sidebar-toggle"></i>
-		   					</div>
-		   				</div>
-		   				<div class="logo-icon-wrapper">
-		   					<a href="index.html">
-		   						<img class="img-fluid main-logo main-white" th:src="@{/assets1/images/logo/1-white.png}"
-		   							alt="logo">
-		   						<img class="img-fluid main-logo main-dark" th:src="@{/assets1/images/logo/logo-white.png}"
-		   							alt="logo">
-		   					</a>
-		   				</div>
-		   				<nav class="sidebar-main">
-		   					<div class="left-arrow" id="left-arrow">
-		   						<i data-feather="arrow-left"></i>
-		   					</div>
+						<li>
+							<div class="mode">
+								<i class="ri-moon-line"></i>
+							</div>
+						</li>
+						<li class="profile-nav onhover-dropdown pe-0 me-0">
+							<div class="media profile-media">
+								<div th:if="${user.profileImage != null and !user.profileImage.isEmpty()}">
+									<img class="user-profile rounded-circle"
+										th:src="@{'/assets1/images/' + ${user.profileImage}}" alt="">
+								</div>
+								<div th:if="${user.profileImage == null or user.profileImage.isEmpty()}"
+									id="profileImage" th:text="${customImage}">
+									<div id="profileImage" th:text="${customImage}">kkk</div>
+								</div>
+								<div class="user-name-hide media-body">
+								<span th:text="${user.name}">Emay Walter</span>
+									<p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
+								</div>
+							</div>
+							<ul class="profile-dropdown onhover-show-div">
+								<li>
+									<a href="all-users.html">
+										<i data-feather="users"></i>
+										<span>Users</span>
+									</a>
+								</li>
+								<li>
+									<a href="order-list.html">
+										<i data-feather="archive"></i>
+										<span>Orders</span>
+									</a>
+								</li>
+								<li>
+									<a href="support-ticket.html">
+										<i data-feather="phone"></i>
+										<span>Spports Tickets</span>
+									</a>
+								</li>
+								<li>
+									<a href="profile-setting.html">
+										<i data-feather="settings"></i>
+										<span>Settings</span>
+									</a>
+								</li>
+								<li>
+									<a data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+										href="javascript:void(0)">
+										<i data-feather="log-out"></i>
+										<span>Log out</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Page Header Ends-->
 
-		   					<div id="sidebar-menu">
-		   						<ul class="sidebar-links" id="simple-bar">
-		   							<li class="back-btn"></li>
+		<!-- Page Body Start-->
+		<div class="page-body-wrapper">
+			<!-- Page Sidebar Start-->
+			<div class="sidebar-wrapper">
+				<div id="sidebarEffect"></div>
+				<div>
+					<div class="logo-wrapper logo-wrapper-center">
+						<a th:href="@{/admin/index}" data-bs-original-title="" title="">
+							<img class="img-fluid for-white" th:src="@{/assets1/images/logo/full-white.png}" alt="logo">
+						</a>
+						<div class="back-btn">
+							<i class="fa fa-angle-left"></i>
+						</div>
+						<div class="toggle-sidebar">
+							<i class="ri-apps-line status_toggle middle sidebar-toggle"></i>
+						</div>
+					</div>
+					<div class="logo-icon-wrapper">
+						<a href="index.html">
+							<img class="img-fluid main-logo main-white" th:src="@{/assets1/images/logo/1-white.png}"
+								alt="logo">
+							<img class="img-fluid main-logo main-dark" th:src="@{/assets1/images/logo/logo-white.png}"
+								alt="logo">
+						</a>
+					</div>
+					<nav class="sidebar-main">
+						<div class="left-arrow" id="left-arrow">
+							<i data-feather="arrow-left"></i>
+						</div>
 
-		   							<li class="sidebar-list">
-		   								<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/index}">
-		   									<i class="ri-home-line"></i>
-		   									<span>Dashboard</span>
-		   								</a>
-		   							</li>
+						<div id="sidebar-menu">
+							<ul class="sidebar-links" id="simple-bar">
+								<li class="back-btn"></li>
 
-		   							<li class="sidebar-list">
-		   								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-		   									<i class="ri-list-check-2"></i>
-		   									<span>Category</span>
-		   								</a>
-		   								<ul class="sidebar-submenu">
-		   									<li>
-		   										<a href="#" th:href="@{/admin/category}">Category List</a>
-		   									</li>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/index}">
+										<i class="ri-home-line"></i>
+										<span>Dashboard</span>
+									</a>
+								</li>
 
-		   									<li>
-		   										<a href="#" th:href="@{/admin/addCategory}">Add New Category</a>
-		   									</li>
-		   								</ul>
-		   							</li>
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-list-check-2"></i>
+										<span>Category</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/category}">Category List</a>
+										</li>
 
-
-		   							<li class="sidebar-list">
-		   								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-		   									<i class="ri-list-check-2"></i>
-		   									<span>subCategory</span>
-		   								</a>
-		   								<ul class="sidebar-submenu">
-		   									<li>
-		   										<a href="#" th:href="@{/admin/subCategory}">subCategory List</a>
-		   									</li>
-
-		   									<li>
-		   										<a href="#" th:href="@{/admin/addSubCategory}">Add New subCategory</a>
-		   									</li>
-		   								</ul>
-		   							</li>
+										<li>
+											<a href="#" th:href="@{/admin/addCategory}">Add New Category</a>
+										</li>
+									</ul>
+								</li>
 
 
-		   							<li class="sidebar-list">
-		   								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-		   									<i class="ri-store-3-line"></i>
-		   									<span>Product</span>
-		   								</a>
-		   								<ul class="sidebar-submenu">
-		   									<li>
-		   										<a href="#" th:href="@{/admin/product}">Prodcts</a>
-		   									</li>
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-list-check-2"></i>
+										<span>subCategory</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/subCategory}">subCategory List</a>
+										</li>
 
-		   									<li>
-		   										<a href="#" th:href="@{/admin/addProduct}">Add New Products</a>
-		   									</li>
-		   								</ul>
-		   							</li>
-
-
-		   							<li class="sidebar-list">
-		   								<a class="sidebar-link sidebar-title" href="javascript:void(0)">
-		   									<i class="ri-user-3-line"></i>
-		   									<span>Users</span>
-		   								</a>
-		   								<ul class="sidebar-submenu">
-		   									<li>
-		   										<a href="#" th:href="@{/admin/allUser}">All users</a>
-		   									</li>
-		   									<li>
-		   										<a href="#">Add new user</a>
-		   									</li>
-		   								</ul>
-		   							</li>
+										<li>
+											<a href="#" th:href="@{/admin/addSubCategory}">Add New subCategory</a>
+										</li>
+									</ul>
+								</li>
 
 
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-store-3-line"></i>
+										<span>Product</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/product}">Prodcts</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/addProduct}">Add New Products</a>
+										</li>
+									</ul>
+								</li>
 
 
-
-		   							 <li class="sidebar-list">
-		                                   <a class="sidebar-link sidebar-title" href="javascript:void(0)">
-		                                       <i class="ri-archive-line"></i>
-		                                       <span>Orders</span>
-		                                   </a>
-		                                   <ul class="sidebar-submenu">
-		                                       <li>
-		                                           <a href="#" th:href="@{/admin/allOrder}">Order List</a>
-		                                       </li>
-		                                       
-		                                        <li>
-		                                           <a href="#" th:href="@{/admin/pendingOrder}">Pending  Order</a>
-		                                       </li>
-		                                        <li>
-		                                           <a href="#" th:href="@{/admin/activeOrder}">Active Order</a>
-		                                       </li>
-		                                        <li>
-		                                           <a href="#" th:href="@{/admin/shippingOrder}">Shipping Order</a>
-		                                       </li>
-		                                       <li>
-		                                           <a href="#" th:href="@{/admin/deliveredOrder}">Delivered Order</a>
-		                                       </li>
-		                                        <li>
-		                                           <a href="#" th:href="@{/admin/cancslledOrder}">Cancalled Order</a>
-		                                       </li>
-		                                       <li>
-		                                           <a href="#" th:href="@{/admin/orderTracking}">Order Tracking</a>
-		                                       </li>
-		                                   </ul>
-		                               </li>
-
-
-		   							<li class="sidebar-list">
-		   								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-		   									<i class="ri-price-tag-3-line"></i>
-		   									<span>Coupons</span>
-		   								</a>
-		   								<ul class="sidebar-submenu">
-		   									<li>
-		   										<a href="#" th:href="@{/admin/allCoupon}">Coupon List</a>
-		   									</li>
-
-		   									<li>
-		   										<a href="#" th:href="@{/admin/createCoupon}">Create Coupon</a>
-		   									</li>
-		   								</ul>
-		   							</li>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-user-3-line"></i>
+										<span>Users</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allUser}">All users</a>
+										</li>
+										<li>
+											<a href="#">Add new user</a>
+										</li>
+									</ul>
+								</li>
 
 
 
-		   							<li class="sidebar-list">
-		   								<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/productReview}">
-		   									<i class="ri-star-line"></i>
-		   									<span>Product Review</span>
-		   								</a>
-		   							</li>
 
 
-		   							
-		   						</ul>
-		   					</div>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-archive-line"></i>
+										<span>Orders</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allOrder}">Order List</a>
+										</li>
 
-		   					<div class="right-arrow" id="right-arrow">
-		   						<i data-feather="arrow-right"></i>
-		   					</div>
-		   				</nav>
-		   			</div>
-		   		</div>
-            <!-- Page Sidebar Ends-->
-            <!-- Container-fluid starts-->
-            <div class="page-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card card-table">
-                                <div class="card-body">
-                                    <div class="title-header option-title d-sm-flex d-block">
-                                        <h5>Products List</h5>
-                                        <div class="right-options">
-                                            <ul>
-                                                <li>
-                                                    <a href="javascript:void(0)">import</a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0)">Export</a>
-                                                </li>
-                                                <li>
-                                                    <a class="btn btn-solid" th:href="@{/admin/insertProduct}">Add Product</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="table-responsive">
-                                            <table class="table all-package theme-table table-product" id="table_id">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Product Image</th>
-                                                        <th>Product Name</th>
-                                                        <th>Category</th>
-                                                        <th>subCategory Name</th>
-                                                        <th>Brand</th>
-                                                        <th>Price</th>
-                                                        <th>Option</th>
-                                                    </tr>
-                                                </thead>
- 
-                                                <tbody>
-                                                  
-                                                    <tr th:each="p: ${product}">
-                                                        <td>
-                                                            <div class="table-image">
-                                                                <img src="#" th:src="@{'/assets1/images/' + ${p.pimage}}"
-                                                                    class="img-fluid" alt="">
-                                                            </div>
-                                                        </td>
+										<li>
+											<a href="#" th:href="@{/admin/pendingOrder}">Pending Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/activeOrder}">Active Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/shippingOrder}">Shipping Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/deliveredOrder}">Delivered Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/cancslledOrder}">Cancalled Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/orderTracking}">Order Tracking</a>
+										</li>
+									</ul>
+								</li>
 
-                                                        <td th:text="${p.pname}"></td>
 
-                                                        <td th:text="${p.category.cname}"></td>
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-price-tag-3-line"></i>
+										<span>Coupons</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allCoupon}">Coupon List</a>
+										</li>
 
-                                                        <td  th:text="${p.subcategory.sub_cat_name}"></td>
+										<li>
+											<a href="#" th:href="@{/admin/createCoupon}">Create Coupon</a>
+										</li>
+									</ul>
+								</li>
 
-                                                        <td th:text="${p.brand}"></td>
 
-                                                        <td th:text="${p.price}"></td>
 
-                                                        <td>
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="order-detail.html">
-                                                                        <i class="ri-eye-line"></i>
-                                                                    </a>
-                                                                </li>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="#"
+										th:href="@{/admin/productReview}">
+										<i class="ri-star-line"></i>
+										<span>Product Review</span>
+									</a>
+								</li>
 
-                                                                <li>
-                                                                    <a th:href="@{'/admin/updateProduct/' + ${p.id}}">
-                                                                        <i class="ri-pencil-line"></i>
-                                                                    </a>
-                                                                </li>
 
-                                                                <li>
-                                                                    <a href="#" th:href="@{'/admin/deleteProduct/' + ${p.id}}">
-                                                                        <i class="ri-delete-bin-line"></i>
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Container-fluid Ends-->
 
-                <div class="container-fluid">
-                    <!-- footer start-->
-                    <footer class="footer">
-                        <div class="row">
-                            <div class="col-md-12 footer-copyright text-center">
-                                <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
-                            </div>
-                        </div>
-                    </footer>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- page-wrapper End-->
+							</ul>
+						</div>
 
-    <!-- Modal Start -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
-                    <p>Are you sure you want to log out?</p>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<div class="right-arrow" id="right-arrow">
+							<i data-feather="arrow-right"></i>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!-- Page Sidebar Ends-->
+			<!-- Container-fluid starts-->
+			<div class="page-body">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="card card-table">
+								<div class="card-body">
+									<div class="title-header option-title d-sm-flex d-block">
+										<h5>Products List</h5>
+										<div class="right-options">
+											<ul>
+												<li>
+													<a href="javascript:void(0)">import</a>
+												</li>
+												<li>
+													<a href="javascript:void(0)">Export</a>
+												</li>
+												<li>
+													<a class="btn btn-solid" th:href="@{/admin/insertProduct}">Add
+														Product</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div>
+										<div class="table-responsive">
+											<table class="table all-package theme-table table-product" id="table_id">
+												<thead>
+													<tr>
+														<th>Product Image</th>
+														<th>Product Name</th>
+														<th>Category</th>
+														<th>subCategory Name</th>
+														<th>Brand</th>
+														<th>Price</th>
+														<th>Option</th>
+													</tr>
+												</thead>
 
-                    <div class="button-box">
-                        <button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
-                        <button type="button" class="btn  btn--yes btn-primary">Yes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal End -->
+												<tbody>
 
-    <!-- Delete Modal Box Start -->
-    <div class="modal fade theme-modal remove-coupon" id="exampleModalToggle" aria-hidden="true" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header d-block text-center">
-                    <h5 class="modal-title w-100" id="exampleModalLabel22">Are You Sure ?</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="remove-box">
-                        <p>The permission for the use/group, preview is inherited from the object, object will create a
-                            new permission for this object</p>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-animation btn-md fw-bold" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-animation btn-md fw-bold" data-bs-target="#exampleModalToggle2"
-                        data-bs-toggle="modal" data-bs-dismiss="modal">Yes</button>
-                </div>
-            </div>
-        </div>
-    </div>
+													<tr th:each="p: ${product}">
+														<td>
+															<div class="table-image">
+																<img src="#"
+																	th:src="@{'/assets1/images/' + ${p.pimage}}"
+																	class="img-fluid" alt="">
+															</div>
+														</td>
 
-    <div class="modal fade theme-modal remove-coupon" id="exampleModalToggle2" aria-hidden="true" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-center" id="exampleModalLabel12">Done!</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="remove-box text-center">
-                        <div class="wrapper">
-                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
-                                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-                            </svg>
-                        </div>
-                        <h4 class="text-content">It's Removed.</h4>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Delete Modal Box End -->
+														<td th:text="${p.pname}"></td>
 
-    <!-- latest js -->
-    <script th:src="@{/assets1/js/jquery-3.6.0.min.js}"></script>
+														<td th:text="${p.category.cname}"></td>
 
-    <!-- Bootstrap js -->
-    <script th:src="@{/assets1/js/bootstrap/bootstrap.bundle.min.js}"></script>
+														<td th:text="${p.subcategory.sub_cat_name}"></td>
 
-    <!-- feather icon js -->
-    <script th:src="@{/assets1/js/icons/feather-icon/feather.min.js}"></script>
-    <script th:src="@{/assets1/js/icons/feather-icon/feather-icon.js}"></script>
+														<td th:text="${p.brand}"></td>
 
-    <!-- scrollbar simplebar js -->
-    <script th:src="@{/assets1/js/scrollbar/simplebar.js}"></script>
-    <script th:src="@{/assets1/js/scrollbar/custom.js}"></script>
+														<td th:text="${p.price}"></td>
 
-    <!-- Sidebar js -->
-    <script th:src="@{/assets1/js/config.js}"></script>
+														<td>
+															<ul>
+																<li>
+																	<a href="order-detail.html">
+																		<i class="ri-eye-line"></i>
+																	</a>
+																</li>
 
-    <!-- customizer js -->
-    <script th:src="@{/assets1/js/customizer.js}"></script>
+																<li>
+																	<a th:href="@{'/admin/updateProduct/' + ${p.id}}">
+																		<i class="ri-pencil-line"></i>
+																	</a>
+																</li>
 
-    <!-- Plugins js -->
-    <script th:src="@{/assets1/js/sidebar-menu.js}"></script>
-    <script th:src="@{/assets1/js/notify/bootstrap-notify.min.js}"></script>
-    <script th:src="@{/assets1/js/notify/index.js}"></script>
+																<li>
+																	<a href="#"
+																		th:href="@{'/admin/deleteProduct/' + ${p.id}}">
+																		<i class="ri-delete-bin-line"></i>
+																	</a>
+																</li>
+															</ul>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
 
-    <!-- Data table js -->
-    <script th:src="@{/assets1/js/jquery.dataTables.js}"></script>
-    <script th:src="@{/assets1/js/custom-data-table.js}"></script>
 
-    <!-- sidebar effect -->
-    <script th:src="@{/assets1/js/sidebareffect.js}"></script>
+								</div>
 
-    <!-- Theme js -->
-    <script th:src="@{/assets1/js/script.js}"></script>
+								<!-- ============================================== Pagination code =====================================================================================-->
+
+								<nav class="custome-pagination" th:if="${totalPages > 1}" style="margin-top: 25px;">
+									<ul class="pagination justify-content-center">
+										<li class="page-item disabled" th:class="${currentPage == 1} ? 'disabled' : ''">
+											<a class="page-link" th:if="${currentPage > 1}"
+												th:href="@{'/admin/product?pageNumber=' + ${currentPage - 1} + '&pageSize=' + ${pageSize}}"
+												tabindex="-1" aria-disabled="true">
+												<i class="fa-solid fa-angles-left"></i>
+											</a>
+										</li>
+
+
+										<li class="page-item active"
+											th:each="page : ${#numbers.sequence(1, totalPages)}"
+											th:class="${currentPage == page} ? 'disabled' : ''">
+											<a class="page-link"
+												th:href="@{'/admin/product?pageNumber=' + ${page} + '&pageSize=' + ${pageSize}}"
+												th:text="${page}"></a>
+										</li>
+
+										<li class="page-item">
+											<a class="page-link" th:if="${currentPage != totalPages}"
+												th:href="@{'/admin/product?pageNumber=' + ${currentPage + 1} + '&pageSize=' + ${pageSize}}">
+												<i class="fa-solid fa-angles-right"></i>
+											</a>
+										</li>
+									</ul>
+								</nav>
+
+								<!--================================================ Paginaation code end ==========================================================================-->
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Container-fluid Ends-->
+
+
+
+				<div class="container-fluid">
+					<!-- footer start-->
+					<footer class="footer">
+						<div class="row">
+							<div class="col-md-12 footer-copyright text-center">
+								<p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+							</div>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- page-wrapper End-->
+
+	<!-- Modal Start -->
+	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog  modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
+					<p>Are you sure you want to log out?</p>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+					<div class="button-box">
+						<button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
+						<button type="button" class="btn  btn--yes btn-primary">Yes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal End -->
+
+	<!-- Delete Modal Box Start -->
+	<div class="modal fade theme-modal remove-coupon" id="exampleModalToggle" aria-hidden="true" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header d-block text-center">
+					<h5 class="modal-title w-100" id="exampleModalLabel22">Are You Sure ?</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+						<i class="fas fa-times"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="remove-box">
+						<p>The permission for the use/group, preview is inherited from the object, object will create a
+							new permission for this object</p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-animation btn-md fw-bold" data-bs-dismiss="modal">No</button>
+					<button type="button" class="btn btn-animation btn-md fw-bold" data-bs-target="#exampleModalToggle2"
+						data-bs-toggle="modal" data-bs-dismiss="modal">Yes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade theme-modal remove-coupon" id="exampleModalToggle2" aria-hidden="true" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-center" id="exampleModalLabel12">Done!</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+						<i class="fas fa-times"></i>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="remove-box text-center">
+						<div class="wrapper">
+							<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+								<circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+								<path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+							</svg>
+						</div>
+						<h4 class="text-content">It's Removed.</h4>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary" data-bs-toggle="modal" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Delete Modal Box End -->
+
+	<!-- latest js -->
+	<script th:src="@{/assets1/js/jquery-3.6.0.min.js}"></script>
+
+	<!-- Bootstrap js -->
+	<script th:src="@{/assets1/js/bootstrap/bootstrap.bundle.min.js}"></script>
+
+	<!-- feather icon js -->
+	<script th:src="@{/assets1/js/icons/feather-icon/feather.min.js}"></script>
+	<script th:src="@{/assets1/js/icons/feather-icon/feather-icon.js}"></script>
+
+	<!-- scrollbar simplebar js -->
+	<script th:src="@{/assets1/js/scrollbar/simplebar.js}"></script>
+	<script th:src="@{/assets1/js/scrollbar/custom.js}"></script>
+
+	<!-- Sidebar js -->
+	<script th:src="@{/assets1/js/config.js}"></script>
+
+	<!-- customizer js -->
+	<script th:src="@{/assets1/js/customizer.js}"></script>
+
+	<!-- Plugins js -->
+	<script th:src="@{/assets1/js/sidebar-menu.js}"></script>
+	<script th:src="@{/assets1/js/notify/bootstrap-notify.min.js}"></script>
+	<script th:src="@{/assets1/js/notify/index.js}"></script>
+
+	<!-- Data table js -->
+	<script th:src="@{/assets1/js/jquery.dataTables.js}"></script>
+	<script th:src="@{/assets1/js/custom-data-table.js}"></script>
+
+	<!-- sidebar effect -->
+	<script th:src="@{/assets1/js/sidebareffect.js}"></script>
+
+	<!-- Theme js -->
+	<script th:src="@{/assets1/js/script.js}"></script>
 </body>
 
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/back-end/products.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Oct 2023 06:44:59 GMT -->
+
 </html>

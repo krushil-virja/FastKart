@@ -3,384 +3,409 @@
 
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/back-end/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Oct 2023 06:45:00 GMT -->
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="pixelstrap">
-    <link rel="icon"  th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
-    <link rel="shortcut icon"  th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
-    <title>Fastkart - All Category</title>
-    <!-- Google font-->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-        rel="stylesheet">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+	<meta name="keywords"
+		content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
+	<meta name="author" content="pixelstrap">
+	<link rel="icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
+	<link rel="shortcut icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
+	<title>Fastkart - All Category</title>
 
-    <!-- Fontawesome css -->
-    	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/font-awesome.css}">
+	<!--custom profile image css-->
+	<style>
+		#profileImage {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background: #512DA8;
+			font-size: 25px;
+			color: #fff;
+			text-align: center;
+			line-height: 50px;
+
+		}
+	</style>
+	<!-- Google font-->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+		rel="stylesheet">
+
+	<!-- Fontawesome css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/font-awesome.css}">
 
 
-    <!-- Linear Icon css -->
-    <link rel="stylesheet" th:href="@{/assets1/css/linearicon.css}">
+	<!-- Linear Icon css -->
+	<link rel="stylesheet" th:href="@{/assets1/css/linearicon.css}">
 
-    <!-- remixicon css -->
-    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/remixicon.css}">
+	<!-- remixicon css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/remixicon.css}">
 
-    <!-- Data Table css -->
-    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/datatables.css}">
+	<!-- Data Table css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/datatables.css}">
 
-    <!-- Themify icon css-->
-    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/vendors/themify.css}">
+	<!-- Themify icon css-->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/themify.css}">
 
-    <!-- Feather icon css -->
-    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/vendors/feather-icon.css}">
+	<!-- Feather icon css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/feather-icon.css}">
 
-    <!-- Plugins css -->
-    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/vendors/scrollbar.css}">
-    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/vendors/animate.css}">
+	<!-- Plugins css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/scrollbar.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/animate.css}">
 
-    <!-- Bootstrap css -->
-    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/vendors/bootstrap.css}">
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/bootstrap.css}">
 
-    <!-- App css -->
-    <link rel="stylesheet" type="text/css"  th:href="@{/assets1/css/style.css}">
+	<!-- App css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/style.css}">
 </head>
 
 <body>
-    <!-- tap on top start -->
-    <div class="tap-top">
-        <span class="lnr lnr-chevron-up"></span>
-    </div>
-    <!-- tap on tap end -->
+	<!-- tap on top start -->
+	<div class="tap-top">
+		<span class="lnr lnr-chevron-up"></span>
+	</div>
+	<!-- tap on tap end -->
 
-    <!-- page-wrapper Start-->
-    <div class="page-wrapper compact-wrapper" id="pageWrapper">
-        <!-- Page Header Start-->
-        <div class="page-header">
-            <div class="header-wrapper m-0">
-                <div class="header-logo-wrapper p-0">
-                    <div class="logo-wrapper">
-                        <a href="index.html">
-                            <img class="img-fluid main-logo" th:src="@{/assets1/images/logo/1.png}" alt="logo">
-                            <img class="img-fluid white-logo" th:src="@{/assets1/images/logo/1-white.png}" alt="logo">
-                        </a>
-                    </div>
-                    <div class="toggle-sidebar">
-                        <i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i>
-                        <a href="index.html">
-                            <img  th:src="@{/assets1/images/logo/1.png}" class="img-fluid" alt="">
-                        </a>
-                    </div>
-                </div>
+	<!-- page-wrapper Start-->
+	<div class="page-wrapper compact-wrapper" id="pageWrapper">
+		<!-- Page Header Start-->
+		<div class="page-header">
+			<div class="header-wrapper m-0">
+				<div class="header-logo-wrapper p-0">
+					<div class="logo-wrapper">
+						<a href="index.html">
+							<img class="img-fluid main-logo" th:src="@{/assets1/images/logo/1.png}" alt="logo">
+							<img class="img-fluid white-logo" th:src="@{/assets1/images/logo/1-white.png}" alt="logo">
+						</a>
+					</div>
+					<div class="toggle-sidebar">
+						<i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i>
+						<a href="index.html">
+							<img th:src="@{/assets1/images/logo/1.png}" class="img-fluid" alt="">
+						</a>
+					</div>
+				</div>
 
-                <form class="form-inline search-full" action="javascript:void(0)" method="get">
-                    <div class="form-group w-100">
-                        <div class="Typeahead Typeahead--twitterUsers">
-                            <div class="u-posRelative">
-                                <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
-                                    placeholder="Search Fastkart .." name="q" title="" autofocus>
-                                <i class="close-search" data-feather="x"></i>
-                                <div class="spinner-border Typeahead-spinner" role="status">
-                                    <span class="sr-only">Loading...</span>
-                                </div>
-                            </div>
-                            <div class="Typeahead-menu"></div>
-                        </div>
-                    </div>
-                </form>
-                <div class="nav-right col-6 pull-right right-header p-0">
-                    <ul class="nav-menus">
-                        <li>
-                            <span class="header-search">
-                                <i class="ri-search-line"></i>
-                            </span>
-                        </li>
-                      
-
-                        <li>
-                            <div class="mode">
-                                <i class="ri-moon-line"></i>
-                            </div>
-                        </li>
-                        <li class="profile-nav onhover-dropdown pe-0 me-0">
-                            <div class="media profile-media">
-                                <img class="user-profile rounded-circle"  th:src="@{/assets1/images/users/4.jpg}" alt="">
-                                <div class="user-name-hide media-body">
-                                    <span>Emay Walter</span>
-                                    <p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
-                                </div>
-                            </div>
-                            <ul class="profile-dropdown onhover-show-div">
-                                <li>
-                                    <a href="all-users.html">
-                                        <i data-feather="users"></i>
-                                        <span>Users</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="order-list.html">
-                                        <i data-feather="archive"></i>
-                                        <span>Orders</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="support-ticket.html">
-                                        <i data-feather="phone"></i>
-                                        <span>Spports Tickets</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="profile-setting.html">
-                                        <i data-feather="settings"></i>
-                                        <span>Settings</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                                        href="javascript:void(0)">
-                                        <i data-feather="log-out"></i>
-                                        <span>Log out</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Page Header Ends-->
-
-        <!-- Page Body Start -->
-        <div class="page-body-wrapper">
-           <!-- Page Sidebar Start-->
-		   <div class="sidebar-wrapper">
-		   			<div id="sidebarEffect"></div>
-		   			<div>
-		   				<div class="logo-wrapper logo-wrapper-center">
-		   					<a href="index.html" data-bs-original-title="" title="">
-		   						<img class="img-fluid for-white" th:src="@{/assets1/images/logo/full-white.png}" alt="logo">
-		   					</a>
-		   					<div class="back-btn">
-		   						<i class="fa fa-angle-left"></i>
-		   					</div>
-		   					<div class="toggle-sidebar">
-		   						<i class="ri-apps-line status_toggle middle sidebar-toggle"></i>
-		   					</div>
-		   				</div>
-		   				<div class="logo-icon-wrapper">
-		   					<a href="index.html">
-		   						<img class="img-fluid main-logo main-white" th:src="@{/assets1/images/logo/1-white.png}"
-		   							alt="logo">
-		   						<img class="img-fluid main-logo main-dark" th:src="@{/assets1/images/logo/logo-white.png}"
-		   							alt="logo">
-		   					</a>
-		   				</div>
-		   				<nav class="sidebar-main">
-		   					<div class="left-arrow" id="left-arrow">
-		   						<i data-feather="arrow-left"></i>
-		   					</div>
-
-		   					<div id="sidebar-menu">
-		   						<ul class="sidebar-links" id="simple-bar">
-		   							<li class="back-btn"></li>
-
-		   							<li class="sidebar-list">
-		   								<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/index}">
-		   									<i class="ri-home-line"></i>
-		   									<span>Dashboard</span>
-		   								</a>
-		   							</li>
-
-		   							<li class="sidebar-list">
-		   								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-		   									<i class="ri-list-check-2"></i>
-		   									<span>Category</span>
-		   								</a>
-		   								<ul class="sidebar-submenu">
-		   									<li>
-		   										<a href="#" th:href="@{/admin/category}">Category List</a>
-		   									</li>
-
-		   									<li>
-		   										<a href="#" th:href="@{/admin/addCategory}">Add New Category</a>
-		   									</li>
-		   								</ul>
-		   							</li>
+				<form class="form-inline search-full" action="javascript:void(0)" method="get">
+					<div class="form-group w-100">
+						<div class="Typeahead Typeahead--twitterUsers">
+							<div class="u-posRelative">
+								<input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
+									placeholder="Search Fastkart .." name="q" title="" autofocus>
+								<i class="close-search" data-feather="x"></i>
+								<div class="spinner-border Typeahead-spinner" role="status">
+									<span class="sr-only">Loading...</span>
+								</div>
+							</div>
+							<div class="Typeahead-menu"></div>
+						</div>
+					</div>
+				</form>
+				<div class="nav-right col-6 pull-right right-header p-0">
+					<ul class="nav-menus">
+						<li>
+							<span class="header-search">
+								<i class="ri-search-line"></i>
+							</span>
+						</li>
 
 
-		   							<li class="sidebar-list">
-		   								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-		   									<i class="ri-list-check-2"></i>
-		   									<span>subCategory</span>
-		   								</a>
-		   								<ul class="sidebar-submenu">
-		   									<li>
-		   										<a href="#" th:href="@{/admin/subCategory}">subCategory List</a>
-		   									</li>
+						<li>
+							<div class="mode">
+								<i class="ri-moon-line"></i>
+							</div>
+						</li>
+						<li class="profile-nav onhover-dropdown pe-0 me-0">
+							<div class="media profile-media">
+								<div th:if="${user.profileImage != null and !user.profileImage.isEmpty()}">
+									<img class="user-profile rounded-circle"
+										th:src="@{'/assets1/images/' + ${user.profileImage}}" alt="">
+								</div>
+								<div th:if="${user.profileImage == null or user.profileImage.isEmpty()}"
+									id="profileImage" th:text="${customImage}">
+									<div id="profileImage" th:text="${customImage}">kkk</div>
+								</div>
+								<div class="user-name-hide media-body">
+									<span th:text="${user.name}">Emay Walter</span>
+									<p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
+								</div>
+							</div>
+							<ul class="profile-dropdown onhover-show-div">
+								<li>
+									<a href="all-users.html">
+										<i data-feather="users"></i>
+										<span>Users</span>
+									</a>
+								</li>
+								<li>
+									<a href="order-list.html">
+										<i data-feather="archive"></i>
+										<span>Orders</span>
+									</a>
+								</li>
+								<li>
+									<a href="support-ticket.html">
+										<i data-feather="phone"></i>
+										<span>Spports Tickets</span>
+									</a>
+								</li>
+								<li>
+									<a href="profile-setting.html">
+										<i data-feather="settings"></i>
+										<span>Settings</span>
+									</a>
+								</li>
+								<li>
+									<a data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+										href="javascript:void(0)">
+										<i data-feather="log-out"></i>
+										<span>Log out</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Page Header Ends-->
 
-		   									<li>
-		   										<a href="#" th:href="@{/admin/addSubCategory}">Add New subCategory</a>
-		   									</li>
-		   								</ul>
-		   							</li>
+		<!-- Page Body Start -->
+		<div class="page-body-wrapper">
+			<!-- Page Sidebar Start-->
+			<div class="sidebar-wrapper">
+				<div id="sidebarEffect"></div>
+				<div>
+					<div class="logo-wrapper logo-wrapper-center">
+						<a th:href="@{/admin/index}" data-bs-original-title="" title="">
+							<img class="img-fluid for-white" th:src="@{/assets1/images/logo/full-white.png}" alt="logo">
+						</a>
+						<div class="back-btn">
+							<i class="fa fa-angle-left"></i>
+						</div>
+						<div class="toggle-sidebar">
+							<i class="ri-apps-line status_toggle middle sidebar-toggle"></i>
+						</div>
+					</div>
+					<div class="logo-icon-wrapper">
+						<a href="index.html">
+							<img class="img-fluid main-logo main-white" th:src="@{/assets1/images/logo/1-white.png}"
+								alt="logo">
+							<img class="img-fluid main-logo main-dark" th:src="@{/assets1/images/logo/logo-white.png}"
+								alt="logo">
+						</a>
+					</div>
+					<nav class="sidebar-main">
+						<div class="left-arrow" id="left-arrow">
+							<i data-feather="arrow-left"></i>
+						</div>
+
+						<div id="sidebar-menu">
+							<ul class="sidebar-links" id="simple-bar">
+								<li class="back-btn"></li>
+
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/index}">
+										<i class="ri-home-line"></i>
+										<span>Dashboard</span>
+									</a>
+								</li>
+
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-list-check-2"></i>
+										<span>Category</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/category}">Category List</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/addCategory}">Add New Category</a>
+										</li>
+									</ul>
+								</li>
 
 
-		   							<li class="sidebar-list">
-		   								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-		   									<i class="ri-store-3-line"></i>
-		   									<span>Product</span>
-		   								</a>
-		   								<ul class="sidebar-submenu">
-		   									<li>
-		   										<a href="#" th:href="@{/admin/product}">Prodcts</a>
-		   									</li>
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-list-check-2"></i>
+										<span>subCategory</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/subCategory}">subCategory List</a>
+										</li>
 
-		   									<li>
-		   										<a href="#" th:href="@{/admin/addProduct}">Add New Products</a>
-		   									</li>
-		   								</ul>
-		   							</li>
-
-
-		   							<li class="sidebar-list">
-		   								<a class="sidebar-link sidebar-title" href="javascript:void(0)">
-		   									<i class="ri-user-3-line"></i>
-		   									<span>Users</span>
-		   								</a>
-		   								<ul class="sidebar-submenu">
-		   									<li>
-		   										<a href="#" th:href="@{/admin/allUser}">All users</a>
-		   									</li>
-		   									<li>
-		   										<a href="#">Add new user</a>
-		   									</li>
-		   								</ul>
-		   							</li>
+										<li>
+											<a href="#" th:href="@{/admin/addSubCategory}">Add New subCategory</a>
+										</li>
+									</ul>
+								</li>
 
 
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-store-3-line"></i>
+										<span>Product</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/product}">Prodcts</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/addProduct}">Add New Products</a>
+										</li>
+									</ul>
+								</li>
 
 
-
-		   							 <li class="sidebar-list">
-		                                   <a class="sidebar-link sidebar-title" href="javascript:void(0)">
-		                                       <i class="ri-archive-line"></i>
-		                                       <span>Orders</span>
-		                                   </a>
-		                                   <ul class="sidebar-submenu">
-		                                       <li>
-		                                           <a href="#" th:href="@{/admin/allOrder}">Order List</a>
-		                                       </li>
-		                                       
-		                                        <li>
-		                                           <a href="#" th:href="@{/admin/pendingOrder}">Pending  Order</a>
-		                                       </li>
-		                                        <li>
-		                                           <a href="#" th:href="@{/admin/activeOrder}">Active Order</a>
-		                                       </li>
-		                                        <li>
-		                                           <a href="#" th:href="@{/admin/shippingOrder}">Shipping Order</a>
-		                                       </li>
-		                                       <li>
-		                                           <a href="#" th:href="@{/admin/deliveredOrder}">Delivered Order</a>
-		                                       </li>
-		                                        <li>
-		                                           <a href="#" th:href="@{/admin/cancslledOrder}">Cancalled Order</a>
-		                                       </li>
-		                                       <li>
-		                                           <a href="#" th:href="@{/admin/orderTracking}">Order Tracking</a>
-		                                       </li>
-		                                   </ul>
-		                               </li>
-
-
-		   							<li class="sidebar-list">
-		   								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-		   									<i class="ri-price-tag-3-line"></i>
-		   									<span>Coupons</span>
-		   								</a>
-		   								<ul class="sidebar-submenu">
-		   									<li>
-		   										<a href="#" th:href="@{/admin/allCoupon}">Coupon List</a>
-		   									</li>
-
-		   									<li>
-		   										<a href="#" th:href="@{/admin/createCoupon}">Create Coupon</a>
-		   									</li>
-		   								</ul>
-		   							</li>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-user-3-line"></i>
+										<span>Users</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allUser}">All users</a>
+										</li>
+										<li>
+											<a href="#">Add new user</a>
+										</li>
+									</ul>
+								</li>
 
 
 
-		   							<li class="sidebar-list">
-		   								<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/productReview}">
-		   									<i class="ri-star-line"></i>
-		   									<span>Product Review</span>
-		   								</a>
-		   							</li>
 
 
-		   							
-		   						</ul>
-		   					</div>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-archive-line"></i>
+										<span>Orders</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allOrder}">Order List</a>
+										</li>
 
-		   					<div class="right-arrow" id="right-arrow">
-		   						<i data-feather="arrow-right"></i>
-		   					</div>
-		   				</nav>
-		   			</div>
-		   		</div>
-            <!-- Page Sidebar Ends-->
+										<li>
+											<a href="#" th:href="@{/admin/pendingOrder}">Pending Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/activeOrder}">Active Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/shippingOrder}">Shipping Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/deliveredOrder}">Delivered Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/cancslledOrder}">Cancalled Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/orderTracking}">Order Tracking</a>
+										</li>
+									</ul>
+								</li>
 
-            <!-- Container-fluid starts-->
-            <div class="page-body">
-                <!-- All User Table Start -->
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card card-table">
-                                <div class="card-body">
-                                    <div class="title-header option-title">
-                                        <h5>All Category</h5>
-                                        <form class="d-inline-flex">
-                                            <a href="#" th:href="@{/admin/addCategory}"
-                                                class="align-items-center btn btn-theme d-flex">
-                                                <i data-feather="plus-square"></i>Add New
-                                            </a>
-                                        </form>
-                                    </div>
-<!--============================================================= Table Start ===========================================================================-->
-                                    <div class="table-responsive category-table">
-                                        <div>
-                                            <table class="table all-package theme-table" id="table_id">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Category Image</th>
-                                                        <th>Category Name</th>
-                                                        <th>Option</th>
-                                                    </tr>
-                                                </thead>
 
-                                                <tbody>
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-price-tag-3-line"></i>
+										<span>Coupons</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allCoupon}">Coupon List</a>
+										</li>
 
-                                                    <tr th:each="c : ${category}">
-														
-														 <td>
-                                                            <div class="table-image">
-                                                                <img src="#" th:src="@{'/assets1/images/' + ${c.cimage}}"
-                                                                    class="img-fluid" alt="">
-                                                            </div>
-                                                        </td>
-                                                        
-                                                        <td th:text="${c.cname}" ></td>
-                                                        <td>
-                                                    	        <ul>
-                                                              
-                                                <!--edit category through pot mapping. not completed-->
-                                                               <!-- <li>
+										<li>
+											<a href="#" th:href="@{/admin/createCoupon}">Create Coupon</a>
+										</li>
+									</ul>
+								</li>
+
+
+
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="#"
+										th:href="@{/admin/productReview}">
+										<i class="ri-star-line"></i>
+										<span>Product Review</span>
+									</a>
+								</li>
+
+
+
+							</ul>
+						</div>
+
+						<div class="right-arrow" id="right-arrow">
+							<i data-feather="arrow-right"></i>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!-- Page Sidebar Ends-->
+
+			<!-- Container-fluid starts-->
+			<div class="page-body">
+				<!-- All User Table Start -->
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="card card-table">
+								<div class="card-body">
+									<div class="title-header option-title">
+										<h5>All Category</h5>
+										<form class="d-inline-flex">
+											<a href="#" th:href="@{/admin/addCategory}"
+												class="align-items-center btn btn-theme d-flex">
+												<i data-feather="plus-square"></i>Add New
+											</a>
+										</form>
+									</div>
+									<!--============================================================= Table Start ===========================================================================-->
+									<div class="table-responsive category-table">
+										<div>
+											<table class="table all-package theme-table" id="table_id">
+												<thead>
+													<tr>
+														<th>Category Image</th>
+														<th>Category Name</th>
+														<th>Option</th>
+													</tr>
+												</thead>
+
+												<tbody>
+
+													<tr th:each="c : ${category}">
+
+														<td>
+															<div class="table-image">
+																<img src="#"
+																	th:src="@{'/assets1/images/' + ${c.cimage}}"
+																	class="img-fluid" alt="">
+															</div>
+														</td>
+
+														<td th:text="${c.cname}"></td>
+														<td>
+															<ul>
+
+																<!--edit category through pot mapping. not completed-->
+																<!-- <li>
 																	<form method="post" action="#" th:action="@{'/updateCategory/' + ${c.id}}">
                                                                   <button type="submit" style="border: none; background: transparent;">
 																	  <a href="#">
@@ -391,144 +416,147 @@
 																   </form>
                                                                    
                                                                 </li>-->
-                                                                
-                                                                  <!--edit category through get mapping. -->
-                                                                 <li>
-																	  <a href="#" th:href="@{'updateCategory/' + ${c.id}}">
-                                                                        <i class="ri-pencil-line"></i>
-																	   </a>
-                                                                </li>
 
-                                                             <li>
-                                                                   
-                                                                        <a href="#" th:href="@{'deleteCategory/' + ${c.id}}">
-                                                                        <i class="ri-delete-bin-line"></i>
-                                                                    </a>
-                                                                </li>
-                                                            
-                                                                <!--
+																<!--edit category through get mapping. -->
+																<li>
+																	<a href="#"
+																		th:href="@{'updateCategory/' + ${c.id}}">
+																		<i class="ri-pencil-line"></i>
+																	</a>
+																</li>
+
+																<li>
+
+																	<a href="#"
+																		th:href="@{'deleteCategory/' + ${c.id}}">
+																		<i class="ri-delete-bin-line"></i>
+																	</a>
+																</li>
+
+																<!--
 	                                                                <li>
 	                                                                        <a href="#" th:onclick="|deleteCategory(${c.id})|">
 	                                                                        <i class="ri-delete-bin-line"></i>
 	                                                                    </a>
 	                                                                </li>-->
-                                                            </ul>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-<!--==========================================================Table END HERE===========================================================================-->
-                                    
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- All User Table Ends-->
+															</ul>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<!--==========================================================Table END HERE===========================================================================-->
 
-                <div class="container-fluid">
-                    <!-- footer start-->
-                    <footer class="footer">
-                        <div class="row">
-                            <div class="col-md-12 footer-copyright text-center">
-                                <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- footer end-->
-                </div>
-            </div>
-            <!-- Container-fluid end -->
-        </div>
-        <!-- Page Body End -->
 
-        <!-- Modal Start -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-            <div class="modal-dialog  modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
-                        <p>Are you sure you want to log out?</p>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <div class="button-box">
-                            <button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
-                            <button type="button" class="btn  btn--yes btn-primary">Yes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal End -->
-    </div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- All User Table Ends-->
 
-   
-    
-<!--=========================================================== Script for sweat atlert ==============================================================-->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+				<div class="container-fluid">
+					<!-- footer start-->
+					<footer class="footer">
+						<div class="row">
+							<div class="col-md-12 footer-copyright text-center">
+								<p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+							</div>
+						</div>
+					</footer>
+					<!-- footer end-->
+				</div>
+			</div>
+			<!-- Container-fluid end -->
+		</div>
+		<!-- Page Body End -->
 
-<!--============================================================ MODEL FOR DELETING CATEGORY =======================================================-->
+		<!-- Modal Start -->
+		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+			<div class="modal-dialog  modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-body">
+						<h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
+						<p>Are you sure you want to log out?</p>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<div class="button-box">
+							<button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
+							<button type="button" class="btn  btn--yes btn-primary">Yes</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Modal End -->
+	</div>
 
-<script>
-	
-	function deleteCategory(id){
-		
-		Swal.fire({
-  title: "Are you sure?",
-  text: "You won't be able to revert this!",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: "Yes, delete it!"
-}).then((result) => {
-  if (result.isConfirmed) {
-   
-   window.location ="/deleteCategory/" + id;
-   
-  }
-});
-	}
-</script>
 
-    <!-- latest js -->
-    <script th:src="@{/assets1/js/jquery-3.6.0.min.js}"></script>
 
-    <!-- Bootstrap js -->
-    <script th:src="@{/assets1/js/bootstrap/bootstrap.bundle.min.js}"></script>
+	<!--=========================================================== Script for sweat atlert ==============================================================-->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!-- feather icon js -->
-    <script th:src="@{/assets1/js/icons/feather-icon/feather.min.js}"></script>
-    <script th:src="@{/assets1/js/icons/feather-icon/feather-icon.js}"></script>
+	<!--============================================================ MODEL FOR DELETING CATEGORY =======================================================-->
 
-    <!-- scrollbar simplebar js -->
-    <script th:src="@{/assets1/js/scrollbar/simplebar.js}"></script>
-    <script th:src="@{/assets1/js/scrollbar/custom.js}"></script>
+	<script>
 
-    <!-- customizer js -->
-    <script th:src="@{/assets1/js/customizer.js}"></script>
+		function deleteCategory(id) {
 
-    <!-- Sidebar js -->
-    <script th:src="@{/assets1/js/config.js}"></script>
+			Swal.fire({
+				title: "Are you sure?",
+				text: "You won't be able to revert this!",
+				icon: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#3085d6",
+				cancelButtonColor: "#d33",
+				confirmButtonText: "Yes, delete it!"
+			}).then((result) => {
+				if (result.isConfirmed) {
 
-    <!-- Plugins JS -->
-    <script th:src="@{/assets1/js/sidebar-menu.js}"></script>
-    <script th:src="@{/assets1/js/notify/bootstrap-notify.min.js}"></script>
-    <script th:src="@{/assets1/js/notify/index.js}"></script>
+					window.location = "/deleteCategory/" + id;
 
-    <!-- Data table js -->
-    <script th:src="@{/assets1/js/jquery.dataTables.js}"></script>
-    <script th:src="@{/assets1/js/custom-data-table.js}"></script>
+				}
+			});
+		}
+	</script>
 
-    <!-- sidebar effect -->
-    <script th:src="@{/assets1/js/sidebareffect.js}"></script>
+	<!-- latest js -->
+	<script th:src="@{/assets1/js/jquery-3.6.0.min.js}"></script>
 
-    <!-- Theme js -->
-    <script th:src="@{/assets1/js/script.js}"></script>
+	<!-- Bootstrap js -->
+	<script th:src="@{/assets1/js/bootstrap/bootstrap.bundle.min.js}"></script>
+
+	<!-- feather icon js -->
+	<script th:src="@{/assets1/js/icons/feather-icon/feather.min.js}"></script>
+	<script th:src="@{/assets1/js/icons/feather-icon/feather-icon.js}"></script>
+
+	<!-- scrollbar simplebar js -->
+	<script th:src="@{/assets1/js/scrollbar/simplebar.js}"></script>
+	<script th:src="@{/assets1/js/scrollbar/custom.js}"></script>
+
+	<!-- customizer js -->
+	<script th:src="@{/assets1/js/customizer.js}"></script>
+
+	<!-- Sidebar js -->
+	<script th:src="@{/assets1/js/config.js}"></script>
+
+	<!-- Plugins JS -->
+	<script th:src="@{/assets1/js/sidebar-menu.js}"></script>
+	<script th:src="@{/assets1/js/notify/bootstrap-notify.min.js}"></script>
+	<script th:src="@{/assets1/js/notify/index.js}"></script>
+
+	<!-- Data table js -->
+	<script th:src="@{/assets1/js/jquery.dataTables.js}"></script>
+	<script th:src="@{/assets1/js/custom-data-table.js}"></script>
+
+	<!-- sidebar effect -->
+	<script th:src="@{/assets1/js/sidebareffect.js}"></script>
+
+	<!-- Theme js -->
+	<script th:src="@{/assets1/js/script.js}"></script>
 </body>
 
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/back-end/category.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Oct 2023 06:45:00 GMT -->
+
 </html>

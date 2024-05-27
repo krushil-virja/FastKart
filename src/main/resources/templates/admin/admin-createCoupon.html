@@ -3,510 +3,544 @@
 
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/back-end/create-coupon.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Oct 2023 06:45:03 GMT -->
+
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
-    <meta name="keywords"
-        content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
-    <meta name="author" content="pixelstrap">
-    <link rel="icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
-    <link rel="shortcut icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
-    <title>Fastkart - Create Coupon</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Fastkart admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+	<meta name="keywords"
+		content="admin template, Fastkart admin template, dashboard template, flat admin template, responsive admin template, web app">
+	<meta name="author" content="pixelstrap">
+	<link rel="icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
+	<link rel="shortcut icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
+	<title>Fastkart - Create Coupon</title>
 
-    <!-- Google font-->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-        rel="stylesheet">
 
-    <!-- Fontawesome css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/font-awesome.css}">
+	<!--custom profile image css-->
+	<style>
+		#profileImage {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background: #512DA8;
+			font-size: 25px;
+			color: #fff;
+			text-align: center;
+			line-height: 50px;
 
-    <!-- Linear Icon css -->
-    <link rel="stylesheet" th:href="@{/assets1/css/linearicon.css}">
+		}
+	</style>
 
-    <!-- remixicon css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/remixicon.css}">
+	<!-- Google font-->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+		rel="stylesheet">
 
-    <!-- Themify icon css-->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/themify.css}">
+	<!-- Fontawesome css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/font-awesome.css}">
 
-    <!-- Feather icon css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/feather-icon.css}">
+	<!-- Linear Icon css -->
+	<link rel="stylesheet" th:href="@{/assets1/css/linearicon.css}">
 
-    <!-- Plugins css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/scrollbar.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/animate.css}">
+	<!-- remixicon css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/remixicon.css}">
 
-    <!-- Bootstrap css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/bootstrap.css}">
+	<!-- Themify icon css-->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/themify.css}">
 
-    <!-- App css -->
-    <link rel="stylesheet" type="text/css" th:href="@{/assets1/css/style.css}">
+	<!-- Feather icon css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/feather-icon.css}">
+
+	<!-- Plugins css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/scrollbar.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/animate.css}">
+
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/vendors/bootstrap.css}">
+
+	<!-- App css -->
+	<link rel="stylesheet" type="text/css" th:href="@{/assets1/css/style.css}">
 </head>
 
 <body>
-    <!-- tap on top start -->
-    <div class="tap-top">
-        <span class="lnr lnr-chevron-up"></span>
-    </div>
-    <!-- tap on tap end -->
+	<!-- tap on top start -->
+	<div class="tap-top">
+		<span class="lnr lnr-chevron-up"></span>
+	</div>
+	<!-- tap on tap end -->
 
-    <!-- page-wrapper Start-->
-    <div class="page-wrapper compact-wrapper" id="pageWrapper">
-        <!-- Page Header Start-->
-        <div class="page-header">
-            <div class="header-wrapper m-0">
-                <div class="header-logo-wrapper p-0">
-                    <div class="logo-wrapper">
-                        <a href="index.html">
-                            <img class="img-fluid main-logo" th:src="@{/assets1/images/logo/1.png}" alt="logo">
-                            <img class="img-fluid white-logo" th:src="@{/assets1/images/logo/1-white.png}" alt="logo">
-                        </a>
-                    </div>
-                    <div class="toggle-sidebar">
-                        <i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i>
-                        <a href="index.html">
-                            <img th:src="@{/assets1/images/logo/1.png}" class="img-fluid" alt="">
-                        </a>
-                    </div>
-                </div>
+	<!-- page-wrapper Start-->
+	<div class="page-wrapper compact-wrapper" id="pageWrapper">
+		<!-- Page Header Start-->
+		<div class="page-header">
+			<div class="header-wrapper m-0">
+				<div class="header-logo-wrapper p-0">
+					<div class="logo-wrapper">
+						<a href="index.html">
+							<img class="img-fluid main-logo" th:src="@{/assets1/images/logo/1.png}" alt="logo">
+							<img class="img-fluid white-logo" th:src="@{/assets1/images/logo/1-white.png}" alt="logo">
+						</a>
+					</div>
+					<div class="toggle-sidebar">
+						<i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i>
+						<a href="index.html">
+							<img th:src="@{/assets1/images/logo/1.png}" class="img-fluid" alt="">
+						</a>
+					</div>
+				</div>
 
-                <form class="form-inline search-full" action="javascript:void(0)" method="get">
-                    <div class="form-group w-100">
-                        <div class="Typeahead Typeahead--twitterUsers">
-                            <div class="u-posRelative">
-                                <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
-                                    placeholder="Search Fastkart .." name="q" title="" autofocus>
-                                <i class="close-search" data-feather="x"></i>
-                                <div class="spinner-border Typeahead-spinner" role="status">
-                                    <span class="sr-only">Loading...</span>
-                                </div>
-                            </div>
-                            <div class="Typeahead-menu"></div>
-                        </div>
-                    </div>
-                </form>
-                <div class="nav-right col-6 pull-right right-header p-0">
-                    <ul class="nav-menus">
-                        <li>
-                            <span class="header-search">
-                                <i class="ri-search-line"></i>
-                            </span>
-                        </li>
-                     
-
-                        <li>
-                            <div class="mode">
-                                <i class="ri-moon-line"></i>
-                            </div>
-                        </li>
-                        <li class="profile-nav onhover-dropdown pe-0 me-0">
-                            <div class="media profile-media">
-                                <img class="user-profile rounded-circle" th:src="@{/assets1/images/users/4.jpg}" alt="">
-                                <div class="user-name-hide media-body">
-                                    <span>Emay Walter</span>
-                                    <p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
-                                </div>
-                            </div>
-                            <ul class="profile-dropdown onhover-show-div">
-                                <li>
-                                    <a href="all-users.html">
-                                        <i data-feather="users"></i>
-                                        <span>Users</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="order-list.html">
-                                        <i data-feather="archive"></i>
-                                        <span>Orders</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="support-ticket.html">
-                                        <i data-feather="phone"></i>
-                                        <span>Spports Tickets</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="profile-setting.html">
-                                        <i data-feather="settings"></i>
-                                        <span>Settings</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                                        href="javascript:void(0)">
-                                        <i data-feather="log-out"></i>
-                                        <span>Log out</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- Page Header Ends-->
-
-        <!-- Page Body Start-->
-        <div class="page-body-wrapper">
-       <!-- Page Sidebar Start-->
-	   <div class="sidebar-wrapper">
-	   			<div id="sidebarEffect"></div>
-	   			<div>
-	   				<div class="logo-wrapper logo-wrapper-center">
-	   					<a href="index.html" data-bs-original-title="" title="">
-	   						<img class="img-fluid for-white" th:src="@{/assets1/images/logo/full-white.png}" alt="logo">
-	   					</a>
-	   					<div class="back-btn">
-	   						<i class="fa fa-angle-left"></i>
-	   					</div>
-	   					<div class="toggle-sidebar">
-	   						<i class="ri-apps-line status_toggle middle sidebar-toggle"></i>
-	   					</div>
-	   				</div>
-	   				<div class="logo-icon-wrapper">
-	   					<a href="index.html">
-	   						<img class="img-fluid main-logo main-white" th:src="@{/assets1/images/logo/1-white.png}"
-	   							alt="logo">
-	   						<img class="img-fluid main-logo main-dark" th:src="@{/assets1/images/logo/logo-white.png}"
-	   							alt="logo">
-	   					</a>
-	   				</div>
-	   				<nav class="sidebar-main">
-	   					<div class="left-arrow" id="left-arrow">
-	   						<i data-feather="arrow-left"></i>
-	   					</div>
-
-	   					<div id="sidebar-menu">
-	   						<ul class="sidebar-links" id="simple-bar">
-	   							<li class="back-btn"></li>
-
-	   							<li class="sidebar-list">
-	   								<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/index}">
-	   									<i class="ri-home-line"></i>
-	   									<span>Dashboard</span>
-	   								</a>
-	   							</li>
-
-	   							<li class="sidebar-list">
-	   								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-	   									<i class="ri-list-check-2"></i>
-	   									<span>Category</span>
-	   								</a>
-	   								<ul class="sidebar-submenu">
-	   									<li>
-	   										<a href="#" th:href="@{/admin/category}">Category List</a>
-	   									</li>
-
-	   									<li>
-	   										<a href="#" th:href="@{/admin/addCategory}">Add New Category</a>
-	   									</li>
-	   								</ul>
-	   							</li>
+				<form class="form-inline search-full" action="javascript:void(0)" method="get">
+					<div class="form-group w-100">
+						<div class="Typeahead Typeahead--twitterUsers">
+							<div class="u-posRelative">
+								<input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
+									placeholder="Search Fastkart .." name="q" title="" autofocus>
+								<i class="close-search" data-feather="x"></i>
+								<div class="spinner-border Typeahead-spinner" role="status">
+									<span class="sr-only">Loading...</span>
+								</div>
+							</div>
+							<div class="Typeahead-menu"></div>
+						</div>
+					</div>
+				</form>
+				<div class="nav-right col-6 pull-right right-header p-0">
+					<ul class="nav-menus">
+						<li>
+							<span class="header-search">
+								<i class="ri-search-line"></i>
+							</span>
+						</li>
 
 
-	   							<li class="sidebar-list">
-	   								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-	   									<i class="ri-list-check-2"></i>
-	   									<span>subCategory</span>
-	   								</a>
-	   								<ul class="sidebar-submenu">
-	   									<li>
-	   										<a href="#" th:href="@{/admin/subCategory}">subCategory List</a>
-	   									</li>
+						<li>
+							<div class="mode">
+								<i class="ri-moon-line"></i>
+							</div>
+						</li>
+						<li class="profile-nav onhover-dropdown pe-0 me-0">
+							<div class="media profile-media">
+								<div th:if="${user.profileImage != null and !user.profileImage.isEmpty()}">
+									<img class="user-profile rounded-circle"
+										th:src="@{'/assets1/images/' + ${user.profileImage}}" alt="">
+								</div>
+								<div th:if="${user.profileImage == null or user.profileImage.isEmpty()}"
+									id="profileImage" th:text="${customImage}">
+									<div id="profileImage" th:text="${customImage}">kkk</div>
+								</div>
+								<div class="user-name-hide media-body">
+									<span th:text="${user.name}">Emay Walter</span>
+									<p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
+								</div>
+							</div>
+							<ul class="profile-dropdown onhover-show-div">
+								<li>
+									<a href="all-users.html">
+										<i data-feather="users"></i>
+										<span>Users</span>
+									</a>
+								</li>
+								<li>
+									<a href="order-list.html">
+										<i data-feather="archive"></i>
+										<span>Orders</span>
+									</a>
+								</li>
+								<li>
+									<a href="support-ticket.html">
+										<i data-feather="phone"></i>
+										<span>Spports Tickets</span>
+									</a>
+								</li>
+								<li>
+									<a href="profile-setting.html">
+										<i data-feather="settings"></i>
+										<span>Settings</span>
+									</a>
+								</li>
+								<li>
+									<a data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+										href="javascript:void(0)">
+										<i data-feather="log-out"></i>
+										<span>Log out</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Page Header Ends-->
 
-	   									<li>
-	   										<a href="#" th:href="@{/admin/addSubCategory}">Add New subCategory</a>
-	   									</li>
-	   								</ul>
-	   							</li>
+		<!-- Page Body Start-->
+		<div class="page-body-wrapper">
+			<!-- Page Sidebar Start-->
+			<div class="sidebar-wrapper">
+				<div id="sidebarEffect"></div>
+				<div>
+					<div class="logo-wrapper logo-wrapper-center">
+						<a th:href="@{/admin/index}" data-bs-original-title="" title="">
+							<img class="img-fluid for-white" th:src="@{/assets1/images/logo/full-white.png}" alt="logo">
+						</a>
+						<div class="back-btn">
+							<i class="fa fa-angle-left"></i>
+						</div>
+						<div class="toggle-sidebar">
+							<i class="ri-apps-line status_toggle middle sidebar-toggle"></i>
+						</div>
+					</div>
+					<div class="logo-icon-wrapper">
+						<a href="index.html">
+							<img class="img-fluid main-logo main-white" th:src="@{/assets1/images/logo/1-white.png}"
+								alt="logo">
+							<img class="img-fluid main-logo main-dark" th:src="@{/assets1/images/logo/logo-white.png}"
+								alt="logo">
+						</a>
+					</div>
+					<nav class="sidebar-main">
+						<div class="left-arrow" id="left-arrow">
+							<i data-feather="arrow-left"></i>
+						</div>
+
+						<div id="sidebar-menu">
+							<ul class="sidebar-links" id="simple-bar">
+								<li class="back-btn"></li>
+
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/index}">
+										<i class="ri-home-line"></i>
+										<span>Dashboard</span>
+									</a>
+								</li>
+
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-list-check-2"></i>
+										<span>Category</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/category}">Category List</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/addCategory}">Add New Category</a>
+										</li>
+									</ul>
+								</li>
 
 
-	   							<li class="sidebar-list">
-	   								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-	   									<i class="ri-store-3-line"></i>
-	   									<span>Product</span>
-	   								</a>
-	   								<ul class="sidebar-submenu">
-	   									<li>
-	   										<a href="#" th:href="@{/admin/product}">Prodcts</a>
-	   									</li>
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-list-check-2"></i>
+										<span>subCategory</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/subCategory}">subCategory List</a>
+										</li>
 
-	   									<li>
-	   										<a href="#" th:href="@{/admin/addProduct}">Add New Products</a>
-	   									</li>
-	   								</ul>
-	   							</li>
-
-
-	   							<li class="sidebar-list">
-	   								<a class="sidebar-link sidebar-title" href="javascript:void(0)">
-	   									<i class="ri-user-3-line"></i>
-	   									<span>Users</span>
-	   								</a>
-	   								<ul class="sidebar-submenu">
-	   									<li>
-	   										<a href="#" th:href="@{/admin/allUser}">All users</a>
-	   									</li>
-	   									<li>
-	   										<a href="#">Add new user</a>
-	   									</li>
-	   								</ul>
-	   							</li>
+										<li>
+											<a href="#" th:href="@{/admin/addSubCategory}">Add New subCategory</a>
+										</li>
+									</ul>
+								</li>
 
 
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-store-3-line"></i>
+										<span>Product</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/product}">Prodcts</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/addProduct}">Add New Products</a>
+										</li>
+									</ul>
+								</li>
 
 
-
-	   							 <li class="sidebar-list">
-	                                   <a class="sidebar-link sidebar-title" href="javascript:void(0)">
-	                                       <i class="ri-archive-line"></i>
-	                                       <span>Orders</span>
-	                                   </a>
-	                                   <ul class="sidebar-submenu">
-	                                       <li>
-	                                           <a href="#" th:href="@{/admin/allOrder}">Order List</a>
-	                                       </li>
-	                                       
-	                                        <li>
-	                                           <a href="#" th:href="@{/admin/pendingOrder}">Pending  Order</a>
-	                                       </li>
-	                                        <li>
-	                                           <a href="#" th:href="@{/admin/activeOrder}">Active Order</a>
-	                                       </li>
-	                                        <li>
-	                                           <a href="#" th:href="@{/admin/shippingOrder}">Shipping Order</a>
-	                                       </li>
-	                                       <li>
-	                                           <a href="#" th:href="@{/admin/deliveredOrder}">Delivered Order</a>
-	                                       </li>
-	                                        <li>
-	                                           <a href="#" th:href="@{/admin/cancslledOrder}">Cancalled Order</a>
-	                                       </li>
-	                                       <li>
-	                                           <a href="#" th:href="@{/admin/orderTracking}">Order Tracking</a>
-	                                       </li>
-	                                   </ul>
-	                               </li>
-
-
-	   							<li class="sidebar-list">
-	   								<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-	   									<i class="ri-price-tag-3-line"></i>
-	   									<span>Coupons</span>
-	   								</a>
-	   								<ul class="sidebar-submenu">
-	   									<li>
-	   										<a href="#" th:href="@{/admin/allCoupon}">Coupon List</a>
-	   									</li>
-
-	   									<li>
-	   										<a href="#" th:href="@{/admin/createCoupon}">Create Coupon</a>
-	   									</li>
-	   								</ul>
-	   							</li>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-user-3-line"></i>
+										<span>Users</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allUser}">All users</a>
+										</li>
+										<li>
+											<a href="#">Add new user</a>
+										</li>
+									</ul>
+								</li>
 
 
 
-	   							<li class="sidebar-list">
-	   								<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/productReview}">
-	   									<i class="ri-star-line"></i>
-	   									<span>Product Review</span>
-	   								</a>
-	   							</li>
 
 
-	   							
-	   						</ul>
-	   					</div>
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-archive-line"></i>
+										<span>Orders</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allOrder}">Order List</a>
+										</li>
 
-	   					<div class="right-arrow" id="right-arrow">
-	   						<i data-feather="arrow-right"></i>
-	   					</div>
-	   				</nav>
-	   			</div>
-	   		</div>
-           <!--Page Sidebar Ends-->
+										<li>
+											<a href="#" th:href="@{/admin/pendingOrder}">Pending Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/activeOrder}">Active Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/shippingOrder}">Shipping Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/deliveredOrder}">Delivered Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/cancslledOrder}">Cancalled Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/orderTracking}">Order Tracking</a>
+										</li>
+									</ul>
+								</li>
 
-            <!-- Create Coupon Table start -->
-            <div class="page-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="row"  style="display: flex; justify-content: center; margin-top: 10%;">
-                                <div class="col-sm-8">
-									
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="title-header option-title">
-                                                <h5>Create Coupon</h5>
-                                            </div>
-                                          
-                                            <div class="tab-content" id="pills-tabContent">
-                                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
-                                                    <form class="theme-form theme-form-2 mega-form "  th:action="@{/addCoupon}" action="#" method="post">
-                                                        <div class="card-header-1">
-                                                            <h5>General</h5>
-                                                        </div>
 
-                                                        <div class="row">
-                                                            <div class="mb-4 row align-items-center">
-                                                                <label
-                                                                    class="form-label-title col-lg-2 col-md-3 mb-0">Coupon
-                                                                    Title</label>
-                                                                <div class="col-md-9 col-lg-10">
-                                                                    <input class="form-control" type="text" name="coupon_name">
-                                                                </div>
-                                                            </div>
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-price-tag-3-line"></i>
+										<span>Coupons</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allCoupon}">Coupon List</a>
+										</li>
 
-                                                            <div class="mb-4 row align-items-center">
-                                                                <label
-                                                                    class="col-lg-2 col-md-3 col-form-label form-label-title">Coupon
-                                                                    Code</label>
-                                                                <div class="col-md-9 col-lg-10">
-                                                                    <input class="form-control" type="text" name="couponCode">
-                                                                </div>
-                                                            </div>
+										<li>
+											<a href="#" th:href="@{/admin/createCoupon}">Create Coupon</a>
+										</li>
+									</ul>
+								</li>
 
-                                                            <div class="mb-4 row align-items-center">
-                                                                <label
-                                                                    class="col-lg-2 col-md-3 col-form-label form-label-title">Discount
-                                                                    </label>
-                                                                <div class="col-md-9 col-lg-10">
-                                                                    <input class="form-control" type="number" name="discount">
-                                                                </div>
-                                                            </div>
-                                                            
-                                                            
-                                                            <div class="mb-4 row align-items-center">
-                                                                <label
-                                                                    class="col-lg-2 col-md-3 col-form-label form-label-title">Min_cart_SubTotal
-                                                                    </label>
-                                                                <div class="col-md-9 col-lg-10">
-                                                                    <input class="form-control" type="number" name="min_cart_subtotal">
-                                                                </div>
-                                                            </div>
-                                                            
-                                                             <div class="mb-4 row align-items-center">
-                                                                <label
-                                                                    class="col-lg-2 col-md-3 col-form-label form-label-title">Max_cart_SubTotal
-                                                                    </label>
-                                                                <div class="col-md-9 col-lg-10">
-                                                                    <input class="form-control" type="number" name="max_cart_subtotal">
-                                                                </div>
-                                                            </div>
-                                                           
 
-                                                            <div class="mb-4 row align-items-center">
-                                                                <label
-                                                                    class="col-lg-2 col-md-3 col-form-label form-label-title">Expiry
-                                                                    Date</label>
-                                                                <div class="col-md-9 col-lg-10">
-                                                                    <input class="form-control" type="date" name="expiry_date">
-                                                                </div>
-                                                            </div>
-                                                            
-                                                            
-                                                            <div  style="text-align: center;">
-																
-																<button type="submit" class="btn btn-primary" >ADD Coupon</button>
+
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="#"
+										th:href="@{/admin/productReview}">
+										<i class="ri-star-line"></i>
+										<span>Product Review</span>
+									</a>
+								</li>
+
+
+
+							</ul>
+						</div>
+
+						<div class="right-arrow" id="right-arrow">
+							<i data-feather="arrow-right"></i>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<!--Page Sidebar Ends-->
+
+			<!-- Create Coupon Table start -->
+			<div class="page-body">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-12">
+							<div class="row" style="display: flex; justify-content: center; margin-top: 10%;">
+								<div class="col-sm-8">
+
+									<div class="card">
+										<div class="card-body">
+											<div class="title-header option-title">
+												<h5>Create Coupon</h5>
+											</div>
+
+											<div class="tab-content" id="pills-tabContent">
+												<div class="tab-pane fade show active" id="pills-home" role="tabpanel">
+													<form class="theme-form theme-form-2 mega-form "
+														th:action="@{/addCoupon}" action="#" method="post">
+														<div class="card-header-1">
+															<h5>General</h5>
+														</div>
+
+														<div class="row">
+															<div class="mb-4 row align-items-center">
+																<label
+																	class="form-label-title col-lg-2 col-md-3 mb-0">Coupon
+																	Title</label>
+																<div class="col-md-9 col-lg-10">
+																	<input class="form-control" type="text"
+																		name="coupon_name">
+																</div>
 															</div>
 
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                               
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Create Coupon Table End -->
+															<div class="mb-4 row align-items-center">
+																<label
+																	class="col-lg-2 col-md-3 col-form-label form-label-title">Coupon
+																	Code</label>
+																<div class="col-md-9 col-lg-10">
+																	<input class="form-control" type="text"
+																		name="couponCode">
+																</div>
+															</div>
 
-            <!-- footer start-->
-            <div class="container-fluid">
-                <footer class="footer">
-                    <div class="row">
-                        <div class="col-md-12 footer-copyright text-center">
-                            <p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-            <!-- footer end-->
-        </div>
-    </div>
-    <!-- page-wrapper end-->
+															<div class="mb-4 row align-items-center">
+																<label
+																	class="col-lg-2 col-md-3 col-form-label form-label-title">Discount
+																</label>
+																<div class="col-md-9 col-lg-10">
+																	<input class="form-control" type="number"
+																		name="discount">
+																</div>
+															</div>
 
-    <!-- Modal start -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog  modal-dialog-centered">
-            <div class="modal-content">
 
-                <div class="modal-body">
-                    <h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
-                    <p>Are you sure you want to log out?</p>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+															<div class="mb-4 row align-items-center">
+																<label
+																	class="col-lg-2 col-md-3 col-form-label form-label-title">Min_cart_SubTotal
+																</label>
+																<div class="col-md-9 col-lg-10">
+																	<input class="form-control" type="number"
+																		name="min_cart_subtotal">
+																</div>
+															</div>
 
-                    <div class="button-box">
-                        <button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
-                        <button type="button" class="btn  btn--yes btn-primary">Yes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal end -->
+															<div class="mb-4 row align-items-center">
+																<label
+																	class="col-lg-2 col-md-3 col-form-label form-label-title">Max_cart_SubTotal
+																</label>
+																<div class="col-md-9 col-lg-10">
+																	<input class="form-control" type="number"
+																		name="max_cart_subtotal">
+																</div>
+															</div>
 
-    <!-- latest js -->
-    <script th:src="@{/assets1/js/jquery-3.6.0.min.js}"></script>
 
-    <!-- Bootstrap js -->
-    <script th:src="@{/assets1/js/bootstrap/bootstrap.bundle.min.js}"></script>
+															<div class="mb-4 row align-items-center">
+																<label
+																	class="col-lg-2 col-md-3 col-form-label form-label-title">Expiry
+																	Date</label>
+																<div class="col-md-9 col-lg-10">
+																	<input class="form-control" type="date"
+																		name="expiry_date">
+																</div>
+															</div>
 
-    <!-- feather icon js -->
-    <script th:src="@{/assets1/js/icons/feather-icon/feather.min.js}"></script>
-    <script th:src="@{/assets1/js/icons/feather-icon/feather-icon.js}"></script>
 
-    <!-- scrollbar simplebar js -->
-    <script th:src="@{/assets1/js/scrollbar/simplebar.js}"></script>
-    <script th:src="@{/assets1/js/scrollbar/custom.js}"></script>
+															<div style="text-align: center;">
 
-    <!-- customizer js -->
-    <script th:src="@{/assets1/js/customizer.js}"></script>
+																<button type="submit" class="btn btn-primary">ADD
+																	Coupon</button>
+															</div>
 
-    <!-- Sidebar js -->
-    <script th:src="@{/assets1/js/config.js}"></script>
+														</div>
+													</form>
+												</div>
 
-    <!-- Plugins JS -->
-    <script th:src="@{/assets1/js/sidebar-menu.js}"></script>
-    <script th:src="@{/assets1/js/notify/bootstrap-notify.min.js}"></script>
-    <script th:src="@{/assets1/js/notify/index.js}"></script>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Create Coupon Table End -->
 
-    <!--Dropzon js -->
-    <script th:src="@{/assets1/js/dropzone/dropzone.js}"></script>
-    <script th:src="@{/assets1/js/dropzone/dropzone-script.js}"></script>
+			<!-- footer start-->
+			<div class="container-fluid">
+				<footer class="footer">
+					<div class="row">
+						<div class="col-md-12 footer-copyright text-center">
+							<p class="mb-0">Copyright 2022 © Fastkart theme by pixelstrap</p>
+						</div>
+					</div>
+				</footer>
+			</div>
+			<!-- footer end-->
+		</div>
+	</div>
+	<!-- page-wrapper end-->
 
-    <!-- select 2 js -->
-    <script th:src="@{/assets1/js/select2.min.js}"></script>
-    <script th:src="@{/assets1/js/select2-custom.js}"></script>
+	<!-- Modal start -->
+	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog  modal-dialog-centered">
+			<div class="modal-content">
 
-    <!-- sidebar effect -->
-    <script th:src="@{/assets1/js/sidebareffect.js}"></script>
+				<div class="modal-body">
+					<h5 class="modal-title" id="staticBackdropLabel">Logging Out</h5>
+					<p>Are you sure you want to log out?</p>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
-    <!-- Theme js -->
-    <script th:src="@{/assets1/js/script.js}"></script>
+					<div class="button-box">
+						<button type="button" class="btn btn--no" data-bs-dismiss="modal">No</button>
+						<button type="button" class="btn  btn--yes btn-primary">Yes</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal end -->
+
+	<!-- latest js -->
+	<script th:src="@{/assets1/js/jquery-3.6.0.min.js}"></script>
+
+	<!-- Bootstrap js -->
+	<script th:src="@{/assets1/js/bootstrap/bootstrap.bundle.min.js}"></script>
+
+	<!-- feather icon js -->
+	<script th:src="@{/assets1/js/icons/feather-icon/feather.min.js}"></script>
+	<script th:src="@{/assets1/js/icons/feather-icon/feather-icon.js}"></script>
+
+	<!-- scrollbar simplebar js -->
+	<script th:src="@{/assets1/js/scrollbar/simplebar.js}"></script>
+	<script th:src="@{/assets1/js/scrollbar/custom.js}"></script>
+
+	<!-- customizer js -->
+	<script th:src="@{/assets1/js/customizer.js}"></script>
+
+	<!-- Sidebar js -->
+	<script th:src="@{/assets1/js/config.js}"></script>
+
+	<!-- Plugins JS -->
+	<script th:src="@{/assets1/js/sidebar-menu.js}"></script>
+	<script th:src="@{/assets1/js/notify/bootstrap-notify.min.js}"></script>
+	<script th:src="@{/assets1/js/notify/index.js}"></script>
+
+	<!--Dropzon js -->
+	<script th:src="@{/assets1/js/dropzone/dropzone.js}"></script>
+	<script th:src="@{/assets1/js/dropzone/dropzone-script.js}"></script>
+
+	<!-- select 2 js -->
+	<script th:src="@{/assets1/js/select2.min.js}"></script>
+	<script th:src="@{/assets1/js/select2-custom.js}"></script>
+
+	<!-- sidebar effect -->
+	<script th:src="@{/assets1/js/sidebareffect.js}"></script>
+
+	<!-- Theme js -->
+	<script th:src="@{/assets1/js/script.js}"></script>
 </body>
 
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/back-end/create-coupon.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Oct 2023 06:45:03 GMT -->
+
 </html>

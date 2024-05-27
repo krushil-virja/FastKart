@@ -5,11 +5,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.FastKart.Dao.categoryDao;
 import com.FastKart.Dao.couponDao;
@@ -111,45 +114,60 @@ m.addAttribute("topSellingProducts", topSellingProducts);
 
 //========================================================= Handler to get Admin addCategory page =========================================================	
 	@GetMapping("/admin/addCategory")
-	public String addCategory( Model m ) {
+	public String addCategory( Model m,Principal principal ) {
 		m.addAttribute("category", new Category());
 
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
 		return "admin/admin-addCategory";
 	}
 
 //========================================================= Handler to get Admin Category page ===========================================================
 	@GetMapping("/admin/category")
-	public String category(Model m) {
+	public String category(Model m, Principal principal) {
 
 		List<Category> showAllCategory = cdao.showAllCategory();
 		m.addAttribute("category", showAllCategory);
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
 
 		return "admin/admin-category";
 	}
 
 //========================================================= Handler to get Admin addSubCategory page =====================================================
 	@GetMapping("/admin/addSubCategory")
-	public String addSubCategory(Model m) {
+	public String addSubCategory(Model m, Principal principal) {
 
 		List<Category> showAllCategory = cdao.showAllCategory();
 		m.addAttribute("category", showAllCategory);
 		m.addAttribute("subCategory", new subCategory());
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
+		
 		return "admin/admin-addSubCategory";
 	}
 	
 	
 	@GetMapping("/admin/updateCategory")
-	public String updateCategory() {
+	public String updateCategory(Model m , Principal principal) {
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
 		
 		return "admin/admin-updateCategory";
 	}
 
 //========================================================= Handler to get Admin subCategory page=========================================================
 	@GetMapping("/admin/subCategory")
-	public String subCategory(Model m) {
+	public String subCategory(Model m, Principal principal) {
 
 		List<subCategory> showAllSubCategory = scdao.showAllSubCategory();
 		m.addAttribute("subCategory", showAllSubCategory);
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
 
 		return "admin/admin-subCategory";
 	}
@@ -157,14 +175,17 @@ m.addAttribute("topSellingProducts", topSellingProducts);
 //========================================================= Handler to get Admin Update subCategory page=========================================================
 
 	@GetMapping("/updateSubCategory")
-	public String updateSubCategory() {
+	public String updateSubCategory(Model m, Principal principal) {
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
 		
 		return "admin/admin-updateSubCategory";
 	}
 //========================================================= Handler to get Admin addProduct page =========================================================
 
 	@GetMapping("/admin/addProduct")
-	public String addProduct(Model m) {
+	public String addProduct(Model m, Principal principal) {
 
 		List<Category> showAllCategory = cdao.showAllCategory();
 		m.addAttribute("category", showAllCategory);
@@ -173,127 +194,183 @@ m.addAttribute("topSellingProducts", topSellingProducts);
 		m.addAttribute("subCategory", showAllSubCategory);
 		
 		m.addAttribute("product", new Product());
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
+		
 		return "admin/admin-addProduct";
 	}
 	
 	@GetMapping("/updateProduct")
-	public String updateProduct(Model m) {
+	public String updateProduct(Model m, Principal principal) {
 		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
 		
 		return "admin/admin-updateProduct";
 	}
 
 //========================================================= Handler to get Admin Product page ============================================================
 	@GetMapping("/admin/product")
-	public String product(Model m) {
+	public String product(Model m, @RequestParam(value = "pageNumber", required = false, defaultValue = "1") Integer pageNumber,
+            @RequestParam(value = "pageSize", required = false, defaultValue = "12") Integer pageSize, Principal principal) {
 
-		List<Product> showAllProduct = pdao.showAllProduct();
+		//List<Product> showAllProduct = pdao.showAllProduct();
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
+		
+		 PageRequest pageable = PageRequest.of(pageNumber - 1, pageSize);
+		Page<Product> page = productRepository.findAll(pageable);
+		
+		List<Product> showAllProduct = page.getContent();
+		
 		m.addAttribute("product", showAllProduct);
+		m.addAttribute("totalPages", page.getTotalPages());
+		
+		m.addAttribute("totalItems", page.getTotalElements());
+		  m.addAttribute("currentPage", pageNumber);
+		    m.addAttribute("pageSize", pageSize);
 
 		return "admin/admin-product";
 	}
 
 //========================================================= Handler to get Admin allUSer page ============================================================
 	@GetMapping("/admin/allUser")
-	public String allUser(Model m) {
+	public String allUser(Model m, Principal principal) {
 
 		List<User> showAllUser = udao.ShowAllUser();
 		m.addAttribute("user", showAllUser);
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
 		return "admin/admin-allUser";
 	}
 
 //========================================================== Handler to get Admin Create Coupon page =====================================================
 	@GetMapping("/admin/createCoupon")
-	public String createCoupon() {
+	public String createCoupon(Model m , Principal principal) {
 
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
+		
 		return "admin/admin-createCoupon";
 	}
 
 //======================================================= Handler to get Admin allCoupon page ============================================================		
 	@GetMapping("/admin/allCoupon")
-	public String allCoupon(Model m) {
+	public String allCoupon(Model m,Principal principal) {
 
 		List<Coupon> allCoupon = coupondao.allCoupon();
 		m.addAttribute("allCoupon", allCoupon);
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
+		
 		return "admin/admin-allCoupon";
 	}
 
 //===================================================== Handler to get Admin allOrder page ==============================================================
 	@GetMapping("/admin/allOrder")
-	public String allOrder(Model m) {
+	public String allOrder(Model m, Principal principal) {
 
 		List<Order> allOrder = oDao.allOrder();
 
 		m.addAttribute("allOrder", allOrder);
+		
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
 
 		return "admin/admin-allOrder";
 	}
 
 //===================================================== Handler to get Admin activeOrder page ==============================================================
 	@GetMapping("/admin/activeOrder")
-	public String activeOrder(Model m) {
+	public String activeOrder(Model m, Principal principal) {
 		
 		List<Order> allOrder = oDao.allOrder();
 
 		m.addAttribute("allOrder", allOrder);
 
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
 
 		return "admin/admin-activeOrder";
 	}
 
 //===================================================== Handler to get Admin pendingOrder page ==============================================================
 	@GetMapping("/admin/pendingOrder")
-	public String pendingOrder(Model m) {
+	public String pendingOrder(Model m, Principal principal) {
 
 		List<Order> allOrder = oDao.allOrder();
 
 		m.addAttribute("allOrder", allOrder);
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
 
 		return "admin/admin-pendingOrder";
 	}
 
 //===================================================== Handler to get Admin shippingOrder page ==============================================================
 	@GetMapping("/admin/shippingOrder")
-	public String shippingOrder(Model m) {
+	public String shippingOrder(Model m, Principal principal) {
 
 		List<Order> allOrder = oDao.allOrder();
 
 		m.addAttribute("allOrder", allOrder);
 
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
+		
 		return "admin/admin-shippingOrder";
 	}
 
 //===================================================== Handler to get Admin deliveredOrder page ==============================================================
 	@GetMapping("/admin/deliveredOrder")
-	public String deliveredOrder(Model m) {
+	public String deliveredOrder(Model m, Principal principal) {
 
 		List<Order> allOrder = oDao.allOrder();
 
 		m.addAttribute("allOrder", allOrder);
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
 
 		return "admin/admin-deliveredOrder";
 	}
 
 //====================================================== Handler to get Admin orderDetails page ==========================================================
 	@GetMapping("/orderDetails")
-	public String orderDetails() {
+	public String orderDetails(Model m, Principal principal) {
 
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
+		
 		return "admin/admin-orderDetails";
 	}
 
 //====================================================== Handler toget Admin orderTracking page =========================================================
 	@GetMapping("/orderTracking")
-	public String orderTracking() {
+	public String orderTracking(Model m , Principal principal) {
 
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
+		
 		return "admin/admin-orderTracking";
 	}
 
 //======================================================= Handler to get productReview Page ============================================================
 	@GetMapping("/admin/productReview")
-	public String productReview(Model m) {
+	public String productReview(Model m, Principal principal) {
 		
 		List<Review> showAllreviews = rdao.showAllreviews();
 		m.addAttribute("showAllreviews", showAllreviews);
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		m.addAttribute("user", loggedInUser);
 
 		return "admin/admin-productReview";
 	}

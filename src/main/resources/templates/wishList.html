@@ -112,8 +112,8 @@
 				
 <!--==================================================== TOAST FOR SHOW MESSAGE ==============================================================-->
 
-				<!--<div th:if="${success}" class="log-in-box">
-					<div class="alert alert-danger" role="alert">
+				<div th:if="${success}" class="log-in-box">
+					<div class="alert alert-success" role="alert">
 						<span th:text="${success}"></span>
 					</div>
 				</div>
@@ -122,18 +122,9 @@
 					<div class="alert alert-danger" role="alert">
 						<span th:text="${wishlisterror}"></span>
 					</div>
-				</div>-->
-
-				<div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
-					aria-atomic="true" th:if="${wishlisterror}">
-					<div class="d-flex">
-						<div class="toast-body" th:text="${wishlisterror}">
-							Hello, world! This is a toast message.
-						</div>
-						<button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-							aria-label="Close"></button>
-					</div>
 				</div>
+
+			
 <!--================================================== TOAST END =============================================================================-->
 
 

@@ -145,13 +145,14 @@
 							<div class="profile-contain">
 								<div class="profile-image">
 									<div class="position-relative">
-										<img th:src="@{'/assets1/images/' + ${loggedInUser.profileImage}}"
-											class="blur-up lazyload update_img" alt="">
-										<div class="cover-icon">
-											<i class="fa-solid fa-pen">
-												<input type="file" onchange="readURL(this,0)">
-											</i>
-										</div>
+										<div th:if="${loggedInUser.profileImage != null}">
+										            <img th:src="@{'/assets1/images/' + ${loggedInUser.profileImage}}"
+										                class="blur-up lazyload update_img" alt="">
+										        </div>
+										        <div th:unless="${loggedInUser.profileImage != null}" class="cover-icon">
+										            <div id="profileImage">kkk</div> <!-- Default profile icon -->
+										        </div>
+										
 									</div>
 								</div>
 

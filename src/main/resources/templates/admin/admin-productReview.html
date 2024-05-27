@@ -17,6 +17,22 @@
 	<link rel="shortcut icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
 	<title>Fastkart - Product Review</title>
 
+
+	<!--custom profile image css-->
+	<style>
+		#profileImage {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background: #512DA8;
+			font-size: 25px;
+			color: #fff;
+			text-align: center;
+			line-height: 50px;
+
+		}
+	</style>
+
 	<!-- Google font-->
 	<link
 		href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
@@ -100,7 +116,7 @@
 								<i class="ri-search-line"></i>
 							</span>
 						</li>
-						
+
 
 						<li>
 							<div class="mode">
@@ -109,9 +125,16 @@
 						</li>
 						<li class="profile-nav onhover-dropdown pe-0 me-0">
 							<div class="media profile-media">
-								<img class="user-profile rounded-circle" th:src="@{/assets1/images/users/4.jpg}" alt="">
+								<div th:if="${user.profileImage != null and !user.profileImage.isEmpty()}">
+									<img class="user-profile rounded-circle"
+										th:src="@{'/assets1/images/' + ${user.profileImage}}" alt="">
+								</div>
+								<div th:if="${user.profileImage == null or user.profileImage.isEmpty()}"
+									id="profileImage" th:text="${customImage}">
+									<div id="profileImage" th:text="${customImage}">kkk</div>
+								</div>
 								<div class="user-name-hide media-body">
-									<span>Emay Walter</span>
+									<span th:text="${user.name}">Emay Walter</span>
 									<p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
 								</div>
 							</div>
@@ -159,181 +182,182 @@
 		<div class="page-body-wrapper">
 			<!-- Page Sidebar Start-->
 			<div class="sidebar-wrapper">
-						<div id="sidebarEffect"></div>
-						<div>
-							<div class="logo-wrapper logo-wrapper-center">
-								<a href="index.html" data-bs-original-title="" title="">
-									<img class="img-fluid for-white" th:src="@{/assets1/images/logo/full-white.png}" alt="logo">
-								</a>
-								<div class="back-btn">
-									<i class="fa fa-angle-left"></i>
-								</div>
-								<div class="toggle-sidebar">
-									<i class="ri-apps-line status_toggle middle sidebar-toggle"></i>
-								</div>
-							</div>
-							<div class="logo-icon-wrapper">
-								<a href="index.html">
-									<img class="img-fluid main-logo main-white" th:src="@{/assets1/images/logo/1-white.png}"
-										alt="logo">
-									<img class="img-fluid main-logo main-dark" th:src="@{/assets1/images/logo/logo-white.png}"
-										alt="logo">
-								</a>
-							</div>
-							<nav class="sidebar-main">
-								<div class="left-arrow" id="left-arrow">
-									<i data-feather="arrow-left"></i>
-								</div>
-
-								<div id="sidebar-menu">
-									<ul class="sidebar-links" id="simple-bar">
-										<li class="back-btn"></li>
-
-										<li class="sidebar-list">
-											<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/index}">
-												<i class="ri-home-line"></i>
-												<span>Dashboard</span>
-											</a>
-										</li>
-
-										<li class="sidebar-list">
-											<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-												<i class="ri-list-check-2"></i>
-												<span>Category</span>
-											</a>
-											<ul class="sidebar-submenu">
-												<li>
-													<a href="#" th:href="@{/admin/category}">Category List</a>
-												</li>
-
-												<li>
-													<a href="#" th:href="@{/admin/addCategory}">Add New Category</a>
-												</li>
-											</ul>
-										</li>
-
-
-										<li class="sidebar-list">
-											<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-												<i class="ri-list-check-2"></i>
-												<span>subCategory</span>
-											</a>
-											<ul class="sidebar-submenu">
-												<li>
-													<a href="#" th:href="@{/admin/subCategory}">subCategory List</a>
-												</li>
-
-												<li>
-													<a href="#" th:href="@{/admin/addSubCategory}">Add New subCategory</a>
-												</li>
-											</ul>
-										</li>
-
-
-										<li class="sidebar-list">
-											<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-												<i class="ri-store-3-line"></i>
-												<span>Product</span>
-											</a>
-											<ul class="sidebar-submenu">
-												<li>
-													<a href="#" th:href="@{/admin/product}">Prodcts</a>
-												</li>
-
-												<li>
-													<a href="#" th:href="@{/admin/addProduct}">Add New Products</a>
-												</li>
-											</ul>
-										</li>
-
-
-										<li class="sidebar-list">
-											<a class="sidebar-link sidebar-title" href="javascript:void(0)">
-												<i class="ri-user-3-line"></i>
-												<span>Users</span>
-											</a>
-											<ul class="sidebar-submenu">
-												<li>
-													<a href="#" th:href="@{/admin/allUser}">All users</a>
-												</li>
-												<li>
-													<a href="#">Add new user</a>
-												</li>
-											</ul>
-										</li>
-
-
-
-
-
-										 <li class="sidebar-list">
-			                                <a class="sidebar-link sidebar-title" href="javascript:void(0)">
-			                                    <i class="ri-archive-line"></i>
-			                                    <span>Orders</span>
-			                                </a>
-			                                <ul class="sidebar-submenu">
-			                                    <li>
-			                                        <a href="#" th:href="@{/admin/allOrder}">Order List</a>
-			                                    </li>
-			                                    
-			                                     <li>
-			                                        <a href="#" th:href="@{/admin/pendingOrder}">Pending  Order</a>
-			                                    </li>
-			                                     <li>
-			                                        <a href="#" th:href="@{/admin/activeOrder}">Active Order</a>
-			                                    </li>
-			                                     <li>
-			                                        <a href="#" th:href="@{/admin/shippingOrder}">Shipping Order</a>
-			                                    </li>
-			                                    <li>
-			                                        <a href="#" th:href="@{/admin/deliveredOrder}">Delivered Order</a>
-			                                    </li>
-			                                     <li>
-			                                        <a href="#" th:href="@{/admin/cancslledOrder}">Cancalled Order</a>
-			                                    </li>
-			                                    <li>
-			                                        <a href="#" th:href="@{/admin/orderTracking}">Order Tracking</a>
-			                                    </li>
-			                                </ul>
-			                            </li>
-
-
-										<li class="sidebar-list">
-											<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-												<i class="ri-price-tag-3-line"></i>
-												<span>Coupons</span>
-											</a>
-											<ul class="sidebar-submenu">
-												<li>
-													<a href="#" th:href="@{/admin/allCoupon}">Coupon List</a>
-												</li>
-
-												<li>
-													<a href="#" th:href="@{/admin/createCoupon}">Create Coupon</a>
-												</li>
-											</ul>
-										</li>
-
-
-
-										<li class="sidebar-list">
-											<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/productReview}">
-												<i class="ri-star-line"></i>
-												<span>Product Review</span>
-											</a>
-										</li>
-
-
-										
-									</ul>
-								</div>
-
-								<div class="right-arrow" id="right-arrow">
-									<i data-feather="arrow-right"></i>
-								</div>
-							</nav>
+				<div id="sidebarEffect"></div>
+				<div>
+					<div class="logo-wrapper logo-wrapper-center">
+						<a th:href="@{/admin/index}" data-bs-original-title="" title="">
+							<img class="img-fluid for-white" th:src="@{/assets1/images/logo/full-white.png}" alt="logo">
+						</a>
+						<div class="back-btn">
+							<i class="fa fa-angle-left"></i>
+						</div>
+						<div class="toggle-sidebar">
+							<i class="ri-apps-line status_toggle middle sidebar-toggle"></i>
 						</div>
 					</div>
+					<div class="logo-icon-wrapper">
+						<a href="index.html">
+							<img class="img-fluid main-logo main-white" th:src="@{/assets1/images/logo/1-white.png}"
+								alt="logo">
+							<img class="img-fluid main-logo main-dark" th:src="@{/assets1/images/logo/logo-white.png}"
+								alt="logo">
+						</a>
+					</div>
+					<nav class="sidebar-main">
+						<div class="left-arrow" id="left-arrow">
+							<i data-feather="arrow-left"></i>
+						</div>
+
+						<div id="sidebar-menu">
+							<ul class="sidebar-links" id="simple-bar">
+								<li class="back-btn"></li>
+
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/index}">
+										<i class="ri-home-line"></i>
+										<span>Dashboard</span>
+									</a>
+								</li>
+
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-list-check-2"></i>
+										<span>Category</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/category}">Category List</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/addCategory}">Add New Category</a>
+										</li>
+									</ul>
+								</li>
+
+
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-list-check-2"></i>
+										<span>subCategory</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/subCategory}">subCategory List</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/addSubCategory}">Add New subCategory</a>
+										</li>
+									</ul>
+								</li>
+
+
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-store-3-line"></i>
+										<span>Product</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/product}">Prodcts</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/addProduct}">Add New Products</a>
+										</li>
+									</ul>
+								</li>
+
+
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-user-3-line"></i>
+										<span>Users</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allUser}">All users</a>
+										</li>
+										<li>
+											<a href="#">Add new user</a>
+										</li>
+									</ul>
+								</li>
+
+
+
+
+
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-archive-line"></i>
+										<span>Orders</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allOrder}">Order List</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/pendingOrder}">Pending Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/activeOrder}">Active Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/shippingOrder}">Shipping Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/deliveredOrder}">Delivered Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/cancslledOrder}">Cancalled Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/orderTracking}">Order Tracking</a>
+										</li>
+									</ul>
+								</li>
+
+
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-price-tag-3-line"></i>
+										<span>Coupons</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allCoupon}">Coupon List</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/createCoupon}">Create Coupon</a>
+										</li>
+									</ul>
+								</li>
+
+
+
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="#"
+										th:href="@{/admin/productReview}">
+										<i class="ri-star-line"></i>
+										<span>Product Review</span>
+									</a>
+								</li>
+
+
+
+							</ul>
+						</div>
+
+						<div class="right-arrow" id="right-arrow">
+							<i data-feather="arrow-right"></i>
+						</div>
+					</nav>
+				</div>
+			</div>
 			<!-- Page Sidebar Ends-->
 
 			<!-- product review section start -->

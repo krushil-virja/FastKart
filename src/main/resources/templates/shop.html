@@ -268,7 +268,7 @@
 							<!--  FILTER PRODUCT SECTION START  -->
 
 							<!--this is for filter -->
-							<div
+							<div th:if="${productByCategories.size() > 0}"
 								style=" display: grid; grid-template-columns: auto auto auto auto; width:100%;  gap: 25px; padding: 10px; margin-top: 50px;">
 								<div th:each="product : ${productByCategories}"
 									style="width: 100%; width: 100%; height: 100%;">
@@ -369,11 +369,9 @@
 								</div>
 							</div>
 
-							<!-- if User direct redirect on this shope page he is able to see all the product -->
-							<!--all product Section start-->
-
-						
-							<!--all product Section start-->
+							<div th:if="${productByCategories.size() == 0}">
+							    <h3>No products found.</h3>
+							</div>
 
 
 						</div>

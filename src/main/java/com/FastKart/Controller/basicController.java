@@ -190,8 +190,9 @@ public class basicController {
 		return "login";
 	}
 //======================================================= SHOP PAGE Handler ============================================================================	
-
-	@GetMapping("/shop")
+ 
+	// comment this method code cause code is to long so i set common model attribute instead of individual
+	/*@GetMapping("/shop")
 	public String shop(Model m, @RequestParam(required = false, name = "category") List<Integer> categoryId,
 			@RequestParam(required = false, name = "filterByPrice") List<Integer> filterByPrice,
 			@RequestParam(value = "pageNumber", required = false, defaultValue = "1") Integer pageNumber,
@@ -308,6 +309,71 @@ public class basicController {
 		}
 
 		return "shop";
+	}*/
+
+	
+	@GetMapping("/shop")
+	public String shop(Model m, @RequestParam(required = false, name = "category") List<Integer> categoryId,
+	                   @RequestParam(required = false, name = "filterByPrice") List<Integer> filterByPrice,
+	                   @RequestParam(value = "pageNumber", required = false, defaultValue = "1") Integer pageNumber,
+	                   @RequestParam(value = "pageSize", required = false, defaultValue = "12") Integer pageSize) {
+
+	    int minPrice = 0;
+	    int maxPrice = 0;
+
+	    if (filterByPrice != null) {
+	        if (filterByPrice.contains(1)) {
+	            minPrice = 0;
+	            maxPrice = 1000;
+	        }
+
+	        if (filterByPrice.contains(2)) {
+	            if (!filterByPrice.contains(1)) {
+	                minPrice = 1000;
+	            }
+	            maxPrice = 10000;
+	        }
+
+	        if (filterByPrice.contains(3)) {
+	            if (!filterByPrice.contains(1) && !filterByPrice.contains(2)) {
+	                minPrice = 10000;
+	            }
+	            maxPrice = 100000;
+	        }
+	    }
+
+	    List<Category> category = cdao.showAllCategory();
+	    m.addAttribute("category", category);
+
+	    Page<Product> page = null;
+	    
+	    if (categoryId != null && filterByPrice != null) {
+	        PageRequest pageable = PageRequest.of(pageNumber - 1, pageSize);
+	        page = productRepository.findByCategoryIdsAndPriceBetween(categoryId, minPrice, maxPrice, pageable);
+	    } else if (categoryId != null) {
+	        PageRequest pageable = PageRequest.of(pageNumber - 1, pageSize);
+	        page = pdao.findProductByCategories(categoryId, pageable);
+	    } else if (filterByPrice != null) {
+	        PageRequest pageable = PageRequest.of(pageNumber - 1, pageSize);
+	        page = productRepository.findByPriceBetween(minPrice, maxPrice, pageable);
+	    } else {
+	        Pageable pageable = PageRequest.of(pageNumber - 1, pageSize);
+	        page = productRepository.findAll(pageable);
+	    }
+
+	    List<Product> products = page.getContent();
+	    m.addAttribute("productByCategories", products);
+	    m.addAttribute("totalPages", page.getTotalPages());
+	    m.addAttribute("totalItems", page.getTotalElements());
+	    m.addAttribute("currentPage", pageNumber);
+	    m.addAttribute("pageSize", pageSize);
+	    
+	    
+	    // to show pagination 
+	    m.addAttribute("categoryIds", categoryId); // Add this line
+	    m.addAttribute("filterByPrice", filterByPrice); // Add this line
+
+	    return "shop";
 	}
 
 //======================================================= ABOUT PAGE Handler ============================================================================

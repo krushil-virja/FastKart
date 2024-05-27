@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -17,6 +16,22 @@
 	<link rel="icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
 	<link rel="shortcut icon" th:href="@{/assets1/images/favicon.png}" type="image/x-icon">
 	<title>Fastkart - Order List</title>
+
+
+	<!--custom profile image css-->
+	<style>
+		#profileImage {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background: #512DA8;
+			font-size: 25px;
+			color: #fff;
+			text-align: center;
+			line-height: 50px;
+
+		}
+	</style>
 
 	<!-- Google font-->
 	<link
@@ -101,7 +116,7 @@
 								<i class="ri-search-line"></i>
 							</span>
 						</li>
-						
+
 
 						<li>
 							<div class="mode">
@@ -110,9 +125,16 @@
 						</li>
 						<li class="profile-nav onhover-dropdown pe-0 me-0">
 							<div class="media profile-media">
-								<img class="user-profile rounded-circle" th:src="@{/assets1/images/users/4.jpg}" alt="">
+								<div th:if="${user.profileImage != null and !user.profileImage.isEmpty()}">
+									<img class="user-profile rounded-circle"
+										th:src="@{'/assets1/images/' + ${user.profileImage}}" alt="">
+								</div>
+								<div th:if="${user.profileImage == null or user.profileImage.isEmpty()}"
+									id="profileImage" th:text="${customImage}">
+									<div id="profileImage" th:text="${customImage}">kkk</div>
+								</div>
 								<div class="user-name-hide media-body">
-									<span>Emay Walter</span>
+									<span th:text="${user.name}">Emay Walter</span>
 									<p class="mb-0 font-roboto">Admin<i class="middle ri-arrow-down-s-line"></i></p>
 								</div>
 							</div>
@@ -160,181 +182,182 @@
 		<div class="page-body-wrapper">
 			<!-- Page Sidebar Start-->
 			<div class="sidebar-wrapper">
-						<div id="sidebarEffect"></div>
-						<div>
-							<div class="logo-wrapper logo-wrapper-center">
-								<a href="index.html" data-bs-original-title="" title="">
-									<img class="img-fluid for-white" th:src="@{/assets1/images/logo/full-white.png}" alt="logo">
-								</a>
-								<div class="back-btn">
-									<i class="fa fa-angle-left"></i>
-								</div>
-								<div class="toggle-sidebar">
-									<i class="ri-apps-line status_toggle middle sidebar-toggle"></i>
-								</div>
-							</div>
-							<div class="logo-icon-wrapper">
-								<a href="index.html">
-									<img class="img-fluid main-logo main-white" th:src="@{/assets1/images/logo/1-white.png}"
-										alt="logo">
-									<img class="img-fluid main-logo main-dark" th:src="@{/assets1/images/logo/logo-white.png}"
-										alt="logo">
-								</a>
-							</div>
-							<nav class="sidebar-main">
-								<div class="left-arrow" id="left-arrow">
-									<i data-feather="arrow-left"></i>
-								</div>
-
-								<div id="sidebar-menu">
-									<ul class="sidebar-links" id="simple-bar">
-										<li class="back-btn"></li>
-
-										<li class="sidebar-list">
-											<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/index}">
-												<i class="ri-home-line"></i>
-												<span>Dashboard</span>
-											</a>
-										</li>
-
-										<li class="sidebar-list">
-											<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-												<i class="ri-list-check-2"></i>
-												<span>Category</span>
-											</a>
-											<ul class="sidebar-submenu">
-												<li>
-													<a href="#" th:href="@{/admin/category}">Category List</a>
-												</li>
-
-												<li>
-													<a href="#" th:href="@{/admin/addCategory}">Add New Category</a>
-												</li>
-											</ul>
-										</li>
-
-
-										<li class="sidebar-list">
-											<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-												<i class="ri-list-check-2"></i>
-												<span>subCategory</span>
-											</a>
-											<ul class="sidebar-submenu">
-												<li>
-													<a href="#" th:href="@{/admin/subCategory}">subCategory List</a>
-												</li>
-
-												<li>
-													<a href="#" th:href="@{/admin/addSubCategory}">Add New subCategory</a>
-												</li>
-											</ul>
-										</li>
-
-
-										<li class="sidebar-list">
-											<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-												<i class="ri-store-3-line"></i>
-												<span>Product</span>
-											</a>
-											<ul class="sidebar-submenu">
-												<li>
-													<a href="#" th:href="@{/admin/product}">Prodcts</a>
-												</li>
-
-												<li>
-													<a href="#" th:href="@{/admin/addProduct}">Add New Products</a>
-												</li>
-											</ul>
-										</li>
-
-
-										<li class="sidebar-list">
-											<a class="sidebar-link sidebar-title" href="javascript:void(0)">
-												<i class="ri-user-3-line"></i>
-												<span>Users</span>
-											</a>
-											<ul class="sidebar-submenu">
-												<li>
-													<a href="#" th:href="@{/admin/allUser}">All users</a>
-												</li>
-												<li>
-													<a href="#">Add new user</a>
-												</li>
-											</ul>
-										</li>
-
-
-
-
-
-										 <li class="sidebar-list">
-			                                <a class="sidebar-link sidebar-title" href="javascript:void(0)">
-			                                    <i class="ri-archive-line"></i>
-			                                    <span>Orders</span>
-			                                </a>
-			                                <ul class="sidebar-submenu">
-			                                    <li>
-			                                        <a href="#" th:href="@{/admin/allOrder}">Order List</a>
-			                                    </li>
-			                                    
-			                                     <li>
-			                                        <a href="#" th:href="@{/admin/pendingOrder}">Pending  Order</a>
-			                                    </li>
-			                                     <li>
-			                                        <a href="#" th:href="@{/admin/activeOrder}">Active Order</a>
-			                                    </li>
-			                                     <li>
-			                                        <a href="#" th:href="@{/admin/shippingOrder}">Shipping Order</a>
-			                                    </li>
-			                                    <li>
-			                                        <a href="#" th:href="@{/admin/deliveredOrder}">Delivered Order</a>
-			                                    </li>
-			                                     <li>
-			                                        <a href="#" th:href="@{/admin/cancslledOrder}">Cancalled Order</a>
-			                                    </li>
-			                                    <li>
-			                                        <a href="#" th:href="@{/admin/orderTracking}">Order Tracking</a>
-			                                    </li>
-			                                </ul>
-			                            </li>
-
-
-										<li class="sidebar-list">
-											<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
-												<i class="ri-price-tag-3-line"></i>
-												<span>Coupons</span>
-											</a>
-											<ul class="sidebar-submenu">
-												<li>
-													<a href="#" th:href="@{/admin/allCoupon}">Coupon List</a>
-												</li>
-
-												<li>
-													<a href="#" th:href="@{/admin/createCoupon}">Create Coupon</a>
-												</li>
-											</ul>
-										</li>
-
-
-
-										<li class="sidebar-list">
-											<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/productReview}">
-												<i class="ri-star-line"></i>
-												<span>Product Review</span>
-											</a>
-										</li>
-
-
-										
-									</ul>
-								</div>
-
-								<div class="right-arrow" id="right-arrow">
-									<i data-feather="arrow-right"></i>
-								</div>
-							</nav>
+				<div id="sidebarEffect"></div>
+				<div>
+					<div class="logo-wrapper logo-wrapper-center">
+						<a th:href="@{/admin/index}" data-bs-original-title="" title="">
+							<img class="img-fluid for-white" th:src="@{/assets1/images/logo/full-white.png}" alt="logo">
+						</a>
+						<div class="back-btn">
+							<i class="fa fa-angle-left"></i>
+						</div>
+						<div class="toggle-sidebar">
+							<i class="ri-apps-line status_toggle middle sidebar-toggle"></i>
 						</div>
 					</div>
+					<div class="logo-icon-wrapper">
+						<a href="index.html">
+							<img class="img-fluid main-logo main-white" th:src="@{/assets1/images/logo/1-white.png}"
+								alt="logo">
+							<img class="img-fluid main-logo main-dark" th:src="@{/assets1/images/logo/logo-white.png}"
+								alt="logo">
+						</a>
+					</div>
+					<nav class="sidebar-main">
+						<div class="left-arrow" id="left-arrow">
+							<i data-feather="arrow-left"></i>
+						</div>
+
+						<div id="sidebar-menu">
+							<ul class="sidebar-links" id="simple-bar">
+								<li class="back-btn"></li>
+
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="#" th:href="@{/admin/index}">
+										<i class="ri-home-line"></i>
+										<span>Dashboard</span>
+									</a>
+								</li>
+
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-list-check-2"></i>
+										<span>Category</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/category}">Category List</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/addCategory}">Add New Category</a>
+										</li>
+									</ul>
+								</li>
+
+
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-list-check-2"></i>
+										<span>subCategory</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/subCategory}">subCategory List</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/addSubCategory}">Add New subCategory</a>
+										</li>
+									</ul>
+								</li>
+
+
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-store-3-line"></i>
+										<span>Product</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/product}">Prodcts</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/addProduct}">Add New Products</a>
+										</li>
+									</ul>
+								</li>
+
+
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-user-3-line"></i>
+										<span>Users</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allUser}">All users</a>
+										</li>
+										<li>
+											<a href="#">Add new user</a>
+										</li>
+									</ul>
+								</li>
+
+
+
+
+
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-archive-line"></i>
+										<span>Orders</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allOrder}">Order List</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/pendingOrder}">Pending Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/activeOrder}">Active Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/shippingOrder}">Shipping Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/deliveredOrder}">Delivered Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/cancslledOrder}">Cancalled Order</a>
+										</li>
+										<li>
+											<a href="#" th:href="@{/admin/orderTracking}">Order Tracking</a>
+										</li>
+									</ul>
+								</li>
+
+
+								<li class="sidebar-list">
+									<a class="linear-icon-link sidebar-link sidebar-title" href="javascript:void(0)">
+										<i class="ri-price-tag-3-line"></i>
+										<span>Coupons</span>
+									</a>
+									<ul class="sidebar-submenu">
+										<li>
+											<a href="#" th:href="@{/admin/allCoupon}">Coupon List</a>
+										</li>
+
+										<li>
+											<a href="#" th:href="@{/admin/createCoupon}">Create Coupon</a>
+										</li>
+									</ul>
+								</li>
+
+
+
+								<li class="sidebar-list">
+									<a class="sidebar-link sidebar-title link-nav" href="#"
+										th:href="@{/admin/productReview}">
+										<i class="ri-star-line"></i>
+										<span>Product Review</span>
+									</a>
+								</li>
+
+
+
+							</ul>
+						</div>
+
+						<div class="right-arrow" id="right-arrow">
+							<i data-feather="arrow-right"></i>
+						</div>
+					</nav>
+				</div>
+			</div>
 			<!-- Page Sidebar Ends-->
 
 			<!-- Order section Start -->
@@ -368,96 +391,97 @@
 
 													<tr data-bs-toggle="offcanvas" href="#order-details"
 														th:each="o : ${allOrder}">
-                                                          
-                                                         <div th:if="${#lists.size(allOrder) > 0}">
-														<div th:if="${o.status} == 4">
-															
-															<td>
-																<span class="order-image">
-																	<img src="assets1/images/product/11.png"
-																		th:src="@{'/assets1/images/' + ${o.product.pimage}}"
-																		alt="users">
-																</span>
-															</td>
 
-															<td th:text="${o.product.pname}"> 586-5865224</td>
+														<div th:if="${#lists.size(allOrder) > 0}">
+															<div th:if="${o.status} == 4">
 
-															<td th:text="${o.orderDate}">Sep 20, 2022</td>
+																<td>
+																	<span class="order-image">
+																		<img src="assets1/images/product/11.png"
+																			th:src="@{'/assets1/images/' + ${o.product.pimage}}"
+																			alt="users">
+																	</span>
+																</td>
 
-															<div th:switch="${o.status}">
-																<div th:case="1">
-																	<td class="order-pending">
-																		<span>Pending</span>
-																	</td>
+																<td th:text="${o.product.pname}"> 586-5865224</td>
+
+																<td th:text="${o.orderDate}">Sep 20, 2022</td>
+
+																<div th:switch="${o.status}">
+																	<div th:case="1">
+																		<td class="order-pending">
+																			<span>Pending</span>
+																		</td>
+																	</div>
 																</div>
-															</div>
 
-															<div th:switch="${o.status}">
-																<div th:case="2">
-																	<td class="order-pending">
-																		<span>Active</span>
-																	</td>
+																<div th:switch="${o.status}">
+																	<div th:case="2">
+																		<td class="order-pending">
+																			<span>Active</span>
+																		</td>
+																	</div>
 																</div>
-															</div>
 
-															<div th:switch="${o.status}">
-																<div th:case="3">
-																	<td class="order-pending">
-																		<span>Shipping</span>
-																	</td>
+																<div th:switch="${o.status}">
+																	<div th:case="3">
+																		<td class="order-pending">
+																			<span>Shipping</span>
+																		</td>
+																	</div>
 																</div>
-															</div>
 
-															<div th:switch="${o.status}">
-																<div th:case="4">
-																	<td class="order-pending">
-																		<span style="background-color:green;"  >Delivered</span>
-																	</td>
+																<div th:switch="${o.status}">
+																	<div th:case="4">
+																		<td class="order-pending">
+																			<span
+																				style="background-color:green;">Delivered</span>
+																		</td>
+																	</div>
 																</div>
-															</div>
 
-															<div th:switch="${o.status}">
-																<div th:case="5">
-																	<td class="order-pending">
-																		<span>Cancelled</span>
-																	</td>
+																<div th:switch="${o.status}">
+																	<div th:case="5">
+																		<td class="order-pending">
+																			<span>Cancelled</span>
+																		</td>
+																	</div>
 																</div>
+
+
+																<td>$15</td>
+
+																<td>
+																	<ul>
+																		<li>
+																			<a href="order-detail.html">
+																				<i class="ri-eye-line"></i>
+																			</a>
+																		</li>
+
+																		<li>
+																			<a href="javascript:void(0)">
+																				<i class="ri-pencil-line"></i>
+																			</a>
+																		</li>
+
+																		<li>
+																			<a href="javascript:void(0)"
+																				data-bs-toggle="modal"
+																				data-bs-target="#exampleModalToggle">
+																				<i class="ri-delete-bin-line"></i>
+																			</a>
+																		</li>
+																		<li>
+																			<a class="btn btn-sm btn-solid text-white"
+																				href="order-tracking.html">
+																				Tracking
+																			</a>
+																		</li>
+																	</ul>
+																</td>
+
 															</div>
-
-
-															<td>$15</td>
-
-															<td>
-																<ul>
-																	<li>
-																		<a href="order-detail.html">
-																			<i class="ri-eye-line"></i>
-																		</a>
-																	</li>
-
-																	<li>
-																		<a href="javascript:void(0)">
-																			<i class="ri-pencil-line"></i>
-																		</a>
-																	</li>
-
-																	<li>
-																		<a href="javascript:void(0)"
-																			data-bs-toggle="modal"
-																			data-bs-target="#exampleModalToggle">
-																			<i class="ri-delete-bin-line"></i>
-																		</a>
-																	</li>
-																	<li>
-																		<a class="btn btn-sm btn-solid text-white"
-																			href="order-tracking.html">
-																			Tracking
-																		</a>
-																	</li>
-																</ul>
-															</td>
-
-														</div>
 														</div>
 													</tr>
 
@@ -636,42 +660,42 @@
 	<!-- Offcanvas Box End -->
 
 	<!-- latest js -->
-	<script  th:src="@{/assets1/js/jquery-3.6.0.min.js}"></script>
+	<script th:src="@{/assets1/js/jquery-3.6.0.min.js}"></script>
 
 	<!-- Bootstrap js -->
-	<script  th:src="@{/assets1/js/bootstrap/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{/assets1/js/bootstrap/bootstrap.bundle.min.js}"></script>
 
 	<!-- feather icon js -->
-	<script  th:src="@{/assets1/js/icons/feather-icon/feather.min.js}"></script>
-	<script  th:src="@{/assets1/js/icons/feather-icon/feather-icon.js}"></script>
+	<script th:src="@{/assets1/js/icons/feather-icon/feather.min.js}"></script>
+	<script th:src="@{/assets1/js/icons/feather-icon/feather-icon.js}"></script>
 
 	<!-- customizer js -->
-	<script  th:src="@{/assets1/js/customizer.js}"></script>
+	<script th:src="@{/assets1/js/customizer.js}"></script>
 
 	<!-- scrollbar simplebar js -->
-	<script  th:src="@{/assets1/js/scrollbar/simplebar.js}"></script>
-	<script  th:src="@{/assets1/js/scrollbar/custom.js}"></script>
+	<script th:src="@{/assets1/js/scrollbar/simplebar.js}"></script>
+	<script th:src="@{/assets1/js/scrollbar/custom.js}"></script>
 
 	<!-- Sidebar js -->
-	<script  th:src="@{/assets1/js/config.js}"></script>
+	<script th:src="@{/assets1/js/config.js}"></script>
 
 	<!-- Plugins js -->
-	<script  th:src="@{/assets1/js/sidebar-menu.js}"></script>
-	<script  th:src="@{/assets1/js/notify/bootstrap-notify.min.js}"></script>
-	<script  th:src="@{/assets1/js/notify/index.js}"></script>
+	<script th:src="@{/assets1/js/sidebar-menu.js}"></script>
+	<script th:src="@{/assets1/js/notify/bootstrap-notify.min.js}"></script>
+	<script th:src="@{/assets1/js/notify/index.js}"></script>
 
 	<!-- Data table js -->
-	<script  th:src="@{/assets1/js/jquery.dataTables.js}"></script>
-	<script  th:src="@{/assets1/js/custom-data-table.js}"></script>
+	<script th:src="@{/assets1/js/jquery.dataTables.js}"></script>
+	<script th:src="@{/assets1/js/custom-data-table.js}"></script>
 
 	<!-- all checkbox select js -->
-	<script  th:src="@{/assets1/js/checkbox-all-check.js}"></script>
+	<script th:src="@{/assets1/js/checkbox-all-check.js}"></script>
 
 	<!-- sidebar effect -->
-	<script  th:src="@{/assets1/js/sidebareffect.js}"></script>
+	<script th:src="@{/assets1/js/sidebareffect.js}"></script>
 
 	<!-- Theme js -->
-	<script  th:src="@{/assets1/js/script.js}"></script>
+	<script th:src="@{/assets1/js/script.js}"></script>
 </body>
 
 
