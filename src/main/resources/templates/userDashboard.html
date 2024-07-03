@@ -1,57 +1,63 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
 
 
 <!-- Mirrored from themes.pixelstrap.com/fastkart/front-end/user-dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 30 Oct 2023 11:45:47 GMT -->
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Fastkart">
-	<meta name="keywords" content="Fastkart">
-	<meta name="author" content="Fastkart">
-	<link rel="icon" href="../assets/images/favicon/1.png" type="image/x-icon">
-	<title>User Dashboard</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fastkart">
+<meta name="keywords" content="Fastkart">
+<meta name="author" content="Fastkart">
+<link rel="icon" href="../assets/images/favicon/1.png"
+	type="image/x-icon">
+<title>User Dashboard</title>
 
-	<!-- Google font -->
-	<link rel="preconnect" href="https://fonts.gstatic.com/">
-	<link href="https://fonts.googleapis.com/css2?family=Russo+One&amp;display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&amp;display=swap"
-		rel="stylesheet">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-		rel="stylesheet">
+<!-- Google font -->
+<link rel="preconnect" href="https://fonts.gstatic.com/">
+<link
+	href="https://fonts.googleapis.com/css2?family=Russo+One&amp;display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800;900&amp;display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+	rel="stylesheet">
 
-	<!-- bootstrap css -->
-	<link id="rtl-link" rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
+<!-- bootstrap css -->
+<link id="rtl-link" rel="stylesheet" type="text/css"
+	href="../assets/css/vendors/bootstrap.css">
 
-	<!-- font-awesome css -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/vendors/font-awesome.css">
+<!-- font-awesome css -->
+<link rel="stylesheet" type="text/css"
+	href="../assets/css/vendors/font-awesome.css">
 
-	<!-- feather icon css -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/vendors/feather-icon.css">
+<!-- feather icon css -->
+<link rel="stylesheet" type="text/css"
+	href="../assets/css/vendors/feather-icon.css">
 
-	<!-- slick css -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick/slick.css">
-	<link rel="stylesheet" type="text/css" href="../assets/css/vendors/slick/slick-theme.css">
+<!-- slick css -->
+<link rel="stylesheet" type="text/css"
+	href="../assets/css/vendors/slick/slick.css">
+<link rel="stylesheet" type="text/css"
+	href="../assets/css/vendors/slick/slick-theme.css">
 
-	<!-- Iconly css -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/bulk-style.css">
+<!-- Iconly css -->
+<link rel="stylesheet" type="text/css"
+	href="../assets/css/bulk-style.css">
 
-	<!-- Template css -->
-	<link id="color-link" rel="stylesheet" type="text/css" href="../assets/css/style.css">
-</head>
-
+<!-- Template css -->
+<link id="color-link" rel="stylesheet" type="text/css"
+	href="../assets/css/style.css">
 <body>
 
 	<!-- Loader Start -->
 	<div class="fullpage-loader">
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
+		<span></span> <span></span> <span></span> <span></span> <span></span>
 		<span></span>
 	</div>
 	<!-- Loader End -->
@@ -63,40 +69,25 @@
 	<!-- mobile fix menu start -->
 	<div class="mobile-menu d-md-none d-block mobile-cart">
 		<ul>
-			<li class="active">
-				<a href="index.html">
-					<i class="iconly-Home icli"></i>
-					<span>Home</span>
-				</a>
-			</li>
+			<li class="active"><a href="index.html"> <i
+					class="iconly-Home icli"></i> <span>Home</span>
+			</a></li>
 
-			<li class="mobile-category">
-				<a href="javascript:void(0)">
-					<i class="iconly-Category icli js-link"></i>
-					<span>Category</span>
-				</a>
-			</li>
+			<li class="mobile-category"><a href="javascript:void(0)"> <i
+					class="iconly-Category icli js-link"></i> <span>Category</span>
+			</a></li>
 
-			<li>
-				<a href="search.html" class="search-box">
-					<i class="iconly-Search icli"></i>
-					<span>Search</span>
-				</a>
-			</li>
+			<li><a href="search.html" class="search-box"> <i
+					class="iconly-Search icli"></i> <span>Search</span>
+			</a></li>
 
-			<li>
-				<a href="wishlist.html" class="notifi-wishlist">
-					<i class="iconly-Heart icli"></i>
-					<span>My Wish</span>
-				</a>
-			</li>
+			<li><a href="wishlist.html" class="notifi-wishlist"> <i
+					class="iconly-Heart icli"></i> <span>My Wish</span>
+			</a></li>
 
-			<li>
-				<a href="cart.html">
-					<i class="iconly-Bag-2 icli fly-cate"></i>
-					<span>Cart</span>
-				</a>
-			</li>
+			<li><a href="cart.html"> <i
+					class="iconly-Bag-2 icli fly-cate"></i> <span>Cart</span>
+			</a></li>
 		</ul>
 	</div>
 	<!-- mobile fix menu end -->
@@ -110,12 +101,11 @@
 						<h2>User Dashboard</h2>
 						<nav>
 							<ol class="breadcrumb mb-0">
-								<li class="breadcrumb-item">
-									<a href="index.html">
-										<i class="fa-solid fa-house"></i>
-									</a>
-								</li>
-								<li class="breadcrumb-item active" aria-current="page">User Dashboard</li>
+								<li class="breadcrumb-item"><a href="index.html"> <i
+										class="fa-solid fa-house"></i>
+								</a></li>
+								<li class="breadcrumb-item active" aria-current="page">User
+									Dashboard</li>
 							</ol>
 						</nav>
 					</div>
@@ -138,21 +128,29 @@
 						</div>
 						<div class="profile-box">
 							<div class="cover-image">
-								<img src="../assets/images/inner-page/cover-img.jpg" class="img-fluid blur-up lazyload"
-									alt="">
+								<img src="../assets/images/inner-page/cover-img.jpg"
+									class="img-fluid blur-up lazyload" alt="">
+
+								
+
 							</div>
 
 							<div class="profile-contain">
 								<div class="profile-image">
 									<div class="position-relative">
 										<div th:if="${loggedInUser.profileImage != null}">
-										            <img th:src="@{'/assets1/images/' + ${loggedInUser.profileImage}}"
-										                class="blur-up lazyload update_img" alt="">
-										        </div>
-										        <div th:unless="${loggedInUser.profileImage != null}" class="cover-icon">
-										            <div id="profileImage">kkk</div> <!-- Default profile icon -->
-										        </div>
+											<img
+												th:src="@{'/assets1/images/' + ${loggedInUser.profileImage}}"
+												class="blur-up lazyload update_img" alt="">
+										</div>
 										
+										<div th:unless="${loggedInUser.profileImage != null}">
+									<!-- Default profile icon -->
+									<div  id="profileImage"
+										th:text="${customImage}">kkk</div>
+								</div>
+
+
 									</div>
 								</div>
 
@@ -163,41 +161,53 @@
 							</div>
 						</div>
 
-						<ul class="nav nav-pills user-nav-pills" id="pills-tab" role="tablist">
+						<ul class="nav nav-pills user-nav-pills" id="pills-tab"
+							role="tablist">
 							<li class="nav-item" role="presentation">
-								<button class="nav-link active" id="pills-dashboard-tab" data-bs-toggle="pill"
-									data-bs-target="#pills-dashboard" type="button" role="tab"
-									aria-controls="pills-dashboard" aria-selected="true"><i data-feather="home"></i>
-									DashBoard</button>
+								<button class="nav-link active" id="pills-dashboard-tab"
+									data-bs-toggle="pill" data-bs-target="#pills-dashboard"
+									type="button" role="tab" aria-controls="pills-dashboard"
+									aria-selected="true">
+									<i data-feather="home"></i> DashBoard
+								</button>
 							</li>
 
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="pills-order-tab" data-bs-toggle="pill"
-									data-bs-target="#pills-order" type="button" role="tab" aria-controls="pills-order"
-									aria-selected="false"><i data-feather="shopping-bag"></i>Order</button>
+								<button class="nav-link" id="pills-order-tab"
+									data-bs-toggle="pill" data-bs-target="#pills-order"
+									type="button" role="tab" aria-controls="pills-order"
+									aria-selected="false">
+									<i data-feather="shopping-bag"></i>Order
+								</button>
 							</li>
 
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="pills-wishlist-tab" data-bs-toggle="pill"
-									data-bs-target="#pills-wishlist" type="button" role="tab"
-									aria-controls="pills-wishlist" aria-selected="false"><i data-feather="heart"></i>
-									Wishlist</button>
+								<button class="nav-link" id="pills-wishlist-tab"
+									data-bs-toggle="pill" data-bs-target="#pills-wishlist"
+									type="button" role="tab" aria-controls="pills-wishlist"
+									aria-selected="false">
+									<i data-feather="heart"></i> Wishlist
+								</button>
 							</li>
 
 
 
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="pills-address-tab" data-bs-toggle="pill"
-									data-bs-target="#pills-address" type="button" role="tab"
-									aria-controls="pills-address" aria-selected="false"><i data-feather="map-pin"></i>
-									Address</button>
+								<button class="nav-link" id="pills-address-tab"
+									data-bs-toggle="pill" data-bs-target="#pills-address"
+									type="button" role="tab" aria-controls="pills-address"
+									aria-selected="false">
+									<i data-feather="map-pin"></i> Address
+								</button>
 							</li>
 
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-									data-bs-target="#pills-profile" type="button" role="tab"
-									aria-controls="pills-profile" aria-selected="false"><i data-feather="user"></i>
-									Profile</button>
+								<button class="nav-link" id="pills-profile-tab"
+									data-bs-toggle="pill" data-bs-target="#pills-profile"
+									type="button" role="tab" aria-controls="pills-profile"
+									aria-selected="false">
+									<i data-feather="user"></i> Profile
+								</button>
 							</li>
 
 							<!--<li class="nav-item" role="presentation">
@@ -206,29 +216,29 @@
 									aria-controls="pills-security" aria-selected="false"><i data-feather="shield"></i>
 									Privacy</button>
 							</li>-->
-							<li class="nav-item" role="presentation">
-								<a th:href="@{/logout}" class="nav-link" role="tab" aria-controls="pills-security"
-									aria-selected="false">
-									<i data-feather="log-out"></i> Logout
-								</a>
-							</li>
+							<li class="nav-item" role="presentation"><a
+								th:href="@{/logout}" class="nav-link" role="tab"
+								aria-controls="pills-security" aria-selected="false"> <i
+									data-feather="log-out"></i> Logout
+							</a></li>
 
 						</ul>
 					</div>
 				</div>
 
 				<div class="col-xxl-9 col-lg-8">
-					<button class="btn left-dashboard-show btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Show
+					<button
+						class="btn left-dashboard-show btn-animation btn-md fw-bold d-block mb-4 d-lg-none">Show
 						Menu</button>
 					<div class="dashboard-right-sidebar">
 						<div class="tab-content" id="pills-tabContent">
-							<div class="tab-pane fade show active" id="pills-dashboard" role="tabpanel"
-								aria-labelledby="pills-dashboard-tab">
+							<div class="tab-pane fade show active" id="pills-dashboard"
+								role="tabpanel" aria-labelledby="pills-dashboard-tab">
 								<div class="dashboard-home">
 									<div class="title">
 										<h2>My Dashboard</h2>
-										<span class="title-leaf">
-											<svg class="icon-width bg-gray">
+										<span class="title-leaf"> <svg
+												class="icon-width bg-gray">
 												<use
 													xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf">
 												</use>
@@ -237,20 +247,24 @@
 									</div>
 
 									<div class="dashboard-user-name">
-										<h6 class="text-content">Hello, <b class="text-title"
-												th:text="${loggedInUser.name}">Vicki E. Pope</b></h6>
-										<p class="text-content">From your My Account Dashboard you have the ability to
-											view a snapshot of your recent account activity and update your account
-											information. Select a link below to view or edit information.</p>
+										<h6 class="text-content">
+											Hello, <b class="text-title" th:text="${loggedInUser.name}">Vicki
+												E. Pope</b>
+										</h6>
+										<p class="text-content">From your My Account Dashboard you
+											have the ability to view a snapshot of your recent account
+											activity and update your account information. Select a link
+											below to view or edit information.</p>
 									</div>
 
 									<div class="total-box">
 										<div class="row g-sm-4 g-3">
 											<div class="col-xxl-4 col-lg-6 col-md-4 col-sm-6">
 												<div class="totle-contain">
-													<img src="https://themes.pixelstrap.com/fastkart/assets/images/svg/order.svg"
-														class="img-1 blur-up lazyload" alt="">
-													<img src="https://themes.pixelstrap.com/fastkart/assets/images/svg/order.svg"
+													<img
+														src="https://themes.pixelstrap.com/fastkart/assets/images/svg/order.svg"
+														class="img-1 blur-up lazyload" alt=""> <img
+														src="https://themes.pixelstrap.com/fastkart/assets/images/svg/order.svg"
 														class="blur-up lazyload" alt="">
 													<div class="totle-detail">
 														<h5>Total Order</h5>
@@ -261,9 +275,10 @@
 
 											<div class="col-xxl-4 col-lg-6 col-md-4 col-sm-6">
 												<div class="totle-contain">
-													<img src="https://themes.pixelstrap.com/fastkart/assets/images/svg/pending.svg"
-														class="img-1 blur-up lazyload" alt="">
-													<img src="https://themes.pixelstrap.com/fastkart/assets/images/svg/pending.svg"
+													<img
+														src="https://themes.pixelstrap.com/fastkart/assets/images/svg/pending.svg"
+														class="img-1 blur-up lazyload" alt=""> <img
+														src="https://themes.pixelstrap.com/fastkart/assets/images/svg/pending.svg"
 														class="blur-up lazyload" alt="">
 													<div class="totle-detail">
 														<h5>Total Delivered Order</h5>
@@ -274,9 +289,10 @@
 
 											<div class="col-xxl-4 col-lg-6 col-md-4 col-sm-6">
 												<div class="totle-contain">
-													<img src="https://themes.pixelstrap.com/fastkart/assets/images/svg/wishlist.svg"
-														class="img-1 blur-up lazyload" alt="">
-													<img src="https://themes.pixelstrap.com/fastkart/assets/images/svg/wishlist.svg"
+													<img
+														src="https://themes.pixelstrap.com/fastkart/assets/images/svg/wishlist.svg"
+														class="img-1 blur-up lazyload" alt=""> <img
+														src="https://themes.pixelstrap.com/fastkart/assets/images/svg/wishlist.svg"
 														class="blur-up lazyload" alt="">
 													<div class="totle-detail">
 														<h5>Total Wishlist</h5>
@@ -294,12 +310,14 @@
 									<div class="row g-4">
 										<div class="col-xxl-6">
 											<div class="dashboard-contant-title">
-												<h4>Contact Information <a href="javascript:void(0)"
+												<h4>
+													Contact Information <a href="javascript:void(0)"
 														data-bs-toggle="modal" data-bs-target="#editProfile">Edit</a>
 												</h4>
 											</div>
 											<div class="dashboard-detail">
-												<h6 class="text-content" th:text="${loggedInUser.name}">MARK JECNO</h6>
+												<h6 class="text-content" th:text="${loggedInUser.name}">MARK
+													JECNO</h6>
 												<h6 class="text-content" th:text="${loggedInUser.email}">
 													vicki.pope@gmail.com</h6>
 												<a th:href="@{'/updatePassword'}">Change Password</a>
@@ -308,28 +326,30 @@
 
 										<div class="col-xxl-6">
 											<div class="dashboard-contant-title">
-												<h4>Newsletters <a href="javascript:void(0)" data-bs-toggle="modal"
-														data-bs-target="#editProfile">Edit</a></h4>
+												<h4>
+													Newsletters <a href="javascript:void(0)"
+														data-bs-toggle="modal" data-bs-target="#editProfile">Edit</a>
+												</h4>
 											</div>
 											<div class="dashboard-detail">
-												<h6 class="text-content">You are currently not subscribed to any
-													newsletter</h6>
+												<h6 class="text-content">You are currently not
+													subscribed to any newsletter</h6>
 											</div>
 										</div>
 
-										
+
 									</div>
 								</div>
 							</div>
 
 							<!--======================================================== Wishlist Section Start ============================================================-->
-							<div class="tab-pane fade show" id="pills-wishlist" role="tabpanel"
-								aria-labelledby="pills-wishlist-tab">
+							<div class="tab-pane fade show" id="pills-wishlist"
+								role="tabpanel" aria-labelledby="pills-wishlist-tab">
 								<div class="dashboard-wishlist">
 									<div class="title">
 										<h2>My Wishlist History</h2>
-										<span class="title-leaf title-leaf-gray">
-											<svg class="icon-width bg-gray">
+										<span class="title-leaf title-leaf-gray"> <svg
+												class="icon-width bg-gray">
 												<use
 													xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf">
 												</use>
@@ -340,14 +360,15 @@
 
 
 
-										<div class="col-xxl-3 col-lg-6 col-md-4 col-sm-6" th:each="w : ${viewWishList}"
+										<div class="col-xxl-3 col-lg-6 col-md-4 col-sm-6"
+											th:each="w : ${viewWishList}"
 											th:if="${viewWishList != null and viewWishList.size()>0}">
 											<div class="product-box-3 theme-bg-white h-100">
 												<div class="product-header">
 													<div class="product-image">
-														<a href="product-left-thumbnail.html">
-															<img th:src="@{'/assets1/images/' + ${w.product.pimage}}"
-																class="img-fluid blur-up lazyload" alt="">
+														<a href="product-left-thumbnail.html"> <img
+															th:src="@{'/assets1/images/' + ${w.product.pimage}}"
+															class="img-fluid blur-up lazyload" alt="">
 														</a>
 
 
@@ -355,7 +376,8 @@
 															<button class="btn wishlist-button close_button">
 																<a
 																	th:href="@{'/deleteWishList/' + ${w.id} + '?source=userDashboard'}">
-																	<i data-feather="x"></i> </a>
+																	<i data-feather="x"></i>
+																</a>
 															</button>
 														</div>
 													</div>
@@ -364,32 +386,30 @@
 												<div class="product-footer">
 													<div class="product-detail">
 														<span class="span-name"
-															th:text="${w.product.category.cname}">Vegetable</span>
-														<a href="product-left-thumbnail.html">
-															<h5 class="name" th:text="${w.product.pname}">Fresh Bread
-																and Pastry Flour 200 g</h5>
+															th:text="${w.product.category.cname}">Vegetable</span> <a
+															href="product-left-thumbnail.html">
+															<h5 class="name" th:text="${w.product.pname}">Fresh
+																Bread and Pastry Flour 200 g</h5>
 														</a>
-														<p class="text-content mt-1 mb-2 product-content">Squirty cheese
-															cottage cheese cheese strings. Red leicester paneer danish
-															fontina queso lancashire when the cheese comes out
-															everybody's happy cottage cheese paneer.</p>
+														<p class="text-content mt-1 mb-2 product-content">Squirty
+															cheese cottage cheese cheese strings. Red leicester
+															paneer danish fontina queso lancashire when the cheese
+															comes out everybody's happy cottage cheese paneer.</p>
 														<h5 class="price">
-															<i class="fa fa-inr  theme-color" style="margin-right: 2px;"
-																aria-hidden="true"></i>
-															<span class="theme-color"
-																th:text="${w.product.price}">$08.02</span>
+															<i class="fa fa-inr  theme-color"
+																style="margin-right: 2px;" aria-hidden="true"></i> <span
+																class="theme-color" th:text="${w.product.price}">$08.02</span>
 
 														</h5>
 														<div class="add-to-cart-box mt-2">
 															<form action="/addToCart" method="post">
 
 																<input name="pid" type="hidden"
-																	th:value="${w.product.id}">
-																<input name="quntity" type="hidden" th:value="1">
+																	th:value="${w.product.id}"> <input
+																	name="quntity" type="hidden" th:value="1">
 																<button class="btn btn-add-cart addcart-button"
-																	tabindex="0">Add
-																</button>
-																</form>
+																	tabindex="0">Add</button>
+															</form>
 
 														</div>
 													</div>
@@ -397,17 +417,19 @@
 											</div>
 										</div>
 
-										<div th:unless="${viewWishList != null and viewWishList.size() > 0}">
+										<div
+											th:unless="${viewWishList != null and viewWishList.size() > 0}">
 											<!-- Show this when the wishlist is empty -->
 											<div class="text-center">
 												<img src="#" th:src="@{/assets/images/wishlist_empty.jpg}"
 													class="img-fluid blur-up lazyload" alt=""
 													style="width: 80%; height: 80%;">
-												<p style="margin-top: 25px;"> Looks like Your wishlist is empty.</p>
+												<p style="margin-top: 25px;">Looks like Your wishlist is
+													empty.</p>
 												<button
 													style="background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
-													<a href="#" th:href="@{home}" style="color: white;">add Your Wishish
-													</a>
+													<a href="#" th:href="@{home}" style="color: white;">add
+														Your Wishish </a>
 												</button>
 											</div>
 										</div>
@@ -425,8 +447,8 @@
 								<div class="dashboard-order">
 									<div class="title">
 										<h2>My Orders History</h2>
-										<span class="title-leaf title-leaf-gray">
-											<svg class="icon-width bg-gray">
+										<span class="title-leaf title-leaf-gray"> <svg
+												class="icon-width bg-gray">
 												<use
 													xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf">
 												</use>
@@ -437,7 +459,8 @@
 									<div class="order-contain">
 
 
-										<div class="order-box dashboard-bg-box" th:each="o : ${orders}">
+										<div class="order-box dashboard-bg-box"
+											th:each="o : ${orders}">
 											<div class="order-container">
 												<div class="order-icon">
 													<i data-feather="box"></i>
@@ -455,14 +478,15 @@
 
 													<div class="order-detail" style="display: flex;">
 														<button
-															style="position: relative; left: 590px; bottom: 30px; padding: 10px 20px;   color: white;  background-color: #0e947a; border: none;
-																  border-radius: 5px; text-align: center; text-decoration: none;   display: inline-block;   font-size: 16px; cursor: pointer; ">
+															style="position: relative; left: 590px; bottom: 30px; padding: 10px 20px; color: white; background-color: #0e947a; border: none; border-radius: 5px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; cursor: pointer;">
 															<a th:href="@{'/invoice/' + ${o.id}}"
-																style="color: white;">Generate Invoice</a></button>
+																style="color: white;">Generate Invoice</a>
+														</button>
 
 													</div>
-													<h6 class="text-content">Caerphilly port-salut parmesan pecorino
-														croque monsieur dolcelatte melted cheese cheese and wine.</h6>
+													<h6 class="text-content">Caerphilly port-salut
+														parmesan pecorino croque monsieur dolcelatte melted cheese
+														cheese and wine.</h6>
 												</div>
 
 
@@ -477,24 +501,24 @@
 											<div class="product-order-detail">
 												<a href="product-left-thumbnail.html" class="order-image">
 													<img style="height: 100px;"
-														th:src="@{'/assets1/images/' + ${o.product.pimage}}"
-														class="blur-up lazyload" alt="">
+													th:src="@{'/assets1/images/' + ${o.product.pimage}}"
+													class="blur-up lazyload" alt="">
 												</a>
 
 												<div class="order-wrap">
 													<a href="product-left-thumbnail.html">
-														<h3 th:text="${o.product.pname}">SnackAmor Combo Pack of
-															Jowar Stick and Jowar Chips</h3>
+														<h3 th:text="${o.product.pname}">SnackAmor Combo Pack
+															of Jowar Stick and Jowar Chips</h3>
 													</a>
-													<p class="text-content" th:text="${o.product.description}">The big
-														cheese cream cheese pepper jack
-														cheese slices danish fontina everyone loves cheese on toast
-														bavarian bergkase.</p>
+													<p class="text-content" th:text="${o.product.description}">The
+														big cheese cream cheese pepper jack cheese slices danish
+														fontina everyone loves cheese on toast bavarian bergkase.</p>
 													<ul class="product-size">
 														<li>
 															<div class="size-box">
-																<h6 class="text-content">Price : </h6>
-																<h5> <i class="fa fa-inr " style="margin-right: 2px;"
+																<h6 class="text-content">Price :</h6>
+																<h5>
+																	<i class="fa fa-inr " style="margin-right: 2px;"
 																		aria-hidden="true"></i> <span
 																		th:text="${o.product.price}"> $20.68</span>
 																</h5>
@@ -503,7 +527,7 @@
 
 														<li>
 															<div class="size-box">
-																<h6 class="text-content">Rate : </h6>
+																<h6 class="text-content">Rate :</h6>
 																<div class="product-rating ms-2">
 																	<!--<ul class="rating">
 																		<li>
@@ -535,14 +559,14 @@
 
 														<li>
 															<div class="size-box">
-																<h6 class="text-content">Brand : </h6>
+																<h6 class="text-content">Brand :</h6>
 																<h5 th:text="${o.product.brand}">Fresho</h5>
 															</div>
 														</li>
 
 														<li>
 															<div class="size-box">
-																<h6 class="text-content">Quantity : </h6>
+																<h6 class="text-content">Quantity :</h6>
 																<h5 th:text="${o.quantity}">250 G</h5>
 															</div>
 														</li>
@@ -556,14 +580,14 @@
 								</div>
 							</div>
 
-							<div class="tab-pane fade show" id="pills-address" role="tabpanel"
-								aria-labelledby="pills-address-tab">
+							<div class="tab-pane fade show" id="pills-address"
+								role="tabpanel" aria-labelledby="pills-address-tab">
 								<div class="dashboard-address">
 									<div class="title title-flex">
 										<div data-bs-toggle="modal" data-bs-target="#add-address">
 											<h2>My Address Book</h2>
-											<span class="title-leaf">
-												<svg class="icon-width bg-gray">
+											<span class="title-leaf"> <svg
+													class="icon-width bg-gray">
 													<use
 														xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf">
 													</use>
@@ -571,9 +595,11 @@
 											</span>
 										</div>
 
-										<button class="btn theme-bg-color text-white btn-sm fw-bold mt-lg-0 mt-3"
-											data-bs-toggle="modal" data-bs-target="#add-address"><i data-feather="plus"
-												class="me-2"></i> Add New Address</button>
+										<button
+											class="btn theme-bg-color text-white btn-sm fw-bold mt-lg-0 mt-3"
+											data-bs-toggle="modal" data-bs-target="#add-address">
+											<i data-feather="plus" class="me-2"></i> Add New Address
+										</button>
 									</div>
 
 									<div class="row g-sm-4 g-3">
@@ -594,16 +620,15 @@
 														<table class="table">
 															<tbody>
 																<tr>
-																	<td colspan="2" th:text="${a.firstName}">Jack Jennas
-																	</td>
+																	<td colspan="2" th:text="${a.firstName}">Jack
+																		Jennas</td>
 																</tr>
 
 																<tr>
 																	<td>Address :</td>
 																	<td>
 																		<p th:text="${a.addressText}">8424 James Lane
-																			South San Francisco, CA 94080
-																		</p>
+																			South San Francisco, CA 94080</p>
 																	</td>
 																</tr>
 
@@ -643,13 +668,13 @@
 
 							<!--User Profile Section Starts-->
 
-							<div class="tab-pane fade show" id="pills-profile" role="tabpanel"
-								aria-labelledby="pills-profile-tab">
+							<div class="tab-pane fade show" id="pills-profile"
+								role="tabpanel" aria-labelledby="pills-profile-tab">
 								<div class="dashboard-profile">
 									<div class="title">
 										<h2>My Profile</h2>
-										<span class="title-leaf">
-											<svg class="icon-width bg-gray">
+										<span class="title-leaf"> <svg
+												class="icon-width bg-gray">
 												<use
 													xlink:href="https://themes.pixelstrap.com/fastkart/assets/svg/leaf.svg#leaf">
 												</use>
@@ -666,27 +691,17 @@
 												<h3>Vicki E. Pope</h3>
 												<div class="product-rating profile-rating">
 													<ul class="rating">
-														<li>
-															<i data-feather="star" class="fill"></i>
-														</li>
-														<li>
-															<i data-feather="star" class="fill"></i>
-														</li>
-														<li>
-															<i data-feather="star" class="fill"></i>
-														</li>
-														<li>
-															<i data-feather="star"></i>
-														</li>
-														<li>
-															<i data-feather="star"></i>
-														</li>
+														<li><i data-feather="star" class="fill"></i></li>
+														<li><i data-feather="star" class="fill"></i></li>
+														<li><i data-feather="star" class="fill"></i></li>
+														<li><i data-feather="star"></i></li>
+														<li><i data-feather="star"></i></li>
 													</ul>
 												</div>
 											</div>
 											<!--===========================================================-->
-											<a href="#" data-bs-toggle="modal" data-bs-target="#editProfile">Update
-												Profile</a>
+											<a href="#" data-bs-toggle="modal"
+												data-bs-target="#editProfile">Update Profile</a>
 
 
 
@@ -719,9 +734,10 @@
 										</div>
 
 										<div class="profile-description">
-											<p>Residences can be classified by and how they are connected to
-												neighbouring residences and land. Different types of housing tenure can
-												be used for the same physical type.</p>
+											<p>Residences can be classified by and how they are
+												connected to neighbouring residences and land. Different
+												types of housing tenure can be used for the same physical
+												type.</p>
 										</div>
 									</div>
 
@@ -745,15 +761,13 @@
 															</tr>
 															<tr>
 																<td>Phone Number :</td>
-																<td>
-																	<a href="javascript:void(0)"><span
-																			th:text="${user.contact}"></span></a>
-																</td>
+																<td><a href="javascript:void(0)"><span
+																		th:text="${user.contact}"></span></a></td>
 															</tr>
 															<tr>
 																<td>Address :</td>
-																<td th:text="${user.address}">549 Sulphur Springs Road,
-																	Downers, IL</td>
+																<td th:text="${user.address}">549 Sulphur Springs
+																	Road, Downers, IL</td>
 															</tr>
 														</tbody>
 													</table>
@@ -768,19 +782,15 @@
 														<tbody>
 															<tr>
 																<td>Email :</td>
-																<td>
-																	<a href="javascript:void(0)"
-																		th:text="${user.email}">vicki.pope@gmail.com
-																		<span data-bs-toggle="modal"
-																			data-bs-target="#editProfile">Edit</span></a>
+																<td><a href="javascript:void(0)"
+																	th:text="${user.email}">vicki.pope@gmail.com <span
+																		data-bs-toggle="modal" data-bs-target="#editProfile">Edit</span></a>
 																</td>
 															</tr>
 															<tr>
 																<td>Password :</td>
-																<td>
-																	<a href="javascript:void(0)">●●●●●●
-																		<span data-bs-toggle="modal"
-																			data-bs-target="#editProfile">Edit</span></a>
+																<td><a href="javascript:void(0)">●●●●●● <span
+																		data-bs-toggle="modal" data-bs-target="#editProfile">Edit</span></a>
 																</td>
 															</tr>
 														</tbody>
@@ -790,7 +800,8 @@
 
 											<div class="col-xxl-5">
 												<div class="profile-image">
-													<img src="../assets/images/inner-page/dashboard-profile.png"
+													<img
+														src="../assets/images/inner-page/dashboard-profile.png"
 														class="img-fluid blur-up lazyload" alt="">
 												</div>
 											</div>
@@ -801,8 +812,8 @@
 							</div>
 							<!--User Profile Section End-->
 
-							<div class="tab-pane fade show" id="pills-security" role="tabpanel"
-								aria-labelledby="pills-security-tab">
+							<div class="tab-pane fade show" id="pills-security"
+								role="tabpanel" aria-labelledby="pills-security-tab">
 								<div class="dashboard-privacy">
 									<div class="dashboard-bg-box">
 										<div class="dashboard-title mb-4">
@@ -813,29 +824,33 @@
 											<div class="d-flex align-items-start">
 												<h6>Allows others to see my profile</h6>
 												<div class="form-check form-switch switch-radio ms-auto">
-													<input class="form-check-input" type="checkbox" role="switch"
-														id="redio" aria-checked="false">
-													<label class="form-check-label" for="redio"></label>
+													<input class="form-check-input" type="checkbox"
+														role="switch" id="redio" aria-checked="false"> <label
+														class="form-check-label" for="redio"></label>
 												</div>
 											</div>
 
-											<p class="text-content">all peoples will be able to see my profile</p>
+											<p class="text-content">all peoples will be able to see
+												my profile</p>
 										</div>
 
 										<div class="privacy-box">
 											<div class="d-flex align-items-start">
-												<h6>who has save this profile only that people see my profile</h6>
+												<h6>who has save this profile only that people see my
+													profile</h6>
 												<div class="form-check form-switch switch-radio ms-auto">
-													<input class="form-check-input" type="checkbox" role="switch"
-														id="redio2" aria-checked="false">
-													<label class="form-check-label" for="redio2"></label>
+													<input class="form-check-input" type="checkbox"
+														role="switch" id="redio2" aria-checked="false"> <label
+														class="form-check-label" for="redio2"></label>
 												</div>
 											</div>
 
-											<p class="text-content">all peoples will not be able to see my profile</p>
+											<p class="text-content">all peoples will not be able to
+												see my profile</p>
 										</div>
 
-										<button class="btn theme-bg-color btn-md fw-bold mt-4 text-white">Save
+										<button
+											class="btn theme-bg-color btn-md fw-bold mt-4 text-white">Save
 											Changes</button>
 									</div>
 
@@ -848,31 +863,32 @@
 											<div class="d-flex align-items-start">
 												<h6>Deleting Your Account Will Permanently</h6>
 												<div class="form-check form-switch switch-radio ms-auto">
-													<input class="form-check-input" type="checkbox" role="switch"
-														id="redio3" aria-checked="false">
-													<label class="form-check-label" for="redio3"></label>
+													<input class="form-check-input" type="checkbox"
+														role="switch" id="redio3" aria-checked="false"> <label
+														class="form-check-label" for="redio3"></label>
 												</div>
 											</div>
-											<p class="text-content">Once your account is deleted, you will be logged out
-												and will be unable to log in back.</p>
+											<p class="text-content">Once your account is deleted, you
+												will be logged out and will be unable to log in back.</p>
 										</div>
 
 										<div class="privacy-box">
 											<div class="d-flex align-items-start">
 												<h6>Deleting Your Account Will Temporary</h6>
 												<div class="form-check form-switch switch-radio ms-auto">
-													<input class="form-check-input" type="checkbox" role="switch"
-														id="redio4" aria-checked="false">
-													<label class="form-check-label" for="redio4"></label>
+													<input class="form-check-input" type="checkbox"
+														role="switch" id="redio4" aria-checked="false"> <label
+														class="form-check-label" for="redio4"></label>
 												</div>
 											</div>
 
-											<p class="text-content">Once your account is deleted, you will be logged out
-												and you will be create new account</p>
+											<p class="text-content">Once your account is deleted, you
+												will be logged out and you will be create new account</p>
 										</div>
 
-										<button class="btn theme-bg-color btn-md fw-bold mt-4 text-white">Delete My
-											Account</button>
+										<button
+											class="btn theme-bg-color btn-md fw-bold mt-4 text-white">Delete
+											My Account</button>
 									</div>
 								</div>
 							</div>
@@ -889,16 +905,18 @@
 	<!-- Footer Section End -->
 
 	<!-- Deal Box Modal Start -->
-	<div class="modal fade theme-modal deal-modal" id="deal-box" tabindex="-1" aria-labelledby="exampleModalLabel"
-		aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+	<div class="modal fade theme-modal deal-modal" id="deal-box"
+		tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div
+			class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
 			<div class="modal-content">
 				<div class="modal-header">
 					<div>
 						<h5 class="modal-title w-100" id="deal_today">Deal Today</h5>
 						<p class="mt-1 text-content">Recommended deals for you.</p>
 					</div>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close">
 						<i class="fa-solid fa-xmark"></i>
 					</button>
 				</div>
@@ -907,56 +925,64 @@
 						<ul class="deal-offer-list">
 							<li class="list-1">
 								<div class="deal-offer-contain">
-									<a href="shop-left-sidebar.html" class="deal-image">
-										<img src="../assets/images/vegetable/product/10.png" class="blur-up lazyload"
-											alt="">
-									</a>
-
-									<a href="shop-left-sidebar.html" class="deal-contain">
+									<a href="shop-left-sidebar.html" class="deal-image"> <img
+										src="../assets/images/vegetable/product/10.png"
+										class="blur-up lazyload" alt="">
+									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+										<h6>
+											$52.57
+											<del>57.62</del>
+											<span>500 G</span>
+										</h6>
 									</a>
 								</div>
 							</li>
 
 							<li class="list-2">
 								<div class="deal-offer-contain">
-									<a href="shop-left-sidebar.html" class="deal-image">
-										<img src="../assets/images/vegetable/product/11.png" class="blur-up lazyload"
-											alt="">
-									</a>
-
-									<a href="shop-left-sidebar.html" class="deal-contain">
+									<a href="shop-left-sidebar.html" class="deal-image"> <img
+										src="../assets/images/vegetable/product/11.png"
+										class="blur-up lazyload" alt="">
+									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+										<h6>
+											$52.57
+											<del>57.62</del>
+											<span>500 G</span>
+										</h6>
 									</a>
 								</div>
 							</li>
 
 							<li class="list-3">
 								<div class="deal-offer-contain">
-									<a href="shop-left-sidebar.html" class="deal-image">
-										<img src="../assets/images/vegetable/product/12.png" class="blur-up lazyload"
-											alt="">
-									</a>
-
-									<a href="shop-left-sidebar.html" class="deal-contain">
+									<a href="shop-left-sidebar.html" class="deal-image"> <img
+										src="../assets/images/vegetable/product/12.png"
+										class="blur-up lazyload" alt="">
+									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+										<h6>
+											$52.57
+											<del>57.62</del>
+											<span>500 G</span>
+										</h6>
 									</a>
 								</div>
 							</li>
 
 							<li class="list-1">
 								<div class="deal-offer-contain">
-									<a href="shop-left-sidebar.html" class="deal-image">
-										<img src="../assets/images/vegetable/product/13.png" class="blur-up lazyload"
-											alt="">
-									</a>
-
-									<a href="shop-left-sidebar.html" class="deal-contain">
+									<a href="shop-left-sidebar.html" class="deal-image"> <img
+										src="../assets/images/vegetable/product/13.png"
+										class="blur-up lazyload" alt="">
+									</a> <a href="shop-left-sidebar.html" class="deal-contain">
 										<h5>Blended Instant Coffee 50 g Buy 1 Get 1 Free</h5>
-										<h6>$52.57 <del>57.62</del> <span>500 G</span></h6>
+										<h6>
+											$52.57
+											<del>57.62</del>
+											<span>500 G</span>
+										</h6>
 									</a>
 								</div>
 							</li>
@@ -984,8 +1010,9 @@
 							</div>
 							<div class="theme-setting-button color-picker">
 								<form class="form-control">
-									<label for="colorPick" class="form-label mb-0">Theme Color</label>
-									<input type="color" class="form-control form-control-color" id="colorPick"
+									<label for="colorPick" class="form-label mb-0">Theme
+										Color</label> <input type="color"
+										class="form-control form-control-color" id="colorPick"
 										value="#0da487" title="Choose your color">
 								</form>
 							</div>
@@ -1016,8 +1043,7 @@
 		</div>
 
 		<div class="back-to-top">
-			<a id="back-to-top" href="#">
-				<i class="fas fa-chevron-up"></i>
+			<a id="back-to-top" href="#"> <i class="fas fa-chevron-up"></i>
 			</a>
 		</div>
 	</div>
@@ -1029,84 +1055,91 @@
 
 	<!-- Add address modal box start -->
 	<section>
-		<div class="modal fade theme-modal" id="add-address" tabindex="-1" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+		<div class="modal fade theme-modal" id="add-address" tabindex="-1"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div
+				class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Add a new address</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+						<h5 class="modal-title" id="exampleModalLabel">Add a new
+							address</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close">
 							<i class="fa-solid fa-xmark"></i>
 						</button>
 					</div>
 					<div class="modal-body">
 						<form th:action="@{/newAddress}" action="#" method="post">
 							<div class="form-floating mb-4 theme-form-floating">
-								<input name="firstName" type="text" class="form-control" id="firstName"
-									placeholder="Enter First Name">
-								<label for="firstName">First Name</label>
+								<input name="firstName" type="text" class="form-control"
+									id="firstName" placeholder="Enter First Name"> <label
+									for="firstName">First Name</label>
 							</div>
 
 
 
 							<div class="form-floating mb-4 theme-form-floating">
-								<input name="lastName" type="text" class="form-control" id="lastName"
-									placeholder="Enter Last Name">
-								<label for="lastName">Last Name</label>
+								<input name="lastName" type="text" class="form-control"
+									id="lastName" placeholder="Enter Last Name"> <label
+									for="lastName">Last Name</label>
 							</div>
 
 
 
 							<div class="form-floating mb-4 theme-form-floating">
 								<input name="email" type="email" class="form-control" id="email"
-									placeholder="Enter Email Address">
-								<label for="email">Email Address</label>
+									placeholder="Enter Email Address"> <label for="email">Email
+									Address</label>
 							</div>
 
 							<div class="form-floating mb-4 theme-form-floating">
-								<input name="number" type="number" class="form-control" id="number"
-									placeholder="Enter Mobile Number">
-								<label for="number">MObile Number</label>
+								<input name="number" type="number" class="form-control"
+									id="number" placeholder="Enter Mobile Number"> <label
+									for="number">MObile Number</label>
 							</div>
 
 
 							<div class="form-floating mb-4 theme-form-floating">
-								<textarea name="addressText" class="form-control" placeholder="Enter Your Address"
-									id="addressText" style="height: 100px"></textarea>
+								<textarea name="addressText" class="form-control"
+									placeholder="Enter Your Address" id="addressText"
+									style="height: 100px"></textarea>
 								<label for="addressText">Enter Address</label>
 							</div>
 
 							<div class="form-floating mb-4 theme-form-floating">
 								<input name="state" type="text" class="form-control" id="state"
-									placeholder="Enter Your State Name">
-								<label for="state">State Name</label>
+									placeholder="Enter Your State Name"> <label for="state">State
+									Name</label>
 							</div>
 
 							<div class="form-floating mb-4 theme-form-floating">
-								<input name="country" type="text" class="form-control" id="country"
-									placeholder="Enter Your Country Name">
-								<label for="country">Country Name</label>
+								<input name="country" type="text" class="form-control"
+									id="country" placeholder="Enter Your Country Name"> <label
+									for="country">Country Name</label>
 							</div>
 
 							<div class="form-floating mb-4 theme-form-floating">
 								<input name="pinCode" type="text" class="form-control" id="pin"
-									placeholder="Enter Pin Code">
-								<label for="pin">Pin Code</label>
+									placeholder="Enter Pin Code"> <label for="pin">Pin
+									Code</label>
 							</div>
 
-							<label for="form-check" style="font-size: 16px;"> Address Type</label><br>
-							<div style="display: flex;margin-top: 5px;">
+							<label for="form-check" style="font-size: 16px;"> Address
+								Type</label><br>
+							<div style="display: flex; margin-top: 5px;">
 
 								<div class="form-check" style="margin-right: 10px;">
-									<input class="form-check-input" value="Home" type="radio" name="addressType"
-										id="flexRadioDefault1" style="font-size: 14px;">
-									<label class="form-check-label" for="flexRadioDefault1">Home</label>
+									<input class="form-check-input" value="Home" type="radio"
+										name="addressType" id="flexRadioDefault1"
+										style="font-size: 14px;"> <label
+										class="form-check-label" for="flexRadioDefault1">Home</label>
 								</div>
 
 								<div class="form-check" style="margin-left: 10px;">
-									<input class="form-check-input" value="Work" type="radio" name="addressType"
-										id="flexRadioDefault2" style="font-size: 14px;">
-									<label class="form-check-label" for="flexRadioDefault2">Work</label>
+									<input class="form-check-input" value="Work" type="radio"
+										name="addressType" id="flexRadioDefault2"
+										style="font-size: 14px;"> <label
+										class="form-check-label" for="flexRadioDefault2">Work</label>
 								</div>
 							</div>
 
@@ -1114,7 +1147,9 @@
 							<div class="modal-footer">
 								<!--<button type="button" class="btn btn-secondary btn-md"
 									data-bs-dismiss="modal">Close</button>-->
-								<button type="submit" class="btn theme-bg-color btn-md text-white">Add Address</button>
+								<button type="submit"
+									class="btn theme-bg-color btn-md text-white">Add
+									Address</button>
 							</div>
 
 						</form>
@@ -1133,85 +1168,92 @@
 	<!-- Modal section with dynamic ID -->
 	<section>
 		<div th:each="a : ${addresses}">
-			<div class="modal fade theme-modal" th:id="'edit-address-' + ${a.id}" tabindex="-1"
-				aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal fade theme-modal" th:id="'edit-address-' + ${a.id}"
+				tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<!-- Modal content -->
-				<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+				<div
+					class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">Add a new address</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							<h5 class="modal-title" id="exampleModalLabel">Add a new
+								address</h5>
+							<button type="button" class="btn-close" data-bs-dismiss="modal"
+								aria-label="Close">
 								<i class="fa-solid fa-xmark"></i>
 							</button>
 						</div>
 						<div class="modal-body">
 							<form th:action="@{/newAddress}" action="#" method="post">
 								<div class="form-floating mb-4 theme-form-floating">
-									<input name="firstName" type="text" class="form-control" id="firstName"
-										placeholder="Enter First Name">
-									<label for="firstName">First Name</label>
+									<input name="firstName" type="text" class="form-control"
+										id="firstName" placeholder="Enter First Name"> <label
+										for="firstName">First Name</label>
 								</div>
 
 
 
 								<div class="form-floating mb-4 theme-form-floating">
-									<input name="lastName" type="text" class="form-control" id="lastName"
-										placeholder="Enter Last Name">
-									<label for="lastName">Last Name</label>
+									<input name="lastName" type="text" class="form-control"
+										id="lastName" placeholder="Enter Last Name"> <label
+										for="lastName">Last Name</label>
 								</div>
 
 
 
 								<div class="form-floating mb-4 theme-form-floating">
-									<input name="email" type="email" class="form-control" id="email"
-										placeholder="Enter Email Address">
-									<label for="email">Email Address</label>
+									<input name="email" type="email" class="form-control"
+										id="email" placeholder="Enter Email Address"> <label
+										for="email">Email Address</label>
 								</div>
 
 								<div class="form-floating mb-4 theme-form-floating">
-									<input name="number" type="number" class="form-control" id="number"
-										placeholder="Enter Mobile Number">
-									<label for="number">MObile Number</label>
+									<input name="number" type="number" class="form-control"
+										id="number" placeholder="Enter Mobile Number"> <label
+										for="number">MObile Number</label>
 								</div>
 
 
 								<div class="form-floating mb-4 theme-form-floating">
-									<textarea name="addressText" class="form-control" placeholder="Enter Your Address"
-										id="addressText" style="height: 100px"></textarea>
+									<textarea name="addressText" class="form-control"
+										placeholder="Enter Your Address" id="addressText"
+										style="height: 100px"></textarea>
 									<label for="addressText">Enter Address</label>
 								</div>
 
 								<div class="form-floating mb-4 theme-form-floating">
 									<input name="state" type="text" class="form-control" id="state"
-										placeholder="Enter Your State Name">
-									<label for="state">State Name</label>
+										placeholder="Enter Your State Name"> <label
+										for="state">State Name</label>
 								</div>
 
 								<div class="form-floating mb-4 theme-form-floating">
-									<input name="country" type="text" class="form-control" id="country"
-										placeholder="Enter Your Country Name">
-									<label for="country">Country Name</label>
+									<input name="country" type="text" class="form-control"
+										id="country" placeholder="Enter Your Country Name"> <label
+										for="country">Country Name</label>
 								</div>
 
 								<div class="form-floating mb-4 theme-form-floating">
 									<input name="pinCode" type="text" class="form-control" id="pin"
-										placeholder="Enter Pin Code">
-									<label for="pin">Pin Code</label>
+										placeholder="Enter Pin Code"> <label for="pin">Pin
+										Code</label>
 								</div>
 
-								<label for="form-check" style="font-size: 16px;"> Address Type</label><br>
-								<div style="display: flex;margin-top: 5px;">
+								<label for="form-check" style="font-size: 16px;">
+									Address Type</label><br>
+								<div style="display: flex; margin-top: 5px;">
 
 									<div class="form-check" style="margin-right: 10px;">
-										<input class="form-check-input" value="Home" type="radio" name="addressType"
-											id="flexRadioDefault1" style="font-size: 14px;">
-										<label class="form-check-label" for="flexRadioDefault1">Home</label>
+										<input class="form-check-input" value="Home" type="radio"
+											name="addressType" id="flexRadioDefault1"
+											style="font-size: 14px;"> <label
+											class="form-check-label" for="flexRadioDefault1">Home</label>
 									</div>
 
 									<div class="form-check" style="margin-left: 10px;">
-										<input class="form-check-input" value="Work" type="radio" name="addressType"
-											id="flexRadioDefault2" style="font-size: 14px;">
-										<label class="form-check-label" for="flexRadioDefault2">Work</label>
+										<input class="form-check-input" value="Work" type="radio"
+											name="addressType" id="flexRadioDefault2"
+											style="font-size: 14px;"> <label
+											class="form-check-label" for="flexRadioDefault2">Work</label>
 									</div>
 								</div>
 
@@ -1219,7 +1261,8 @@
 								<div class="modal-footer">
 									<!--<button type="button" class="btn btn-secondary btn-md"
 									data-bs-dismiss="modal">Close</button>-->
-									<button type="submit" class="btn theme-bg-color btn-md text-white">Add
+									<button type="submit"
+										class="btn theme-bg-color btn-md text-white">Add
 										Address</button>
 								</div>
 
@@ -1237,22 +1280,27 @@
 	<!-- Add address modal box end -->
 
 	<!-- Location Modal Start -->
-	<div class="modal location-modal fade theme-modal" id="locationModal" tabindex="-1"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+	<div class="modal location-modal fade theme-modal" id="locationModal"
+		tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div
+			class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel1">Choose your Delivery Location</h5>
-					<p class="mt-1 text-content">Enter your address and we will specify the offer for your area.</p>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+					<h5 class="modal-title" id="exampleModalLabel1">Choose your
+						Delivery Location</h5>
+					<p class="mt-1 text-content">Enter your address and we will
+						specify the offer for your area.</p>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close">
 						<i class="fa-solid fa-xmark"></i>
 					</button>
 				</div>
 				<div class="modal-body">
 					<div class="location-list">
 						<div class="search-input">
-							<input type="search" class="form-control" placeholder="Search Your Area">
-							<i class="fa-solid fa-magnifying-glass"></i>
+							<input type="search" class="form-control"
+								placeholder="Search Your Area"> <i
+								class="fa-solid fa-magnifying-glass"></i>
 						</div>
 
 						<div class="disabled-box">
@@ -1260,75 +1308,45 @@
 						</div>
 
 						<ul class="location-select custom-height">
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Alabama</h6>
-									<span>Min: $130</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Alabama</h6> <span>Min: $130</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Arizona</h6>
-									<span>Min: $150</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Arizona</h6> <span>Min: $150</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>California</h6>
-									<span>Min: $110</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>California</h6> <span>Min: $110</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Colorado</h6>
-									<span>Min: $140</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Colorado</h6> <span>Min: $140</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Florida</h6>
-									<span>Min: $160</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Florida</h6> <span>Min: $160</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Georgia</h6>
-									<span>Min: $120</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Georgia</h6> <span>Min: $120</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Kansas</h6>
-									<span>Min: $170</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Kansas</h6> <span>Min: $170</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Minnesota</h6>
-									<span>Min: $120</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Minnesota</h6> <span>Min: $120</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>New York</h6>
-									<span>Min: $110</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>New York</h6> <span>Min: $110</span>
+							</a></li>
 
-							<li>
-								<a href="javascript:void(0)">
-									<h6>Washington</h6>
-									<span>Min: $130</span>
-								</a>
-							</li>
+							<li><a href="javascript:void(0)">
+									<h6>Washington</h6> <span>Min: $130</span>
+							</a></li>
 						</ul>
 					</div>
 				</div>
@@ -1341,15 +1359,18 @@
 
 
 	<section>
-		<div class="modal fade theme-modal" id="editProfile" tabindex="-1" aria-labelledby="exampleModalLabel"
-			aria-hidden="true">
+		<div class="modal fade theme-modal" id="editProfile" tabindex="-1"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-			<form th:action="@{/updateProfile}" method="post" enctype="multipart/form-data">
-				<div class="modal-dialog modal-lg modal-dialog-centered modal-fullscreen-sm-down">
+			<form th:action="@{/updateProfile}" method="post"
+				enctype="multipart/form-data">
+				<div
+					class="modal-dialog modal-lg modal-dialog-centered modal-fullscreen-sm-down">
 					<div class="modal-content">
 						<div class="modal-header">
 							<h5 class="modal-title" id="exampleModalLabel2">Edit Profile</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							<button type="button" class="btn-close" data-bs-dismiss="modal"
+								aria-label="Close">
 								<i class="fa-solid fa-xmark"></i>
 							</button>
 						</div>
@@ -1362,8 +1383,8 @@
 
 									<div class="form-floating theme-form-floating">
 										<input name="name" type="text" class="form-control" id="pname"
-											th:value="${user.name}">
-										<label for="name">Full Name</label>
+											th:value="${user.name}"> <label for="name">Full
+											Name</label>
 									</div>
 
 								</div>
@@ -1371,9 +1392,9 @@
 								<div class="col-xxl-6">
 
 									<div class="form-floating theme-form-floating">
-										<input name="email" type="email" class="form-control" id="email1"
-											th:value="${user.email}">
-										<label for="email1">Email address</label>
+										<input name="email" type="email" class="form-control"
+											id="email1" th:value="${user.email}"> <label
+											for="email1">Email address</label>
 									</div>
 
 								</div>
@@ -1382,17 +1403,18 @@
 								<div class="col-xxl-6">
 
 									<div class="form-floating theme-form-floating">
-										<input class="form-control" type="password" name="password" id="password"
-											th:value="${user.password}" readonly>
-										<label for="password">Password</label>
+										<input class="form-control" type="password" name="password"
+											id="password" th:value="${user.password}" readonly> <label
+											for="password">Password</label>
 									</div>
 
 								</div>
 
 								<div class="col-xxl-4">
 									<div class="form-floating theme-form-floating">
-										<input class="form-control" type="tel" name="contact" th:value="${user.contact}"
-											id="contact" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value =
+										<input class="form-control" type="tel" name="contact"
+											th:value="${user.contact}" id="contact" maxlength="10"
+											oninput="javascript: if (this.value.length > this.maxLength) this.value =
 														                                            this.value.slice(0, this.maxLength);">
 										<label for="mobile">Contact Number</label>
 									</div>
@@ -1400,24 +1422,23 @@
 
 								<div class="col-xxl-4">
 									<div class="form-floating theme-form-floating">
-										<select name="gender" th:value="${user.gender}" class="form-select"
-											id="floatingSelect">
+										<select name="gender" th:value="${user.gender}"
+											class="form-select" id="floatingSelect">
 											<!--<option selected th;value="${user.gender}">Choose Your Gender</option>-->
 											<option>Choose Your Gender</option>
 											<option value="Male">Male</option>
 											<option value="Female">Female</option>
 											<option value="Other">Other</option>
 
-										</select>
-										<label for="floatingSelect">Gender</label>
+										</select> <label for="floatingSelect">Gender</label>
 									</div>
 								</div>
 
 								<div class="col-xxl-4">
 									<div class="form-floating theme-form-floating">
-										<input type="date" class="form-control" name="birthDate" id="birthDate"
-											th:value="${user.birthDate}">
-										<label for="birthDate">birthDate</label>
+										<input type="date" class="form-control" name="birthDate"
+											id="birthDate" th:value="${user.birthDate}"> <label
+											for="birthDate">birthDate</label>
 									</div>
 								</div>
 
@@ -1425,16 +1446,17 @@
 
 								<div class="col-12">
 									<div class="form-floating theme-form-floating">
-										<input type="file" class="form-control" name="pImage" id="pImage">
-										<label for="pImage">Profile Image</label>
+										<input type="file" class="form-control" name="pImage"
+											id="pImage"> <label for="pImage">Profile
+											Image</label>
 									</div>
 								</div>
 
 								<div class="col-12">
 									<div class="form-floating theme-form-floating">
-										<input type="text" class="form-control" name="address" id="address"
-											th:value="${user.address}">
-										<label for="address">Add Address</label>
+										<input type="text" class="form-control" name="address"
+											id="address" th:value="${user.address}"> <label
+											for="address">Add Address</label>
 									</div>
 								</div>
 
@@ -1444,7 +1466,8 @@
 						<div class="modal-footer">
 							<button type="button" class="btn btn-animation btn-md fw-bold"
 								data-bs-dismiss="modal">Close</button>
-							<button class="btn theme-bg-color btn-md fw-bold text-light">Save changes</button>
+							<button class="btn theme-bg-color btn-md fw-bold text-light">Save
+								changes</button>
 						</div>
 					</div>
 				</div>
@@ -1454,9 +1477,10 @@
 	<!-- Edit Profile End -->
 
 	<!-- Edit Card Start -->
-	<div class="modal fade theme-modal" id="editCard" tabindex="-1" aria-labelledby="exampleModalLabel"
-		aria-hidden="true">
-		<div class="modal-dialog modal-lg modal-dialog-centered modal-fullscreen-sm-down">
+	<div class="modal fade theme-modal" id="editCard" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div
+			class="modal-dialog modal-lg modal-dialog-centered modal-fullscreen-sm-down">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel8">Edit Card</h5>
@@ -1469,8 +1493,8 @@
 						<div class="col-xxl-6">
 							<form>
 								<div class="form-floating theme-form-floating">
-									<input type="text" class="form-control" id="finame" value="Mark">
-									<label for="finame">First Name</label>
+									<input type="text" class="form-control" id="finame"
+										value="Mark"> <label for="finame">First Name</label>
 								</div>
 							</form>
 						</div>
@@ -1478,8 +1502,8 @@
 						<div class="col-xxl-6">
 							<form>
 								<div class="form-floating theme-form-floating">
-									<input type="text" class="form-control" id="laname" value="Jecno">
-									<label for="laname">Last Name</label>
+									<input type="text" class="form-control" id="laname"
+										value="Jecno"> <label for="laname">Last Name</label>
 								</div>
 							</form>
 						</div>
@@ -1495,8 +1519,7 @@
 										<option value="fra">RuPay Card</option>
 										<option value="china">Contactless Card</option>
 										<option value="spain">Maestro Card</option>
-									</select>
-									<label for="floatingSelect12">Card Type</label>
+									</select> <label for="floatingSelect12">Card Type</label>
 								</div>
 							</form>
 						</div>
@@ -1505,7 +1528,9 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-animation btn-md fw-bold"
 						data-bs-dismiss="modal">Cancel</button>
-					<button type="button" class="btn theme-bg-color btn-md fw-bold text-light">Update Card</button>
+					<button type="button"
+						class="btn theme-bg-color btn-md fw-bold text-light">Update
+						Card</button>
 				</div>
 			</div>
 		</div>
@@ -1513,37 +1538,44 @@
 	<!-- Edit Card End -->
 
 	<!-- Remove Profile Modal Start -->
-	<div class="modal fade theme-modal remove-profile" id="removeProfile" tabindex="-1"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+	<div class="modal fade theme-modal remove-profile" id="removeProfile"
+		tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div
+			class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
 			<div class="modal-content">
 				<div class="modal-header d-block text-center">
-					<h5 class="modal-title w-100" id="exampleModalLabel22">Are You Sure ?</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+					<h5 class="modal-title w-100" id="exampleModalLabel22">Are You
+						Sure ?</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close">
 						<i class="fa-solid fa-xmark"></i>
 					</button>
 				</div>
 				<div class="modal-body">
 					<div class="remove-box">
-						<p>The permission for the use/group, preview is inherited from the object, object will create a
-							new permission for this object</p>
+						<p>The permission for the use/group, preview is inherited from
+							the object, object will create a new permission for this object</p>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-animation btn-md fw-bold" data-bs-dismiss="modal">No</button>
-					<button type="button" class="btn theme-bg-color btn-md fw-bold text-light"
+					<button type="button" class="btn btn-animation btn-md fw-bold"
+						data-bs-dismiss="modal">No</button>
+					<button type="button"
+						class="btn theme-bg-color btn-md fw-bold text-light"
 						data-bs-target="#removeAddress" data-bs-toggle="modal">Yes</button>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="modal fade theme-modal remove-profile" id="removeAddress" tabindex="-1"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+	<div class="modal fade theme-modal remove-profile" id="removeAddress"
+		tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div
+			class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title text-center" id="exampleModalLabel12">Done!</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+					<button type="button" class="btn-close" data-bs-dismiss="modal"
+						aria-label="Close">
 						<i class="fa-solid fa-xmark"></i>
 					</button>
 				</div>
@@ -1553,7 +1585,8 @@
 					</div>
 				</div>
 				<div class="modal-footer pt-0">
-					<button type="button" class="btn theme-bg-color btn-md fw-bold text-light"
+					<button type="button"
+						class="btn theme-bg-color btn-md fw-bold text-light"
 						data-bs-dismiss="modal">Close</button>
 				</div>
 			</div>

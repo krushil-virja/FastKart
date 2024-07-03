@@ -42,6 +42,7 @@ import com.FastKart.entities.Order;
 import com.FastKart.entities.Product;
 import com.FastKart.entities.User;
 import com.FastKart.entities.WishList;
+import com.itextpdf.text.log.SysoCounter;
 import com.mysql.cj.x.protobuf.MysqlxCrud.Collection;
 import com.nimbusds.oauth2.sdk.http.HTTPRequest;
 
@@ -365,8 +366,13 @@ public class basicController {
 	    m.addAttribute("productByCategories", products);
 	    m.addAttribute("totalPages", page.getTotalPages());
 	    m.addAttribute("totalItems", page.getTotalElements());
-	    m.addAttribute("currentPage", pageNumber);
+	    m.addAttribute("currentPage", pageNumber); 
 	    m.addAttribute("pageSize", pageSize);
+	    
+	    System.out.println("totalPage :" + page.getTotalPages() );
+	    System.out.println(("totalItems :" + page.getTotalElements()));
+	    System.out.println("currentPage :" + pageNumber );
+	    System.out.println(("pageSize :" + pageSize ));
 	    
 	    
 	    // to show pagination 
@@ -526,6 +532,9 @@ public class basicController {
 
 			List<WishList> viewWishList = wdao.viewWishList(principal);
 			m.addAttribute("viewWishList", viewWishList);
+			
+			 String customImage = udao.customImage(principal);
+		       m.addAttribute("customImage", customImage);
 
 			return "userDashboard";
 		} else {

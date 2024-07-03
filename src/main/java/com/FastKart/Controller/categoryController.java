@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.FastKart.Dao.categoryDao;
+import com.FastKart.Dao.userDao;
 import com.FastKart.Repository.CategoryRepository;
 import com.FastKart.entities.Category;
+import com.FastKart.entities.User;
 import com.itextpdf.text.log.SysoCounter;
 
 import jakarta.validation.Valid;
@@ -31,6 +34,9 @@ public class categoryController {
 
 	@Autowired
 	private categoryDao cdao;
+	
+	@Autowired
+	private userDao udao;
 
 	@Autowired
 	private CategoryRepository categoryRepository;
@@ -91,10 +97,18 @@ public class categoryController {
 //======================================================== get Category detail by Id =============================================================
 
 	@GetMapping("/admin/updateCategory/{id}")
-	public String findCategoryById(@PathVariable("id") int id, Model m) {
+	public String findCategoryById(@PathVariable("id") int id, Model m, Principal principal) {
 
 		Category category = cdao.getCategory(id);
 		m.addAttribute("category", category);
+		
+		  User loggedInUser = udao.getLoggedInUser(principal);
+		    if (loggedInUser != null) {
+		        System.out.println("Logged In User: " + loggedInUser.getName());
+		        m.addAttribute("user", loggedInUser);
+		    } else {
+		        System.out.println("User is null");
+		    }
 
 		return "admin/admin-updateCategory";
 	}

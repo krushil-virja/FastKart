@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,9 +23,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.FastKart.Dao.categoryDao;
 import com.FastKart.Dao.subCategoryDao;
+import com.FastKart.Dao.userDao;
 import com.FastKart.Repository.CategoryRepository;
 import com.FastKart.Repository.SubCategoryRepository;
 import com.FastKart.entities.Category;
+import com.FastKart.entities.User;
 import com.FastKart.entities.subCategory;
 
 import jakarta.validation.Valid;
@@ -35,6 +38,9 @@ public class subCategoryController {
 
 	@Autowired
 	private subCategoryDao scDao;
+	
+	@Autowired
+	private userDao udao;
 
 	@Autowired
 	private SubCategoryRepository subCategoryRepository;
@@ -115,7 +121,7 @@ public class subCategoryController {
 //============================================================= get subcategory by id =============================================================
 
 	@GetMapping("/admin/updateSubCategory/{id}")
-	public String getSubCategory(@PathVariable("id") int id, Model m) {
+	public String getSubCategory(@PathVariable("id") int id, Model m, Principal principal) {
 
 		subCategory sc = subCategoryRepository.findById(id).get();
 		m.addAttribute("subCategory", sc);
@@ -123,6 +129,14 @@ public class subCategoryController {
 		List<Category> showAllCategory = cdao.showAllCategory();
 		m.addAttribute("category", showAllCategory);
 
+		
+		  User loggedInUser = udao.getLoggedInUser(principal);
+		    if (loggedInUser != null) {
+		        System.out.println("Logged In User: " + loggedInUser.getName());
+		        m.addAttribute("user", loggedInUser);
+		    } else {
+		        System.out.println("User is null");
+		    }
 		return "admin/admin-updateSubCategory";
 
 	}

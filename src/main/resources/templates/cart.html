@@ -157,9 +157,13 @@
 
 
 										<td class="save-remove" style="background: none;">
-											<h4 class="table-title text-content">Action</h4> <a
-												class="save notifi-wishlist" href="#">Save for later</a> <a
-												class="remove close_button" href="#"
+											<h4 class="table-title text-content">Action</h4> 
+											<form th:action="@{/addToWishList}" method="post">
+											<input name="pid" type="hidden" th:value="${c.product.id}">
+											<button style=" border: none; background: transparent;"><a class="save notifi-wishlist" style="margin-left: -6px;">Save for later</a></button>
+											</form>
+											
+												 <a class="remove close_button" href="#"
 												th:href="@{'/deleteCart/' + ${c.id}}">Remove</a>
 										</td>
 									</tr>

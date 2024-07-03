@@ -154,6 +154,7 @@ m.addAttribute("topSellingProducts", topSellingProducts);
 	public String updateCategory(Model m , Principal principal) {
 		
 		User loggedInUser = udao.getLoggedInUser(principal);
+		System.out.println(loggedInUser.getName());
 		m.addAttribute("user", loggedInUser);
 		
 		return "admin/admin-updateCategory";

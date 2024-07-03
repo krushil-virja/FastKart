@@ -19758,7 +19758,7 @@ header .offcanvas-backdrop {
     font-weight: 700
 }
 
->>.table:not(:last-child):last-child>* {
+.table:not(:last-child):last-child>* {
     border-bottom: none
 }
 
@@ -24832,8 +24832,8 @@ header .offcanvas-backdrop {
 }
 
 .user-dashboard-section .dashboard-left-sidebar .profile-box .cover-image .cover-icon {
-    width: 30px;
-    height: 30px;
+  /*   width: 30px;
+    height: 30px; */
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -24853,13 +24853,14 @@ header .offcanvas-backdrop {
 }
 
 .user-dashboard-section .dashboard-left-sidebar .profile-box .profile-contain {
-    padding: 0 15px
+    padding: 0 15px;
+        
 }
 
 .user-dashboard-section .dashboard-left-sidebar .profile-box .profile-contain .profile-image {
     margin: 0 auto;
     text-align: center;
-    margin-top: -50px;
+    margin-top: 15px;
     z-index: 1;
     position: relative
 }
@@ -24912,7 +24913,7 @@ header .offcanvas-backdrop {
 }
 
 .user-dashboard-section .dashboard-left-sidebar .profile-box .profile-contain .profile-name {
-    margin-top: calc(10px + (13 - 10) * ((100vw - 320px) / (1920 - 320)));
+    margin-top: calc(15px + (13 - 10) * ((100vw - 320px) / (1920 - 320)));
     text-align: center;
     padding-bottom: calc(12px + (18 - 12) * ((100vw - 320px) / (1920 - 320)));
     border-bottom: 1px solid #ddd

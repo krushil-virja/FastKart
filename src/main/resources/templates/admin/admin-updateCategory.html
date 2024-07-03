@@ -94,7 +94,7 @@
 
 			<!-- Page Header Start-->
 			<!-- common header using thymeleaf replace fragment -->
-		<div th:replace="/admin/admin-header::Header"></div>
+		<div th:replace="~{/admin/admin-header::Header}"></div>
 			<!-- Page Header Ends-->
 			<!--=================================================== PAGE HEADER END HERE ==========================================================================-->
 
@@ -104,7 +104,7 @@
 				<!--=================================================== PAGE SIDEBAR START HERE ========================================================================-->
 				<!-- Page Sidebar Start-->
 				<!-- common side bar using thymeleafe replace fragmnet -->
-		    <div th:replace="/admin/admin-sidebar::sidebar"></div>
+		   <div th:replace="~{/admin/admin-sidebar::sidebar}"></div>
 				<!-- Page Sidebar Ends-->
 				<!--=================================================== PAGE SIDEBAR END HERE ========================================================================-->
 				<div class="page-body">

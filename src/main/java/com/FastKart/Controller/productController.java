@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,13 +26,17 @@ import com.FastKart.Dao.categoryDao;
 import com.FastKart.Dao.productDao;
 import com.FastKart.Dao.reviewsDao;
 import com.FastKart.Dao.subCategoryDao;
+import com.FastKart.Dao.userDao;
+import com.FastKart.Repository.CartRepository;
 import com.FastKart.Repository.CategoryRepository;
 import com.FastKart.Repository.OrderRepository;
 import com.FastKart.Repository.ProductRepository;
 import com.FastKart.Repository.ReviewsRepository;
 import com.FastKart.Repository.SubCategoryRepository;
+import com.FastKart.Repository.WishListRepository;
 import com.FastKart.entities.Category;
 import com.FastKart.entities.Product;
+import com.FastKart.entities.User;
 import com.FastKart.entities.subCategory;
 import com.itextpdf.text.log.SysoCounter;
 
@@ -48,6 +53,9 @@ public class productController {
 
 	@Autowired
 	private subCategoryDao scdao;
+	
+	@Autowired
+	private userDao udao;
 
 	@Autowired
 	private CategoryRepository categoryRepository;
@@ -66,6 +74,12 @@ public class productController {
 	
 	@Autowired
 	private reviewsDao rdao;
+	
+	@Autowired
+	private CartRepository cartRepository;
+	
+	@Autowired
+	private WishListRepository wishListRepository;
 
 	@PostMapping("/admin/insertProduct")
 	private String addProduct(@Valid @ModelAttribute Product product, BindingResult result, 
@@ -152,7 +166,8 @@ if (file.isEmpty()) {
 
 //========================================================= FIND CATEGORY WISE PRODUCT HANDLER ========================================================	
 	@GetMapping("/findProductByCategory/{id}")
-	public String findProductByCategory(@PathVariable("id") int id, Model model) {
+	public String findProductByCategory(@PathVariable("id") int id, Model model,Principal principal) {
+		
 		
 		
 		List<Product> productsByCategory = pdao.findProductByCategory(id);
@@ -169,6 +184,14 @@ if (file.isEmpty()) {
 		
 		int countProductsInRange10000To100000 = productRepository.countProductsInRange10000To100000();
 		model.addAttribute("countProductsInRange10000To100000", countProductsInRange10000To100000);
+		
+		User loggedInUser = udao.getLoggedInUser(principal);
+		
+		int wishListCount = wishListRepository.countByUser(loggedInUser);
+		model.addAttribute("wishListCount", wishListCount);
+		
+		int cartItemCount = cartRepository.countByUser(loggedInUser);
+		model.addAttribute("cartItemCount", cartItemCount);
 	
 		return "shop"; // Assuming your view name is "home.html"
 	}
@@ -176,7 +199,7 @@ if (file.isEmpty()) {
 //=====================================================SHow PRODUCT DETAILS HANDLER====================================================================
 
 	@GetMapping("/productDetails/{id}")
-	public String productDetails(@PathVariable("id") int id, Model m) {
+	public String productDetails(@PathVariable("id") int id, Model m, Principal principal) {
 		Product findProductById = pdao.findProductById(id);
 
 		m.addAttribute("productDetails", findProductById);
@@ -211,26 +234,48 @@ if (file.isEmpty()) {
 		
 		List<Product> relatedProducts = pdao.findRelatedProducts(findProductById);
 		m.addAttribute("relatedProducts", relatedProducts);
-
+		
+User loggedInUser = udao.getLoggedInUser(principal);
+System.out.println("login user is : " + loggedInUser);
+		
+		int wishListCount = wishListRepository.countByUser(loggedInUser);
+		m.addAttribute("wishListCount", wishListCount);
+		System.out.println("wishlist count  is : " + wishListCount);
+		
+		int cartItemCount = cartRepository.countByUser(loggedInUser);
+		m.addAttribute("cartItemCount", cartItemCount);
+		System.out.println("cart  count  is : " + cartItemCount);
 		
 		return "productDetails";
 	}
 
 //========================================get Product Details for Update ========================================================================
 	@GetMapping("/admin/updateProduct/{id}")
-	public String getProductDetails(@PathVariable("id") int id, Model m) {
-		
-		Product product = productRepository.findById(id).get();
-		m.addAttribute("product", product);
-		
-		List<Category> showAllCategory = cdao.showAllCategory();
-		m.addAttribute("category", showAllCategory);
-		
-		List<subCategory> showAllSubCategory = scdao.showAllSubCategory();
-		m.addAttribute("subCategory", showAllSubCategory);
-		
-		return "admin/admin-updateProduct";
-		
+	public String getProductDetails(@PathVariable("id") int id, Model m, Principal principal) {
+	    if (principal != null) {
+	        System.out.println("Principal Name: " + principal.getName());
+	    } else {
+	        System.out.println("Principal is null");
+	    }
+
+	    Product product = productRepository.findById(id).orElse(null);
+	    m.addAttribute("product", product);
+
+	    List<Category> showAllCategory = cdao.showAllCategory();
+	    m.addAttribute("category", showAllCategory);
+
+	    List<subCategory> showAllSubCategory = scdao.showAllSubCategory();
+	    m.addAttribute("subCategory", showAllSubCategory);
+
+	    User loggedInUser = udao.getLoggedInUser(principal);
+	    if (loggedInUser != null) {
+	        System.out.println("Logged In User: " + loggedInUser.getName());
+	        m.addAttribute("user", loggedInUser);
+	    } else {
+	        System.out.println("User is null");
+	    }
+
+	    return "admin/admin-updateProduct";
 	}
 
 //================================================= Update Product Handler ===============================================================

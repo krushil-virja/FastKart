@@ -49,7 +49,7 @@ public class reviewsDao {
 
 			int productId = o.getProduct().getId();
 
-			if (productId == pid) {
+			if (productId == pid) { 
 				// if the product ID matches, return true indicating the user has bought this
 				// product
 				return true;

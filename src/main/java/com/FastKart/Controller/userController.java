@@ -1,4 +1,4 @@
-package com.FastKart.Controller;
+ package com.FastKart.Controller;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -137,7 +137,7 @@ public class userController {
 
 	@PostMapping("/updateProfile")
 	public String userUpdate(@ModelAttribute User u, @RequestParam("name") String name,
-	        @RequestParam("email") String email, @RequestParam("password") String password,
+	        @RequestParam("email") String email, @RequestParam(value = "password", required = false) String password,
 	        @RequestParam(value = "contact", required = false) Long contact, @RequestParam("gender") String gender,
 	        @RequestParam(value = "birthDate", required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date birthdate, @RequestParam("address") String address,
 	        @RequestParam("pImage") MultipartFile file, // Change the parameter type here
